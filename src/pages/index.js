@@ -1,21 +1,129 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import injectSheet from 'react-jss'
+import '../styles/fonts.css'
+import Avatar from '../images/avatar.png'
+import Button from '../components/Button'
 
 import Layout from '../components/layout'
-import Image from '../components/image'
-import SEO from '../components/seo'
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" keywords={['gatsby', 'application', 'react']} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: '300px', marginBottom: '1.45rem' }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+const IndexPage = ({ classes }) => (
+  <div className={classes.wrapper}>
+    <Layout>
+      <div className={classes.container}>
+        <img className={classes.avatar} src={Avatar} alt={'avatar'} />
+
+        <h1 className={classes.myHeading}>Hey, I’m Dillon.</h1>
+        <p className={classes.subHeading}>
+          UI Designer & Developer from Phoenix, AZ.
+        </p>
+        <p className={classes.bodyText}>
+          Currently working with some amazing people at{' '}
+          <a
+            className={classes.link}
+            target="_blank"
+            href={'https://www.elmstreettechnology.com'}
+          >
+            Elm Street Technology.
+          </a>
+        </p>
+        <Button
+          color={'rgba(65,131,215,1)'}
+          border={'3px solid rgba(65,131,215,1)'}
+          boxShadow={'5px 5px rgba(65, 131, 215, 0.4)'}
+          boxShadowHover={'5px 5px rgba(65, 131, 215, 1)'}
+          text={'more about me'}
+          fontSize={14}
+          page={'/about/'}
+          padding={'10px 30px'}
+        />
+      </div>
+    </Layout>
+  </div>
 )
 
-export default IndexPage
+const styles = {
+  wrapper: {
+    backgroundColor: '#f4f4f4',
+  },
+  container: {
+    padding: '20px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    height: '100vh',
+  },
+  avatar: {
+    width: '180px',
+    paddingBottom: '15px',
+
+    '@media (min-width: 600px)': {
+      paddingBottom: '22px',
+    },
+  },
+  emoji: {
+    fontSize: '48px',
+  },
+  myHeading: {
+    color: '#414141',
+    fontWeight: '700',
+    fontFamily: 'Inter UI',
+    letterSpacing: '.8px',
+    fontSize: '22px',
+    lineHeight: '1.4',
+    textAlign: 'center',
+
+    '@media (min-width: 400px)': {
+      fontSize: '28px',
+    },
+
+    '@media (min-width: 600px)': {
+      fontSize: '36px',
+    },
+  },
+  subHeading: {
+    color: '#414141',
+    fontFamily: 'Inter UI',
+    fontWeight: '400',
+    maxWidth: '800px',
+    textAlign: 'center',
+    lineHeight: '24px',
+    marginBottom: '10px',
+    letterSpacing: '.4px',
+    fontSize: '16px',
+
+    '@media (min-width: 600px)': {
+      fontSize: '18px',
+    },
+  },
+  bodyText: {
+    color: '#414141',
+    fontFamily: 'Inter UI',
+    maxWidth: '800px',
+    textAlign: 'center',
+    lineHeight: '24px',
+    marginBottom: '60px',
+    letterSpacing: '.4px',
+    fontSize: '16px',
+
+    '@media (min-width: 600px)': {
+      fontSize: '18px',
+    },
+  },
+  link: {
+    color: '#4183D7',
+    textDecoration: 'none',
+    borderBottom: '2px solid #e2e2e2',
+
+    '&:hover': {
+      transition: '250ms all',
+      borderBottom: '2px solid #4183D7',
+    },
+
+    '@media (min-width: 600px)': {
+      fontSize: '18px',
+    },
+  },
+}
+
+export default injectSheet(styles)(IndexPage)
