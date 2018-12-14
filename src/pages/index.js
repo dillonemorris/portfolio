@@ -54,7 +54,7 @@ const styles = {
     height: '100vh',
   },
   avatar: {
-    width: '180px',
+    width: '140px',
     paddingBottom: '15px',
 
     '@media (min-width: 600px)': {
