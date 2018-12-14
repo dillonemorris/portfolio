@@ -61,24 +61,24 @@ export default ({ data }) => {
   )
 }
 
-// export const query = graphql`
-//   query {
-//     allMarkdownRemark {
-//       totalCount
-//       edges {
-//         node {
-//           timeToRead
-//           id
-//           frontmatter {
-//             title
-//             date
-//             excerpt
-//           }
-//           fields {
-//             slug
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
+export const query = graphql`
+  query {
+    allMarkdownRemark {
+      totalCount
+      edges {
+        node {
+          timeToRead
+          id
+          frontmatter {
+            title
+            date
+            excerpt
+          }
+          fields {
+            slug
+          }
+        }
+      }
+    }
+  }
+`
