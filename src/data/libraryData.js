@@ -1,11 +1,11 @@
-import jordanPeterson from '../images/jordan-peterson.png'
-import feynman from '../images/feynman.png'
-import bigmagic from '../images/bigmagic.png'
-import onething from '../images/onething.png'
-import lessons from '../images/lessons.png'
-import sogood from '../images/sogood.png'
-import cosmos from '../images/cosmos.png'
-import obstacle from '../images/obstacle.png'
+import jordanPeterson from '../images/jordan-peterson.jpg'
+import feynman from '../images/feynman.jpg'
+import bigmagic from '../images/bigmagic.jpg'
+import onething from '../images/onething.jpg'
+import lessons from '../images/lessons.jpg'
+import sogood from '../images/sogood.jpg'
+import cosmos from '../images/cosmos.jpg'
+import obstacle from '../images/obstacle.jpg'
 
 const libraryData = [
   {
