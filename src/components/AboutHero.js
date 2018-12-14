@@ -1,6 +1,6 @@
 import React from 'react'
 import injectSheet from 'react-jss'
-import duotone from '../images/duotone.png'
+import duotone from '../images/duotone.jpg'
 
 const AboutHero = ({ classes }) => (
   <div className={classes.container}>

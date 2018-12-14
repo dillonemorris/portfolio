@@ -1,5 +1,5 @@
-import Typewise from '../images/typewise.png'
-import Dailyui from '../images/daily-ui.png'
+import Typewise from '../images/typewise.jpg'
+import Dailyui from '../images/daily-ui.jpg'
 
 const projectData = [
   {
