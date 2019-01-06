@@ -24,14 +24,16 @@ const styles = {
   },
   date: {
     color: '#606571',
-    fontFamily: 'Plex Mono',
+    fontFamily:
+      "Plex Mono, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
     fontSize: '13px',
     letterSpacing: '.5px',
     fontWeight: '200',
     paddingBottom: '4px',
   },
   title: {
-    fontFamily: 'Inter UI',
+    fontFamily:
+      "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
     fontSize: '26px',
     fontWeight: '600',
     color: '#414141',
@@ -41,7 +43,8 @@ const styles = {
     transition: 'all 170ms ease-in-out',
   },
   excerpt: {
-    fontFamily: 'Inter UI',
+    fontFamily:
+      "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
     color: '#606571',
     fontSize: '16px',
     letterSpacing: '.4px',

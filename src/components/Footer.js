@@ -99,7 +99,8 @@ const styles = {
     backgroundColor: '#fff',
     margin: '0 auto',
     color: '#414141',
-    fontFamily: 'Inter UI',
+    fontFamily:
+      "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
   },
   inner: {
     maxWidth: '1080px',
@@ -122,7 +123,8 @@ const styles = {
     textDecoration: 'none',
   },
   left: {
-    fontFamily: 'Plex Mono',
+    fontFamily:
+      "Plex Mono, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
     letterSpacing: '.5px',
     fontSize: '11px',
     paddingTop: '10px',

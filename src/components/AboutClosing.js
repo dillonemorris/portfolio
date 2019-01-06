@@ -55,7 +55,8 @@ const styles = {
   myHeading: {
     color: '#414141',
     fontWeight: '500',
-    fontFamily: 'Inter UI',
+    fontFamily:
+      "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
     fontSize: '32px',
     letterSpacing: '.3px',
 
@@ -85,7 +86,8 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     color: '#606571',
-    fontFamily: 'Inter UI',
+    fontFamily:
+      "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
     lineHeight: '1.5',
     padding: '80px 0px 0px',
   },

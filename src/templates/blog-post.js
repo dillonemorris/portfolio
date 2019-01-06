@@ -17,7 +17,8 @@ export default ({ data }) => {
           <div
             style={{
               color: '#606571',
-              fontFamily: 'Plex Mono',
+              fontFamily:
+                "Plex Mono, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
               fontSize: '14px',
               letterSpacing: '.5px',
               fontWeight: '200',
@@ -29,7 +30,8 @@ export default ({ data }) => {
           <h1 style={{ color: '#414141' }}>{post.frontmatter.title}</h1>
           <div
             style={{
-              fontFamily: 'Inter UI',
+              fontFamily:
+                "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
               color: '#414141',
               lineHeight: '1.6',
               paddingBottom: '40px',

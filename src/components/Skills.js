@@ -54,7 +54,8 @@ const styles = {
   myHeading: {
     color: '#414141',
     fontWeight: '500',
-    fontFamily: 'Inter UI',
+    fontFamily:
+      "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
     fontSize: '32px',
     letterSpacing: '.3px',
 
@@ -64,7 +65,8 @@ const styles = {
   },
   paragraph: {
     color: '#606571',
-    fontFamily: 'Inter UI',
+    fontFamily:
+      "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
     paddingBottom: '50px',
     lineHeight: '1.5',
     maxWidth: '400px',

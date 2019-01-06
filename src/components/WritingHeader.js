@@ -41,7 +41,8 @@ const styles = {
   subHeading: {
     color: '#606571',
     fontSize: '15px',
-    fontFamily: 'Inter UI',
+    fontFamily:
+      "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
     fontWeight: '300',
     maxWidth: '800px',
     textAlign: 'center',

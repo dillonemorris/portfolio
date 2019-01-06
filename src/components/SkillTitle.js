@@ -14,7 +14,8 @@ const styles = {
     display: 'flex',
   },
   title: {
-    fontFamily: 'Plex Mono',
+    fontFamily:
+      "Plex Mono, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
     fontSize: '24px',
     fontWeight: '500',
     paddingBottom: '20px',

@@ -11,7 +11,8 @@ const SkillPill = ({ classes, text }) => (
 
 const styles = {
   container: {
-    fontFamily: 'Plex Mono',
+    fontFamily:
+      "Plex Mono, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
     fontWeight: '300',
     fontSize: '14px',
     color: '#4183D7',

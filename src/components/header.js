@@ -76,7 +76,8 @@ const styles = {
     backgroundColor: '#fff',
     margin: '0 auto',
     color: '#414141',
-    fontFamily: 'Inter UI',
+    fontFamily:
+      "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
   },
   inner: {
     padding: '0px 1.0875rem 0rem',
