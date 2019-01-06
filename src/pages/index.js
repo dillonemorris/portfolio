@@ -51,7 +51,7 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column',
-    height: '100vh',
+    minHeight: 'calc(100vh - 210px)',
   },
   avatar: {
     width: '140px',

@@ -95,7 +95,7 @@ const styles = {
     alignContent: 'center',
     justifyContent: 'space-between',
     width: '100%',
-    height: '140px',
+    height: '110px',
     backgroundColor: '#fff',
     margin: '0 auto',
     color: '#414141',
@@ -112,7 +112,7 @@ const styles = {
     '@media (min-width: 600px)': {
       width: '100%',
       flexDirection: 'row',
-      padding: '40px 1.0875rem 64px',
+      padding: '0px 1.0875rem 0px',
       justifyContent: 'space-between',
     },
   },
@@ -124,24 +124,33 @@ const styles = {
   left: {
     fontFamily: 'Plex Mono',
     letterSpacing: '.5px',
-    fontSize: '12px',
+    fontSize: '11px',
     paddingTop: '10px',
     fontWeight: '300',
     order: 2,
     textAlign: 'center',
 
     '@media (min-width: 600px)': {
+      fontSize: '12px',
       paddingTop: '0px',
-      fontSize: '13px',
       order: 1,
       textAlign: 'left',
     },
   },
   socialContainer: {
     display: 'flex',
-    width: '180px',
     justifyContent: 'space-between',
     order: 1,
+    width: '180px',
+    paddingTop: '16px',
+
+    '@media (min-width: 600px)': {
+      fontSize: '12px',
+      paddingTop: '0px',
+      paddingTop: '0px',
+      order: 1,
+      textAlign: 'left',
+    },
   },
   socialLink: {
     width: '20px',

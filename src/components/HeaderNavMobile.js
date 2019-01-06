@@ -19,16 +19,16 @@ const HeaderNavMobile = ({ classes, className, onMenuClose }) => {
           </svg>
         </button>
       </div>
-      <Link className={classes.link} to="/projects/">
+      <Link onClick={onMenuClose} className={classes.link} to="/projects/">
         Projects
       </Link>
-      <Link className={classes.link} to="/writing/">
+      <Link onClick={onMenuClose} className={classes.link} to="/writing/">
         Writing
       </Link>
-      <Link className={classes.link} to="/library/">
+      <Link onClick={onMenuClose} className={classes.link} to="/library/">
         Library
       </Link>
-      <Link className={classes.link} to="/about/">
+      <Link onClick={onMenuClose} className={classes.link} to="/about/">
         About
       </Link>
     </nav>
