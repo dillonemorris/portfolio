@@ -1,10 +1,14 @@
 import React from 'react'
 import injectSheet from 'react-jss'
-import duotone from '../images/duotone.jpg'
+import about from '../images/about.jpg'
 
 const AboutHero = ({ classes }) => (
   <div className={classes.container}>
-    <img className={classes.left} src={duotone} />
+    <img
+      className={classes.left}
+      src={about}
+      alt={'Dillon standing beneath tree in Autumn'}
+    />
     <div className={classes.right}>
       <h1 className={classes.myHeading}>About</h1>
       <div className={classes.paragraph}>
@@ -17,8 +21,22 @@ const AboutHero = ({ classes }) => (
         engineering.
       </div>
       <div className={classes.paragraph}>
-        Away from the screen I enjoy playing music, spending time with my lovely
-        girlfriend, and getting to bed by 9pm 👴🏻.
+        When I'm not coding & creating for the web I enjoy playing and writing
+        music, spending time with my lovely girlfriend and our Golden Doodle
+        named Bowie⚡️.
+      </div>
+      <div className={classes.tagline}>
+        Check my skills{' '}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="18"
+          height="18"
+          fill="#4183D7"
+          style={{ marginLeft: '9px' }}
+        >
+          <path d="M11 18.59V3a1 1 0 0 1 2 0v15.59l5.3-5.3a1 1 0 0 1 1.4 1.42l-7 7a1 1 0 0 1-1.4 0l-7-7a1 1 0 0 1 1.4-1.42l5.3 5.3z" />
+        </svg>
       </div>
     </div>
   </div>
@@ -32,7 +50,7 @@ const styles = {
 
     '@media (min-width: 700px)': {
       flexDirection: 'row',
-      padding: '160px 0px',
+      padding: '130px 0px',
     },
   },
   myHeading: {
@@ -67,23 +85,28 @@ const styles = {
 
     '@media (min-width: 700px)': {
       maxWidth: '350px',
-      maxHeight: '220px',
+      maxHeight: '420px',
       marginRight: '40px',
       paddingBottom: '0px',
     },
 
     '@media (min-width: 900px)': {
       maxWidth: '450px',
-      maxHeight: '320px',
       marginRight: '60px',
-      // paddingBottom: '0px',
     },
+  },
+  tagline: {
+    fontFamily:
+      "Plex Mono, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
+    color: '#4183D7',
+    fontSize: '16px',
+    fontWeight: '300',
+    paddingTop: '20px',
+    display: 'flex',
+    alignItems: 'center',
 
-    '@media (min-width: 1030px)': {
-      maxWidth: '475px',
-      maxHeight: '350px',
-      marginRight: '80px',
-      // paddingBottom: '0px',
+    '&:hover': {
+      cursor: 'pointer',
     },
   },
 }

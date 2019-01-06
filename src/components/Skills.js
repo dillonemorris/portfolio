@@ -1,9 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import injectSheet from 'react-jss'
-
-import Layout from '../components/layout'
-import AboutHero from '../components/AboutHero'
 import SkillTitle from '../components/SkillTitle'
 import SkillPill from '../components/SkillPill'
 import skillData from '../data/skillData'

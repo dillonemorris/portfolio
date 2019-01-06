@@ -14,7 +14,12 @@ const ProjectStandard = ({
   boxShadowHover,
   border,
 }) => (
-  <a className={classes.link} href={page} target="_blank">
+  <a
+    className={classes.link}
+    href={page}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
     <div className={classes.wrapper}>
       <div className={classes.container}>
         <h1 style={{ color }} className={classes.title}>

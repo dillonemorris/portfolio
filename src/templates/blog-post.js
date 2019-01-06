@@ -2,40 +2,21 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Button from '../components/Button'
+import injectSheet from 'react-jss'
+import '../styles/fonts.css'
 
-export default ({ data }) => {
+const BlogPost = ({ data, classes }) => {
   const post = data.markdownRemark
   return (
     <div style={{ backgroundColor: '#f4f4f4' }}>
       <Layout>
-        <div
-          style={{
-            maxWidth: '650px',
-            margin: '100px auto',
-          }}
-        >
-          <div
-            style={{
-              color: '#606571',
-              fontFamily:
-                "Plex Mono, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
-              fontSize: '14px',
-              letterSpacing: '.5px',
-              fontWeight: '200',
-              paddingBottom: '4px',
-            }}
-          >
+        <div className={classes.container}>
+          <div className={classes.postDate}>
             {post.frontmatter.date} &bull; {post.timeToRead} min read
           </div>
-          <h1 style={{ color: '#414141' }}>{post.frontmatter.title}</h1>
+          <h1 className={classes.postTitle}>{post.frontmatter.title}</h1>
           <div
-            style={{
-              fontFamily:
-                "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
-              color: '#414141',
-              lineHeight: '1.6',
-              paddingBottom: '40px',
-            }}
+            className={classes.postBody}
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
           <Button
@@ -69,3 +50,31 @@ export const query = graphql`
     }
   }
 `
+
+const styles = {
+  container: {
+    maxWidth: '650px',
+    margin: '100px auto',
+  },
+  postDate: {
+    color: '#606571',
+    fontFamily:
+      "Plex Mono, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
+    fontSize: '14px',
+    letterSpacing: '.5px',
+    fontWeight: '200',
+    paddingBottom: '4px',
+  },
+  postTitle: {
+    color: '#414141',
+  },
+  postBody: {
+    fontFamily:
+      "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
+    color: '#414141',
+    lineHeight: '1.6',
+    paddingBottom: '40px',
+  },
+}
+
+export default injectSheet(styles)(BlogPost)

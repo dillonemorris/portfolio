@@ -25,7 +25,12 @@ const Button = ({
     )
   }
   return (
-    <a target="_blank" style={{ fontSize: `${fontSize}px` }} href={page}>
+    <a
+      target="_blank"
+      style={{ fontSize: `${fontSize}px` }}
+      href={page}
+      rel="noopener noreferrer"
+    >
       <button style={{ padding: `${padding}` }} className={classes.button}>
         {text}
       </button>

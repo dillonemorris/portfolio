@@ -1,4 +1,4 @@
-import Typewise from '../images/typewise.jpg'
+import Typewise from '../images/typewise.png'
 import Dailyui from '../images/daily-ui.jpg'
 
 const projectData = [
@@ -9,16 +9,16 @@ const projectData = [
     screenshot: Typewise,
     btnText: 'visit site',
     orientation: 'Standard',
-    color: 'rgba(242,38,19,.65)',
-    border: '3px solid rgba(242,38,19,.65)',
-    boxShadow: '5px 5px rgba(242,38,19,.25)',
-    boxShadowHover: '5px 5px rgba(242,38,19,.65)',
+    color: 'rgba(38,128,194, 1)',
+    border: '3px solid rgba(38,128,194, 1)',
+    boxShadow: '5px 5px rgba(38,128,194,.25)',
+    boxShadowHover: '5px 5px rgba(38,128,194, 1)',
     page: 'http://typewise.fun/',
   },
   {
     title: 'Daily UI',
     description:
-      "If you're not familiar, Daily UI helps you to become a better designer in 100 days. It is a design challenge I've partaken in and continue to work through whenever I have downtime.",
+      "If you're not familiar, Daily UI helps you to become a better designer in 100 days. It is a design challenge I partake in whenever I have downtime.",
     screenshot: Dailyui,
     btnText: 'see all designs',
     orientation: 'Inverted',

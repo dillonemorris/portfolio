@@ -1,12 +1,15 @@
 import React from 'react'
 import injectSheet from 'react-jss'
-import ReactCardFlipper from 'react-card-flipper'
-import Button from '../components/Button'
 
 const Resource = ({ classes, title, category, link }) => (
   <div className={classes.wrapper}>
     <div className={classes.container}>
-      <a className={classes.link} href={link} target="_blank">
+      <a
+        className={classes.link}
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         {title}
       </a>{' '}
       <span className={classes.category}>- {category}</span>

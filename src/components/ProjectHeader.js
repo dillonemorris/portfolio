@@ -14,7 +14,7 @@ const ProjectHeader = ({ classes }) => (
     </svg>
     <h1 className={classes.myHeading}>projects</h1>
     <p className={classes.subHeading}>
-      A hopefully evergrowing collection of personal projects
+      An evergrowing collection of personal projects
     </p>
   </div>
 )

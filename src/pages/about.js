@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import injectSheet from 'react-jss'
 
 import Layout from '../components/layout'

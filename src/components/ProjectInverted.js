@@ -14,7 +14,12 @@ const ProjectInverted = ({
   boxShadowHover,
   border,
 }) => (
-  <a className={classes.link} href={page} target="_blank">
+  <a
+    className={classes.link}
+    href={page}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
     <div className={classes.wrapper}>
       <div className={classes.projectContainer}>
         <img
@@ -123,9 +128,6 @@ const styles = {
     boxShadow:
       '0 16px 16px rgba(103,110,144,.05), 0 8px 8px rgba(103,110,144,.05), 0 4px 4px rgba(103,110,144,.05), 0 2px 2px rgba(103,110,144,.05)',
     transition: 'box-shadow .2s ease',
-  },
-  link: {
-    textDecoration: 'none',
   },
 }
 

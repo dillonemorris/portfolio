@@ -1,7 +1,5 @@
 import React from 'react'
 import injectSheet from 'react-jss'
-import ReactCardFlipper from 'react-card-flipper'
-import Button from '../components/Button'
 
 const SkillPill = ({ classes, text }) => (
   <div className={classes.container}>

@@ -22,6 +22,7 @@ const IndexPage = ({ classes }) => (
             className={classes.link}
             target="_blank"
             href={'https://www.elmstreettechnology.com'}
+            rel="noopener noreferrer"
           >
             Elm Street Technology.
           </a>
@@ -55,10 +56,10 @@ const styles = {
   },
   avatar: {
     width: '140px',
-    paddingBottom: '15px',
+    padding: '18px 0px',
 
     '@media (min-width: 600px)': {
-      paddingBottom: '22px',
+      padding: '22px 0px',
     },
   },
   emoji: {

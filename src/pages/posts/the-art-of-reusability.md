@@ -33,7 +33,7 @@ As far as deployment, I went with Netlify. Netlify and Gatsby are besties. Essen
 5. Click "deploy site"
 
 For a more in-depth tutorial of that process you can check out the step by step guide
-<a style="color: #4183D7; text-decoration: none;" href="https://www.netlify.com/blog/2016/02/24/a-step-by-step-guide-gatsby-on-netlify/" target="_blank">here</a>, but that's pretty much it
+<a style="color: #4183D7; text-decoration: none;" href="https://www.netlify.com/blog/2016/02/24/a-step-by-step-guide-gatsby-on-netlify/" target="_blank" rel="noopener noreferrer">here</a>, but that's pretty much it
 
 <br />
 
@@ -92,7 +92,7 @@ As you can see, we simply set the values of the props that our component is now 
 
 This Button component works great but it's not quite there yet. Remember how I mentioned that Link is a Gatsby specific thing that allows you to link to an internal page? Well what happens if we want to link to an external site as in the "projects" page? Unfortunately Gatsby's Link doesn't allow you to do that. Hmmm...what to do  🤔? Do we just have to "hard code" a button and use a traditional `<a href="">` tag? That doesn't seem like the most "reusable" solution. Fortunately, Gatsby has a doc for this specific scenario. Gatsby docs FTW yet again 🎉.
 
-Following the steps in the <a style="color: #4183D7; text-decoration: none;" href="https://www.gatsbyjs.org/docs/gatsby-link/#use-link-only-for-internal-links" target="_blank">doc</a>, I was able to set up a check which looks at the "page" prop passed in and determines whether or not it's an internal or external link. Essentially, if that prop starts with a "/" a Link is rendered, otherwise a traditional <a /> tag is rendered, thus allowing us to link to an external page.
+Following the steps in the <a style="color: #4183D7; text-decoration: none;" href="https://www.gatsbyjs.org/docs/gatsby-link/#use-link-only-for-internal-links" target="_blank" rel="noopener noreferrer">doc</a>, I was able to set up a check which looks at the "page" prop passed in and determines whether or not it's an internal or external link. Essentially, if that prop starts with a "/" a Link is rendered, otherwise a traditional <a /> tag is rendered, thus allowing us to link to an external page.
 
 Here's what the component looks like at the time of writing:
 
@@ -108,7 +108,12 @@ const Button = ({ text, fontSize, page }) => {
     )
   }
   return (
-    <a target="_blank" style={{ fontSize: `${fontSize}px` }} href={page}>
+    <a
+      target="_blank"
+      style={{ fontSize: `${fontSize}px` }}
+      href={page}
+      rel="noopener noreferrer"
+    >
       <button>{text}</button>
     </a>
   )
@@ -148,7 +153,7 @@ const projectData = [
   {
     title: 'Daily UI',
     description:
-      "If you're not familiar, Daily UI helps you to become a better designer in 100 days. It is a design challenge I've partaken in and continue to work through whenever I have downtime.",
+      "If you're not familiar, Daily UI helps you to become a better designer in 100 days. It is a design challenge I partake in whenever I have downtime.",
     screenshot: Dailyui,
     btnText: 'see all designs',
     orientation: 'Inverted',

@@ -10,6 +10,7 @@ const Footer = ({ classes }) => (
         <a
           href={'https://github.com/dillonmorris91/portfoliodm'}
           target={'_blank'}
+          rel="noopener noreferrer"
           className={classes.codeLink}
         >
           View source code
@@ -21,6 +22,7 @@ const Footer = ({ classes }) => (
             className={classes.link}
             href={'https://github.com/dillonmorris91'}
             target={'_blank'}
+            rel="noopener noreferrer"
           >
             <svg
               className={classes.socialIcon}
@@ -38,6 +40,7 @@ const Footer = ({ classes }) => (
             className={classes.link}
             href={'https://dribbble.com/dillonmorris'}
             target={'_blank'}
+            rel="noopener noreferrer"
           >
             <svg
               className={classes.socialIcon}
@@ -55,6 +58,7 @@ const Footer = ({ classes }) => (
             className={classes.link}
             href={'https://www.linkedin.com/in/dillonmorrisdev/'}
             target={'_blank'}
+            rel="noopener noreferrer"
           >
             <svg
               className={classes.socialIcon}
@@ -72,6 +76,7 @@ const Footer = ({ classes }) => (
             className={classes.link}
             href={'https://twitter.com/ThisIsDillon'}
             target={'_blank'}
+            rel="noopener noreferrer"
           >
             <svg
               className={classes.socialIcon}
