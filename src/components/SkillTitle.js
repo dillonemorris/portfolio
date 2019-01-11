@@ -15,8 +15,8 @@ const styles = {
   },
   title: {
     fontFamily:
-      "Plex Mono, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
-    fontSize: '24px',
+      "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
+    fontSize: '21px',
     fontWeight: '500',
     paddingBottom: '20px',
     letterSpacing: '.5px',

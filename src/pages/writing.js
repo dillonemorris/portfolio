@@ -6,7 +6,6 @@ import BlogPostCard from '../components/BlogPostCard'
 import Button from '../components/Button'
 
 export default ({ data }) => {
-  console.log(data)
   return (
     <div style={{ backgroundColor: '#f4f4f4' }}>
       <Layout>
@@ -63,7 +62,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { fields: [frontmatter___date] }) {
       totalCount
       edges {
         node {

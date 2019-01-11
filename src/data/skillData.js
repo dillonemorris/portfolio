@@ -13,11 +13,11 @@ const skillData = {
   },
   Design: {
     title: 'Design',
-    skills: ['Sketch', 'Invision'],
+    skills: ['Sketch', 'Invision', 'Rapid Prototyping'],
   },
   Engineering: {
     title: 'Engineering',
-    skills: ['React.js', 'HTML5', 'CSS3', 'JSS', 'Javascript'],
+    skills: ['React.js', 'HTML5', 'CSS3', 'CSS in JS', 'Javascript'],
   },
 }
 

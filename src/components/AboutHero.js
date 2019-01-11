@@ -1,46 +1,60 @@
-import React from 'react'
+import React, { Component } from 'react'
 import injectSheet from 'react-jss'
 import about from '../images/about.jpg'
 
-const AboutHero = ({ classes }) => (
-  <div className={classes.container}>
-    <img
-      className={classes.left}
-      src={about}
-      alt={'Dillon standing beneath tree in Autumn'}
-    />
-    <div className={classes.right}>
-      <h1 className={classes.myHeading}>About</h1>
-      <div className={classes.paragraph}>
-        I love learning. I strive to improve my craft every day. I see
-        challenges as opportunities for growth and embrace them with open arms.
+class AboutHero extends Component {
+  handleClick() {
+    document.querySelector('#target').scrollIntoView({
+      behavior: 'smooth',
+    })
+
+    console.log(document.querySelector('#target'))
+  }
+
+  render() {
+    const { classes } = this.props
+    return (
+      <div className={classes.container}>
+        <img
+          className={classes.left}
+          src={about}
+          alt={'Dillon standing beneath tree in Autumn'}
+        />
+        <div className={classes.right}>
+          <h1 className={classes.myHeading}>About</h1>
+          <div className={classes.paragraph}>
+            I love learning. I strive to improve my craft every day. I see
+            challenges as opportunities for growth and embrace them with open
+            arms.
+          </div>
+          <div className={classes.paragraph}>
+            In my current role, I am fortunate enough to be able to apply
+            creative and analytical thinking to solve problems in both design
+            and engineering.
+          </div>
+          <div className={classes.paragraph}>
+            When I'm not coding & creating for the web I enjoy playing and
+            writing music, spending time with my lovely girlfriend and our
+            Golden Doodle named Bowie⚡️.
+          </div>
+          <button onClick={this.handleClick} className={classes.tagline}>
+            Check my skills{' '}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="18"
+              height="18"
+              fill="#4183D7"
+              style={{ marginLeft: '9px' }}
+            >
+              <path d="M11 18.59V3a1 1 0 0 1 2 0v15.59l5.3-5.3a1 1 0 0 1 1.4 1.42l-7 7a1 1 0 0 1-1.4 0l-7-7a1 1 0 0 1 1.4-1.42l5.3 5.3z" />
+            </svg>
+          </button>
+        </div>
       </div>
-      <div className={classes.paragraph}>
-        In my current role, I am fortunate enough to be able to apply creative
-        and analytical thinking to solve problems in both design and
-        engineering.
-      </div>
-      <div className={classes.paragraph}>
-        When I'm not coding & creating for the web I enjoy playing and writing
-        music, spending time with my lovely girlfriend and our Golden Doodle
-        named Bowie⚡️.
-      </div>
-      <div className={classes.tagline}>
-        Check my skills{' '}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="18"
-          height="18"
-          fill="#4183D7"
-          style={{ marginLeft: '9px' }}
-        >
-          <path d="M11 18.59V3a1 1 0 0 1 2 0v15.59l5.3-5.3a1 1 0 0 1 1.4 1.42l-7 7a1 1 0 0 1-1.4 0l-7-7a1 1 0 0 1 1.4-1.42l5.3 5.3z" />
-        </svg>
-      </div>
-    </div>
-  </div>
-)
+    )
+  }
+}
 
 const styles = {
   container: {
@@ -98,15 +112,23 @@ const styles = {
   tagline: {
     fontFamily:
       "Plex Mono, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
-    color: '#4183D7',
     fontSize: '16px',
     fontWeight: '300',
-    paddingTop: '20px',
+    color: '#4183D7',
+    marginTop: '20px',
+    width: '180px',
     display: 'flex',
     alignItems: 'center',
+    padding: '0px',
+    border: 0,
+    background: 'none',
 
     '&:hover': {
       cursor: 'pointer',
+    },
+
+    '&:focus': {
+      outline: 'none',
     },
   },
 }

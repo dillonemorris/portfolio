@@ -5,7 +5,7 @@ import SkillPill from '../components/SkillPill'
 import skillData from '../data/skillData'
 
 const Skills = ({ classes }) => (
-  <div className={classes.bgWrapper}>
+  <div id="target" className={classes.bgWrapper}>
     <div className={classes.container}>
       <h1 className={classes.myHeading}>Skills</h1>
       <div className={classes.paragraph}>

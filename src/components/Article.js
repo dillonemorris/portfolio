@@ -35,13 +35,14 @@ const styles = {
     },
   },
   link: {
-    color: '#4183D7',
+    color: '#414141',
+    fontWeight: '600',
     textDecoration: 'none',
-    borderBottom: '2px solid #ededed',
+    borderBottom: '2px solid #bcd9ff',
 
     '&:hover': {
       transition: '250ms all',
-      borderBottom: '2px solid #4183D7',
+      background: '#bcd9ff',
     },
   },
   author: {
