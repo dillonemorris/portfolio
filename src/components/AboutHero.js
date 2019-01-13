@@ -64,7 +64,7 @@ const styles = {
 
     '@media (min-width: 700px)': {
       flexDirection: 'row',
-      padding: '130px 0px',
+      padding: '120px 0px 100px',
     },
   },
   myHeading: {

@@ -7,14 +7,38 @@ const AboutClosing = ({ classes }) => (
   <div className={classes.patternBg}>
     <div className={classes.container}>
       <div className={classes.closing}>
-        <h1 className={classes.myHeading}>Other stuff</h1>
+        <h1 className={classes.myHeading}>Contact</h1>
         <div className={classes.closingContainer}>
-          <p>Feel free to check out some of my personal projects.</p>
+          <p className={classes.description}>
+            Drop me a line if you want to chat, work together, or see more of my
+            work.
+          </p>
+          <a className={classes.link} href="mailto:dillonmorris91@gmail.com">
+            <svg
+              style={{ marginRight: '4px' }}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              fill="#414141"
+            >
+              <path
+                class="heroicon-ui"
+                d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6c0-1.1.9-2 2-2zm16 3.38V6H4v1.38l8 4 8-4zm0 2.24l-7.55 3.77a1 1 0 0 1-.9 0L4 9.62V18h16V9.62z"
+              />
+            </svg>
+            dillonmorris91@gmail.com
+          </a>
+        </div>
+        <div className={classes.closingContainer}>
+          <p className={classes.description}>
+            Feel free to check out some of my personal projects.
+          </p>
           <Button
-            color={'rgba(65,131,215,1)'}
-            border={'3px solid rgba(65,131,215,1)'}
-            boxShadow={'5px 5px rgba(65, 131, 215, 0.4)'}
-            boxShadowHover={'5px 5px rgba(65, 131, 215, 1)'}
+            color={'rgba(208, 91, 121,1)'}
+            border={'3px solid rgba(208, 91, 121,1)'}
+            boxShadow={'5px 5px rgba(208, 91, 121, 0.4)'}
+            boxShadowHover={'5px 5px rgba(208, 91, 121, 1)'}
             text={'projects'}
             fontSize={14}
             page={'/projects/'}
@@ -22,15 +46,15 @@ const AboutClosing = ({ classes }) => (
           />
         </div>
         <div className={classes.closingContainer}>
-          <p>
+          <p className={classes.description}>
             I also like to get my thoughts down on "paper" every once in a
             while.
           </p>
           <Button
-            color={'rgba(65,131,215,1)'}
-            border={'3px solid rgba(65,131,215,1)'}
-            boxShadow={'5px 5px rgba(65, 131, 215, 0.4)'}
-            boxShadowHover={'5px 5px rgba(65, 131, 215, 1)'}
+            color={'rgba(130, 105, 200,1)'}
+            border={'3px solid rgba(130, 105, 200,1)'}
+            boxShadow={'5px 5px rgba(130, 105, 200, 0.4)'}
+            boxShadowHover={'5px 5px rgba(130, 105, 200, 1)'}
             text={'writing'}
             fontSize={14}
             page={'/writing/'}
@@ -38,13 +62,19 @@ const AboutClosing = ({ classes }) => (
           />
         </div>
         <div className={classes.closingContainer}>
-          <p>
-            Drop me a line if you want to chat, work together, or see more of my
-            work.
+          <p className={classes.description}>
+            Or share learnings I have enjoyed and in hopes you may too.
           </p>
-          <a className={classes.link} href="mailto:dillonmorris91@gmail.com">
-            dillonmorris91@gmail.com
-          </a>
+          <Button
+            color={'rgba(61, 118, 113, 1)'}
+            border={'3px solid rgba(61, 118, 113, 1)'}
+            boxShadowHover={'5px 5px rgba(61, 118, 113, 1)'}
+            boxShadow={'5px 5px rgba(61, 118, 113, .4)'}
+            text={'library'}
+            fontSize={14}
+            page={'/library/'}
+            padding={'6px 20px'}
+          />
         </div>
       </div>
     </div>
@@ -92,18 +122,25 @@ const styles = {
     padding: '80px 0px 0px',
   },
   closingContainer: {
-    paddingBottom: '60px',
+    paddingBottom: '48px',
   },
   link: {
+    display: 'flex',
+    alignItems: 'center',
+    maxWidth: '250px',
     color: '#414141',
     fontWeight: '600',
     textDecoration: 'none',
     borderBottom: '2px solid #bcd9ff',
+    transition: 'background 0.4s ease-out',
 
     '&:hover': {
-      transition: '250ms all',
       background: '#bcd9ff',
     },
+  },
+  description: {
+    paddingBottom: '10px',
+    marginBottom: '0px',
   },
 }
 

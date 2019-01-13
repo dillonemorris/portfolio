@@ -54,7 +54,11 @@ export const query = graphql`
 const styles = {
   container: {
     maxWidth: '650px',
-    margin: '100px auto',
+    margin: '50px auto',
+
+    '@media (min-width: 900px)': {
+      margin: '100px auto',
+    },
   },
   postDate: {
     color: '#606571',
@@ -74,6 +78,18 @@ const styles = {
     color: '#414141',
     lineHeight: '1.6',
     paddingBottom: '40px',
+
+    '& a': {
+      color: '#414141',
+      fontWeight: '600',
+      textDecoration: 'none',
+      borderBottom: '2px solid #bcd9ff',
+      transition: 'background 0.4s ease-out',
+
+      '&:hover': {
+        background: '#bcd9ff',
+      },
+    },
   },
 }
 

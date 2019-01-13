@@ -48,7 +48,7 @@ const styles = {
     textAlign: 'center',
     lineHeight: '24px',
     marginBottom: '10px',
-    letterSpacing: '1px',
+    letterSpacing: '.8px',
   },
 }
 

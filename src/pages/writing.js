@@ -29,7 +29,7 @@ export default ({ data }) => {
             display: 'grid',
             gridGap: '100px',
             gridTemplateColumns: 'repeat(auto-fit, minmax(360px, auto))',
-            padding: '120px 0px',
+            padding: '60px 0px',
           }}
         >
           {data.allMarkdownRemark.edges.map(({ node }) => (

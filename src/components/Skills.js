@@ -36,7 +36,7 @@ const styles = {
   container: {
     margin: '0px auto',
     maxWidth: '1080px',
-    padding: '60px 1.0875rem 60px',
+    padding: '60px 1.0875rem 40px',
   },
   bgWrapper: {
     backgroundColor: '#f4f4f4',

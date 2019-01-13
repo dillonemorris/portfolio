@@ -38,7 +38,7 @@ In music, silence is the origin from which sound is created, sound cannot exist 
 
 If there is too much noise in a song, too much clutter, it can be difficult to understand what the music is trying to convey. For example, imagine listening to a song and the instruments are so loud that they drown out the vocals, preventing you from hearing the singer clearly. This would irritate most listeners and in turn alienate them, they would probably listen to something else. Drawing a corollary back to UI design, imagine a site where the primary call-to-action is drowned out by the noise of a neighboring element. This would cause confusion among users, they would probably determine your product is too hard to use and navigate elsewhere.
 
-Without giving your UI room to breathe, you add clutter and dysfunction into the user experience. The power and importance of whitespace in UI/UX design cannot be overstated. For a deeper dive into the topic, read <a style="color: #4183D7; text-decoration: none;" href="https://uxplanet.org/the-power-of-whitespace-a1a95e45f82b" target="_blank" rel="noopener noreferrer">this article</a>.
+Without giving your UI room to breathe, you add clutter and dysfunction into the user experience. The power and importance of whitespace in UI/UX design cannot be overstated. For a deeper dive into the topic, read <a href="https://uxplanet.org/the-power-of-whitespace-a1a95e45f82b" target="_blank" rel="noopener noreferrer">this article</a>.
 
 <br />
 

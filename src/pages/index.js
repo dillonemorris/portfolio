@@ -119,9 +119,9 @@ const styles = {
     fontWeight: '600',
     textDecoration: 'none',
     borderBottom: '2px solid #bcd9ff',
+    transition: 'background 0.4s ease-out',
 
     '&:hover': {
-      transition: '.8s all ease',
       background: '#bcd9ff',
     },
 

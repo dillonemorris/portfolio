@@ -16,12 +16,11 @@ const Projects = ({ classes }) => (
           switch (project.orientation) {
             case 'Standard': {
               return (
-                <div className={classes.bgWrapper}>
+                <div key={project.title} className={classes.bgWrapper}>
                   <div className={classes.projectWrapper}>
                     <ProjectStandard
                       page={project.page}
                       color={project.color}
-                      key={project.title}
                       title={project.title}
                       description={project.description}
                       screenshot={project.screenshot}

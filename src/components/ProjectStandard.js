@@ -64,7 +64,7 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',
-    padding: '80px 0px',
+    padding: '40px 0px',
 
     '@media (min-width: 900px)': {
       padding: '120px 0px',
@@ -96,18 +96,24 @@ const styles = {
     fontFamily:
       "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
     fontSize: '36px',
-    paddingBottom: '10px',
     transition: 'all 170ms ease-in-out',
+    paddingBottom: '0px',
+
+    '@media (min-width: 900px)': {
+      paddingBottom: '10px',
+    },
   },
   description: {
     color: '#606571',
     fontFamily:
       "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
     maxWidth: '800px',
-    lineHeight: '30px',
-    marginBottom: '40px',
+    lineHeight: '26px',
+    marginBottom: '20px',
 
     '@media (min-width: 900px)': {
+      marginBottom: '40px',
+      lineHeight: '30px',
       maxWidth: '800px',
     },
   },
