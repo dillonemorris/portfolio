@@ -8,7 +8,7 @@ const Footer = ({ classes }) => (
       <div className={classes.left}>
         <div>Designed and coded with 🖤</div>
         <a
-          href={'https://github.com/dillonmorris91/portfoliodm'}
+          href={'https://github.com/dillonmorris91/portfolio'}
           target={'_blank'}
           rel="noopener noreferrer"
           className={classes.codeLink}
