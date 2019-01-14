@@ -31,9 +31,7 @@ const AboutClosing = ({ classes }) => (
           </a>
         </div>
         <div className={classes.closingContainer}>
-          <p className={classes.description}>
-            Feel free to check out some of my personal projects.
-          </p>
+          <p className={classes.description}>Side projects are everything!</p>
           <Button
             color={'rgba(208, 91, 121,1)'}
             border={'3px solid rgba(208, 91, 121,1)'}
@@ -47,8 +45,7 @@ const AboutClosing = ({ classes }) => (
         </div>
         <div className={classes.closingContainer}>
           <p className={classes.description}>
-            I also like to get my thoughts down on "paper" every once in a
-            while.
+            This page should really be called "typing" 🤫
           </p>
           <Button
             color={'rgba(130, 105, 200,1)'}
@@ -62,9 +59,7 @@ const AboutClosing = ({ classes }) => (
           />
         </div>
         <div className={classes.closingContainer}>
-          <p className={classes.description}>
-            Or share learnings I have enjoyed and in hopes you may too.
-          </p>
+          <p className={classes.description}>Learning is fun!</p>
           <Button
             color={'rgba(61, 118, 113, 1)'}
             border={'3px solid rgba(61, 118, 113, 1)'}
@@ -139,6 +134,7 @@ const styles = {
     },
   },
   description: {
+    fontSize: '20px',
     paddingBottom: '10px',
     marginBottom: '0px',
   },

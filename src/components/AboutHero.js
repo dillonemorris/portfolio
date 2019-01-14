@@ -85,6 +85,7 @@ const styles = {
   },
   paragraph: {
     color: '#606571',
+    fontSize: '20px',
     fontFamily:
       "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
     paddingBottom: '20px',
