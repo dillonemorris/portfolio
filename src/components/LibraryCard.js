@@ -117,8 +117,12 @@ const styles = {
     fontFamily:
       "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
     letterSpacing: '.5px',
-    lineHeight: '1.5',
-    fontSize: '18px',
+    lineHeight: '1.3',
+    fontSize: '24px',
+
+    '@media (min-width: 475px)': {
+      fontSize: '18px',
+    },
   },
   title: {
     color: '#414141',

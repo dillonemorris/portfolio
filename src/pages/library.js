@@ -3,10 +3,10 @@ import injectSheet from 'react-jss'
 import Layout from '../components/layout'
 import LibraryHeader from '../components/LibraryHeader'
 import LibraryCard from '../components/LibraryCard'
-import DevResource from '../components/DevResource'
-import Resource from '../components/Resource'
+import DevResources from '../components/DevResources'
+import Resources from '../components/Resources'
 import libraryData from '../data/libraryData'
-import devResourceData from '../data/devResourceData'
+
 import resourceData from '../data/resourceData'
 
 const Library = ({ classes }) => (
@@ -16,7 +16,9 @@ const Library = ({ classes }) => (
         <LibraryHeader />
       </div>
       <h1 className={classes.myHeading}>Books</h1>
-      <h2 className={classes.subHeading}>Books I've thoroughly enjoyed</h2>
+      <h2 className={classes.subHeading}>
+        Good reads that I've thoroughly enjoyed
+      </h2>
       <div className={classes.container}>
         <div className={classes.libraryCardGrid}>
           {libraryData.map((book, i) => {
@@ -32,47 +34,8 @@ const Library = ({ classes }) => (
             )
           })}
         </div>
-        <div className={classes.devResourceBackground}>
-          <div className={classes.devResourceHeadingContainer}>
-            <h1 className={classes.myHeading}>Devoloper Resources</h1>
-            <h2 className={classes.subHeading}>
-              Resources that will help you improve as a developer.
-            </h2>
-          </div>
-          <div className={classes.devResourceContainer}>
-            {devResourceData.map((devResource, i) => {
-              return (
-                <DevResource
-                  key={i}
-                  title={devResource.title}
-                  category={devResource.category}
-                  link={devResource.link}
-                  image={devResource.image}
-                />
-              )
-            })}
-          </div>
-        </div>
-
-        <h1 style={{ paddingTop: '60px' }} className={classes.myHeading}>
-          Design Resources
-        </h1>
-        <h2 style={{ paddingBottom: '36px' }} className={classes.subHeading}>
-          Resources for design tips, inspiration, and best practices.
-        </h2>
-        <div className={classes.resourceContainer}>
-          {resourceData.map((resource, i) => {
-            return (
-              <Resource
-                key={i}
-                title={resource.title}
-                category={resource.category}
-                link={resource.link}
-                image={resource.image}
-              />
-            )
-          })}
-        </div>
+        <DevResources />
+        <Resources />
       </div>
     </Layout>
   </div>
@@ -92,22 +55,18 @@ const styles = {
     fontWeight: '600',
     fontFamily:
       "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
-    fontSize: '26px',
+    fontSize: '24px',
     paddingTop: '60px',
     paddingBottom: '8px',
     marginBottom: '0px',
   },
   subHeading: {
-    fontSize: '15px',
+    fontSize: '18px',
     fontWeight: '400',
     color: '#606571',
     letterSpacing: '.5px',
     paddingBottom: '20px',
     lineHeight: '1.4',
-  },
-  link: {
-    color: '#4183D7',
-    textDecoration: 'none',
   },
   headingContainer: {
     backgroundColor: '#fff',
@@ -131,35 +90,6 @@ const styles = {
       gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
       gridAutoRows: 'minmax(360px, auto)',
     },
-  },
-  devResourceBackground: {
-    backgroundColor: '#fff',
-    width: '100vw',
-    position: 'relative',
-    left: '50%',
-    right: '50%',
-    marginLeft: '-50vw',
-    marginRight: '-50vw',
-  },
-  devResourceContainer: {
-    maxWidth: '1080px',
-    margin: 'auto',
-    padding: '20px 1.0875rem 60px',
-    display: 'grid',
-    gridGap: '50px',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-    paddingBottom: '60px',
-  },
-  devResourceHeadingContainer: {
-    maxWidth: '1080px',
-    margin: 'auto',
-    padding: '0px 1.0875rem 0px',
-  },
-  resourceContainer: {
-    display: 'grid',
-    gridGap: '50px',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-    paddingBottom: '60px',
   },
 }
 

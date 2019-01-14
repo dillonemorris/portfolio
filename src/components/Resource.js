@@ -73,9 +73,9 @@ const styles = {
   },
   category: {
     color: '#606571',
-    fontSize: '12px',
+    fontSize: '14px',
     textTransform: 'uppercase',
-    letterSpacing: '.7px',
+    letterSpacing: '.8px',
   },
   cardImageWrapper: {
     borderRadius: '8px',

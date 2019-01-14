@@ -34,14 +34,14 @@ const styles = {
   },
   subHeading: {
     color: '#606571',
-    fontSize: '16px',
+    fontSize: '18px',
     fontFamily:
       "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
     fontWeight: '300',
     textAlign: 'center',
     lineHeight: '24px',
     marginBottom: '10px',
-    letterSpacing: '.8px',
+    letterSpacing: '.7px',
     maxWidth: '340px',
   },
 }

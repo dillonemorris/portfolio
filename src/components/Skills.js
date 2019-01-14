@@ -52,7 +52,7 @@ const styles = {
     fontWeight: '500',
     fontFamily:
       "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
-    fontSize: '32px',
+    fontSize: '28px',
     letterSpacing: '.3px',
 
     '@media (min-width: 700px)': {

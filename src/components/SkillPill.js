@@ -12,10 +12,10 @@ const styles = {
     fontFamily:
       "Plex Mono, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
     fontWeight: '300',
-    fontSize: '14px',
+    fontSize: '16px',
     color: '#4183D7',
     backgroundColor: '#fff',
-    padding: '8px 24px',
+    padding: '8px 28px',
     borderRadius: '32px',
     textAlign: 'center',
     marginRight: '20px',
