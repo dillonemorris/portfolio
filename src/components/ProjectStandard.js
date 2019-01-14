@@ -105,6 +105,7 @@ const styles = {
   },
   description: {
     color: '#606571',
+    fontSize: '18px',
     fontFamily:
       "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
     maxWidth: '800px',

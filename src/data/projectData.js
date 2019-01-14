@@ -5,7 +5,7 @@ const projectData = [
   {
     title: 'Typewise',
     description:
-      'Typewise is a curated list of the best Google Fonts. You can filter between Display, serif, or sans-serif fonts and there are links to the Google Fonts page for each font or you can simply download the font directly.',
+      "Typewise is a curated list of the best Google Fonts. I love Google Fonts, but I created this because I felt like picking fonts on their site can sometimes be overwhelming (maybe it's just me 🤔).",
     screenshot: Typewise,
     btnText: 'visit site',
     orientation: 'Standard',

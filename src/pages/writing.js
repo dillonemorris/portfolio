@@ -3,35 +3,17 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import WritingHeader from '../components/WritingHeader'
 import BlogPostCard from '../components/BlogPostCard'
+import injectSheet from 'react-jss'
 import Button from '../components/Button'
 
-export default ({ data }) => {
+const writing = ({ data, classes }) => {
   return (
     <div style={{ backgroundColor: '#f4f4f4' }}>
       <Layout>
-        <div
-          style={{
-            backgroundColor: '#fff',
-            width: '100vw',
-            position: 'relative',
-            left: '50%',
-            right: '50%',
-            marginLeft: '-50vw',
-            marginRight: '-50vw',
-          }}
-        >
+        <div className={classes.headerContainer}>
           <WritingHeader />
         </div>
-        <div
-          style={{
-            margin: '0px auto',
-            maxWidth: '1080px',
-            display: 'grid',
-            gridGap: '100px',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(360px, auto))',
-            padding: '60px 0px',
-          }}
-        >
+        <div className={classes.blogPostGrid}>
           {data.allMarkdownRemark.edges.map(({ node }) => (
             <div key={node.id}>
               <Link style={{ textDecoration: 'none' }} to={node.fields.slug}>
@@ -81,3 +63,25 @@ export const query = graphql`
     }
   }
 `
+
+const styles = {
+  headerContainer: {
+    backgroundColor: '#fff',
+    width: '100vw',
+    position: 'relative',
+    left: '50%',
+    right: '50%',
+    marginLeft: '-50vw',
+    marginRight: '-50vw',
+  },
+  blogPostGrid: {
+    margin: '0px auto',
+    maxWidth: '1080px',
+    display: 'grid',
+    gridGap: '100px',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(340px, auto))',
+    padding: '60px 0px',
+  },
+}
+
+export default injectSheet(styles)(writing)

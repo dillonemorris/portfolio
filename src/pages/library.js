@@ -16,9 +16,7 @@ const Library = ({ classes }) => (
         <LibraryHeader />
       </div>
       <h1 className={classes.myHeading}>Books</h1>
-      <h2 className={classes.subHeading}>
-        Books I've thoroughly enjoyed and highly recommend.
-      </h2>
+      <h2 className={classes.subHeading}>Books I've thoroughly enjoyed</h2>
       <div className={classes.container}>
         <div className={classes.libraryCardGrid}>
           {libraryData.map((book, i) => {

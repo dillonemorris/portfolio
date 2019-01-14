@@ -1,7 +1,7 @@
 ---
 title: 'The Art of Reusability'
 date: 'October 19, 2018'
-excerpt: 'Taking you through my process of building this here site and how I set it up for optimum reusability. With content based sites such as a portfolio, you or whoever is updating/adding content should be able to do so within a preexisting framework. Reusability is a fundamental principle and concept to understand before building modern websites or apps. I sort of understood it as an abstract concept, but having built this site with reusability as a primary goal, I feel I now fully understand the importance of it and some ways to achieve it.'
+excerpt: 'Taking you through my process of building this here site and how I approached it with reusability as a primary goal. With content based sites such as a portfolio, you or whoever is updating/adding content should be able to do so within a preexisting framework. Reusability is a fundamental principle and concept to understand before building modern websites or apps.'
 ---
 
 I'll be taking you through my process of building this site and how I set it up for optimum reusability. With content based sites such as a portfolio, you or whoever is updating/adding content should be able to do so within a preexisting framework. Reusability is a fundamental principle and concept to understand before building modern websites or apps. I sort of understood it as an abstract concept, but having built this site with reusability as a primary goal, I feel I now fully understand the importance of it and some ways to achieve it.
