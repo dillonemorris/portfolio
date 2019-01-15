@@ -3,12 +3,12 @@ import injectSheet from 'react-jss'
 import '../styles/fonts.css'
 import Avatar from '../images/avatar.png'
 import Button from '../components/Button'
-
-import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 const IndexPage = ({ classes }) => (
-  <div className={classes.wrapper}>
-    <Layout>
+  <>
+    <SEO title="Home" />
+    <div className={classes.wrapper}>
       <div className={classes.container}>
         <img className={classes.avatar} src={Avatar} alt={'avatar'} />
 
@@ -38,8 +38,8 @@ const IndexPage = ({ classes }) => (
           padding={'10px 30px'}
         />
       </div>
-    </Layout>
-  </div>
+    </div>
+  </>
 )
 
 const styles = {

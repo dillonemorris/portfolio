@@ -1,17 +1,17 @@
 import React from 'react'
 import injectSheet from 'react-jss'
-import Layout from '../components/layout'
 import LibraryHeader from '../components/LibraryHeader'
 import LibraryCard from '../components/LibraryCard'
 import DevResources from '../components/DevResources'
 import Resources from '../components/Resources'
+import SEO from '../components/SEO'
 import libraryData from '../data/libraryData'
-
 import resourceData from '../data/resourceData'
 
 const Library = ({ classes }) => (
-  <div className={classes.wrapper}>
-    <Layout>
+  <>
+    <SEO title="Library" />
+    <div className={classes.wrapper}>
       <div className={classes.headingContainer}>
         <LibraryHeader />
       </div>
@@ -37,8 +37,8 @@ const Library = ({ classes }) => (
         <DevResources />
         <Resources />
       </div>
-    </Layout>
-  </div>
+    </div>
+  </>
 )
 
 const styles = {

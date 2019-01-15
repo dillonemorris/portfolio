@@ -104,6 +104,7 @@ const styles = {
     },
   },
   navMobileIcon: {
+    cursor: 'pointer',
     color: '#2E2E35',
     display: 'inline-flex',
     backgroundColor: 'none',

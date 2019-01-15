@@ -1,15 +1,15 @@
 import React from 'react'
 import injectSheet from 'react-jss'
-
-import Layout from '../components/layout'
 import ProjectStandard from '../components/ProjectStandard'
 import ProjectInverted from '../components/ProjectInverted'
 import ProjectHeader from '../components/ProjectHeader'
 import data from '../data/projectData'
+import SEO from '../components/SEO'
 
 const Projects = ({ classes }) => (
-  <div className={classes.container}>
-    <Layout>
+  <>
+    <SEO title="Projects" />
+    <div className={classes.container}>
       <ProjectHeader />
       <div className={classes.projectWrapper}>
         {data.map((project, i) => {
@@ -55,8 +55,8 @@ const Projects = ({ classes }) => (
           }
         })}
       </div>
-    </Layout>
-  </div>
+    </div>
+  </>
 )
 
 const styles = {

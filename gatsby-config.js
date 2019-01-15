@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Dillon Morris - UI Designer & Developer',
     author: 'Dillon Morris',
-    siteUrl: 'www.dillonmorris.me',
+    siteUrl: 'https://www.dillonmorris.me/',
     description: 'Dillon is a UI/UX Developer & Designer in Phoenix, AZ',
   },
   plugins: [

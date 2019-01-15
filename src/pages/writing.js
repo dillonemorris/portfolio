@@ -1,15 +1,16 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import Layout from '../components/layout'
 import WritingHeader from '../components/WritingHeader'
 import BlogPostCard from '../components/BlogPostCard'
 import injectSheet from 'react-jss'
 import Button from '../components/Button'
+import SEO from '../components/SEO'
 
 const writing = ({ data, classes }) => {
   return (
-    <div style={{ backgroundColor: '#f4f4f4' }}>
-      <Layout>
+    <>
+      <SEO title="Writing" />
+      <div style={{ backgroundColor: '#f4f4f4' }}>
         <div className={classes.headerContainer}>
           <WritingHeader />
         </div>
@@ -37,8 +38,8 @@ const writing = ({ data, classes }) => {
             </div>
           ))}
         </div>
-      </Layout>
-    </div>
+      </div>
+    </>
   )
 }
 

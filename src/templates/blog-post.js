@@ -1,15 +1,16 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../components/layout'
 import Button from '../components/Button'
 import injectSheet from 'react-jss'
 import '../styles/fonts.css'
+import SEO from '../components/seo'
 
 const BlogPost = ({ data, classes }) => {
   const post = data.markdownRemark
   return (
-    <div style={{ backgroundColor: '#f4f4f4' }}>
-      <Layout>
+    <>
+      <SEO title={post.frontmatter.title} />
+      <div style={{ backgroundColor: '#f4f4f4' }}>
         <div className={classes.container}>
           <div className={classes.postDate}>
             {post.frontmatter.date} &bull; {post.timeToRead} min read
@@ -30,8 +31,8 @@ const BlogPost = ({ data, classes }) => {
             page={'/writing/'}
           />
         </div>
-      </Layout>
-    </div>
+      </div>
+    </>
   )
 }
 
