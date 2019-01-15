@@ -4,57 +4,60 @@ import ProjectStandard from '../components/ProjectStandard'
 import ProjectInverted from '../components/ProjectInverted'
 import ProjectHeader from '../components/ProjectHeader'
 import data from '../data/projectData'
-import SEO from '../components/SEO'
+import SEO from '../components/seo'
+import Container from '../components/Container'
 
 const Projects = ({ classes }) => (
   <>
     <SEO title="Projects" />
     <div className={classes.container}>
-      <ProjectHeader />
-      <div className={classes.projectWrapper}>
-        {data.map((project, i) => {
-          switch (project.orientation) {
-            case 'Standard': {
-              return (
-                <div key={project.title} className={classes.bgWrapper}>
-                  <div className={classes.projectWrapper}>
-                    <ProjectStandard
-                      page={project.page}
-                      color={project.color}
-                      title={project.title}
-                      description={project.description}
-                      screenshot={project.screenshot}
-                      btnText={project.btnText}
-                      border={project.border}
-                      boxShadow={project.boxShadow}
-                      boxShadowHover={project.boxShadowHover}
-                    />
+      <Container>
+        <ProjectHeader />
+        <div className={classes.projectWrapper}>
+          {data.map((project, i) => {
+            switch (project.orientation) {
+              case 'Standard': {
+                return (
+                  <div key={project.title} className={classes.bgWrapper}>
+                    <div className={classes.projectWrapper}>
+                      <ProjectStandard
+                        page={project.page}
+                        color={project.color}
+                        title={project.title}
+                        description={project.description}
+                        screenshot={project.screenshot}
+                        btnText={project.btnText}
+                        border={project.border}
+                        boxShadow={project.boxShadow}
+                        boxShadowHover={project.boxShadowHover}
+                      />
+                    </div>
                   </div>
-                </div>
-              )
+                )
+              }
+              case 'Inverted': {
+                return (
+                  <ProjectInverted
+                    page={project.page}
+                    color={project.color}
+                    key={project.title}
+                    title={project.title}
+                    description={project.description}
+                    screenshot={project.screenshot}
+                    btnText={project.btnText}
+                    border={project.border}
+                    boxShadow={project.boxShadow}
+                    boxShadowHover={project.boxShadowHover}
+                  />
+                )
+              }
+              default: {
+                return null
+              }
             }
-            case 'Inverted': {
-              return (
-                <ProjectInverted
-                  page={project.page}
-                  color={project.color}
-                  key={project.title}
-                  title={project.title}
-                  description={project.description}
-                  screenshot={project.screenshot}
-                  btnText={project.btnText}
-                  border={project.border}
-                  boxShadow={project.boxShadow}
-                  boxShadowHover={project.boxShadowHover}
-                />
-              )
-            }
-            default: {
-              return null
-            }
-          }
-        })}
-      </div>
+          })}
+        </div>
+      </Container>
     </div>
   </>
 )

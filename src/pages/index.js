@@ -4,40 +4,43 @@ import '../styles/fonts.css'
 import Avatar from '../images/avatar.png'
 import Button from '../components/Button'
 import SEO from '../components/seo'
+import Container from '../components/Container'
 
 const IndexPage = ({ classes }) => (
   <>
     <SEO title="Home" />
     <div className={classes.wrapper}>
-      <div className={classes.container}>
-        <img className={classes.avatar} src={Avatar} alt={'avatar'} />
+      <Container>
+        <div className={classes.container}>
+          <img className={classes.avatar} src={Avatar} alt={'avatar'} />
 
-        <h1 className={classes.myHeading}>Hey, I’m Dillon.</h1>
-        <p className={classes.subHeading}>
-          UI Designer & Developer from Phoenix, AZ.
-        </p>
-        <p className={classes.bodyText}>
-          Currently working with some amazing people at{' '}
-          <a
-            className={classes.link}
-            target="_blank"
-            href={'https://www.elmstreettechnology.com'}
-            rel="noopener noreferrer"
-          >
-            Elm Street Technology.
-          </a>
-        </p>
-        <Button
-          color={'rgba(65,131,215,1)'}
-          border={'3px solid rgba(65,131,215,1)'}
-          boxShadow={'5px 5px rgba(65, 131, 215, 0.4)'}
-          boxShadowHover={'5px 5px rgba(65, 131, 215, 1)'}
-          text={'more about me'}
-          fontSize={14}
-          page={'/about/'}
-          padding={'10px 30px'}
-        />
-      </div>
+          <h1 className={classes.myHeading}>Hey, I’m Dillon.</h1>
+          <p className={classes.subHeading}>
+            UI Designer & Developer from Phoenix, AZ.
+          </p>
+          <p className={classes.bodyText}>
+            Currently working with some amazing people at{' '}
+            <a
+              className={classes.link}
+              target="_blank"
+              href={'https://www.elmstreettechnology.com'}
+              rel="noopener noreferrer"
+            >
+              Elm Street Technology.
+            </a>
+          </p>
+          <Button
+            color={'rgba(65,131,215,1)'}
+            border={'3px solid rgba(65,131,215,1)'}
+            boxShadow={'5px 5px rgba(65, 131, 215, 0.4)'}
+            boxShadowHover={'5px 5px rgba(65, 131, 215, 1)'}
+            text={'more about me'}
+            fontSize={14}
+            page={'/about/'}
+            padding={'10px 30px'}
+          />
+        </div>
+      </Container>
     </div>
   </>
 )

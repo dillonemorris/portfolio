@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import posed, { PoseGroup } from 'react-pose'
-import Footer from './Footer'
 import Header from './header'
+import Footer from './Footer'
 import './layout.css'
 import { pageFade } from '../styles/poses'
 
@@ -18,19 +18,11 @@ class Layout extends React.Component {
       <>
         <Header />
         <PoseGroup animateOnMount preEnterPose="initial">
-          <Transition
-            key={this.props.location.pathname}
-            style={{
-              margin: '0 auto',
-              maxWidth: 1080,
-              padding: '0px 1.0875rem 1.45rem',
-              paddingTop: 0,
-            }}
-          >
+          <Transition key={this.props.location.pathname}>
             {children}
+            <Footer />
           </Transition>
         </PoseGroup>
-        <Footer />
       </>
     )
   }
