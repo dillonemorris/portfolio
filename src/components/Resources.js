@@ -6,7 +6,7 @@ import resourceData from '../data/resourceData'
 const Resources = ({ classes }) => (
   <Fragment>
     <h1 style={{ paddingTop: '60px' }} className={classes.myHeading}>
-      Design Resources
+      <span style={{ fontSize: '40px' }}>👩‍🎨</span> Design Resources
     </h1>
     <h2 style={{ paddingBottom: '36px' }} className={classes.subHeading}>
       Resources for design tips, inspiration, and best practices
@@ -33,7 +33,7 @@ const styles = {
     fontWeight: '600',
     fontFamily:
       "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
-    fontSize: '24px',
+    fontSize: '28px',
     paddingTop: '60px',
     paddingBottom: '8px',
     marginBottom: '0px',
