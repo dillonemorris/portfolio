@@ -1,6 +1,6 @@
 ---
 title: 'What Music Can Teach Us About Design'
-date: 'Janurary 10, 2018'
+date: 'January 10, 2018'
 excerpt: 'A well designed user interface is like a great song. It pulls you in, it relates to you, it somehow knows your wants, your needs, your struggles and your desires. Although neither a web page or a piece of music are tangible, physical things, they nevertheless can prove to be highly valuable and meaningful, adding beauty, clarity, and purpose to our lives if crafted intelligently.'
 ---
 
