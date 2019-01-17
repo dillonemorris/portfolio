@@ -17,7 +17,9 @@ const Library = ({ classes }) => (
         <div className={classes.headingContainer}>
           <LibraryHeader />
         </div>
-        <h1 className={classes.myHeading}>Books</h1>
+        <h1 className={classes.myHeading}>
+          <span style={{ fontSize: '40px' }}>📚</span> Books
+        </h1>
         <h2 className={classes.subHeading}>
           Good reads that I've thoroughly enjoyed
         </h2>
@@ -58,7 +60,7 @@ const styles = {
     fontWeight: '600',
     fontFamily:
       "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
-    fontSize: '24px',
+    fontSize: '28px',
     paddingTop: '60px',
     paddingBottom: '8px',
     marginBottom: '0px',

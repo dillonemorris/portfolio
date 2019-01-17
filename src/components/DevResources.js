@@ -6,7 +6,9 @@ import devResourceData from '../data/devResourceData'
 const DevResources = ({ classes }) => (
   <div className={classes.devResourceBackground}>
     <div className={classes.devResourceHeadingContainer}>
-      <h1 className={classes.myHeading}>Devoloper Resources</h1>
+      <h1 className={classes.myHeading}>
+        <span style={{ fontSize: '40px' }}>👨‍💻</span> Devoloper Resources
+      </h1>
       <h2 className={classes.subHeading}>
         Resources that will help you improve as a developer
       </h2>
@@ -33,7 +35,7 @@ const styles = {
     fontWeight: '600',
     fontFamily:
       "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
-    fontSize: '24px',
+    fontSize: '28px',
     paddingTop: '60px',
     paddingBottom: '8px',
     marginBottom: '0px',
