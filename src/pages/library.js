@@ -1,46 +1,49 @@
 import React from 'react'
 import injectSheet from 'react-jss'
-import Layout from '../components/layout'
 import LibraryHeader from '../components/LibraryHeader'
 import LibraryCard from '../components/LibraryCard'
 import DevResources from '../components/DevResources'
 import Resources from '../components/Resources'
+import SEO from '../components/seo'
+import Container from '../components/Container'
 import libraryData from '../data/libraryData'
-
 import resourceData from '../data/resourceData'
 
 const Library = ({ classes }) => (
-  <div className={classes.wrapper}>
-    <Layout>
-      <div className={classes.headingContainer}>
-        <LibraryHeader />
-      </div>
-      <h1 className={classes.myHeading}>
-        <span style={{ fontSize: '40px' }}>📚</span> Books
-      </h1>
-      <h2 className={classes.subHeading}>
-        Good reads that I've thoroughly enjoyed
-      </h2>
-      <div className={classes.container}>
-        <div className={classes.libraryCardGrid}>
-          {libraryData.map((book, i) => {
-            return (
-              <LibraryCard
-                key={i}
-                title={book.title}
-                author={book.author}
-                screenshot={book.screenshot}
-                quote={book.quote}
-                page={book.page}
-              />
-            )
-          })}
+  <>
+    <SEO title="Library" />
+    <div className={classes.wrapper}>
+      <Container>
+        <div className={classes.headingContainer}>
+          <LibraryHeader />
         </div>
-        <DevResources />
-        <Resources />
-      </div>
-    </Layout>
-  </div>
+        <h1 className={classes.myHeading}>
+          <span style={{ fontSize: '40px' }}>📚</span> Books
+        </h1>
+        <h2 className={classes.subHeading}>
+          Good reads that I've thoroughly enjoyed
+        </h2>
+        <div className={classes.container}>
+          <div className={classes.libraryCardGrid}>
+            {libraryData.map((book, i) => {
+              return (
+                <LibraryCard
+                  key={i}
+                  title={book.title}
+                  author={book.author}
+                  screenshot={book.screenshot}
+                  quote={book.quote}
+                  page={book.page}
+                />
+              )
+            })}
+          </div>
+          <DevResources />
+          <Resources />
+        </div>
+      </Container>
+    </div>
+  </>
 )
 
 const styles = {

@@ -1,19 +1,22 @@
 import React from 'react'
 import injectSheet from 'react-jss'
-
-import Layout from '../components/layout'
 import AboutHero from '../components/AboutHero'
 import AboutClosing from '../components/AboutClosing'
 import Skills from '../components/Skills'
+import SEO from '../components/seo'
+import Container from '../components/Container'
 
 const About = ({ classes }) => (
-  <div className={classes.wrapper}>
-    <Layout>
-      <AboutHero />
-      <Skills />
-      <AboutClosing />
-    </Layout>
-  </div>
+  <>
+    <SEO title="About" />
+    <div className={classes.wrapper}>
+      <Container>
+        <AboutHero />
+        <Skills />
+        <AboutClosing />
+      </Container>
+    </div>
+  </>
 )
 
 const styles = {

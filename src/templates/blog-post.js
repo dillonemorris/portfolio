@@ -1,37 +1,41 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import Layout from '../components/layout'
 import Button from '../components/Button'
 import injectSheet from 'react-jss'
 import '../styles/fonts.css'
+import SEO from '../components/seo'
+import Container from '../components/Container'
 
 const BlogPost = ({ data, classes }) => {
   const post = data.markdownRemark
   return (
-    <div style={{ backgroundColor: '#f4f4f4' }}>
-      <Layout>
-        <div className={classes.container}>
-          <div className={classes.postDate}>
-            {post.frontmatter.date} &bull; {post.timeToRead} min read
+    <>
+      <SEO title={post.frontmatter.title} />
+      <div style={{ backgroundColor: '#f4f4f4' }}>
+        <Container>
+          <div className={classes.container}>
+            <div className={classes.postDate}>
+              {post.frontmatter.date} &bull; {post.timeToRead} min read
+            </div>
+            <h1 className={classes.postTitle}>{post.frontmatter.title}</h1>
+            <div
+              className={classes.postBody}
+              dangerouslySetInnerHTML={{ __html: post.html }}
+            />
+            <Button
+              color={'rgba(65,131,215,1)'}
+              border={'3px solid rgba(65,131,215,1)'}
+              boxShadow={'5px 5px rgba(65, 131, 215, 0.4)'}
+              boxShadowHover={'5px 5px rgba(65, 131, 215, 1)'}
+              padding={'10px 30px'}
+              fontSize={14}
+              text={'back to writing'}
+              page={'/writing/'}
+            />
           </div>
-          <h1 className={classes.postTitle}>{post.frontmatter.title}</h1>
-          <div
-            className={classes.postBody}
-            dangerouslySetInnerHTML={{ __html: post.html }}
-          />
-          <Button
-            color={'rgba(65,131,215,1)'}
-            border={'3px solid rgba(65,131,215,1)'}
-            boxShadow={'5px 5px rgba(65, 131, 215, 0.4)'}
-            boxShadowHover={'5px 5px rgba(65, 131, 215, 1)'}
-            padding={'10px 30px'}
-            fontSize={14}
-            text={'back to writing'}
-            page={'/writing/'}
-          />
-        </div>
-      </Layout>
-    </div>
+        </Container>
+      </div>
+    </>
   )
 }
 
@@ -54,10 +58,11 @@ export const query = graphql`
 const styles = {
   container: {
     maxWidth: '650px',
-    margin: '50px auto',
+    margin: '0 auto',
+    padding: '50px 0',
 
     '@media (min-width: 900px)': {
-      margin: '100px auto',
+      padding: '100px 0',
     },
   },
   postDate: {

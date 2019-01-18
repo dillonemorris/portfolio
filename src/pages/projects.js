@@ -1,62 +1,65 @@
 import React from 'react'
 import injectSheet from 'react-jss'
-
-import Layout from '../components/layout'
 import ProjectStandard from '../components/ProjectStandard'
 import ProjectInverted from '../components/ProjectInverted'
 import ProjectHeader from '../components/ProjectHeader'
 import data from '../data/projectData'
+import SEO from '../components/seo'
+import Container from '../components/Container'
 
 const Projects = ({ classes }) => (
-  <div className={classes.container}>
-    <Layout>
-      <ProjectHeader />
-      <div className={classes.projectWrapper}>
-        {data.map((project, i) => {
-          switch (project.orientation) {
-            case 'Standard': {
-              return (
-                <div key={project.title} className={classes.bgWrapper}>
-                  <div className={classes.projectWrapper}>
-                    <ProjectStandard
-                      page={project.page}
-                      color={project.color}
-                      title={project.title}
-                      description={project.description}
-                      screenshot={project.screenshot}
-                      btnText={project.btnText}
-                      border={project.border}
-                      boxShadow={project.boxShadow}
-                      boxShadowHover={project.boxShadowHover}
-                    />
+  <>
+    <SEO title="Projects" />
+    <div className={classes.container}>
+      <Container>
+        <ProjectHeader />
+        <div className={classes.projectWrapper}>
+          {data.map((project, i) => {
+            switch (project.orientation) {
+              case 'Standard': {
+                return (
+                  <div key={project.title} className={classes.bgWrapper}>
+                    <div className={classes.projectWrapper}>
+                      <ProjectStandard
+                        page={project.page}
+                        color={project.color}
+                        title={project.title}
+                        description={project.description}
+                        screenshot={project.screenshot}
+                        btnText={project.btnText}
+                        border={project.border}
+                        boxShadow={project.boxShadow}
+                        boxShadowHover={project.boxShadowHover}
+                      />
+                    </div>
                   </div>
-                </div>
-              )
+                )
+              }
+              case 'Inverted': {
+                return (
+                  <ProjectInverted
+                    page={project.page}
+                    color={project.color}
+                    key={project.title}
+                    title={project.title}
+                    description={project.description}
+                    screenshot={project.screenshot}
+                    btnText={project.btnText}
+                    border={project.border}
+                    boxShadow={project.boxShadow}
+                    boxShadowHover={project.boxShadowHover}
+                  />
+                )
+              }
+              default: {
+                return null
+              }
             }
-            case 'Inverted': {
-              return (
-                <ProjectInverted
-                  page={project.page}
-                  color={project.color}
-                  key={project.title}
-                  title={project.title}
-                  description={project.description}
-                  screenshot={project.screenshot}
-                  btnText={project.btnText}
-                  border={project.border}
-                  boxShadow={project.boxShadow}
-                  boxShadowHover={project.boxShadowHover}
-                />
-              )
-            }
-            default: {
-              return null
-            }
-          }
-        })}
-      </div>
-    </Layout>
-  </div>
+          })}
+        </div>
+      </Container>
+    </div>
+  </>
 )
 
 const styles = {
