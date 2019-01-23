@@ -30,6 +30,7 @@ const IndexPage = ({ classes }) => (
             </a>
           </p>
           <Button
+            className={classes.button}
             color={'rgba(65,131,215,1)'}
             border={'3px solid rgba(65,131,215,1)'}
             boxShadow={'5px 5px rgba(65, 131, 215, 0.4)'}
@@ -55,6 +56,7 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column',
+    textAlign: 'center',
     minHeight: 'calc(100vh - 210px)',
   },
   avatar: {
@@ -131,6 +133,9 @@ const styles = {
     '@media (min-width: 600px)': {
       fontSize: '18px',
     },
+  },
+  button: {
+    fontSize: '14px !important',
   },
 }
 
