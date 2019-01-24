@@ -7,8 +7,6 @@ class AboutHero extends Component {
     document.querySelector('#target').scrollIntoView({
       behavior: 'smooth',
     })
-
-    console.log(document.querySelector('#target'))
   }
 
   render() {

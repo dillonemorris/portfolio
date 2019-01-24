@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import SEO from '../components/seo'
 import Container from '../components/Container'
 import Button from '../components/Button'
-import Error from '../images/error'
+import Error from '../images/Error'
 import injectSheet from 'react-jss'
 
 const NotFoundPage = ({ classes }) => (
