@@ -6,7 +6,12 @@ const Footer = ({ classes }) => (
   <div className={classes.container}>
     <div className={classes.inner}>
       <div className={classes.left}>
-        <div>Designed and coded with 🖤</div>
+        <div>
+          Designed and coded with{' '}
+          <span aria-label="heart" role="img">
+            🖤
+          </span>
+        </div>
         <a
           href={'https://github.com/dillonmorris91/portfolio'}
           target={'_blank'}
@@ -153,7 +158,6 @@ const styles = {
 
     '@media (min-width: 600px)': {
       fontSize: '12px',
-      paddingTop: '0px',
       paddingTop: '0px',
       order: 1,
       textAlign: 'left',

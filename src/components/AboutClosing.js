@@ -45,7 +45,10 @@ const AboutClosing = ({ classes }) => (
         </div>
         <div className={classes.closingContainer}>
           <p className={classes.description}>
-            This page should really be called "typing" 🤫
+            This page should really be called "typing"{' '}
+            <span role="img" aria-label="don't tell">
+              🤫
+            </span>
           </p>
           <Button
             color={'rgba(130, 105, 200,1)'}

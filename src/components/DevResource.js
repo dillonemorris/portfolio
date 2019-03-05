@@ -9,6 +9,7 @@ const DevResource = ({ classes, title, category, link, image }) => (
           className={classes.cardImage}
           style={{ borderRadius: '6px', width: '100%' }}
           src={image}
+          alt={'resource logo'}
         />
       </a>
     </div>

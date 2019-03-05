@@ -6,7 +6,10 @@ import resourceData from '../data/resourceData'
 const Resources = ({ classes }) => (
   <Fragment>
     <h1 style={{ paddingTop: '60px' }} className={classes.myHeading}>
-      <span style={{ fontSize: '40px' }}>👩‍🎨</span> Design Resources
+      <span style={{ fontSize: '40px' }} aria-label="designer" role="img">
+        👩‍🎨
+      </span>{' '}
+      Design Resources
     </h1>
     <h2 style={{ paddingBottom: '36px' }} className={classes.subHeading}>
       Resources for design tips, inspiration, and best practices

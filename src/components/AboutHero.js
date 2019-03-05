@@ -33,7 +33,11 @@ class AboutHero extends Component {
           <div className={classes.paragraph}>
             When I'm not coding & creating for the web I enjoy playing and
             writing music, spending time with my lovely girlfriend and our
-            Golden Doodle named Bowie⚡️.
+            Golden Doodle named Bowie
+            <span role="img" aria-label="lightning bolt">
+              ⚡️
+            </span>
+            .
           </div>
           <button onClick={this.handleClick} className={classes.tagline}>
             Check my skills{' '}

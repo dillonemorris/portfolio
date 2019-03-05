@@ -7,7 +7,14 @@ const DevResources = ({ classes }) => (
   <div className={classes.devResourceBackground}>
     <div className={classes.devResourceHeadingContainer}>
       <h1 className={classes.myHeading}>
-        <span style={{ fontSize: '40px' }}>👨‍💻</span> Devoloper Resources
+        <span
+          role="img"
+          aria-label="web developer"
+          style={{ fontSize: '40px' }}
+        >
+          👨‍💻
+        </span>{' '}
+        Devoloper Resources
       </h1>
       <h2 className={classes.subHeading}>
         Resources that will help you improve as a developer

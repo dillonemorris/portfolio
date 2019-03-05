@@ -7,7 +7,6 @@ import Resources from '../components/Resources'
 import SEO from '../components/seo'
 import Container from '../components/Container'
 import libraryData from '../data/libraryData'
-import resourceData from '../data/resourceData'
 
 const Library = ({ classes }) => (
   <>
@@ -18,7 +17,10 @@ const Library = ({ classes }) => (
           <LibraryHeader />
         </div>
         <h1 className={classes.myHeading}>
-          <span style={{ fontSize: '40px' }}>📚</span> Books
+          <span role="img" aria-label="books" style={{ fontSize: '40px' }}>
+            📚
+          </span>{' '}
+          Books
         </h1>
         <h2 className={classes.subHeading}>
           Good reads that I've thoroughly enjoyed
