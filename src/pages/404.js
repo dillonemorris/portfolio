@@ -41,10 +41,14 @@ const styles = {
       "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
   },
   myHeading: {
-    fontSize: '48px',
     paddingTop: '32px',
     color: '#414141',
     marginBottom: '12px',
+    fontSize: '36px',
+
+    '@media (min-width: 700px)': {
+      fontSize: '48px',
+    },
   },
   body: {
     color: '#606571',

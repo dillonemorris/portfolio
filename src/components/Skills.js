@@ -21,7 +21,14 @@ const Skills = ({ classes }) => (
               <SkillTitle title={skillObject.title} />
               <div className={classes.skillsContainer}>
                 {skillObject.skills.map((skill, i) => {
-                  return <SkillPill key={i} text={skill} />
+                  return (
+                    <SkillPill
+                      color="#1b5aaa"
+                      fontSize={15}
+                      key={i}
+                      text={skill}
+                    />
+                  )
                 })}
               </div>
             </div>

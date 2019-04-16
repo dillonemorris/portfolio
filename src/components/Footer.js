@@ -129,21 +129,21 @@ const styles = {
   },
   link: {
     color: '#414141',
-    fontSize: '14px',
+    fontSize: '13px',
     textDecoration: 'none',
   },
   left: {
     fontFamily:
       "Plex Mono, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
     letterSpacing: '.5px',
-    fontSize: '11px',
+    fontSize: '14px',
     paddingTop: '10px',
     fontWeight: '300',
     order: 2,
     textAlign: 'center',
 
     '@media (min-width: 600px)': {
-      fontSize: '12px',
+      fontSize: '13px',
       paddingTop: '0px',
       order: 1,
       textAlign: 'left',
@@ -157,7 +157,7 @@ const styles = {
     paddingTop: '16px',
 
     '@media (min-width: 600px)': {
-      fontSize: '12px',
+      fontSize: '14px',
       paddingTop: '0px',
       order: 1,
       textAlign: 'left',

@@ -74,11 +74,11 @@ const styles = {
     fontWeight: '500',
     fontFamily:
       "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
-    fontSize: '28px',
     letterSpacing: '.3px',
+    fontSize: '36px',
 
     '@media (min-width: 700px)': {
-      fontSize: '40px',
+      fontSize: '48px',
     },
   },
   right: {
@@ -98,7 +98,8 @@ const styles = {
     textDecoration: 'none',
   },
   left: {
-    paddingBottom: '30px',
+    marginBottom: '40px',
+    borderRadius: '16px',
 
     '@media (min-width: 700px)': {
       maxWidth: '350px',

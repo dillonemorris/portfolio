@@ -45,16 +45,22 @@ const styles = {
     fontWeight: '600',
     background: '#fff',
     border: '3px solid #414141',
-    boxShadow: props => props.boxShadow,
+    boxShadow: props => (props.boxShadow ? props.boxShadow : 'none'),
     textDecoration: 'none',
     color: '#414141',
     transition: 'all 170ms ease-in-out',
+    width: '100%',
+
+    '@media (min-width: 600px)': {
+      width: 'auto',
+    },
 
     '&:hover': {
-      boxShadow: props => props.boxShadowHover,
+      boxShadow: props =>
+        props.boxShadowHover ? props.boxShadowHover : 'none',
       cursor: 'pointer',
-      border: props => props.border,
-      color: props => props.color,
+      border: props => (props.border ? props.border : 'none'),
+      color: props => (props.color ? props.color : '#414141'),
     },
 
     '& a': {

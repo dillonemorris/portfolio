@@ -30,6 +30,8 @@ const Projects = ({ classes }) => (
                         border={project.border}
                         boxShadow={project.boxShadow}
                         boxShadowHover={project.boxShadowHover}
+                        skills={project.skills}
+                        id={project.id}
                       />
                     </div>
                   </div>
@@ -48,6 +50,8 @@ const Projects = ({ classes }) => (
                     border={project.border}
                     boxShadow={project.boxShadow}
                     boxShadowHover={project.boxShadowHover}
+                    skills={project.skills}
+                    id={project.id}
                   />
                 )
               }

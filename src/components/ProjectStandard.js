@@ -1,6 +1,7 @@
 import React from 'react'
 import injectSheet from 'react-jss'
 import Button from '../components/Button'
+import SkillPill from './SkillPill'
 
 const ProjectStandard = ({
   classes,
@@ -8,11 +9,13 @@ const ProjectStandard = ({
   description,
   screenshot,
   btnText,
+  id,
   color,
   page,
   boxShadow,
   boxShadowHover,
   border,
+  skills,
 }) => (
   <a
     className={classes.link}
@@ -26,6 +29,11 @@ const ProjectStandard = ({
           {title}
         </h1>
         <p className={classes.description}>{description}</p>
+        <div className={classes.skillsContainer}>
+          {skills.map((skill, id) => (
+            <SkillPill key={id} fontSize={14} color={color} text={skill} />
+          ))}
+        </div>
         <Button
           boxShadow={boxShadow}
           boxShadowHover={boxShadowHover}
@@ -64,10 +72,10 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',
-    padding: '40px 0px',
+    padding: '84px 0px 32px',
 
     '@media (min-width: 900px)': {
-      padding: '120px 0px',
+      padding: '96px 0px 64px',
     },
 
     '&:hover': {
@@ -95,22 +103,26 @@ const styles = {
     fontWeight: '600',
     fontFamily:
       "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
-    fontSize: '36px',
+    fontSize: '32px',
     transition: 'all 170ms ease-in-out',
+    marginBottom: '0px',
+
+    '@media (min-width: 900px)': {
+      fontSize: '36px',
+    },
   },
   description: {
     color: '#606571',
-    fontSize: '18px',
     fontFamily:
       "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
-    maxWidth: '800px',
-    lineHeight: '26px',
-    marginBottom: '20px',
+    maxWidth: '500px',
+    lineHeight: '32px',
+    fontSize: '21px',
+    margin: '16px 0px 24px',
 
     '@media (min-width: 900px)': {
-      marginBottom: '40px',
-      lineHeight: '30px',
-      maxWidth: '800px',
+      margin: '16px 0px',
+      marginBottom: '24px',
     },
   },
   screenshot: {
@@ -120,6 +132,12 @@ const styles = {
   },
   link: {
     textDecoration: 'none',
+  },
+  skillsContainer: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    fontSize: '14px',
+    marginBottom: '16px',
   },
 }
 

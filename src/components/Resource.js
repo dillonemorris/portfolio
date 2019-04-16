@@ -59,7 +59,7 @@ const styles = {
   title: {
     display: 'flex',
     color: '#414141',
-    fontSize: '18px',
+    fontSize: '21px',
     fontWeight: '600',
     textDecoration: 'none',
     transition: 'color 0.15s ease-out',
