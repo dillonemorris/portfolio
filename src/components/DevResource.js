@@ -7,7 +7,7 @@ const DevResource = ({ classes, title, category, link, image }) => (
       <a href={link} target="_blank" rel="noopener noreferrer">
         <img
           className={classes.cardImage}
-          style={{ borderRadius: '6px', width: '100%' }}
+          style={{ width: '100%' }}
           src={image}
           alt={'resource logo'}
         />
@@ -81,8 +81,6 @@ const styles = {
     letterSpacing: '.8px',
   },
   cardImageWrapper: {
-    borderRadius: '8px',
-
     '&:hover': {
       cursor: 'pointer',
     },

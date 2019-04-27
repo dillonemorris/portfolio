@@ -23,7 +23,7 @@ const Skills = ({ classes }) => (
                 {skillObject.skills.map((skill, i) => {
                   return (
                     <SkillPill
-                      color="#1b5aaa"
+                      color="#4183D7"
                       fontSize={15}
                       key={i}
                       text={skill}

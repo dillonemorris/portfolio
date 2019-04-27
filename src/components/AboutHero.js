@@ -99,7 +99,6 @@ const styles = {
   },
   left: {
     marginBottom: '40px',
-    borderRadius: '16px',
 
     '@media (min-width: 700px)': {
       maxWidth: '350px',

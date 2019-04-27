@@ -53,7 +53,6 @@ const styles = {
   },
   cardInner: {
     backgroundColor: '#fff',
-    borderRadius: '8px',
     transition: 'box-shadow .2s ease',
     height: '384px',
 
@@ -67,7 +66,6 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     height: '384px',
-    borderRadius: '8px',
     boxShadow:
       '0 16px 16px rgba(103,110,144,.05), 0 8px 8px rgba(103,110,144,.05), 0 4px 4px rgba(103,110,144,.05), 0 2px 2px rgba(103,110,144,.05)',
 
@@ -101,7 +99,6 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    borderRadius: '8px',
     boxShadow:
       '0 16px 16px rgba(103,110,144,.05), 0 8px 8px rgba(103,110,144,.05), 0 4px 4px rgba(103,110,144,.05), 0 2px 2px rgba(103,110,144,.05)',
 
@@ -147,7 +144,6 @@ const styles = {
   screenshot: {
     width: '100%',
     height: '384px',
-    borderRadius: '8px',
 
     '@media (min-width: 960px)': {
       height: '340px',
