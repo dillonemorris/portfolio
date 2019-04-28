@@ -17,7 +17,7 @@ const Button = ({
 
   if (internal) {
     return (
-      <Link style={{ fontSize: `${fontSize}px` }} to={page}>
+      <Link to={page}>
         <button className={classes.button} style={{ padding: `${padding}` }}>
           {text}
         </button>
@@ -41,6 +41,7 @@ const Button = ({
 const styles = {
   button: {
     fontFamily: 'Plex mono',
+    fontSize: props => (props.fontSize ? props.fontSize : 14),
     letterSpacing: '.8px',
     fontWeight: '600',
     background: '#fff',
