@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { graphql } from 'gatsby'
 import Button from '../components/Button'
 import injectSheet from 'react-jss'
