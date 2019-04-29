@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-import Toggle from '../components/Toggle'
+import MyToggle from '../components/MyToggle'
 import { useDarkMode } from '../components/hooks/useDarkMode'
 import { graphql } from 'gatsby'
 import Button from '../components/Button'
@@ -32,7 +32,7 @@ const BlogPost = ({ data, classes }) => {
               >
                 {post.frontmatter.date} &bull; {post.timeToRead} min read
               </div>
-              <Toggle darkMode={darkMode} setDarkMode={setDarkMode} />
+              <MyToggle darkMode={darkMode} setDarkMode={setDarkMode} />
             </div>
             <h1
               className={classNames(
@@ -165,6 +165,7 @@ const styles = {
   dateToggleContainer: {
     display: 'flex',
     justifyContent: 'space-between',
+    alignItems: 'center',
   },
 }
 

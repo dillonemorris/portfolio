@@ -38,7 +38,7 @@ const styles = {
     fontWeight: '600',
     color: '#414141',
     letterSpacing: '.2px',
-    paddingBottom: '20px',
+    paddingBottom: '8px',
     lineHeight: '36px',
     transition: 'all 170ms ease-in-out',
   },

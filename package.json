@@ -25,7 +25,8 @@
     "react-dom": "^16.8.0",
     "react-helmet": "^5.2.0",
     "react-jss": "^8.6.1",
-    "react-pose": "^4.0.5"
+    "react-pose": "^4.0.5",
+    "react-toggle": "^4.0.2"
   },
   "keywords": [
     "gatsby"
