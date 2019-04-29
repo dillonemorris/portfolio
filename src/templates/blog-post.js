@@ -11,6 +11,7 @@ import Container from '../components/Container'
 
 const BlogPost = ({ data, classes }) => {
   const post = data.markdownRemark
+
   const [darkMode, setDarkMode] = useDarkMode()
 
   return (

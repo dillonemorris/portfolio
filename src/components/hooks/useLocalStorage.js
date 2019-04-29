@@ -1,10 +1,13 @@
 import { useState } from 'react'
+import { window } from 'browser-monads'
 
 function useLocalStorage(key, initialValue) {
   const [storedValue, setStoredValue] = useState(() => {
     try {
-      // Get from local storage by key
+      // Get from local storage by key, first make sure window is defined
+
       const item = window.localStorage.getItem(key)
+
       // Parse stored json or if none return initialValue
       return item ? JSON.parse(item) : initialValue
     } catch (error) {

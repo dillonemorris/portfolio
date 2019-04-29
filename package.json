@@ -4,6 +4,7 @@
   "version": "1.0.1",
   "author": "Dillon Morris <dillonmorris91@gmail.com>",
   "dependencies": {
+    "browser-monads": "^1.0.0",
     "classnames": "^2.2.6",
     "gatsby": "^2.3.23",
     "gatsby-cli": "^2.4.8",

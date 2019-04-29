@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react'
+import { window } from 'browser-monads'
 
 function useMedia(queries, values, defaultValue) {
   const mediaQueryLists = queries.map(q => window.matchMedia(q))
