@@ -2,15 +2,11 @@ import { useState, useEffect } from 'react'
 import { window } from 'browser-monads'
 
 function useMedia(queries, values, defaultValue) {
-  if (typeof window !== `undefined`) {
-    const mediaQueryLists = queries.map(q => window.matchMedia(q))
-  }
+  const mediaQueryLists = queries.map(q => window.matchMedia(q))
 
   const getValue = () => {
-    if (typeof window !== `undefined`) {
-      const index = mediaQueryLists.findIndex(mql => mql.matches)
-      return typeof values[index] !== 'undefined' ? values[index] : defaultValue
-    }
+    const index = mediaQueryLists.findIndex(mql => mql.matches)
+    return typeof values[index] !== 'undefined' ? values[index] : defaultValue
   }
 
   const [value, setValue] = useState(getValue)
