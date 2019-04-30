@@ -624,3 +624,12 @@ pre[class*='language-'] {
   font-size: 16px;
   color: #eee8a9;
 }
+
+/* Hide the page content until the Layout component mounts */
+.initial {
+  opacity: 0;
+}
+
+.loaded {
+  opacity: 1 !important;
+}
