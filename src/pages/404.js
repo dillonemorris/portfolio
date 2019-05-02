@@ -42,7 +42,7 @@ const styles = {
   },
   myHeading: {
     paddingTop: '32px',
-    color: '#414141',
+    color: '#11181E',
     marginBottom: '12px',
     fontSize: '36px',
 

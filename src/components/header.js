@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import injectSheet from 'react-jss'
 import '../styles/fonts.css'
-import Logo from '../images/logo.png'
+import Logo from '../images/Logo'
 import noScroll from 'no-scroll'
 import HeaderNavDesktop from './HeaderNavDesktop'
 import HeaderNavMobile from './HeaderNavMobile'
@@ -29,11 +29,7 @@ class Header extends Component {
       <div className={classes.container}>
         <div className={classes.inner}>
           <Link className={classes.link} to="/">
-            <img
-              className={classes.logo}
-              src={Logo}
-              alt={'Personal brand logo'}
-            />
+            <Logo />
           </Link>
           <button onClick={this.onMenuOpen} className={classes.navMobileIcon}>
             <svg
@@ -41,7 +37,7 @@ class Header extends Component {
               width="24"
               height="24"
               viewBox="0 0 24 24"
-              fill="#414141"
+              fill="#11181E"
             >
               <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
             </svg>
@@ -75,7 +71,7 @@ const styles = {
     height: '70px',
     backgroundColor: '#fff',
     margin: '0 auto',
-    color: '#414141',
+    color: '#11181E',
     fontFamily:
       "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
   },
@@ -93,6 +89,8 @@ const styles = {
     marginTop: '8px',
   },
   link: {
+    display: 'flex',
+    alignItems: 'center',
     width: 'inherit',
   },
 

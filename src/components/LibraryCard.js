@@ -122,7 +122,7 @@ const styles = {
     },
   },
   title: {
-    color: '#414141',
+    color: '#11181E',
     fontFamily:
       "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
     letterSpacing: '.5px',

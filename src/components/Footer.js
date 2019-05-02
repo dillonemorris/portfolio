@@ -31,7 +31,7 @@ const Footer = ({ classes }) => (
           >
             <svg
               className={classes.socialIcon}
-              fill={'#414141'}
+              fill={'#11181E'}
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -49,7 +49,7 @@ const Footer = ({ classes }) => (
           >
             <svg
               className={classes.socialIcon}
-              fill={'#414141'}
+              fill={'#11181E'}
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -67,7 +67,7 @@ const Footer = ({ classes }) => (
           >
             <svg
               className={classes.socialIcon}
-              fill={'#414141'}
+              fill={'#11181E'}
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -85,7 +85,7 @@ const Footer = ({ classes }) => (
           >
             <svg
               className={classes.socialIcon}
-              fill={'#414141'}
+              fill={'#11181E'}
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -108,7 +108,7 @@ const styles = {
     height: '110px',
     backgroundColor: '#fff',
     margin: '0 auto',
-    color: '#414141',
+    color: '#11181E',
     fontFamily:
       "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
   },
@@ -128,7 +128,7 @@ const styles = {
     },
   },
   link: {
-    color: '#414141',
+    color: '#11181E',
     fontSize: '13px',
     textDecoration: 'none',
   },

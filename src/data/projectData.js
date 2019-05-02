@@ -7,7 +7,7 @@ const projectData = [
   {
     title: 'Typewise',
     description:
-      "Typewise is a curated list of the best Google Fonts. I love Google Fonts, but I created this because I felt like picking fonts on their site can sometimes be overwhelming (maybe it's just me 🤔).",
+      "Typewise is a curated list of the best Google Fonts. I love Google Fonts, but I created this because I felt like picking fonts on their site can be overwhelming (maybe it's just me 🤔).",
     screenshot: Typewise,
     btnText: 'visit site',
     orientation: 'Standard',

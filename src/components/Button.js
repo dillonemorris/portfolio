@@ -45,10 +45,10 @@ const styles = {
     letterSpacing: '.8px',
     fontWeight: '600',
     background: '#fff',
-    border: '3px solid #414141',
+    border: '3px solid #11181E',
     boxShadow: props => (props.boxShadow ? props.boxShadow : 'none'),
     textDecoration: 'none',
-    color: '#414141',
+    color: '#11181E',
     transition: 'all 170ms ease-in-out',
     width: '100%',
 
@@ -61,11 +61,11 @@ const styles = {
         props.boxShadowHover ? props.boxShadowHover : 'none',
       cursor: 'pointer',
       border: props => (props.border ? props.border : 'none'),
-      color: props => (props.color ? props.color : '#414141'),
+      color: props => (props.color ? props.color : '#11181E'),
     },
 
     '& a': {
-      color: '#414141',
+      color: '#11181E',
       textDecoration: 'none',
     },
 

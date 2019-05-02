@@ -13,7 +13,6 @@ const IndexPage = ({ classes }) => (
       <Container>
         <div className={classes.container}>
           <img className={classes.avatar} src={Avatar} alt={'avatar'} />
-
           <h1 className={classes.myHeading}>Hey, I’m Dillon.</h1>
           <p className={classes.subHeading}>
             UI Designer & Developer from Phoenix, AZ.
@@ -71,7 +70,7 @@ const styles = {
     fontSize: '48px',
   },
   myHeading: {
-    color: '#414141',
+    color: '#11181E',
     fontWeight: '700',
     fontFamily:
       "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
@@ -89,7 +88,7 @@ const styles = {
     },
   },
   subHeading: {
-    color: '#414141',
+    color: '#11181E',
     fontFamily:
       "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
     fontWeight: '400',
@@ -105,7 +104,7 @@ const styles = {
     },
   },
   bodyText: {
-    color: '#414141',
+    color: '#11181E',
     fontFamily:
       "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
     maxWidth: '800px',
@@ -120,7 +119,7 @@ const styles = {
     },
   },
   link: {
-    color: '#414141',
+    color: '#11181E',
     fontWeight: '600',
     textDecoration: 'none',
     borderBottom: '2px solid #bcd9ff',

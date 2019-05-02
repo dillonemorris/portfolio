@@ -18,12 +18,8 @@ const styles = {
     alignItems: 'center',
     padding: '30px',
   },
-  icon: {
-    fill: '#414141',
-    width: '140px',
-  },
   myHeading: {
-    color: '#414141',
+    color: '#11181E',
     fontWeight: '600',
     fontFamily:
       "Inter UI -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",

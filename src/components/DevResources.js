@@ -38,7 +38,7 @@ const DevResources = ({ classes }) => (
 
 const styles = {
   myHeading: {
-    color: '#414141',
+    color: '#11181E',
     fontWeight: '600',
     fontFamily:
       "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",

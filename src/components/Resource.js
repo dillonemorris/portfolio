@@ -58,7 +58,7 @@ const styles = {
   },
   title: {
     display: 'flex',
-    color: '#414141',
+    color: '#11181E',
     fontSize: '21px',
     fontWeight: '600',
     textDecoration: 'none',

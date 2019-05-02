@@ -20,7 +20,7 @@ const styles = {
     fontWeight: '500',
     paddingBottom: '20px',
     letterSpacing: '.5px',
-    color: '#414141',
+    color: '#11181E',
   },
 }
 

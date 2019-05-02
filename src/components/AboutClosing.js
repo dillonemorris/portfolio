@@ -20,7 +20,7 @@ const AboutClosing = ({ classes }) => (
               viewBox="0 0 24 24"
               width="24"
               height="24"
-              fill="#414141"
+              fill="#11181E"
             >
               <path
                 className="heroicon-ui"
@@ -81,7 +81,7 @@ const AboutClosing = ({ classes }) => (
 
 const styles = {
   myHeading: {
-    color: '#414141',
+    color: '#11181E',
     fontWeight: '500',
     fontFamily:
       "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
@@ -126,7 +126,7 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     maxWidth: '250px',
-    color: '#414141',
+    color: '#11181E',
     fontWeight: '600',
     textDecoration: 'none',
     borderBottom: '2px solid #bcd9ff',

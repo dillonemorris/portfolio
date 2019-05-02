@@ -52,7 +52,7 @@ const BlogPost = ({ data, classes }) => {
               dangerouslySetInnerHTML={{ __html: post.html }}
             />
             <Button
-              color={'#414141'}
+              color={'#11181E'}
               border={'3px solid #c0c0ce'}
               padding={'10px 30px'}
               fontSize={14}
@@ -132,19 +132,19 @@ const styles = {
       color: '#fff',
       fontWeight: '600',
       textDecoration: 'none',
-      borderBottom: '2px solid #414141',
+      borderBottom: '2px solid #11181E',
       transition: 'background 0.4s ease-out',
 
       '&:hover': {
-        background: '#414141',
+        background: '#11181E',
       },
     },
   },
   postTextLight: {
-    color: '#414141',
+    color: '#11181E',
 
     '& a': {
-      color: '#414141',
+      color: '#11181E',
       fontWeight: '600',
       textDecoration: 'none',
       borderBottom: '2px solid #bcd9ff',
@@ -160,7 +160,7 @@ const styles = {
     color: '#fff',
   },
   postTitleLight: {
-    color: '#414141',
+    color: '#11181E',
   },
 
   dateToggleContainer: {

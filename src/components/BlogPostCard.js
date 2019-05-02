@@ -36,7 +36,7 @@ const styles = {
       "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
     fontSize: '26px',
     fontWeight: '600',
-    color: '#414141',
+    color: '#11181E',
     letterSpacing: '.2px',
     paddingBottom: '8px',
     lineHeight: '36px',

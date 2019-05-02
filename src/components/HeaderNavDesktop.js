@@ -53,7 +53,7 @@ const styles = {
     textDecoration: 'none',
     fontSize: '15px',
     fontWeight: '400',
-    color: '#414141',
+    color: '#11181E',
     paddingLeft: '60px',
     letterSpacing: '.3px',
 
