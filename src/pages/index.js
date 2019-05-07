@@ -1,141 +1,163 @@
 import React from 'react'
-import injectSheet from 'react-jss'
+import styled from 'styled-components'
 import '../styles/fonts.css'
 import Avatar from '../images/avatar.png'
 import Button from '../components/Button'
 import SEO from '../components/seo'
-import Container from '../components/Container'
 
-const IndexPage = ({ classes }) => (
+const Container = styled.div`
+  padding: 0px 1.0875rem 1.45rem;
+  padding-top: 0px;
+  max-width: 1080px;
+
+  @media (min-width: 600px) {
+    margin: 0px auto;
+  }
+`
+
+const Wrapper = styled.div`
+  background-color: #f4f4f4;
+`
+
+const Heading = styled.h1`
+    color: #11181E;
+    font-weight: 700;
+    font-family:
+      Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !importantI
+    letter-spacing: .8px;
+    font-size: 22px;
+    line-height: 1;
+    text-align: center;
+
+    @media (min-width: 400px) {
+      font-size: 28px;
+    }
+
+    @media (min-width: 600px) {
+      font-size: 36px; 
+    }
+`
+
+const Subheading = styled.p`
+  color: #11181e;
+  font-family: Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif !important;
+  font-weight: 400;
+  max-width: 800px;
+  text-align: center;
+  line-height: 24px;
+  margin-bottom: 10px;
+  letter-spacing: 0.4px;
+  font-size: 16px;
+
+  @media (min-width: 600px) {
+    font-size: 18px;
+  }
+`
+
+const MyContainer = styled.div`
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  min-height: calc(100vh - 210px);
+`
+
+const BodyText = styled.p`
+  color: #11181e;
+  font-family: Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif !important;
+  max-width: 800px;
+  text-align: center;
+  line-height: 24px;
+  margin-bottom: 60px;
+  letter-spacing: 0.4px;
+  font-size: 16px;
+
+  @media (min-width: 600px) {
+    font-size: 18px;
+  }
+`
+
+const Img = styled.img`
+  width: 140px;
+  padding: 18px 0px;
+
+  @media (min-width: 600px) {
+    padding: 22px 0px;
+  }
+`
+
+const Link = styled.a`
+  color: #11181e;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid #bcd9ff;
+  transition: background 0.4s ease-out;
+
+  :hover {
+    background: #bcd9ff;
+  }
+
+  @media (min-width: 600px) {
+    fontsize: '18px';
+  }
+`
+
+const StyledButton = styled(Button)`
+  font-family: Plex mono;
+  font-size: 14px;
+  letter-spacing: 0.8px;
+  font-weight: 600;
+  background: #fff;
+  border: 3px solid #11181e;
+  box-shadow: 5px 5px rgba(65, 131, 215, 0.4);
+  padding: 10px 30px;
+  text-decoration: none;
+  color: #11181e;
+  transition: all 170ms ease-in-out;
+  width: 100%;
+
+  @media (min-width: 600px) {
+    width: auto;
+  }
+
+  :hover {
+    box-shadow: 5px 5px rgba(65, 131, 215, 1);
+    cursor: pointer;
+    border: 3px solid rgba(65, 131, 215, 1);
+    color: rgba(65, 131, 215, 1);
+  }
+`
+
+const IndexPage = () => (
   <>
     <SEO title="Home" />
-    <div className={classes.wrapper}>
+    <Wrapper>
       <Container>
-        <div className={classes.container}>
-          <img className={classes.avatar} src={Avatar} alt={'avatar'} />
-          <h1 className={classes.myHeading}>Hey, I’m Dillon.</h1>
-          <p className={classes.subHeading}>
-            UI Designer & Developer from Phoenix, AZ.
-          </p>
-          <p className={classes.bodyText}>
+        <MyContainer>
+          <Img src={Avatar} alt={'avatar'} />
+          <Heading>Hey, I’m Dillon.</Heading>
+          <Subheading>UI Designer & Developer from Phoenix, AZ.</Subheading>
+          <BodyText>
             Currently working with some amazing people at{' '}
-            <a
-              className={classes.link}
+            <Link
               target="_blank"
               href={'https://www.elmstreettechnology.com'}
               rel="noopener noreferrer"
             >
               Elm Street Technology.
-            </a>
-          </p>
-          <Button
-            className={classes.button}
-            color={'rgba(65,131,215,1)'}
-            border={'3px solid rgba(65,131,215,1)'}
-            boxShadow={'5px 5px rgba(65, 131, 215, 0.4)'}
-            boxShadowHover={'5px 5px rgba(65, 131, 215, 1)'}
-            text={'more about me'}
-            fontSize={14}
-            page={'/about/'}
-            padding={'10px 30px'}
-          />
-        </div>
+            </Link>
+          </BodyText>
+          <StyledButton text="more about me" page={'/about/'} />
+        </MyContainer>
       </Container>
-    </div>
+    </Wrapper>
   </>
 )
 
-const styles = {
-  wrapper: {
-    backgroundColor: '#f4f4f4',
-  },
-  container: {
-    padding: '20px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column',
-    textAlign: 'center',
-    minHeight: 'calc(100vh - 210px)',
-  },
-  avatar: {
-    width: '140px',
-    padding: '18px 0px',
-
-    '@media (min-width: 600px)': {
-      padding: '22px 0px',
-    },
-  },
-  emoji: {
-    fontSize: '48px',
-  },
-  myHeading: {
-    color: '#11181E',
-    fontWeight: '700',
-    fontFamily:
-      "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
-    letterSpacing: '.8px',
-    fontSize: '22px',
-    lineHeight: '1.4',
-    textAlign: 'center',
-
-    '@media (min-width: 400px)': {
-      fontSize: '28px',
-    },
-
-    '@media (min-width: 600px)': {
-      fontSize: '36px',
-    },
-  },
-  subHeading: {
-    color: '#11181E',
-    fontFamily:
-      "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
-    fontWeight: '400',
-    maxWidth: '800px',
-    textAlign: 'center',
-    lineHeight: '24px',
-    marginBottom: '10px',
-    letterSpacing: '.4px',
-    fontSize: '16px',
-
-    '@media (min-width: 600px)': {
-      fontSize: '18px',
-    },
-  },
-  bodyText: {
-    color: '#11181E',
-    fontFamily:
-      "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
-    maxWidth: '800px',
-    textAlign: 'center',
-    lineHeight: '24px',
-    marginBottom: '60px',
-    letterSpacing: '.4px',
-    fontSize: '16px',
-
-    '@media (min-width: 600px)': {
-      fontSize: '18px',
-    },
-  },
-  link: {
-    color: '#11181E',
-    fontWeight: '600',
-    textDecoration: 'none',
-    borderBottom: '2px solid #bcd9ff',
-    transition: 'background 0.4s ease-out',
-
-    '&:hover': {
-      background: '#bcd9ff',
-    },
-
-    '@media (min-width: 600px)': {
-      fontSize: '18px',
-    },
-  },
-  button: {
-    fontSize: '14px !important',
-  },
-}
-
-export default injectSheet(styles)(IndexPage)
+export default IndexPage

@@ -1,59 +1,84 @@
 import React, { Fragment } from 'react'
 import SEO from '../components/seo'
-import Container from '../components/Container'
+import styled from 'styled-components'
 import Button from '../components/Button'
 import Error from '../images/Error'
-import injectSheet from 'react-jss'
 
-const NotFoundPage = ({ classes }) => (
+const Container = styled.div`
+  padding: 0px 1.0875rem 1.45rem;
+  padding-top: 0px;
+  max-width: 1080px;
+
+  @media (min-width: 600px) {
+    margin: 0px auto;
+  }
+`
+
+const Heading = styled.h1`
+  padding-top: 32px;
+  color: #11181e;
+  margin-bottom: 12px;
+  font-size: 36px;
+
+  @media (min-width: 700px) {
+    font-size: 48px;
+  }
+`
+
+const Body = styled.p`
+  color: #486581;
+  font-size: 20px;
+`
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto 20px;
+  font-family: Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif !important;
+`
+
+const StyledButton = styled(Button)`
+  font-family: Plex mono;
+  font-size: 14px;
+  letter-spacing: 0.8px;
+  font-weight: 600;
+  background: #fff;
+  border: 3px solid #11181e;
+  box-shadow: 5px 5px rgba(218, 162, 176, 0.4);
+  padding: 10px 30px;
+  text-decoration: none;
+  color: #11181e;
+  transition: all 170ms ease-in-out;
+  width: 100%;
+
+  @media (min-width: 600px) {
+    width: auto;
+  }
+
+  :hover {
+    box-shadow: 5px 5px rgba(218, 162, 176, 1);
+    cursor: pointer;
+    border: 3px solid rgba(218, 162, 176, 1);
+    color: rgba(218, 162, 176, 1);
+  }
+`
+
+const NotFoundPage = () => (
   <Fragment>
     <SEO title="404 - Not Found" />
     <Container>
-      <div className={classes.container}>
+      <Wrapper>
         <Error />
-        <h1 className={classes.myHeading}>Woah!</h1>
-        <p className={classes.body}>
-          Looks like you're doing a bit of off-roading there...
-        </p>
-        <Button
-          color={'rgba(218, 162, 176,1)'}
-          border={'3px solid rgba(218, 162, 176,1)'}
-          boxShadow={'5px 5px rgba(218, 162, 176, 0.4)'}
-          boxShadowHover={'5px 5px rgba(218, 162, 176, 1)'}
-          text={'go back'}
-          fontSize={14}
-          page={'/projects/'}
-          padding={'6px 20px'}
-        />
-      </div>
+        <Heading>Woah!</Heading>
+        <Body>Looks like you're doing a bit of off-roading there...</Body>
+        <StyledButton text={'go back'} page={'/projects/'} />
+      </Wrapper>
     </Container>
   </Fragment>
 )
 
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: '40px auto 20px',
-    fontFamily:
-      "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
-  },
-  myHeading: {
-    paddingTop: '32px',
-    color: '#11181E',
-    marginBottom: '12px',
-    fontSize: '36px',
-
-    '@media (min-width: 700px)': {
-      fontSize: '48px',
-    },
-  },
-  body: {
-    color: '#606571',
-    fontSize: '20px',
-  },
-}
-
-export default injectSheet(styles)(NotFoundPage)
+export default NotFoundPage

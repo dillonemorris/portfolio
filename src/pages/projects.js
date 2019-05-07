@@ -1,25 +1,56 @@
 import React from 'react'
-import injectSheet from 'react-jss'
+import styled from 'styled-components'
 import ProjectStandard from '../components/ProjectStandard'
 import ProjectInverted from '../components/ProjectInverted'
 import ProjectHeader from '../components/ProjectHeader'
 import data from '../data/projectData'
 import SEO from '../components/seo'
-import Container from '../components/Container'
 
-const Projects = ({ classes }) => (
+const Container = styled.div`
+  padding: 0px 1.0875rem 1.45rem;
+  padding-top: 0px;
+  max-width: 1080px;
+
+  @media (min-width: 600px) {
+    margin: 0px auto;
+  }
+`
+
+const Wrapper = styled.div`
+  background-color: #f4f4f4;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`
+
+const ProjectWrapper = styled.div`
+  margin: 0px auto;
+  max-width: 1080px;
+`
+
+const BackgroundWrapper = styled.div`
+  background-color: #fff;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+`
+
+const Projects = () => (
   <>
     <SEO title="Projects" />
-    <div className={classes.container}>
+    <Wrapper>
       <Container>
         <ProjectHeader />
-        <div className={classes.projectWrapper}>
+        <ProjectWrapper>
           {data.map((project, i) => {
             switch (project.orientation) {
               case 'Standard': {
                 return (
-                  <div key={project.title} className={classes.bgWrapper}>
-                    <div className={classes.projectWrapper}>
+                  <BackgroundWrapper key={project.title}>
+                    <ProjectWrapper>
                       <ProjectStandard
                         page={project.page}
                         color={project.color}
@@ -33,8 +64,8 @@ const Projects = ({ classes }) => (
                         skills={project.skills}
                         id={project.id}
                       />
-                    </div>
-                  </div>
+                    </ProjectWrapper>
+                  </BackgroundWrapper>
                 )
               }
               case 'Inverted': {
@@ -60,36 +91,10 @@ const Projects = ({ classes }) => (
               }
             }
           })}
-        </div>
+        </ProjectWrapper>
       </Container>
-    </div>
+    </Wrapper>
   </>
 )
 
-const styles = {
-  container: {
-    backgroundColor: '#f4f4f4',
-    display: 'flex',
-    alignItems: 'center',
-    flexDirection: 'column',
-  },
-  link: {
-    color: '#4183D7',
-    textDecoration: 'none',
-  },
-  projectWrapper: {
-    margin: '0px auto',
-    maxWidth: '1080px',
-  },
-  bgWrapper: {
-    backgroundColor: '#fff',
-    width: '100vw',
-    position: 'relative',
-    left: '50%',
-    right: '50%',
-    marginLeft: '-50vw',
-    marginRight: '-50vw',
-  },
-}
-
-export default injectSheet(styles)(Projects)
+export default Projects

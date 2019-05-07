@@ -1,72 +1,45 @@
-import React, { Component } from 'react'
-import classNames from 'classnames'
-import injectSheet from 'react-jss'
+import React from 'react'
+import styled from 'styled-components'
 import { Link } from 'gatsby'
-class HeaderNavDesktop extends Component {
-  render() {
-    const { classes, className } = this.props
-    return (
-      <nav className={classNames(classes.nav, className)}>
-        <Link
-          activeClassName={classes.linkActive}
-          className={classes.link}
-          to="/projects/"
-        >
-          Projects
-        </Link>
-        <Link
-          activeClassName={classes.linkActive}
-          className={classes.link}
-          to="/writing/"
-        >
-          Writing
-        </Link>
-        <Link
-          activeClassName={classes.linkActive}
-          className={classes.link}
-          to="/library/"
-        >
-          Library
-        </Link>
-        <Link
-          activeClassName={classes.linkActive}
-          className={classes.link}
-          to="/about/"
-        >
-          About
-        </Link>
-      </nav>
-    )
+
+const Nav = styled.nav`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+`
+
+const StyledLink = styled(Link)`
+  display: flex;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 400;
+  color: #11181e;
+  padding-left: 60px;
+  letter-spacing: 0.3px;
+
+  :hover {
+    cursor: pointer;
+    color: #4183d7;
+    transition: all 170ms ease-in-out;
   }
-}
+`
 
-const styles = {
-  nav: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginRight: '8px',
-  },
+const HeaderNavDesktop = ({ className }) => (
+  <Nav className={className}>
+    <StyledLink activeStyle={{ color: '#4183d7' }} to="/projects/">
+      Projects
+    </StyledLink>
+    <StyledLink activeStyle={{ color: '#4183d7' }} to="/writing/">
+      Writing
+    </StyledLink>
+    <StyledLink activeStyle={{ color: '#4183d7' }} to="/library/">
+      Library
+    </StyledLink>
+    <StyledLink activeStyle={{ color: '#4183d7' }} to="/about/">
+      About
+    </StyledLink>
+  </Nav>
+)
 
-  link: {
-    display: 'flex',
-    textDecoration: 'none',
-    fontSize: '15px',
-    fontWeight: '400',
-    color: '#11181E',
-    paddingLeft: '60px',
-    letterSpacing: '.3px',
-
-    '&:hover': {
-      cursor: 'pointer',
-      color: '#4183D7',
-      transition: 'all 170ms ease-in-out',
-    },
-  },
-
-  linkActive: {
-    color: '#4183D7',
-  },
-}
-
-export default injectSheet(styles)(HeaderNavDesktop)
+export default HeaderNavDesktop

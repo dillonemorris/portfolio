@@ -1,15 +1,113 @@
 import React from 'react'
-import classNames from 'classnames'
-import MyToggle from '../components/MyToggle'
-import { useDarkMode } from '../components/hooks/useDarkMode'
 import { graphql } from 'gatsby'
-import Button from '../components/Button'
-import injectSheet from 'react-jss'
+import styled from 'styled-components'
 import '../styles/fonts.css'
 import SEO from '../components/seo'
-import Container from '../components/Container'
+import MyToggle from '../components/MyToggle'
+import Button from '../components/Button'
+import { useDarkMode } from '../components/hooks/useDarkMode'
 
-const BlogPost = ({ data, classes }) => {
+const Container = styled.div`
+  padding: 0px 1.0875rem 1.45rem;
+  padding-top: 0px;
+  max-width: 1080px;
+
+  @media (min-width: 600px) {
+    margin: 0px auto;
+  }
+`
+
+const PostBackground = styled.div`
+  background-color: ${props =>
+    props.darkMode ? '#25212d' : 'rgb(244, 244, 244)'};
+`
+
+const Wrapper = styled.div`
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 50px 0;
+
+  @media (min-width: 900px) {
+    padding: 100px 0;
+  }
+`
+
+const DateToggle = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
+const PostDate = styled.div`
+  font-family: Plex Mono, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif !important;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  font-weight: 200;
+  padding-bottom: 4px;
+  color: ${props => (props.darkMode ? '#c0c0ce' : '#486581')};
+`
+
+const PostTitle = styled.h1`
+  color: ${props => (props.darkMode ? '#fff' : '#11181E')};
+`
+
+const PostBody = styled.div`
+  font-family: Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif !important;
+  line-height: 1.6;
+  padding-bottom: 40px;
+  font-size: 21px;
+  color: ${props => (props.darkMode ? '#c0c0ce' : '#486581')};
+  & h1,
+  h2,
+  h3,
+  h4 {
+    color: ${props => (props.darkMode ? '#fff' : '#11181E')};
+  }
+
+  & a {
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.4s ease-out;
+    border-bottom: 2px solid #bcd9ff;
+    color: ${props => (props.darkMode ? '#fff' : '#11181E')};
+
+    :hover {
+      background: #bcd9ff;
+    }
+  }
+`
+
+const StyledButton = styled(Button)`
+  font-family: Plex mono;
+  font-size: 14px;
+  letter-spacing: 0.8px;
+  font-weight: 600;
+  background: #fff;
+  border: 3px solid #11181e;
+  box-shadow: 5px 5px rgba(65, 131, 215, 0.4);
+  padding: 10px 30px;
+  text-decoration: none;
+  color: #11181e;
+  transition: all 170ms ease-in-out;
+  width: 100%;
+
+  @media (min-width: 600px) {
+    width: auto;
+  }
+
+  :hover {
+    box-shadow: 5px 5px rgba(65, 131, 215, 1);
+    cursor: pointer;
+    border: 3px solid rgba(65, 131, 215, 1);
+    color: rgba(65, 131, 215, 1);
+  }
+`
+
+const BlogPost = ({ data }) => {
   const post = data.markdownRemark
 
   const [darkMode, setDarkMode] = useDarkMode()
@@ -17,157 +115,27 @@ const BlogPost = ({ data, classes }) => {
   return (
     <>
       <SEO title={post.frontmatter.title} />
-      <div
-        className={classNames(
-          darkMode ? classes.postBackgroundDark : classes.postBackgroundLight
-        )}
-      >
+      <PostBackground darkMode={darkMode}>
         <Container>
-          <div className={classes.container}>
-            <div className={classes.dateToggleContainer}>
-              <div
-                className={classNames(
-                  classes.postDate,
-                  darkMode ? classes.postDateDark : classes.postDateLight
-                )}
-              >
+          <Wrapper>
+            <DateToggle>
+              <PostDate darkMode={darkMode}>
                 {post.frontmatter.date} &bull; {post.timeToRead} min read
-              </div>
+              </PostDate>
               <MyToggle darkMode={darkMode} setDarkMode={setDarkMode} />
-            </div>
-            <h1
-              className={classNames(
-                classes.postTitle,
-                darkMode ? classes.postTitleDark : classes.postTitleLight
-              )}
-            >
-              {post.frontmatter.title}
-            </h1>
+            </DateToggle>
+            <PostTitle darkMode={darkMode}>{post.frontmatter.title}</PostTitle>
 
-            <div
-              className={classNames(
-                classes.postBody,
-                darkMode ? classes.postTextDark : classes.postTextLight
-              )}
+            <PostBody
+              darkMode={darkMode}
               dangerouslySetInnerHTML={{ __html: post.html }}
             />
-            <Button
-              color={'#11181E'}
-              border={'3px solid #c0c0ce'}
-              padding={'10px 30px'}
-              fontSize={14}
-              text={'back to writing'}
-              page={'/writing/'}
-            />
-          </div>
+            <StyledButton text={'back to writing'} page={'/writing/'} />
+          </Wrapper>
         </Container>
-      </div>
+      </PostBackground>
     </>
   )
-}
-
-const styles = {
-  container: {
-    maxWidth: '650px',
-    margin: '0 auto',
-    padding: '50px 0',
-
-    '@media (min-width: 900px)': {
-      padding: '100px 0',
-    },
-  },
-  postBackgroundLight: {
-    backgroundColor: 'rgb(244, 244, 244)',
-  },
-  postBackgroundDark: {
-    backgroundColor: '#25212d',
-  },
-  postDate: {
-    fontFamily:
-      "Plex Mono, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
-    fontSize: '14px',
-    letterSpacing: '.5px',
-    fontWeight: '200',
-    paddingBottom: '4px',
-  },
-  postDateLight: {
-    color: '#606571',
-  },
-  postDateDark: {
-    color: '#c0c0ce',
-  },
-  postBody: {
-    fontFamily:
-      "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
-    lineHeight: '1.6',
-    paddingBottom: '40px',
-
-    '& a': {
-      fontWeight: '600',
-      textDecoration: 'none',
-      transition: 'background 0.4s ease-out',
-
-      '&:hover': {
-        background: 'transparent',
-      },
-    },
-  },
-  postTextDark: {
-    color: '#c0c0ce',
-
-    '& h1': {
-      color: '#fff',
-    },
-    '& h2': {
-      color: '#fff',
-    },
-    '& h3': {
-      color: '#fff',
-    },
-    '& h4': {
-      color: '#fff',
-    },
-
-    '& a': {
-      color: '#fff',
-      fontWeight: '600',
-      textDecoration: 'none',
-      borderBottom: '2px solid #11181E',
-      transition: 'background 0.4s ease-out',
-
-      '&:hover': {
-        background: '#11181E',
-      },
-    },
-  },
-  postTextLight: {
-    color: '#11181E',
-
-    '& a': {
-      color: '#11181E',
-      fontWeight: '600',
-      textDecoration: 'none',
-      borderBottom: '2px solid #bcd9ff',
-      transition: 'background 0.4s ease-out',
-
-      '&:hover': {
-        background: '#bcd9ff',
-      },
-    },
-  },
-
-  postTitleDark: {
-    color: '#fff',
-  },
-  postTitleLight: {
-    color: '#11181E',
-  },
-
-  dateToggleContainer: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
 }
 
 export const query = graphql`
@@ -186,4 +154,4 @@ export const query = graphql`
   }
 `
 
-export default injectSheet(styles)(BlogPost)
+export default BlogPost

@@ -1,27 +1,27 @@
 import React from 'react'
-import injectSheet from 'react-jss'
+import styled from 'styled-components'
 
-const SkillTitle = ({ classes, title }) => {
+const Container = styled.div`
+  display: flex;
+`
+
+const Title = styled.div`
+  font-family: Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif !important;
+  font-size: 24px;
+  font-weight: 500;
+  padding-bottom: 20px;
+  letter-spacing: 0.5px;
+  color: #11181e;
+`
+
+const SkillTitle = ({ title }) => {
   return (
-    <div className={classes.root}>
-      <div className={classes.title}>{title}</div>
-    </div>
+    <Container>
+      <Title>{title}</Title>
+    </Container>
   )
 }
 
-const styles = {
-  root: {
-    display: 'flex',
-  },
-  title: {
-    fontFamily:
-      "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
-    fontSize: '24px',
-    fontWeight: '500',
-    paddingBottom: '20px',
-    letterSpacing: '.5px',
-    color: '#11181E',
-  },
-}
-
-export default injectSheet(styles)(SkillTitle)
+export default SkillTitle

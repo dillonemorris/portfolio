@@ -2,21 +2,75 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import WritingHeader from '../components/WritingHeader'
 import BlogPostCard from '../components/BlogPostCard'
-import injectSheet from 'react-jss'
+import styled from 'styled-components'
 import Button from '../components/Button'
 import SEO from '../components/seo'
-import Container from '../components/Container'
 
-const writing = ({ data, classes }) => {
+const Container = styled.div`
+  padding: 0px 1.0875rem 1.45rem;
+  padding-top: 0px;
+  max-width: 1080px;
+
+  @media (min-width: 600px) {
+    margin: 0px auto;
+  }
+`
+
+const HeaderContainer = styled.div`
+  background-color: #fff;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+`
+
+const BlogPostGrid = styled.div`
+  margin: 0px auto;
+  max-width: 1080px;
+  display: grid;
+  grid-gap: 100px;
+  grid-template-columns: repeat(auto-fit, minmax(340px, auto));
+  padding: 60px 0px;
+`
+
+const StyledButton = styled(Button)`
+  font-family: Plex mono;
+  font-size: 14px;
+  letter-spacing: 0.8px;
+  font-weight: 600;
+  background: #fff;
+  border: 3px solid #11181e;
+  box-shadow: 5px 5px rgba(65, 131, 215, 0.4);
+  padding: 10px 30px;
+  text-decoration: none;
+  color: #11181e;
+  transition: all 170ms ease-in-out;
+  width: 100%;
+
+  @media (min-width: 600px) {
+    width: auto;
+  }
+
+  :hover {
+    box-shadow: 5px 5px rgba(65, 131, 215, 1);
+    cursor: pointer;
+    border: 3px solid rgba(65, 131, 215, 1);
+    color: rgba(65, 131, 215, 1);
+  }
+`
+
+const writing = ({ data }) => {
   return (
     <>
       <SEO title="Writing" />
       <div style={{ backgroundColor: '#f4f4f4' }}>
         <Container>
-          <div className={classes.headerContainer}>
+          <HeaderContainer>
             <WritingHeader />
-          </div>
-          <div className={classes.blogPostGrid}>
+          </HeaderContainer>
+          <BlogPostGrid>
             {data.allMarkdownRemark.edges.map(({ node }) => (
               <div key={node.id}>
                 <Link style={{ textDecoration: 'none' }} to={node.fields.slug}>
@@ -26,20 +80,11 @@ const writing = ({ data, classes }) => {
                     title={node.frontmatter.title}
                     excerpt={node.frontmatter.excerpt}
                   />
-                  <Button
-                    color={'rgba(65,131,215,1)'}
-                    border={'3px solid rgba(65,131,215,1)'}
-                    boxShadow={'5px 5px rgba(65, 131, 215, 0.4)'}
-                    boxShadowHover={'5px 5px rgba(65, 131, 215, 1)'}
-                    padding={'10px 30px'}
-                    fontSize={14}
-                    text={'read more'}
-                    page={node.fields.slug}
-                  />
+                  <StyledButton text={'read more'} page={node.fields.slug} />
                 </Link>
               </div>
             ))}
-          </div>
+          </BlogPostGrid>
         </Container>
       </div>
     </>
@@ -68,24 +113,4 @@ export const query = graphql`
   }
 `
 
-const styles = {
-  headerContainer: {
-    backgroundColor: '#fff',
-    width: '100vw',
-    position: 'relative',
-    left: '50%',
-    right: '50%',
-    marginLeft: '-50vw',
-    marginRight: '-50vw',
-  },
-  blogPostGrid: {
-    margin: '0px auto',
-    maxWidth: '1080px',
-    display: 'grid',
-    gridGap: '100px',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(340px, auto))',
-    padding: '60px 0px',
-  },
-}
-
-export default injectSheet(styles)(writing)
+export default writing
