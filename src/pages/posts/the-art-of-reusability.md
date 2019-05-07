@@ -217,7 +217,7 @@ This takes care of displaying our ProjectStandard component with actual data, bu
 This is how that will look:
 
 ```js
-const Projects = ({ classes }) => (
+const Projects = () => (
   <div>
     {data.map(project => {
       switch (project.orientation) {
@@ -234,17 +234,13 @@ const Projects = ({ classes }) => (
         }
         case 'Inverted': {
           return (
-            <div className={classes.bgWrapperGrey}>
-              <div className={classes.projectWrapper}>
-                <ProjectInverted
-                  key={i}
-                  title={project.title}
-                  description={project.description}
-                  screenshot={project.screenshot}
-                  btnText={project.btnText}
-                />
-              </div>
-            </div>
+            <ProjectInverted
+              key={i}
+              title={project.title}
+              description={project.description}
+              screenshot={project.screenshot}
+              btnText={project.btnText}
+            />
           )
         }
         default: {

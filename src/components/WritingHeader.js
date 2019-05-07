@@ -1,53 +1,49 @@
 import React from 'react'
-import injectSheet from 'react-jss'
+import styled from 'styled-components'
 
-const WritingHeader = ({ classes }) => (
-  <div className={classes.container}>
-    <h1 className={classes.myHeading}>Writing</h1>
-    <p className={classes.subHeading}>
-      My thoughts on career development, design, and more
-    </p>
-  </div>
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+`
+
+const Heading = styled.h1`
+  color: #11181e;
+  font-weight: 600;
+  font-family: Inter UI -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif !important;
+  letter-spacing: 1px;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-size: 36px;
+
+  @media (min-width: 700px) {
+    font-size: 48px;
+  }
+`
+
+const Subheading = styled.p`
+  color: #486581;
+  font-size: 18px;
+  font-family: Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif !important;
+  font-weight: 300;
+  text-align: center;
+  line-height: 24px;
+  margin-bottom: 10px;
+  letter-spacing: 0.7px;
+  max-width: 340px;
+`
+
+const WritingHeader = () => (
+  <Container>
+    <Heading>Writing</Heading>
+    <Subheading>My thoughts on career development, design, and more</Subheading>
+  </Container>
 )
 
-const styles = {
-  container: {
-    display: 'flex',
-    justifyContent: 'center',
-    flexDirection: 'column',
-    alignItems: 'center',
-    padding: '30px',
-  },
-  icon: {
-    fill: '#11181E',
-    width: '140px',
-  },
-  myHeading: {
-    color: '#11181E',
-    fontWeight: '600',
-    fontFamily:
-      "Inter UI -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
-    letterSpacing: '1px',
-    marginTop: '24px',
-    marginBottom: '12px',
-    fontSize: '36px',
-
-    '@media (min-width: 700px)': {
-      fontSize: '48px',
-    },
-  },
-  subHeading: {
-    color: '#606571',
-    fontSize: '18px',
-    fontFamily:
-      "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
-    fontWeight: '300',
-    textAlign: 'center',
-    lineHeight: '24px',
-    marginBottom: '10px',
-    letterSpacing: '.7px',
-    maxWidth: '340px',
-  },
-}
-
-export default injectSheet(styles)(WritingHeader)
+export default WritingHeader

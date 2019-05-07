@@ -1,0 +1,24 @@
+.cardInner {
+  background-color: #fff;
+  transition: box-shadow 0.2s ease;
+  height: 384px;
+}
+
+.cardOuter {
+  display: block;
+  position: relative;
+  height: 384px;
+}
+
+.cardOuter:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 960px) {
+  .cardInner {
+    height: 340px;
+  }
+  .cardOuter {
+    height: 340px;
+  }
+}

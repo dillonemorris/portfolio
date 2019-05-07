@@ -1,85 +1,87 @@
 import React from 'react'
-import injectSheet from 'react-jss'
+import styled from 'styled-components'
 import SkillTitle from '../components/SkillTitle'
 import SkillPill from '../components/SkillPill'
 import skillData from '../data/skillData'
 
-const Skills = ({ classes }) => (
-  <div id="target" className={classes.bgWrapper}>
-    <div className={classes.container}>
-      <h1 className={classes.myHeading}>Skills</h1>
-      <div className={classes.paragraph}>
+const BgWrapper = styled.div`
+  background-color: #f4f4f4;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+`
+
+const Container = styled.div`
+  margin: 0px auto;
+  max-width: 1080px;
+  padding: 60px 1.0875rem 40px;
+`
+
+const Heading = styled.h1`
+  color: #11181e;
+  font-weight: 500;
+  font-family: Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif !important;
+  font-size: 28px;
+  letter-spacing: 0.3px;
+
+  @media (min-width: 700px) {
+    font-size: 40px;
+  }
+`
+
+const Paragraph = styled.div`
+  color: #486581;
+  font-size: 20px;
+  font-family: Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif !important;
+  padding-bottom: 50px;
+  line-height: 1.5;
+  max-width: 400px;
+`
+
+const SkillsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 40px;
+`
+
+const StyledSkillPill = styled(SkillPill)`
+  color: #4183d7;
+  font-size: 15px;
+`
+
+const Skills = () => (
+  <BgWrapper id="target">
+    <Container>
+      <Heading>Skills</Heading>
+      <Paragraph>
         I have skills in both UI/UX Design and Front End Development. Being able
         to take a product or feature from idea to implementation is what thrills
         me.
-      </div>
+      </Paragraph>
       <div>
         {Object.keys(skillData).map(skill => {
           const skillObject = skillData[skill]
           return (
             <div key={skillObject.title}>
               <SkillTitle title={skillObject.title} />
-              <div className={classes.skillsContainer}>
+              <SkillsContainer>
                 {skillObject.skills.map((skill, i) => {
-                  return (
-                    <SkillPill
-                      color="#4183D7"
-                      fontSize={15}
-                      key={i}
-                      text={skill}
-                    />
-                  )
+                  return <StyledSkillPill key={i} text={skill} />
                 })}
-              </div>
+              </SkillsContainer>
             </div>
           )
         })}
       </div>
-    </div>
-  </div>
+    </Container>
+  </BgWrapper>
 )
 
-const styles = {
-  container: {
-    margin: '0px auto',
-    maxWidth: '1080px',
-    padding: '60px 1.0875rem 40px',
-  },
-  bgWrapper: {
-    backgroundColor: '#f4f4f4',
-    width: '100vw',
-    position: 'relative',
-    left: '50%',
-    right: '50%',
-    marginLeft: '-50vw',
-    marginRight: '-50vw',
-  },
-  myHeading: {
-    color: '#11181E',
-    fontWeight: '500',
-    fontFamily:
-      "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
-    fontSize: '28px',
-    letterSpacing: '.3px',
-
-    '@media (min-width: 700px)': {
-      fontSize: '40px',
-    },
-  },
-  paragraph: {
-    color: '#606571',
-    fontSize: '20px',
-    fontFamily:
-      "Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !important",
-    paddingBottom: '50px',
-    lineHeight: '1.5',
-    maxWidth: '400px',
-  },
-  skillsContainer: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    paddingBottom: '40px',
-  },
-}
-
-export default injectSheet(styles)(Skills)
+export default Skills
