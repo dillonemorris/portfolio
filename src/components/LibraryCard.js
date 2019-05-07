@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import ReactCardFlipper from 'react-card-flipper'
-import '../styles/react-card-flipper.css'
 import Button from '../components/Button'
 
 const Wrapper = styled.div`

@@ -2,7 +2,6 @@ import React from 'react'
 import Toggle from 'react-toggle'
 import Light from './Light'
 import Dark from './Dark'
-import '../styles/react-toggle.css'
 
 const MyToggle = ({ darkMode, setDarkMode }) => (
   <Toggle

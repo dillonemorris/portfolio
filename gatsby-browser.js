@@ -38,6 +38,3 @@ export const shouldUpdateScroll = ({
   }
   return false
 }
-
-// Import the prism css
-require('prismjs/themes/prism-tomorrow.css')

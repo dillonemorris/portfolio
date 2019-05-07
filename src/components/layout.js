@@ -1,8 +1,9 @@
 import React from 'react'
 import posed, { PoseGroup } from 'react-pose'
+import GlobalStyle from '../styles/global'
 import Header from './header'
 import Footer from './Footer'
-import './layout.css'
+// import './layout.css'
 import { pageFade } from '../styles/poses'
 
 const Transition = posed.div(pageFade)
@@ -40,6 +41,7 @@ class Layout extends React.Component {
 
     return (
       <>
+        <GlobalStyle />
         <Header />
         <div className={`${loaded ? ' loaded' : 'initial'}`}>
           <PoseGroup animateOnMount preEnterPose="initial">
