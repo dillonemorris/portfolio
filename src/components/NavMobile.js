@@ -1,24 +1,22 @@
 import React from 'react'
+import { animated } from 'react-spring'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
-const Nav = styled.nav`
+const Nav = styled(animated.nav)`
   display: flex;
   align-items: center;
   flex-direction: column;
-  max-width: 280px;
-  width: 100%;
   padding-top: 80px;
   padding-bottom: 30px;
   position: fixed;
-  top: 0;
+  background: #fff;
   left: 0;
   right: 0;
+  top: 0;
   bottom: 0;
-  background: #fff;
   z-index: 9;
   overflow-y: scroll;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 5px 20px 0 rgba(0, 0, 0, 0.2);
 `
 
 const Top = styled.div`
@@ -58,10 +56,10 @@ const StyledLink = styled(Link)`
   }
 `
 
-const HeaderNavMobile = ({ className, onMenuClose }) => (
-  <Nav className={className}>
+const NavMobile = ({ className, style, toggleMenu }) => (
+  <Nav style={style} className={className}>
     <Top>
-      <MobileIcon onClick={onMenuClose}>
+      <MobileIcon onClick={toggleMenu}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -73,19 +71,19 @@ const HeaderNavMobile = ({ className, onMenuClose }) => (
         </svg>
       </MobileIcon>
     </Top>
-    <StyledLink onClick={onMenuClose} to="/projects/">
+    <StyledLink onClick={toggleMenu} to="/projects/">
       Projects
     </StyledLink>
-    <StyledLink onClick={onMenuClose} to="/writing/">
+    <StyledLink onClick={toggleMenu} to="/writing/">
       Writing
     </StyledLink>
-    <StyledLink onClick={onMenuClose} to="/library/">
+    <StyledLink onClick={toggleMenu} to="/library/">
       Library
     </StyledLink>
-    <StyledLink onClick={onMenuClose} to="/about/">
+    <StyledLink onClick={toggleMenu} to="/about/">
       About
     </StyledLink>
   </Nav>
 )
 
-export default HeaderNavMobile
+export default NavMobile

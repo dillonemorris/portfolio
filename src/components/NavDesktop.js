@@ -25,7 +25,7 @@ const StyledLink = styled(Link)`
   }
 `
 
-const HeaderNavDesktop = ({ className }) => (
+const NavDesktop = ({ className }) => (
   <Nav className={className}>
     <StyledLink activeStyle={{ color: '#4183d7' }} to="/projects/">
       Projects
@@ -42,4 +42,4 @@ const HeaderNavDesktop = ({ className }) => (
   </Nav>
 )
 
-export default HeaderNavDesktop
+export default NavDesktop
