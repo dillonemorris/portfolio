@@ -34,6 +34,7 @@ const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
   width: inherit;
+  text-decoration: none;
 `
 
 const MobileIcon = styled.button`
@@ -62,7 +63,6 @@ const Desktop = styled(NavDesktop)`
 
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false)
-
   const toggleMenu = () => setMenuOpen(!isMenuOpen)
 
   const animatedMenu = useSpring({

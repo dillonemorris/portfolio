@@ -22,7 +22,7 @@ const Logo = () => (
             letterSpacing="0.382608712"
             fill="#11181E"
           >
-            <tspan x="12" y="38">
+            <tspan style={{ textDecoration: 'none' }} x="12" y="38">
               DM
             </tspan>
           </text>
