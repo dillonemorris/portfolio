@@ -1,23 +1,24 @@
 // import Typewise from '../images/typewise.png'
+import CWCVentures from '../images/cwcventures.png'
 import Dailyui from '../images/daily-ui.jpg'
 import Fenix from '../images/fenix.png'
 import StormQuestions from '../images/stormquestions.png'
 
 const projectData = [
-  // {
-  //   title: 'Typewise',
-  //   description:
-  //     "Typewise is a curated list of the best Google Fonts. I love Google Fonts, but I created this because I felt like picking fonts on their site can be overwhelming (maybe it's just me 🤔).",
-  //   screenshot: Typewise,
-  //   btnText: 'visit site',
-  //   orientation: 'Standard',
-  //   color: 'rgba(38,128,194, 1)',
-  //   border: '3px solid rgba(38,128,194, 1)',
-  //   boxShadow: '5px 5px rgba(38,128,194,.25)',
-  //   boxShadowHover: '5px 5px rgba(38,128,194, 1)',
-  //   page: 'http://typewise.fun/',
-  //   skills: ['React', 'CSS', 'Sketch'],
-  // },
+  {
+    title: 'CWC Ventures',
+    description:
+      'I designed and built this single-page site and came up with the brand colors, the logo, and the overall look and feel.',
+    screenshot: CWCVentures,
+    btnText: 'visit site',
+    orientation: 'Standard',
+    color: 'rgba(76, 99, 181, 1)',
+    border: '3px solid rgba(76, 99, 181, 1)',
+    boxShadow: '5px 5px rgba(76, 99, 181, .25)',
+    boxShadowHover: '5px 5px rgba(76, 99, 181, 1)',
+    page: 'https://www.cwcventures.com/',
+    skills: ['HTML5', 'CSS', 'Sketch'],
+  },
   {
     title: 'Storm Questions',
     description:

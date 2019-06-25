@@ -51,11 +51,6 @@ const SkillsContainer = styled.div`
   padding-bottom: 40px;
 `
 
-const StyledSkillPill = styled(SkillPill)`
-  color: #4183d7;
-  font-size: 15px;
-`
-
 const Skills = () => (
   <BgWrapper id="target">
     <Container>
@@ -73,7 +68,7 @@ const Skills = () => (
               <SkillTitle title={skillObject.title} />
               <SkillsContainer>
                 {skillObject.skills.map((skill, i) => {
-                  return <StyledSkillPill key={i} text={skill} />
+                  return <SkillPill key={i} text={skill} color="#4183d7" />
                 })}
               </SkillsContainer>
             </div>

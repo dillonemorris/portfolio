@@ -129,11 +129,6 @@ const Screenshot = styled.img`
   transition: box-shadow 0.2s ease;
 `
 
-const StyledSkillPill = styled(SkillPill)`
-  color: ${props => props.color};
-  font-size: 14px;
-`
-
 const ProjectStandard = ({
   title,
   description,
@@ -154,7 +149,7 @@ const ProjectStandard = ({
         <Description>{description}</Description>
         <SkillsContainer>
           {skills.map((skill, id) => (
-            <StyledSkillPill key={id} text={skill} />
+            <SkillPill color={color} key={id} text={skill} />
           ))}
         </SkillsContainer>
         <StyledButton
