@@ -79,32 +79,6 @@ const SkillsContainer = styled.div`
   margin-bottom: 16px;
 `
 
-const StyledButton = styled(Button)`
-  font-family: Plex mono;
-  font-size: 14px;
-  letter-spacing: 0.8px;
-  font-weight: 600;
-  background: #fff;
-  border: 3px solid #11181e;
-  box-shadow: ${props => props.boxShadow};
-  padding: 10px 30px;
-  text-decoration: none;
-  color: #11181e;
-  transition: all 170ms ease-in-out;
-  width: 100%;
-
-  @media (min-width: 600px) {
-    width: auto;
-  }
-
-  :hover {
-    box-shadow: ${props => props.boxShadowHover};
-    cursor: pointer;
-    border: 3px solid ${props => props.color};
-    color: ${props => props.color};
-  }
-`
-
 const ProjectContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -152,7 +126,7 @@ const ProjectStandard = ({
             <SkillPill color={color} key={id} text={skill} />
           ))}
         </SkillsContainer>
-        <StyledButton
+        <Button
           boxShadow={boxShadow}
           boxShadowHover={boxShadowHover}
           border={border}

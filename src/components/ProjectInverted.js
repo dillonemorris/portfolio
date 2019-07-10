@@ -94,32 +94,6 @@ const Description = styled.p`
   }
 `
 
-const StyledButton = styled(Button)`
-  font-family: Plex mono;
-  font-size: 14px;
-  letter-spacing: 0.8px;
-  font-weight: 600;
-  background: #fff;
-  border: 3px solid #11181e;
-  box-shadow: ${props => props.boxShadow};
-  padding: 10px 30px;
-  text-decoration: none;
-  color: #11181e;
-  transition: all 170ms ease-in-out;
-  width: 100%;
-
-  @media (min-width: 600px) {
-    width: auto;
-  }
-
-  :hover {
-    box-shadow: ${props => props.boxShadowHover};
-    cursor: pointer;
-    border: 3px solid ${props => props.color};
-    color: ${props => props.color};
-  }
-`
-
 const SkillsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -158,7 +132,7 @@ const ProjectInverted = ({
             <StyledSkillPill key={id} color={color} text={skill} />
           ))}
         </SkillsContainer>
-        <StyledButton
+        <Button
           boxShadow={boxShadow}
           boxShadowHover={boxShadowHover}
           border={border}

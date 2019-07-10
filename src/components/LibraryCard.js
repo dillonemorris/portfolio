@@ -125,7 +125,7 @@ const LibraryCard = ({ title, author, screenshot, quote, page }) => (
               boxShadowHover={'5px 5px rgba(61, 118, 113, 1)'}
               boxShadow={'5px 5px rgba(61, 118, 113, .4)'}
               text={'amazon'}
-              fontSize={14}
+              fontSize={'13px'}
               padding={'2px 30px'}
               page={page}
             />

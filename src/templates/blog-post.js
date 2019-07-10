@@ -86,12 +86,13 @@ const StyledButton = styled(Button)`
   font-size: 14px;
   letter-spacing: 0.8px;
   font-weight: 600;
-  background: #fff;
-  border: 3px solid #11181e;
-  box-shadow: 5px 5px rgba(65, 131, 215, 0.4);
+  background: ${props => (props.darkMode ? '#11181E' : '#fff')};
+  border: 3px solid ${props => (props.darkMode ? '#c0c0ce' : '#11181E')};
+  box-shadow: 5px 5px
+    ${props => (props.darkMode ? '#5c5c6b' : 'rgba(65, 131, 215, 0.4)')};
   padding: 10px 30px;
   text-decoration: none;
-  color: #11181e;
+  color: ${props => (props.darkMode ? '#c0c0ce' : '#11181E')};
   transition: all 170ms ease-in-out;
   width: 100%;
 
@@ -100,10 +101,12 @@ const StyledButton = styled(Button)`
   }
 
   :hover {
-    box-shadow: 5px 5px rgba(65, 131, 215, 1);
+    box-shadow: 5px 5px
+      ${props => (props.darkMode ? '#fff' : 'rgba(65, 131, 215, 1)')};
     cursor: pointer;
-    border: 3px solid rgba(65, 131, 215, 1);
-    color: rgba(65, 131, 215, 1);
+    border: 3px solid
+      ${props => (props.darkMode ? '#fff' : 'rgba(65, 131, 215, 1)')};
+    color: ${props => (props.darkMode ? '#fff' : 'rgba(65, 131, 215, 1)')};
   }
 `
 
@@ -130,7 +133,11 @@ const BlogPost = ({ data }) => {
               darkMode={darkMode}
               dangerouslySetInnerHTML={{ __html: post.html }}
             />
-            <StyledButton text={'back to writing'} page={'/writing/'} />
+            <StyledButton
+              darkMode={darkMode}
+              text={'back to writing'}
+              page={'/writing/'}
+            />
           </Wrapper>
         </Container>
       </PostBackground>

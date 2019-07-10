@@ -35,32 +35,6 @@ const BlogPostGrid = styled.div`
   padding: 60px 0px;
 `
 
-const StyledButton = styled(Button)`
-  font-family: Plex mono;
-  font-size: 14px;
-  letter-spacing: 0.8px;
-  font-weight: 600;
-  background: #fff;
-  border: 3px solid #11181e;
-  box-shadow: 5px 5px rgba(65, 131, 215, 0.4);
-  padding: 10px 30px;
-  text-decoration: none;
-  color: #11181e;
-  transition: all 170ms ease-in-out;
-  width: 100%;
-
-  @media (min-width: 600px) {
-    width: auto;
-  }
-
-  :hover {
-    box-shadow: 5px 5px rgba(65, 131, 215, 1);
-    cursor: pointer;
-    border: 3px solid rgba(65, 131, 215, 1);
-    color: rgba(65, 131, 215, 1);
-  }
-`
-
 const writing = ({ data }) => {
   return (
     <>
@@ -80,7 +54,14 @@ const writing = ({ data }) => {
                     title={node.frontmatter.title}
                     excerpt={node.frontmatter.excerpt}
                   />
-                  <StyledButton text={'read more'} page={node.fields.slug} />
+                  <Button
+                    boxShadowHover={'5px 5px rgba(65, 131, 215, 1)'}
+                    boxShadow={'5px 5px rgba(65, 131, 215, .4)'}
+                    border={'3px solid rgba(65, 131, 215, 1)'}
+                    color={'rgba(65, 131, 215, 1)'}
+                    text={'read more'}
+                    page={node.fields.slug}
+                  />
                 </Link>
               </div>
             ))}

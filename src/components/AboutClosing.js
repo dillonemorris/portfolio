@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import Button from './Button'
-import pattern from '../images/pattern.svg'
+import Pattern from '../images/pattern.svg'
 
 const PatternBackground = styled.div`
-  background-image: url('${pattern}'),
+  background-image: url(${props => props.bg});
   background-color: #fff;
   width: 100vw;
   position: relative;
@@ -73,60 +73,8 @@ const Link = styled.a`
   },
 `
 
-const StyledButton = styled(Button)`
-  font-family: Plex mono;
-  font-size: 14px;
-  letter-spacing: 0.8px;
-  font-weight: 600;
-  background: #fff;
-  border: 3px solid #11181e;
-  padding: 6px 20px;
-  text-decoration: none;
-  color: #11181e;
-  transition: all 170ms ease-in-out;
-  width: 100%;
-
-  @media (min-width: 600px) {
-    width: auto;
-  }
-
-  :hover {
-    cursor: pointer;
-  }
-
-  &.projects {
-    box-shadow: 5px 5px rgba(208, 91, 121, 0.4);
-
-    :hover {
-      box-shadow: 5px 5px rgba(208, 91, 121, 1);
-      border: 3px solid rgba(208, 91, 121, 1);
-      color: rgba(208, 91, 121, 1);
-    }
-  }
-
-  &.writing {
-    box-shadow: 5px 5px rgba(130, 105, 200, 0.4);
-
-    :hover {
-      box-shadow: 5px 5px rgba(130, 105, 200, 1);
-      border: 3px solid rgba(130, 105, 200, 1);
-      color: rgba(130, 105, 200, 1);
-    }
-  }
-
-  &.library {
-    box-shadow: 5px 5px rgba(61, 118, 113, 0.4);
-
-    :hover {
-      box-shadow: 5px 5px rgba(61, 118, 113, 1);
-      border: 3px solid rgba(61, 118, 113, 1);
-      color: rgba(61, 118, 113, 1);
-    }
-  }
-`
-
 const AboutClosing = () => (
-  <PatternBackground>
+  <PatternBackground bg={Pattern}>
     <Container>
       <Closing>
         <Heading>Contact</Heading>
@@ -154,10 +102,14 @@ const AboutClosing = () => (
         </ClosingContainer>
         <ClosingContainer>
           <Description>Side projects are everything!</Description>
-          <StyledButton
+          <Button
             className="projects"
             text={'projects'}
             page={'/projects/'}
+            boxShadow={'5px 5px rgba(208, 91, 121, 0.4)'}
+            boxShadowHover={'5px 5px rgba(208, 91, 121, 1)'}
+            border={'3px solid rgba(208, 91, 121, 1)'}
+            color={'rgba(208, 91, 121, 1)'}
           />
         </ClosingContainer>
         <ClosingContainer>
@@ -167,18 +119,26 @@ const AboutClosing = () => (
               🤫
             </span>
           </Description>
-          <StyledButton
+          <Button
             className="writing"
             text={'writing'}
             page={'/writing/'}
+            boxShadow={'5px 5px rgba(130, 105, 200, 0.4)'}
+            boxShadowHover={'5px 5px rgba(130, 105, 200, 1)'}
+            border={'3px solid rgba(130, 105, 200, 1)'}
+            color={'rgba(130, 105, 200, 1)'}
           />
         </ClosingContainer>
         <ClosingContainer>
           <Description>Learning is fun!</Description>
-          <StyledButton
+          <Button
             text={'library'}
             page={'/library/'}
             className="library"
+            boxShadow={'5px 5px rgba(61, 118, 113, 0.4)'}
+            boxShadowHover={'5px 5px rgba(61, 118, 113, 1)'}
+            border={'3px solid rgba(61, 118, 113, 1)'}
+            color={'rgba(61, 118, 113, 1)'}
           />
         </ClosingContainer>
       </Closing>
