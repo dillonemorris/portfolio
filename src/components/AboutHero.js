@@ -106,8 +106,7 @@ class AboutHero extends Component {
           </Paragraph>
           <Paragraph>
             When I'm not coding & creating for the web I enjoy playing and
-            writing music, spending time with my lovely girlfriend and our
-            Golden Doodle named Bowie
+            writing music and staying physically active.
             <span role="img" aria-label="lightning bolt">
               ⚡️
             </span>
