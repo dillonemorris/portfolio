@@ -107,10 +107,6 @@ class AboutHero extends Component {
           <Paragraph>
             When I'm not coding & creating for the web I enjoy playing and
             writing music and staying physically active.
-            <span role="img" aria-label="lightning bolt">
-              ⚡️
-            </span>
-            .
           </Paragraph>
           <Tagline onClick={this.handleClick}>
             Check my skills{' '}

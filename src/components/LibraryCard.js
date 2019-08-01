@@ -70,8 +70,6 @@ const CardBackBottom = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: #f4f4f4;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
 `
 
 const Title = styled.div`
