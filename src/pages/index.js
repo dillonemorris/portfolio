@@ -116,7 +116,7 @@ const IndexPage = () => (
         <MyContainer>
           <Img src={Avatar} alt={'avatar'} />
           <Heading>Hey, I’m Dillon.</Heading>
-          <Subheading>UI Designer & Developer from Phoenix, AZ.</Subheading>
+          <Subheading>UI Developer from Phoenix, AZ.</Subheading>
           <BodyText>
             Currently working with some amazing people at{' '}
             <Link

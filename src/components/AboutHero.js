@@ -100,9 +100,9 @@ class AboutHero extends Component {
             arms.
           </Paragraph>
           <Paragraph>
-            In my current role, I am fortunate enough to be able to apply
-            creative and analytical thinking to solve problems in both design
-            and engineering.
+            Right now I am interested in Functional Javascript, learning about
+            new features in React such as Hooks, and using new exciting tools
+            like Gatsby and Netlify.
           </Paragraph>
           <Paragraph>
             When I'm not coding & creating for the web I enjoy playing and

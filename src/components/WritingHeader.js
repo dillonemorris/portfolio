@@ -42,7 +42,9 @@ const Subheading = styled.p`
 const WritingHeader = () => (
   <Container>
     <Heading>Writing</Heading>
-    <Subheading>My thoughts on career development, design, and more</Subheading>
+    <Subheading>
+      My thoughts on career development, design, Javascript, and more
+    </Subheading>
   </Container>
 )
 
