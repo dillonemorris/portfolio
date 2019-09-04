@@ -2,35 +2,36 @@ import CWCVentures from '../images/cwcventures.png'
 import Fenix from '../images/fenix.png'
 import StormQuestions from '../images/stormquestions.png'
 import typewise from '../images/typewise.png'
+import uigems from '../images/uigems.png'
 
 const projectData = [
+  {
+    title: 'UI Gems',
+    description:
+      'Bringing you the best of the best UI designs from the web. Get inspired to create something great.',
+    screenshot: uigems,
+    btnText: 'visit site',
+    orientation: 'Standard',
+    color: 'rgba(96, 93, 238, 1)',
+    border: '3px solid rgba(96, 93, 238, 1)',
+    boxShadow: '5px 5px rgba(96, 93, 238, .25)',
+    boxShadowHover: '5px 5px rgba(96, 93, 238, 1)',
+    page: 'https://www.ui-gems.com/',
+    skills: ['Gatsby', 'Contentful', 'CSS Grid'],
+  },
   {
     title: 'Typewise',
     description:
       'A curated list of the best google fonts. This is a bare bones alternative to the Google Fonts site if you find yourself feeling overwhelmed when choosing fonts.',
     screenshot: typewise,
     btnText: 'visit site',
-    orientation: 'Standard',
+    orientation: 'Inverted',
     color: 'rgba(38, 128, 194, 1)',
     border: '3px solid rgba(38, 128, 194, 1)',
     boxShadow: '5px 5px rgba(38, 128, 194, .25)',
     boxShadowHover: '5px 5px rgba(38, 128, 194, 1)',
     page: 'https://typewise.xyz/',
     skills: ['React', 'CSS Grid'],
-  },
-  {
-    title: 'CWC Ventures',
-    description:
-      'I designed and built this single-page site and came up with the brand colors, the logo, and the overall look and feel.',
-    screenshot: CWCVentures,
-    btnText: 'visit site',
-    orientation: 'Inverted',
-    color: 'rgba(76, 99, 181, 1)',
-    border: '3px solid rgba(76, 99, 181, 1)',
-    boxShadow: '5px 5px rgba(76, 99, 181, .25)',
-    boxShadowHover: '5px 5px rgba(76, 99, 181, 1)',
-    page: 'https://www.cwcventures.com/',
-    skills: ['HTML5', 'CSS3'],
   },
   {
     title: 'Storm Questions',
