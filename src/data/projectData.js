@@ -1,4 +1,3 @@
-import CWCVentures from '../images/cwcventures.png'
 import Fenix from '../images/fenix.png'
 import StormQuestions from '../images/stormquestions.png'
 import typewise from '../images/typewise.png'
