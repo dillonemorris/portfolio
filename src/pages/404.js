@@ -36,9 +36,6 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin: 40px auto 20px;
-  font-family: Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif !important;
 `
 
 const NotFoundPage = () => (

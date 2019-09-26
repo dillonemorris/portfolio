@@ -49,9 +49,7 @@ export const CardBack = styled.div`
 export const Quote = styled.div`
   padding: 20px;
   color: #486581;
-  font-family: Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif !important;
+  
   letter-spacing: 0.5px;
   line-height: 1.3;
   font-size: 24px;
@@ -71,9 +69,7 @@ export const CardBackBottom = styled.div`
 
 export const Title = styled.div`
   color: #11181e;
-  font-family: Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif !important;
+  
   letter-spacing: 0.5px;
   line-height: 1.3;
   font-size: 16px;
@@ -86,9 +82,7 @@ export const Title = styled.div`
 export const Author = styled.div`
   padding-bottom: 4px;
   color: #486581;
-  font-family: Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif !important;
+  
   font-size: 13px;
   letter-spacing: 0.5px;
 `

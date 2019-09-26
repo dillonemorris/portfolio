@@ -34,9 +34,6 @@ const HeadingContainer = styled.div`
 const Heading = styled.h1`
   color: #11181e;
   font-weight: 600;
-  font-family: Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif !important;
   font-size: 28px;
   padding-top: 60px;
   padding-bottom: 8px;

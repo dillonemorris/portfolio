@@ -19,23 +19,20 @@ export const Container = styled.div`
 export const Heading = styled.h1`
   color: #11181e;
   font-weight: 500;
-  font-family: Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif !important;
+
   font-size: 28px;
   letter-spacing: 0.3px;
+  margin-bottom: 8px;
 
   @media (min-width: 700px) {
-    font-size: 40px;
+    font-size: 36px;
   }
 `
 
 export const Paragraph = styled.div`
   color: #486581;
   font-size: 20px;
-  font-family: Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif !important;
+
   padding-bottom: 50px;
   line-height: 1.5;
   max-width: 400px;

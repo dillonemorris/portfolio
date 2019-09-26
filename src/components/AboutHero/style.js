@@ -35,11 +35,9 @@ export const Right = styled.div`
 export const Heading = styled.h1`
   color: #11181e;
   font-weight: 500;
-  font-family: Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif !important;
   letter-spacing: 0.3px;
   font-size: 36px;
+  margin-bottom: 12px;
 
   @media (min-width: 700px) {
     font-size: 48px;
@@ -49,14 +47,14 @@ export const Heading = styled.h1`
 export const Paragraph = styled.p`
   color: #486581;
   font-size: 20px;
-  font-family: Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif !important;
   line-height: 1.5;
 `
 
 export const Tagline = styled.button`
-  font-family: Plex Mono, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  font-family: 'IBM Plex Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
     'Helvetica Neue', sans-serif !important;
   font-size: 18px;

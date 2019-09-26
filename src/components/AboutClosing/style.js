@@ -24,9 +24,6 @@ export const Closing = styled.div`
   display: flex;
   flex-direction: column;
   color: #486581;
-  font-family: Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif !important;
   line-height: 1.5;
   padding: 80px 0px 0px;
 `
@@ -34,9 +31,6 @@ export const Closing = styled.div`
 export const Heading = styled.h1`
   color: #11181e;
   font-weight: 500;
-  font-family: Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif !important;
   font-size: 32px;
   letter-spacing: 0.3px;
 

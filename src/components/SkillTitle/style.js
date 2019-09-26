@@ -5,9 +5,7 @@ export const Container = styled.div`
 `
 
 export const Title = styled.div`
-  font-family: Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif !important;
+  
   font-size: 24px;
   font-weight: 500;
   padding-bottom: 20px;

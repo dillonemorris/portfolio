@@ -1,7 +1,6 @@
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import NavDesktop from '../NavDesktop'
-import '../../styles/fonts.css'
 
 export const Container = styled.div`
   display: flex;
@@ -11,9 +10,6 @@ export const Container = styled.div`
   background-color: #fff;
   margin: 0 auto;
   color: #11181e;
-  font-family: Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif !important;
 `
 
 export const Inner = styled.div`

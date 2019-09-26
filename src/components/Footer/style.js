@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import '../../styles/fonts.css'
 
 export const Container = styled.div`
   display: flex;
@@ -10,9 +9,6 @@ export const Container = styled.div`
   background-color: #fff;
   margin: 0 auto;
   color: #11181e;
-  font-family: Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif !important;
 `
 
 export const Inner = styled.div`
@@ -32,7 +28,7 @@ export const Inner = styled.div`
 `
 
 export const Left = styled.div`
-  font-family: Plex Mono, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  font-family: 'IBM Plex Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
     'Helvetica Neue', sans-serif !important;
   letter-spacing: 0.5px;

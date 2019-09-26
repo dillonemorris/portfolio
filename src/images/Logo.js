@@ -16,7 +16,6 @@ const Logo = () => (
           />
           <text
             id="DM"
-            fontFamily="InterUI-Bold, Inter UI"
             fontSize="22"
             fontWeight="bold"
             letterSpacing="0.382608712"

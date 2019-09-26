@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 
 export const StyledButton = styled.button`
-  font-family: Plex mono;
+  font-family: 'IBM Plex Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif !important;
   font-size: ${props => (props.fontSize ? props.fontSize : '14px')};
   letter-spacing: 0.8px;
   font-weight: 600;

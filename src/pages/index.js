@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import '../styles/fonts.css'
 import Avatar from '../images/avatar.png'
 import Button from '../components/Button'
 import SEO from '../components/seo'
@@ -20,29 +19,25 @@ const Wrapper = styled.div`
 `
 
 const Heading = styled.h1`
-    color: #11181E;
-    font-weight: 700;
-    font-family:
-      Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif !importantI
-    letter-spacing: .8px;
-    font-size: 22px;
-    line-height: 1;
-    text-align: center;
+  color: #11181e;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  font-size: 22px;
+  line-height: 1;
+  text-align: center;
 
-    @media (min-width: 400px) {
-      font-size: 28px;
-    }
+  @media (min-width: 400px) {
+    font-size: 28px;
+  }
 
-    @media (min-width: 600px) {
-      font-size: 36px; 
-    }
+  @media (min-width: 600px) {
+    font-size: 36px;
+  }
 `
 
 const Subheading = styled.p`
   color: #11181e;
-  font-family: Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif !important;
+
   font-weight: 400;
   max-width: 800px;
   text-align: center;
@@ -68,9 +63,7 @@ const MyContainer = styled.div`
 
 const BodyText = styled.p`
   color: #11181e;
-  font-family: Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif !important;
+
   max-width: 800px;
   text-align: center;
   line-height: 24px;
@@ -116,15 +109,15 @@ const IndexPage = () => (
         <MyContainer>
           <Img src={Avatar} alt={'avatar'} />
           <Heading>Hey, I’m Dillon.</Heading>
-          <Subheading>UI Developer from Phoenix, AZ.</Subheading>
+          <Subheading>UI Developer in Phoenix, AZ.</Subheading>
           <BodyText>
             Currently working with some amazing people at{' '}
             <Link
               target="_blank"
-              href={'https://www.elmstreettechnology.com'}
+              href={'https://www.synapsestudios.com'}
               rel="noopener noreferrer"
             >
-              Elm Street Technology.
+              Synapse Studios
             </Link>
           </BodyText>
           <Button

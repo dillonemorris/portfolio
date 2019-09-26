@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import ProjectStandard from '../components/ProjectStandard'
-import ProjectInverted from '../components/ProjectInverted'
+import Project from '../components/Project'
 import ProjectHeader from '../components/ProjectHeader'
 import data from '../data/projectData'
 import SEO from '../components/seo'
@@ -17,7 +16,6 @@ const Container = styled.div`
 `
 
 const Wrapper = styled.div`
-  background-color: #f4f4f4;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -29,7 +27,7 @@ const ProjectWrapper = styled.div`
 `
 
 const BackgroundWrapper = styled.div`
-  background-color: #fff;
+  background-color: ${props => (props.orientation ? '#fff' : '#f4f4f4')};
   width: 100vw;
   position: relative;
   left: 50%;
@@ -46,34 +44,13 @@ const Projects = () => (
         <ProjectHeader />
         <ProjectWrapper>
           {data.map((project, i) => {
-            switch (project.orientation) {
-              case 'Standard': {
-                return (
-                  <BackgroundWrapper key={project.title}>
-                    <ProjectWrapper>
-                      <ProjectStandard
-                        page={project.page}
-                        color={project.color}
-                        title={project.title}
-                        description={project.description}
-                        screenshot={project.screenshot}
-                        btnText={project.btnText}
-                        border={project.border}
-                        boxShadow={project.boxShadow}
-                        boxShadowHover={project.boxShadowHover}
-                        skills={project.skills}
-                        id={project.id}
-                      />
-                    </ProjectWrapper>
-                  </BackgroundWrapper>
-                )
-              }
-              case 'Inverted': {
-                return (
-                  <ProjectInverted
+            return (
+              <BackgroundWrapper orientation={i % 2 !== 0} key={project.title}>
+                <ProjectWrapper>
+                  <Project
+                    orientation={i % 2 !== 0}
                     page={project.page}
                     color={project.color}
-                    key={project.title}
                     title={project.title}
                     description={project.description}
                     screenshot={project.screenshot}
@@ -84,12 +61,9 @@ const Projects = () => (
                     skills={project.skills}
                     id={project.id}
                   />
-                )
-              }
-              default: {
-                return null
-              }
-            }
+                </ProjectWrapper>
+              </BackgroundWrapper>
+            )
           })}
         </ProjectWrapper>
       </Container>

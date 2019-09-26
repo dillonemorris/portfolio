@@ -12,22 +12,22 @@ import {
   Screenshot,
 } from './style'
 
-const ProjectStandard = ({
+const Project = ({
   title,
   description,
   screenshot,
   btnText,
-  id,
   color,
   page,
   boxShadow,
   boxShadowHover,
   border,
   skills,
+  orientation,
 }) => (
   <Link href={page} target="_blank" rel="noopener noreferrer">
-    <Wrapper>
-      <Container>
+    <Wrapper orientation={orientation}>
+      <Container orientation={orientation}>
         <Title style={{ color }}>{title}</Title>
         <Description>{description}</Description>
         <SkillsContainer>
@@ -44,11 +44,11 @@ const ProjectStandard = ({
           page={page}
         />
       </Container>
-      <ProjectContainer>
+      <ProjectContainer orientation={orientation}>
         <Screenshot src={screenshot} alt={'screenshot of project'} />
       </ProjectContainer>
     </Wrapper>
   </Link>
 )
 
-export default ProjectStandard
+export default Project

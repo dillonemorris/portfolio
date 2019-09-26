@@ -11,7 +11,7 @@ export const Container = styled.div`
 
 export const Date = styled.div`
   color: #486581;
-  font-family: Plex Mono, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  font-family: 'IBM Plex Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
     'Helvetica Neue', sans-serif !important;
   font-size: 13px;
@@ -21,25 +21,19 @@ export const Date = styled.div`
 `
 
 export const Title = styled.div`
-  font-family: Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif !important;
   font-size: 26px;
   font-weight: 600;
   color: #11181e;
   letter-spacing: 0.2px;
-  padding-bottom: 8px;
-  line-height: 36px;
+  padding-bottom: 6px;
+  line-height: 28px;
   transition: all 170ms ease-in-out;
 `
 
 export const Excerpt = styled.div`
-  font-family: Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif !important;
   color: #486581;
   font-size: 18px;
   letter-spacing: 0.4px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
   line-height: 1.6;
 `

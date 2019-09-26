@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
-import '../styles/fonts.css'
 import SEO from '../components/seo'
 import MyToggle from '../components/MyToggle'
 import Button from '../components/Button'
@@ -39,7 +38,7 @@ const DateToggle = styled.div`
 `
 
 const PostDate = styled.div`
-  font-family: Plex Mono, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  font-family: 'IBM Plex Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
     'Helvetica Neue', sans-serif !important;
   font-size: 14px;
@@ -50,13 +49,11 @@ const PostDate = styled.div`
 `
 
 const PostTitle = styled.h1`
+  margin-bottom: 12px;
   color: ${props => (props.darkMode ? '#fff' : '#11181E')};
 `
 
 const PostBody = styled.div`
-  font-family: Inter UI, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif !important;
   line-height: 1.6;
   padding-bottom: 40px;
   font-size: 21px;
@@ -66,6 +63,7 @@ const PostBody = styled.div`
   h3,
   h4 {
     color: ${props => (props.darkMode ? '#fff' : '#11181E')};
+    margin-bottom: 12px;
   }
 
   & a {
