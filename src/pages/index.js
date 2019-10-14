@@ -19,8 +19,9 @@ const Wrapper = styled.div`
 `
 
 const Heading = styled.h1`
-  color: #11181e;
-  font-weight: 700;
+  color: ${props => props.theme.colors.gray900};
+  font-family: ${props => props.theme.fonts.fontFamily.primary};
+  font-weight: 900;
   letter-spacing: 0.8px;
   font-size: 22px;
   line-height: 1;

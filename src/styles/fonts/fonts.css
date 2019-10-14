@@ -1,0 +1,57 @@
+/* Define the "system font family */
+@font-face {
+  font-family: system;
+  font-style: normal;
+  font-weight: 300;
+  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"),
+    local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+}
+
+@font-face {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 200;
+  src: url("./Metropolis-Thin.woff2") format("woff2"), url("./Metropolis-Thin.woff") format("woff");
+}
+@font-face {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 300;
+  src: url("./Metropolis-Light.woff2") format("woff2"), url("./Metropolis-Light.woff") format("woff");
+}
+@font-face {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./Metropolis-Regular.woff2") format("woff2"), url("./Metropolis-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./Metropolis-Medium.woff2") format("woff2"), url("./Metropolis-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 600;
+  src: url("./Metropolis-SemiBold.woff2") format("woff2"), url("./Metropolis-SemiBold.woff") format("woff");
+}
+@font-face {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./Metropolis-Bold.woff2") format("woff2"), url("./Metropolis-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 800;
+  src: url("./Metropolis-ExtraBold.woff2") format("woff2"), url("./Metropolis-ExtraBold.woff") format("woff");
+}
+@font-face {
+  font-family: "Metropolis";
+  font-style: normal;
+  font-weight: 900;
+  src: url("./Metropolis-Black.woff2") format("woff2"), url("./Metropolis-Black.woff") format("woff");
+}

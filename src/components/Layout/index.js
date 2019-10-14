@@ -1,5 +1,7 @@
 import React from 'react'
 import posed, { PoseGroup } from 'react-pose'
+import { ThemeProvider } from 'styled-components'
+import theme from '../../styles/theme'
 import Header from '../Header'
 import Footer from '../Footer'
 import '../../styles/layout.css'
@@ -39,7 +41,7 @@ class Layout extends React.Component {
     const { loaded } = this.state
 
     return (
-      <>
+      <ThemeProvider theme={theme}>
         <Header />
         <div className={`${loaded ? ' loaded' : 'initial'}`}>
           <PoseGroup animateOnMount preEnterPose="initial">
@@ -49,7 +51,7 @@ class Layout extends React.Component {
             </Transition>
           </PoseGroup>
         </div>
-      </>
+      </ThemeProvider>
     )
   }
 }
