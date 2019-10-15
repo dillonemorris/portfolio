@@ -1,16 +1,15 @@
 import styled from 'styled-components'
 
 export const StyledButton = styled.button`
-  font-family: 'IBM Plex Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif !important;
-  font-size: ${props => (props.fontSize ? props.fontSize : '14px')};
-  letter-spacing: 0.8px;
-  font-weight: 600;
-  background: #fff;
-  border: 3px solid #11181e;
-  box-shadow: ${props => props.boxShadow};
-  padding: ${props => (props.padding ? props.padding : '10px 30px')};
+  font-family: ${props => props.theme.fontFamily.primary};
+  font-size: ${props =>
+    props.fontSize ? props.fontSize : props.theme.fontSize.text_base};
+  letter-spacing: ${props => props.theme.letterSpacing.wide};
+  font-weight: ${props => props.theme.fontWeight.light};
+  background: transparent;
+  border: 1px solid
+    ${props => (props.color ? props.color : props.theme.colors.primary)};
+  padding: ${props => (props.padding ? props.padding : '24px 48px')};
   text-decoration: none;
   color: #11181e;
   transition: all 170ms ease-in-out;
@@ -21,9 +20,10 @@ export const StyledButton = styled.button`
   }
 
   :hover {
-    box-shadow: ${props => props.boxShadowHover};
     cursor: pointer;
-    border: 3px solid ${props => props.color};
-    color: ${props => props.color};
+    color: ${props =>
+      props.textColor ? props.textColor : props.theme.colors.white};
+    background-color: ${props =>
+      props.color ? props.color : props.theme.colors.primary};
   }
 `

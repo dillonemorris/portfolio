@@ -10,12 +10,6 @@
 @font-face {
   font-family: "Metropolis";
   font-style: normal;
-  font-weight: 200;
-  src: url("./Metropolis-Thin.woff2") format("woff2"), url("./Metropolis-Thin.woff") format("woff");
-}
-@font-face {
-  font-family: "Metropolis";
-  font-style: normal;
   font-weight: 300;
   src: url("./Metropolis-Light.woff2") format("woff2"), url("./Metropolis-Light.woff") format("woff");
 }

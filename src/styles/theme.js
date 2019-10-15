@@ -1,6 +1,8 @@
 const theme = {
   // colors
   colors: {
+    white: '#fff',
+
     // grays
     gray100: '#F7FAFC',
     gray200: '#EDF2F7',
@@ -63,36 +65,119 @@ const theme = {
     xxl: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
   },
 
-  // fonts
-  fonts: {
-    fontFamily: {
-      primary:
-        '"Metropolis", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-      secondary:
-        '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-    },
-    fontSize: {
-      text_xs: '.75rem',
-      text_sm: '.875rem',
-      text_base: '1rem',
-      text_lg: '1.125rem',
-      text_xl: '1.25rem',
-      text_2xl: '1.5rem',
-      text_3xl: '1.875rem',
-      text_4xl: '2.25rem',
-      text_5xl: '3rem',
-      text_6xl: '4rem',
-    },
-    fontWeight: {
-      thin: 200,
-      light: 300,
-      regular: 400,
-      medium: 500,
-      semiBold: 600,
-      bold: 700,
-      extraBold: 800,
-      black: 900,
-    },
+  // typography
+  fontFamily: {
+    primary:
+      '"Metropolis", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    secondary:
+      '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+  },
+
+  fontSize: {
+    text_xs: '.75rem',
+    text_sm: '.875rem',
+    text_base: '1rem',
+    text_lg: '1.125rem',
+    text_xl: '1.25rem',
+    text_2xl: '1.5rem',
+    text_3xl: '1.875rem',
+    text_4xl: '2.25rem',
+    text_5xl: '3rem',
+    text_6xl: '4rem',
+  },
+
+  fontWeight: {
+    light: 300,
+    regular: 400,
+    medium: 500,
+    semiBold: 600,
+    bold: 700,
+    extraBold: 800,
+    black: 900,
+  },
+
+  letterSpacing: {
+    tighter: '-.05em',
+    tight: '-.025em',
+    normal: 0,
+    wide: '0.025em',
+    wider: '0.05em',
+    widest: '.1em',
+  },
+
+  lineHeight: {
+    none: 1,
+    tight: 1.25,
+    snug: 1.375,
+    normal: 1.5,
+    relaxed: 1.625,
+    loose: 2,
+  },
+
+  // sizing
+  maxWidth: {
+    max_w_xs: '20rem',
+    max_w_sm: '24rem',
+    max_w_md: '28rem',
+    max_w_lg: '32rem',
+    max_w_xl: '36rem',
+    max_w_2xl: '42rem',
+    max_w_3xl: '48rem',
+    max_w_4xl: '56rem',
+    max_w_5xl: '64rem',
+    max_w_6xl: '72rem',
+    max_w_full: '100%',
+  },
+
+  // spacing
+  margin: {
+    m_0: '0',
+    m_1: '0.25rem',
+    m_2: '0.5rem',
+    m_3: '0.75rem',
+    m_4: '0.1rem',
+    m_5: '1.25rem',
+    m_6: '1.5rem',
+    m_8: '2rem',
+    m_10: '2.5rem',
+    m_12: '3rem',
+    m_16: '4rem',
+    m_20: '5rem',
+    m_24: '6rem',
+    m_32: '8rem',
+    m_40: '10rem',
+    m_48: '12rem',
+    m_56: '14rem',
+    m_64: '16rem',
+  },
+
+  padding: {
+    p_0: '0',
+    p_1: '0.25rem',
+    p_2: '0.5rem',
+    p_3: '0.75rem',
+    p_4: '0.1rem',
+    p_5: '1.25rem',
+    p_6: '1.5rem',
+    p_8: '2rem',
+    p_10: '2.5rem',
+    p_12: '3rem',
+    p_16: '4rem',
+    p_20: '5rem',
+    p_24: '6rem',
+    p_32: '8rem',
+    p_40: '10rem',
+    p_48: '12rem',
+    p_56: '14rem',
+    p_64: '16rem',
+  },
+
+  // media queries
+  mq: {
+    sm: '640px',
+    md: '768px',
+    lg: '1024px',
+    xl: '1280ox',
   },
 }
 
