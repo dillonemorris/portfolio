@@ -39,7 +39,6 @@ export const MobileIcon = styled.button`
 `
 
 export const StyledLink = styled(Link)`
-  font-family: Plex mono;
   color: inherit;
   text-decoration: none;
   display: flex;

@@ -28,9 +28,6 @@ export const Inner = styled.div`
 `
 
 export const Left = styled.div`
-  font-family: 'IBM Plex Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif !important;
   letter-spacing: 0.5px;
   font-size: 14px;
   padding-top: 10px;

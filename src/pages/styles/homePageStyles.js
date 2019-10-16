@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+// layout
+
 export const Container = styled.div`
   padding: 0px 1.0875rem 1.45rem;
   padding-top: 0px;
@@ -10,16 +12,18 @@ export const Container = styled.div`
   }
 `
 
+// hero
+
 export const Intro = styled.p`
   color: ${props => props.theme.colors.gray600};
   font-size: ${props => props.theme.fontSize.text_base};
   font-weight: ${props => props.theme.fontWeight.light};
   letter-spacing: ${props => props.theme.letterSpacing.wide};
-  margin-bottom: ${props => props.theme.margin.m_0};
+  margin-bottom: ${props => props.theme.spacing._0};
 
   @media (min-width: ${props => props.theme.mq.sm}) {
     font-size: ${props => props.theme.fontSize.text_xl};
-    margin-bottom: ${props => props.theme.margin.m_1};
+    margin-bottom: ${props => props.theme.spacing._1};
   }
 `
 
@@ -36,12 +40,25 @@ export const Heading = styled.h1`
   }
 `
 
-export const MyContainer = styled.div`
+export const HeroHeadingContainer = styled.div`
   max-width: ${props => props.theme.maxWidth.max_w_xl};
   display: flex;
-  margin-top: ${props => props.theme.margin.m_40};
   flex-direction: column;
-  min-height: calc(100vh - 210px);
+`
+
+export const BlobContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`
+
+export const SmallCirclesContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-top: ${props => props.theme.spacing._12};
+`
+
+export const TriangleContainer = styled.div`
+  position: absolute;
 `
 
 export const Img = styled.img`

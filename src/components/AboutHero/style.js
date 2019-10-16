@@ -47,16 +47,11 @@ export const Heading = styled.h1`
 export const Paragraph = styled.p`
   color: #486581;
   font-size: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif !important;
   line-height: 1.5;
 `
 
 export const Tagline = styled.button`
-  font-family: 'IBM Plex Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif !important;
+  font-family: ${props => props.theme.fontFamily.primary};
   font-size: 18px;
   font-weight: 300;
   color: #4183d7;

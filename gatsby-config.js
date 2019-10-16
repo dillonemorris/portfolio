@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: 'Dillon Morris - UI Designer & Developer',
+    title: 'Dillon Morris - Front End Developer',
     author: 'Dillon Morris',
     siteUrl: 'https://www.dillonmorris.me/',
-    description: 'Dillon is a UI/UX Developer & Designer in Phoenix, AZ',
+    description: 'Dillon is a Front End Developer specializing in UI/UX Design',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
