@@ -6,10 +6,14 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  height: 70px;
-  background-color: #fff;
+  padding: 16px 0px;
+  background-color: ${props => props.theme.colors.background};
   margin: 0 auto;
-  color: #11181e;
+  z-index: 5;
+
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 `
 
 export const Inner = styled.div`
@@ -25,7 +29,6 @@ export const Inner = styled.div`
 export const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
-  width: inherit;
   text-decoration: none;
 `
 
@@ -50,5 +53,13 @@ export const Desktop = styled(NavDesktop)`
 
   @media (min-width: 900px) {
     display: flex;
+  }
+`
+
+export const MyToggleContainer = styled.div`
+  display: flex;
+
+  @media (min-width: 900px) {
+    display: none;
   }
 `

@@ -51,7 +51,6 @@ export const Paragraph = styled.p`
 `
 
 export const Tagline = styled.button`
-  font-family: ${props => props.theme.fontFamily.primary};
   font-size: 18px;
   font-weight: 300;
   color: #4183d7;

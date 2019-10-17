@@ -5,6 +5,7 @@
   position: relative;
   cursor: pointer;
   background-color: transparent;
+  margin: auto;
   border: 0;
   padding: 0;
 
@@ -124,9 +125,9 @@
 }
 
 .react-toggle:active:not(.react-toggle--disabled) .react-toggle-thumb {
-  -webkit-box-shadow: 0px 0px 3px 2px #11181E;
-  -moz-box-shadow: 0px 0px 3px 2px #11181E;
-  box-shadow: 0px 0px 2px 3px #11181E;
+  -webkit-box-shadow: 0px 0px 3px 2px #11181e;
+  -moz-box-shadow: 0px 0px 3px 2px #11181e;
+  box-shadow: 0px 0px 2px 3px #11181e;
 }
 
 .react-toggle--focus .react-toggle-thumb {

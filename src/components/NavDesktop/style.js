@@ -13,13 +13,17 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
   font-size: 15px;
   font-weight: 400;
-  color: #11181e;
-  padding-left: 60px;
+  color: ${props => props.theme.colors.navLink};
+  padding: 0px 30px;
   letter-spacing: 0.3px;
 
   :hover {
     cursor: pointer;
-    color: #4183d7;
+    color: ${props => props.theme.colors.activeNavLink};
     transition: all 170ms ease-in-out;
   }
+`
+
+export const MyToggleContainer = styled.div`
+  padding: 6px 0px 0px 30px;
 `

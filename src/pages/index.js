@@ -1,13 +1,4 @@
 import React from 'react'
-import {
-  Container,
-  Intro,
-  Heading,
-  HeroHeadingContainer,
-  BlobContainer,
-  SmallCirclesContainer,
-  TriangleContainer,
-} from './styles/homePageStyles'
 import { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
 // import Image from '../components/Image'
@@ -20,11 +11,23 @@ import Blob from '../images/Blob'
 import SmallCircles from '../images/SmallCircles'
 import Triangle from '../images/Triangle'
 
+//styles
+import {
+  Container,
+  Intro,
+  Heading,
+  HeroHeadingContainer,
+  BlobContainer,
+  SmallCirclesContainer,
+  TriangleContainer,
+  Background,
+} from './styles/homePageStyles'
+
 const IndexPage = () => {
   // const theme = useContext(ThemeContext)
 
   return (
-    <>
+    <Background>
       <SEO title="Home" />
       <Container>
         <BlobContainer>
@@ -45,7 +48,7 @@ const IndexPage = () => {
       <TriangleContainer>
         <Triangle />
       </TriangleContainer>
-    </>
+    </Background>
   )
 }
 

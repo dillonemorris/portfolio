@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 
 // layout
-
+export const Background = styled.div`
+  background-color: ${props => props.theme.colors.background};
+`
 export const Container = styled.div`
   padding: 0px 1.0875rem 1.45rem;
   padding-top: 0px;
@@ -13,9 +15,8 @@ export const Container = styled.div`
 `
 
 // hero
-
 export const Intro = styled.p`
-  color: ${props => props.theme.colors.gray600};
+  color: ${props => props.theme.colors.body};
   font-size: ${props => props.theme.fontSize.text_base};
   font-weight: ${props => props.theme.fontWeight.light};
   letter-spacing: ${props => props.theme.letterSpacing.wide};
@@ -28,7 +29,7 @@ export const Intro = styled.p`
 `
 
 export const Heading = styled.h1`
-  color: ${props => props.theme.colors.gray900};
+  color: ${props => props.theme.colors.heading};
   font-weight: ${props => props.theme.fontWeight.black};
   font-size: ${props => props.theme.fontSize.text_2xl};
   letter-spacing: ${props => props.theme.letterSpacing.normal};

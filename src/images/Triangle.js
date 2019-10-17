@@ -8,7 +8,7 @@ const Triangle = ({ color }) => {
       <path
         d="M200.516.288l458.919 113.727-695.902 295.393z"
         fill={fill}
-        fill-rule="nonzero"
+        fillRule="nonzero"
         opacity=".647"
       />
     </svg>

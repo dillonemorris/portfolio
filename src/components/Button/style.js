@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const StyledButton = styled.button`
-  font-family: ${props => props.theme.fontFamily.primary};
   font-size: ${props =>
     props.fontSize ? props.fontSize : props.theme.fontSize.text_base};
   letter-spacing: ${props => props.theme.letterSpacing.wide};

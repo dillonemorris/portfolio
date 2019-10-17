@@ -6,7 +6,7 @@ const SmallCircles = ({ primary, secondary }) => {
 
   return (
     <svg width="51" height="53" xmlns="http://www.w3.org/2000/svg">
-      <g fill-rule="nonzero" fill="none">
+      <g fillRule="nonzero" fill="none">
         <circle fill={primaryFill} cx="21.5" cy="31.5" r="21.5" />
         <circle fill={secondaryFill} cx="29.5" cy="21.5" r="21.5" />
       </g>
