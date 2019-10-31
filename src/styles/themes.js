@@ -3,12 +3,20 @@ const themes = {
     colors: {
       //backgrounds
       background: '#fff',
+      calloutBackground: 'rgba(237, 242, 247, 0.6)',
 
       // text
       heading: '#1A202C',
       body: '#718096',
       navLink: '#1A202C',
       activeNavLink: '#5A67D8',
+      accentBody: '#4A5568',
+
+      // borders
+      border: '#4C51BF',
+
+      // buttons
+      primaryButtonText: '#3C366B',
 
       // grays
       white: '#fff',
@@ -62,6 +70,7 @@ const themes = {
       blue600: '#3182CE',
       blue800: '#2C5282',
     },
+
     // shadows
     shadow: {
       base: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
@@ -179,6 +188,14 @@ const themes = {
       body: '#CBD5E0',
       navLink: '#fff',
       activeNavLink: '#7F9CF5',
+      accentBody: '#D8FBFF',
+
+      // borders
+      border: '#A3BFFA',
+      calloutBackground: 'rgba(45, 55, 72, 0.9)',
+
+      // buttons
+      primaryButtonText: '#fff',
 
       primary100: '#A3BFFA',
       primary200: '#7F9CF5',

@@ -1,10 +1,10 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
-// import Image from '../components/Image'
 import Button from '../components/Button'
+import Callout from '../components/Callout'
 import SEO from '../components/seo'
-import ProfilePic from '../images/ProfilePic.jpg'
 
 //shapes
 import Blob from '../images/Blob'
@@ -23,7 +23,7 @@ import {
   Background,
 } from './styles/homePageStyles'
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
   // const theme = useContext(ThemeContext)
 
   return (
@@ -42,14 +42,27 @@ const IndexPage = () => {
           <Intro>Hey, I’m Dillon!</Intro>
           <Heading>Front End Developer specializing in UI/UX Design</Heading>
         </HeroHeadingContainer>
-
-        {/* <Image src={ProfilePic} /> */}
       </Container>
       <TriangleContainer>
         <Triangle />
       </TriangleContainer>
+      <Container>
+        <Callout />
+      </Container>
     </Background>
   )
 }
+
+export const query = graphql`
+  query {
+    file(relativePath: { eq: "../images/ProfilePic.jpg" }) {
+      childImageSharp {
+        fixed(width: 125, height: 125) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage

@@ -2,7 +2,16 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { StyledButton } from './style'
 
-const Button = ({ className, text, page, color, fontSize, padding }) => {
+const Button = ({
+  className,
+  text,
+  page,
+  color,
+  fontSize,
+  padding,
+  textColor,
+  textHoverColor,
+}) => {
   const internal = /^\/(?!\/)/.test(page)
 
   if (internal) {
@@ -13,6 +22,8 @@ const Button = ({ className, text, page, color, fontSize, padding }) => {
           color={color}
           padding={padding}
           className={className}
+          textColor={textColor}
+          textHoverColor={textHoverColor}
         >
           {text}
         </StyledButton>
@@ -26,6 +37,8 @@ const Button = ({ className, text, page, color, fontSize, padding }) => {
         color={color}
         padding={padding}
         className={className}
+        textColor={textColor}
+        textHoverColor={textHoverColor}
       >
         {text}
       </StyledButton>

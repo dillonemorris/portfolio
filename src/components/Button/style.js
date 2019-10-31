@@ -8,9 +8,10 @@ export const StyledButton = styled.button`
   background: transparent;
   border: 1px solid
     ${props => (props.color ? props.color : props.theme.colors.primary)};
-  padding: ${props => (props.padding ? props.padding : '24px 48px')};
+  padding: ${props => (props.padding ? props.padding : '20px 36px')};
   text-decoration: none;
-  color: #11181e;
+  color: ${props =>
+    props.textColor ? props.textColor : props.theme.colors.body};
   transition: all 170ms ease-in-out;
   width: 100%;
 
@@ -21,7 +22,7 @@ export const StyledButton = styled.button`
   :hover {
     cursor: pointer;
     color: ${props =>
-      props.textColor ? props.textColor : props.theme.colors.white};
+      props.textHoverColor ? props.textHoverColor : props.theme.colors.white};
     background-color: ${props =>
       props.color ? props.color : props.theme.colors.primary};
   }
