@@ -3,10 +3,11 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 40px 40px 28px;
+  padding: 60px 60px 28px;
   border: 1px solid ${({ theme }) => theme.colors.border};
   background-color: ${({ theme }) => theme.colors.calloutBackground};
   position: relative;
+  top: -240px;
 `
 
 export const Left = styled.div`
@@ -16,7 +17,7 @@ export const Left = styled.div`
 
 export const Heading = styled.h1`
   color: ${({ theme }) => theme.colors.heading};
-  font-size: ${({ theme }) => theme.fontSize.text_2xl};
+  font-size: ${({ theme }) => theme.fontSize.text_4xl};
   margin-bottom: ${({ theme }) => theme.spacing._2};
 `
 
@@ -24,10 +25,10 @@ export const Description = styled.p`
   color: ${({ theme }) => theme.colors.accentBody};
   font-size: ${({ theme }) => theme.fontSize.text_xl};
   font-weight: ${({ theme }) => theme.fontWeight.light};
-  line-height: ${({ theme }) => theme.lineHeight.snug};
+  line-height: ${({ theme }) => theme.lineHeight.normal};
   padding-right: ${({ theme }) => theme.spacing._16};
 `
 
 export const Img = styled.img`
-  width: 240px;
+  width: 300px;
 `

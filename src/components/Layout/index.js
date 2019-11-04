@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useDarkMode } from '../../hooks/useDarkMode'
+
 import posed, { PoseGroup } from 'react-pose'
 import { ThemeProvider } from 'styled-components'
 import themes from '../../styles/themes'

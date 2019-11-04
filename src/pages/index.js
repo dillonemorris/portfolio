@@ -1,55 +1,55 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { useContext } from 'react'
-import { ThemeContext } from 'styled-components'
-import Button from '../components/Button'
 import Callout from '../components/Callout'
 import SEO from '../components/seo'
 
 //shapes
 import Blob from '../images/Blob'
 import SmallCircles from '../images/SmallCircles'
-import Triangle from '../images/Triangle'
+import Triangle from '../images/Triangle.svg'
 
 //styles
 import {
   Container,
+  Landing,
   Intro,
   Heading,
   HeroHeadingContainer,
   BlobContainer,
   SmallCirclesContainer,
-  TriangleContainer,
   Background,
 } from './styles/homePageStyles'
 
 const IndexPage = ({ data }) => {
-  // const theme = useContext(ThemeContext)
-
   return (
-    <Background>
+    <>
       <SEO title="Home" />
-      <Container>
-        <BlobContainer>
-          <Blob />
-        </BlobContainer>
+      <Background bg={Triangle}>
+        <Container>
+          <BlobContainer>
+            <Blob />
+          </BlobContainer>
+          <Landing>
+            <SmallCirclesContainer>
+              <SmallCircles />
+            </SmallCirclesContainer>
+            <HeroHeadingContainer>
+              <Intro>Hey, I’m Dillon!</Intro>
+              <Heading>
+                Front End Developer specializing in UI/UX Design
+              </Heading>
+            </HeroHeadingContainer>
+            {/* <TriangleContainer>
+              <Triangle />
+            </TriangleContainer> */}
+          </Landing>
+        </Container>
+      </Background>
 
-        <SmallCirclesContainer>
-          <SmallCircles />
-        </SmallCirclesContainer>
-
-        <HeroHeadingContainer>
-          <Intro>Hey, I’m Dillon!</Intro>
-          <Heading>Front End Developer specializing in UI/UX Design</Heading>
-        </HeroHeadingContainer>
-      </Container>
-      <TriangleContainer>
-        <Triangle />
-      </TriangleContainer>
       <Container>
         <Callout />
       </Container>
-    </Background>
+    </>
   )
 }
 

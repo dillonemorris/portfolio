@@ -3,6 +3,10 @@ import styled from 'styled-components'
 // layout
 export const Background = styled.div`
   background-color: ${props => props.theme.colors.background};
+  background-image: url(${props => props.bg});
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: 210vh;
 `
 export const Container = styled.div`
   padding: 0px 1.0875rem 1.45rem;
@@ -12,6 +16,10 @@ export const Container = styled.div`
   @media (min-width: ${props => props.theme.mq.sm}) {
     margin: 0px auto;
   }
+`
+
+export const Landing = styled.div`
+  height: 96vh;
 `
 
 // hero
@@ -31,18 +39,18 @@ export const Intro = styled.p`
 export const Heading = styled.h1`
   color: ${props => props.theme.colors.heading};
   font-weight: ${props => props.theme.fontWeight.black};
-  font-size: ${props => props.theme.fontSize.text_2xl};
+  font-size: ${props => props.theme.fontSize.text_3xl};
   letter-spacing: ${props => props.theme.letterSpacing.normal};
   line-height: ${props => props.theme.lineHeight.tight};
 
   @media (min-width: ${props => props.theme.mq.sm}) {
-    font-size: ${props => props.theme.fontSize.text_4xl};
+    font-size: 7vh;
     line-height: ${props => props.theme.lineHeight.none};
   }
 `
 
 export const HeroHeadingContainer = styled.div`
-  max-width: ${props => props.theme.maxWidth.max_w_xl};
+  max-width: ${props => props.theme.maxWidth.max_w_3xl};
   display: flex;
   flex-direction: column;
 `

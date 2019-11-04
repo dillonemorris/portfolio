@@ -14,7 +14,7 @@ const Callout = () => {
         <Description>
           I am currently working with some amazing people at{' '}
           <strong>Synapse Studios</strong>. There, I get to utilize my diverse
-          skillset working on next level projects.
+          skillset working on next level products.
         </Description>
         <Button
           textColor={theme.colors.primaryButtonText}
