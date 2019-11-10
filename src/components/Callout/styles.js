@@ -10,6 +10,13 @@ export const Container = styled.div`
   top: -240px;
 `
 
+export const IconContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 0px 24px 48px;
+`
+
 export const Left = styled.div`
   display: flex;
   flex-direction: column;

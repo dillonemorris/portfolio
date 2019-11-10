@@ -40,7 +40,7 @@ export const Heading = styled.h1`
   color: ${props => props.theme.colors.heading};
   font-weight: ${props => props.theme.fontWeight.black};
   font-size: ${props => props.theme.fontSize.text_3xl};
-  letter-spacing: ${props => props.theme.letterSpacing.normal};
+  letter-spacing: ${props => props.theme.letterSpacing.tight};
   line-height: ${props => props.theme.lineHeight.tight};
 
   @media (min-width: ${props => props.theme.mq.sm}) {
@@ -55,9 +55,54 @@ export const HeroHeadingContainer = styled.div`
   flex-direction: column;
 `
 
+export const CallToAction = styled.div`
+  font-size: ${({ theme }) => theme.fontSize.text_xl};
+  font-weight: ${({ theme }) => theme.fontWeight.light};
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 120px;
+  margin-left: auto;
+  width: 260px;
+
+  :hover {
+    cursor: pointer;
+  }
+`
+
+export const DownArrowContainer = styled.div`
+  margin: 2px auto;
+  animation: float 2.4s ease-in-out infinite;
+
+  @keyframes float {
+    0% {
+      transform: translatey(0px);
+    }
+    50% {
+      transform: translatey(8px);
+    }
+    100% {
+      transform: translatey(0px);
+    }
+  }
+`
+
 export const BlobContainer = styled.div`
   display: flex;
   justify-content: flex-end;
+`
+
+export const BigBlobContainer = styled.div`
+  right: 0;
+  transform: translateY(-180px);
+  position: absolute;
+  overflow: hidden;
+`
+
+export const CheckerContainer = styled.div`
+  /* position: relative;
+  bottom: 200px;
+  left: 60px; */
 `
 
 export const SmallCirclesContainer = styled.div`

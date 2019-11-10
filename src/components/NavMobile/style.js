@@ -9,7 +9,7 @@ export const Nav = styled(animated.nav)`
   padding-top: 80px;
   padding-bottom: 30px;
   position: fixed;
-  background: #fff;
+  background: ${({ theme }) => theme.colors.background};
   left: 0;
   right: 0;
   top: 0;
@@ -30,16 +30,16 @@ export const MobileIcon = styled.button`
   top: 26px;
   right: 26px;
   z-index: 1;
-  background-color: none;
+  background: none;
   border: none;
 
   :focus {
-    outline: 1px solid #fff;
+    outline: none;
   }
 `
 
 export const StyledLink = styled(Link)`
-  color: inherit;
+  color: ${({ theme }) => theme.colors.navLink};
   text-decoration: none;
   display: flex;
   font-weight: 600;

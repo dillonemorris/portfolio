@@ -36,11 +36,11 @@ export const MobileIcon = styled.button`
   cursor: pointer;
   color: #2e2e35;
   display: inline-flex;
-  background-color: none;
+  background: none;
   border: none;
 
   :focus {
-    outline: 1px solid #fff;
+    outline: none;
   }
 
   @media (min-width: 900px) {

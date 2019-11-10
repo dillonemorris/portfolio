@@ -12,7 +12,7 @@ const MyToggle = ({ darkMode, setDarkMode }) => (
     onChange={() => setDarkMode(!darkMode)}
     icons={{
       checked: <Dark alt="Moon" style={{ pointerEvents: 'none' }} />,
-      unchecked: <Light alt="Moon" style={{ pointerEvents: 'none' }} />,
+      unchecked: <Light alt="Sun" style={{ pointerEvents: 'none' }} />,
     }}
   />
 )
