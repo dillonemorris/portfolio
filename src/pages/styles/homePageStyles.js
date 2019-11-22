@@ -44,7 +44,7 @@ export const Heading = styled.h1`
   line-height: ${props => props.theme.lineHeight.tight};
 
   @media (min-width: ${props => props.theme.mq.sm}) {
-    font-size: 7vh;
+    font-size: 6.5vh;
     line-height: ${props => props.theme.lineHeight.none};
   }
 `
@@ -97,12 +97,6 @@ export const BigBlobContainer = styled.div`
   transform: translateY(-180px);
   position: absolute;
   overflow: hidden;
-`
-
-export const CheckerContainer = styled.div`
-  /* position: relative;
-  bottom: 200px;
-  left: 60px; */
 `
 
 export const SmallCirclesContainer = styled.div`

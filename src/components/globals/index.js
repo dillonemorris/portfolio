@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const H1 = styled.h1`
   color: ${({ theme }) => theme.colors.body};
   font-weight: ${({ theme }) => theme.fontWeight.black};
-  font-size: ${({ theme }) => theme.fontSize.text_6xl};
+  font-size: ${({ theme }) => theme.fontSize.text_5xl};
   line-height: 1.3;
   margin: 0;
   padding: 0;

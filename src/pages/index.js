@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { graphql } from 'gatsby'
+
 import Callout from '../components/Callout'
 import SEO from '../components/seo'
 import { ThemeContext } from 'styled-components'
@@ -15,7 +15,7 @@ import Triangle from '../images/Triangle.svg'
 import TriangleDark from '../images/TriangleDark.svg'
 
 //styles
-import { LargeBody } from '../components/globals'
+import { LargeBody, H1 } from '../components/globals'
 
 import {
   Container,
@@ -33,6 +33,12 @@ import {
 
 const IndexPage = () => {
   const theme = useContext(ThemeContext)
+
+  const handleClick = () => {
+    document.querySelector('#callout').scrollIntoView({
+      behavior: 'smooth',
+    })
+  }
 
   return (
     <>
@@ -55,7 +61,7 @@ const IndexPage = () => {
                 </span>
               </Heading>
             </HeroHeadingContainer>
-            <CallToAction>
+            <CallToAction onClick={handleClick}>
               <LargeBody>Scroll on down</LargeBody>
               <DownArrowContainer>
                 <DownArrow color={theme.colors.primaryLink} />
@@ -67,23 +73,14 @@ const IndexPage = () => {
       <BigBlobContainer>
         <BigBlob color={theme.colors.bigBlob} />
       </BigBlobContainer>
-      <Container>
-        <Callout />
-      </Container>
+      <div style={{ background: theme.colors.homePageGradient }}>
+        <Container id="callout">
+          <Callout />
+          <H1>I'm really good at...</H1>
+        </Container>
+      </div>
     </>
   )
 }
-
-export const query = graphql`
-  query {
-    file(relativePath: { eq: "../images/ProfilePic.jpg" }) {
-      childImageSharp {
-        fixed(width: 125, height: 125) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-  }
-`
 
 export default IndexPage

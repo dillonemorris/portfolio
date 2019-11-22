@@ -28,6 +28,10 @@ const themes = {
       navIcon: '#1A202C',
       socialIcon: '#4C51BF',
 
+      //gradients
+      homePageGradient:
+        'linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rgba(244,246,255,1) 100%)',
+
       // grays
       white: '#fff',
       gray100: '#F7FAFC',
@@ -216,6 +220,10 @@ const themes = {
       //icons
       navIcon: '#fff',
       socialIcon: '#fff',
+
+      //gradients
+      homePageGradient:
+        'linear-gradient(180deg, rgba(2,0,36,1) 0%, #434190 0%, #4C51BF 100%)',
 
       primary100: '#A3BFFA',
       primary200: '#7F9CF5',

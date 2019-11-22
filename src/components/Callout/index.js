@@ -24,14 +24,17 @@ const Callout = () => {
         <Heading>What I'm up to</Heading>
         <Description>
           I am currently working with some amazing people at{' '}
-          <span
+          <a
+            href="https://synapsestudios.com"
+            target="blank"
             style={{
               color: theme.colors.primaryLink,
               fontWeight: theme.fontWeight.medium,
+              textDecoration: 'none',
             }}
           >
             Synapse Studios
-          </span>
+          </a>
           . There, I get to utilize my diverse skillset working on next level
           products.
         </Description>
@@ -42,10 +45,18 @@ const Callout = () => {
       </Left>
       <Img src={ProfilePic} />
       <IconContainer>
-        <Github color={theme.colors.socialIcon} />
-        <Twitter color={theme.colors.socialIcon} />
-        <Dribbble color={theme.colors.socialIcon} />
-        <LinkedIn color={theme.colors.socialIcon} />
+        <a target="blank" href="https://github.com/dillonmorris91">
+          <Github color={theme.colors.socialIcon} />
+        </a>
+        <a target="blank" href="https://twitter.com/ThisIsDillon">
+          <Twitter color={theme.colors.socialIcon} />
+        </a>
+        <a target="blank" href="https://dribbble.com/dillonmorris">
+          <Dribbble color={theme.colors.socialIcon} />
+        </a>
+        <a target="blank" href="https://www.linkedin.com/in/dillonmorrisdev/">
+          <LinkedIn color={theme.colors.socialIcon} />
+        </a>
       </IconContainer>
     </Container>
   )
