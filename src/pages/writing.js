@@ -45,7 +45,7 @@ const writing = ({ data }) => {
             <WritingHeader />
           </HeaderContainer>
           <BlogPostGrid>
-            {data.allMarkdownRemark.edges.map(({ node }) => (
+            {data.allMdx.edges.map(({ node }) => (
               <div key={node.id}>
                 <Link style={{ textDecoration: 'none' }} to={node.fields.slug}>
                   <BlogPostCard
@@ -74,7 +74,7 @@ const writing = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date] }) {
+    allMdx(sort: { fields: [frontmatter___date] }) {
       totalCount
       edges {
         node {

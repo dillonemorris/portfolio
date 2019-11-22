@@ -29,7 +29,7 @@ import {
   Background,
   CallToAction,
   DownArrowContainer,
-} from './styles/homePageStyles'
+} from '../styles/page-styles/home-page-styles'
 
 const IndexPage = () => {
   const theme = useContext(ThemeContext)
