@@ -20,7 +20,9 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `IBM Plex Mono\:300,400,400,700`, // you can also specify font weights and styles
+          `Space Mono\:400,700`,
+          `PT Serif\:500, 700,`,
+          `IBM Plex Mono\:400,700`,
         ],
         display: 'swap',
       },

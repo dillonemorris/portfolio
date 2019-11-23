@@ -8,17 +8,23 @@ This post is part of a series I am calling "Helpful Snippets." A lot of the time
 
 <br />
 
-##I wanted to share a solution for scrolling the window down to a certain element on click.
+## I wanted to share a solution for scrolling the window down to a certain element on click.
 
 I discovered this solution while building a passion project called UI Gems.
 
 Here's a screenshot to help visualize what my end goal was:
 
-<img style="margin: 0px 0px 20px" src="https://drive.google.com/uc?id=1U_5xsn_hCAlBJulUEbs6Ib0-yzgYoKO2" />
+<img
+  style="margin: 0px 0px 20px"
+  src="https://drive.google.com/uc?id=1U_5xsn_hCAlBJulUEbs6Ib0-yzgYoKO2"
+/>
 
 See that link that says "Get Inspired?" When a user clicks that, the page or "window" should scroll down so much so that the Filter Bar (Sign in, Hero, Pricing etc.) is at the very top of the window.
 
-<img style="margin: 16px 0px" src="https://drive.google.com/uc?id=1bmj3w3O57uHQBDdprGBv2z0QYOkhtr-H" />
+<img
+  style="margin: 16px 0px"
+  src="https://drive.google.com/uc?id=1bmj3w3O57uHQBDdprGBv2z0QYOkhtr-H"
+/>
 
 My first instinct was to grab the native <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView" target="_blank" rel="noopener noreferrer">scrollIntoView()</a> function, which has helped me achieve this sort of functionality before. However, there is a caveat to that function which is: What if the target element is already in view?
 
@@ -34,15 +40,20 @@ handleClick = () => {
 However, if the element is already in view, the browser knows this and so does not scroll the window at all.
 
 So what to do now? Let's see if there is another scroll method that may work for our purposes. This hunt naturally leads us to the <strong>scrollTo</strong> function. Another function which is native to Javascript but is a bit more customizable.
+
 <br />
 <br />
 
-##scrollTo()
+## scrollTo()
+
 The way scrollTo works is pretty easy to understand, a brief look at the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo" target="_blank" rel="noopener noreferrer">MDN docs</a> should give you a general idea of how it works. We'll have to customize it a bit though to get it to work for our purposes. First we'll determine what our "scroll target" is. In this case, it is the top of what we're calling the filterBar.
 
 This guy:
 
-<img style="margin: 0px 0px 20px" src="https://drive.google.com/uc?id=1ajtn2M6_lqhCIThptX-Zoxwx-saLCB4a" />
+<img
+  style="margin: 0px 0px 20px"
+  src="https://drive.google.com/uc?id=1ajtn2M6_lqhCIThptX-Zoxwx-saLCB4a"
+/>
 
 <br />
 
