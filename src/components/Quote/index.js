@@ -1,7 +1,8 @@
 import React from 'react'
+import { Container } from './style'
 
 const Quote = ({ children }) => {
-  return <div style={{ backgroundColor: '#CBD5E0' }}>{children}</div>
+  return <Container>{children}</Container>
 }
 
 export default Quote

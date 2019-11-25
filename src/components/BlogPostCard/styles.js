@@ -10,8 +10,10 @@ export const Container = styled.div`
 `
 
 export const Date = styled.div`
-  color: #486581;
-  font-size: 13px;
+  color: ${({ theme }) => theme.colors.body};
+  font-family: ${props =>
+    props.fontStyle ? props.fontStyle : props.theme.fontFamily.secondary};
+  font-size: 14px;
   letter-spacing: 0.5px;
   font-weight: 200;
   padding-bottom: 4px;

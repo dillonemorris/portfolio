@@ -1,42 +1,47 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useLocalStorage } from '../../hooks/useLocalStorage'
 import { graphql } from 'gatsby'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { Container, Background, H1, H2, Body } from './styles'
+import { Date } from '../BlogPostCard/styles'
 import Quote from '../Quote'
+import CodeBlock from '../CodeBlock'
 
 const fonts = {
+  default:
+    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
   serif: 'PT Serif',
   mono: 'Space Mono',
 }
 
 const PostsLayout = ({ data: { mdx } }) => {
   const [largeFont, setLargeFont] = useLocalStorage(false)
-  const [fontStyle, setFontStyle] = useLocalStorage(null)
+  const [fontStyle, setFontStyle] = useLocalStorage(fonts.default)
 
-  const { title } = mdx.frontmatter
+  const components = {
+    h2: ({ children }) => (
+      <H2 largeFont={largeFont} fontStyle={fontStyle}>
+        {children}
+      </H2>
+    ),
+    p: ({ children }) => (
+      <Body largeFont={largeFont} fontStyle={fontStyle}>
+        {children}
+      </Body>
+    ),
+    blockquote: ({ children }) => <Quote>{children}</Quote>,
+    pre: ({ children }) => <CodeBlock children={children} />,
+  }
+
+  const { title, date } = mdx.frontmatter
 
   return (
-    <MDXProvider
-      components={{
-        h2: ({ children }) => (
-          <H2 largeFont={largeFont} fontStyle={fontStyle}>
-            {children}
-          </H2>
-        ),
-        p: ({ children }) => (
-          <Body largeFont={largeFont} fontStyle={fontStyle}>
-            {children}
-          </Body>
-        ),
-        blockquote: ({ children }) => <Quote>{children}</Quote>,
-      }}
-    >
+    <MDXProvider components={components}>
       <Background>
         <Container>
           <div>
-            <button onClick={() => setFontStyle(null)}>default</button>
+            <button onClick={() => setFontStyle(fonts.default)}>default</button>
             <button onClick={() => setFontStyle(fonts.serif)}>serif</button>
             <button onClick={() => setFontStyle(fonts.mono)}>mono</button>
           </div>
@@ -47,6 +52,9 @@ const PostsLayout = ({ data: { mdx } }) => {
           <H1 largeFont={largeFont} fontStyle={fontStyle}>
             {title}
           </H1>
+          <Date fontStyle={fontStyle} className="hover-styles">
+            {date} &bull; {mdx.timeToRead} min read
+          </Date>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </Container>
       </Background>
@@ -57,9 +65,11 @@ export const pageQuery = graphql`
   query BlogPostQuery($id: String) {
     mdx(id: { eq: $id }) {
       id
+      timeToRead
       body
       frontmatter {
         title
+        date
       }
     }
   }
