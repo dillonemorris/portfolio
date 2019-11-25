@@ -6,7 +6,7 @@ export const Background = styled.div`
 
 export const Container = styled.div`
   padding: 0px 1.0875rem 1.45rem;
-  padding-top: ${({ theme }) => theme.spacing._6};
+  padding-top: ${({ theme }) => theme.spacing._12};
   max-width: 680px;
 
   @media (min-width: 600px) {
