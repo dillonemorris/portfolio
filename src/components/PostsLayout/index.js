@@ -1,10 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useLocalStorage } from '../../hooks/useLocalStorage'
 import { graphql } from 'gatsby'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { Container, Background, H1, H2, Body } from './styles'
-import { Date } from '../BlogPostCard/styles'
+import {
+  Container,
+  Background,
+  H1,
+  H2,
+  Body,
+  FontSettingsContainer,
+} from './style'
+import { Date } from '../BlogPostCard/style'
 import FontSettings from '../FontSettings'
 import Quote from '../Quote'
 import CodeBlock from '../CodeBlock'
@@ -17,7 +24,6 @@ const fonts = {
 }
 
 const PostsLayout = ({ data: { mdx } }) => {
-  const [isFontSettingsOpen, setFontSettingsOpen] = useState(false)
   const [largeFont, setLargeFont] = useLocalStorage(false)
   const [fontStyle, setFontStyle] = useLocalStorage(fonts.default)
 
@@ -48,17 +54,14 @@ const PostsLayout = ({ data: { mdx } }) => {
           <Date fontStyle={fontStyle} className="hover-styles">
             {date} &bull; {mdx.timeToRead} min read
           </Date>
-          <button onClick={() => setFontSettingsOpen(!isFontSettingsOpen)}>
-            Font Settings
-          </button>
-          {isFontSettingsOpen && (
+          <FontSettingsContainer>
             <FontSettings
+              largeFont={largeFont}
+              setLargeFont={setLargeFont}
               fonts={fonts}
               setFontStyle={setFontStyle}
-              setLargeFont={setLargeFont}
             />
-          )}
-
+          </FontSettingsContainer>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </Container>
       </Background>

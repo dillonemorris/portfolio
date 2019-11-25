@@ -32,7 +32,7 @@ const Header = ({ darkMode, setDarkMode }) => {
           <Logo />
         </StyledLink>
         <MyToggleContainer>
-          <MyToggle darkMode={darkMode} setDarkMode={setDarkMode} />
+          <MyToggle toggle={darkMode} setToggle={setDarkMode} />
         </MyToggleContainer>
         <MobileIcon onClick={toggleMenu}>
           <NavIcon color={navIcon} />

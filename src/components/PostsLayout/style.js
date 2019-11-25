@@ -6,12 +6,17 @@ export const Background = styled.div`
 
 export const Container = styled.div`
   padding: 0px 1.0875rem 1.45rem;
-  padding-top: ${({ theme }) => theme.spacing._12};
+  padding-top: ${({ theme }) => theme.spacing._16};
   max-width: 680px;
 
   @media (min-width: 600px) {
     margin: 0px auto;
   }
+`
+
+export const FontSettingsContainer = styled.div`
+  padding-top: ${({ theme }) => theme.spacing._4};
+  padding-bottom: ${({ theme }) => theme.spacing._8};
 `
 
 export const Body = styled.p`

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Date, Title, Excerpt } from './styles'
+import { Container, Date, Title, Excerpt } from './style'
 
 const BlogPostCard = ({ date, title, excerpt, timeToRead }) => (
   <Container>

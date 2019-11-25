@@ -5,15 +5,21 @@ const themes = {
       //backgrounds
       background: '#fff',
       calloutBackground: 'rgba(237, 242, 247, 0.6)',
+      info: '#EBF4FF',
 
       // text
       heading: '#1A202C',
       secondaryHeading: '#4C51BF',
       body: '#1A202C',
+      accentBody: '#2D3748',
+
+      // links
+      primaryLink: '#4C51BF',
+      secondaryLink: '#4C51BF',
+      secondaryLinkHover: '#3C366B',
+      accentLink: '#C3DAFE',
       navLink: '#1A202C',
       activeNavLink: '#5A67D8',
-      accentBody: '#2D3748',
-      primaryLink: '#4C51BF',
 
       // borders
       border: '#4C51BF',
@@ -45,13 +51,15 @@ const themes = {
       gray900: '#1A202C',
 
       // primary
-      primary100: '#A3BFFA',
-      primary200: '#7F9CF5',
-      primary300: '#667EEA',
-      primary400: '#5A67D8',
+      primary100: '#EBF4FF',
+      primary200: '#C3DAFE',
+      primary300: '#A3BFFA',
+      primary400: '#7F9CF5',
+      primary500: '#667EEA',
+      primary600: '#5A67D8',
       primary: '#4C51BF',
-      primary600: '#434190',
-      primary700: '#3C366B',
+      primary800: '#434190',
+      primary900: '#3C366B',
 
       // secondary
       secondary100: '#E6FFFA',
@@ -183,6 +191,17 @@ const themes = {
       _64: '16rem',
     },
 
+    // transitions
+    transitions: {
+      hover: 'all .2s ease',
+    },
+
+    // borders
+    borderRadius: {
+      default: '0px',
+      secondary: '4px',
+    },
+
     // media queries
     mq: {
       sm: '640px',
@@ -202,14 +221,20 @@ const themes = {
       heading: '#fff',
       secondaryHeading: '#A3BFFA',
       body: '#fff',
+      accentBody: '#fff',
+
+      // links
+      primaryLink: '#fff',
+      secondaryLink: '#EDF2F7',
+      secondaryLinkHover: '#C3DAFE',
+      accentLink: '#1A202C',
       navLink: '#fff',
       activeNavLink: '#7F9CF5',
-      accentBody: '#fff',
-      primaryLink: '#fff',
 
       // borders
       border: '#A3BFFA',
       calloutBackground: 'rgba(45, 55, 72, 0.9)',
+      info: '#2d3748',
 
       // buttons
       primaryButtonText: '#fff',
@@ -225,13 +250,16 @@ const themes = {
       homePageGradient:
         'linear-gradient(180deg, rgba(2,0,36,1) 0%, #434190 0%, #4C51BF 100%)',
 
-      primary100: '#A3BFFA',
-      primary200: '#7F9CF5',
-      primary300: '#667EEA',
-      primary400: '#5A67D8',
+      // primary
+      primary100: '#EBF4FF',
+      primary200: '#C3DAFE',
+      primary300: '#A3BFFA',
+      primary400: '#7F9CF5',
+      primary500: '#667EEA',
+      primary600: '#5A67D8',
       primary: '#4C51BF',
-      primary600: '#434190',
-      primary700: '#3C366B',
+      primary800: '#434190',
+      primary900: '#3C366B',
     },
 
     fontSize: {
@@ -310,6 +338,17 @@ const themes = {
       _48: '12rem',
       _56: '14rem',
       _64: '16rem',
+    },
+
+    // transitions
+    transitions: {
+      hover: 'all .2s ease',
+    },
+
+    // borders
+    borderRadius: {
+      default: '0px',
+      secondary: '4px',
     },
 
     // media queries

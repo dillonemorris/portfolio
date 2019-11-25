@@ -1,18 +1,30 @@
 import React from 'react'
+import { Button, Bar, ButtonContainer } from './style'
+import MyToggle from '../MyToggle'
 
-const FontSettings = ({ setFontStyle, setLargeFont, fonts }) => {
+const FontSettings = ({ setLargeFont, largeFont, setFontStyle, fonts }) => {
   return (
-    <>
-      <div>
-        <button onClick={() => setFontStyle(fonts.default)}>default</button>
-        <button onClick={() => setFontStyle(fonts.serif)}>serif</button>
-        <button onClick={() => setFontStyle(fonts.mono)}>mono</button>
-      </div>
-      <div>
-        <button onClick={() => setLargeFont(false)}>small</button>
-        <button onClick={() => setLargeFont(true)}>large</button>
-      </div>
-    </>
+    <Bar>
+      <ButtonContainer>
+        <Button
+          fontStyle={fonts.default}
+          onClick={() => setFontStyle(fonts.default)}
+        >
+          default
+        </Button>
+        <Button
+          fontStyle={fonts.serif}
+          onClick={() => setFontStyle(fonts.serif)}
+        >
+          serif
+        </Button>
+        <Button fontStyle={fonts.mono} onClick={() => setFontStyle(fonts.mono)}>
+          mono
+        </Button>
+      </ButtonContainer>
+
+      <MyToggle toggle={largeFont} setToggle={setLargeFont} />
+    </Bar>
   )
 }
 

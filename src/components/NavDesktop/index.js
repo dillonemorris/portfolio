@@ -21,7 +21,7 @@ const NavDesktop = ({ className, darkMode, setDarkMode }) => {
         About
       </StyledLink>
       <MyToggleContainer>
-        <MyToggle darkMode={darkMode} setDarkMode={setDarkMode} />
+        <MyToggle toggle={darkMode} setToggle={setDarkMode} />
       </MyToggleContainer>
     </Nav>
   )
