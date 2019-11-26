@@ -13,6 +13,8 @@ import {
   MyToggleContainer,
 } from './style'
 import MyToggle from '../MyToggle'
+import Light from '../../icons/Light'
+import Dark from '../../icons/Dark'
 
 const Header = ({ darkMode, setDarkMode }) => {
   const [isMenuOpen, setMenuOpen] = useState(false)
@@ -32,7 +34,14 @@ const Header = ({ darkMode, setDarkMode }) => {
           <Logo />
         </StyledLink>
         <MyToggleContainer>
-          <MyToggle darkMode={darkMode} setDarkMode={setDarkMode} />
+          <MyToggle
+            toggle={darkMode}
+            setToggle={setDarkMode}
+            icons={{
+              checked: <Dark alt="Moon" style={{ pointerEvents: 'none' }} />,
+              unchecked: <Light alt="Sun" style={{ pointerEvents: 'none' }} />,
+            }}
+          />
         </MyToggleContainer>
         <MobileIcon onClick={toggleMenu}>
           <NavIcon color={navIcon} />
