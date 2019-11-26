@@ -4,17 +4,18 @@ import { ThemeContext } from 'styled-components'
 
 const FontSizeLarge = () => {
   const {
-    colors: { white },
+    colors: { gray900 },
   } = useContext(ThemeContext)
   return (
     <svg
+      style={{ marginLeft: '3px' }}
       width="19"
       height="19"
       viewBox="0 0 17 17"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g
-        stroke={white}
+        stroke={gray900}
         fill="none"
         fillRule="evenodd"
         strokeLinecap="round"

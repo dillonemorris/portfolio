@@ -42,14 +42,14 @@ const FontSettings = ({
         setToggle={setLargeFont}
         icons={{
           checked: (
-            <FontSizeSmall
-              alt="Letter 'A' Small"
+            <FontSizeLarge
+              alt="Letter 'A' Large"
               style={{ pointerEvents: 'none' }}
             />
           ),
           unchecked: (
-            <FontSizeLarge
-              alt="Letter 'A' Large"
+            <FontSizeSmall
+              alt="Letter 'A' Small"
               style={{ pointerEvents: 'none' }}
             />
           ),

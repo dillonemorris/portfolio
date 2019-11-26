@@ -4,18 +4,18 @@ import { ThemeContext } from 'styled-components'
 
 const FontSizeSmall = () => {
   const {
-    colors: { gray900 },
+    colors: { white },
   } = useContext(ThemeContext)
   return (
     <svg
-      style={{ marginLeft: '3px', marginBottom: '2px' }}
+      style={{ marginRight: '3px', marginBottom: '3px' }}
       width="14"
       height="14"
       viewBox="0 0 16 16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g
-        stroke={gray900}
+        stroke={white}
         fill="none"
         fillRule="evenodd"
         strokeLinecap="round"

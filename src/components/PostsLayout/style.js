@@ -19,6 +19,10 @@ export const FontSettingsContainer = styled.div`
   padding-bottom: ${({ theme }) => theme.spacing._8};
 `
 
+export const DateContainer = styled.div`
+  padding-bottom: ${({ theme }) => theme.spacing._2};
+`
+
 export const Body = styled.p`
   color: ${({ theme }) => theme.colors.body};
   font-family: ${props =>
@@ -47,7 +51,7 @@ export const H1 = styled.h1`
       : props.theme.fontSize.text_3xl};
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   line-height: ${({ theme }) => theme.lineHeight.none};
-  margin-bottom: ${({ theme }) => theme.spacing._2};
+  margin-bottom: 0;
   padding: 0;
 `
 

@@ -10,6 +10,7 @@ import {
   H2,
   Body,
   FontSettingsContainer,
+  DateContainer,
 } from './style'
 import { Date } from '../BlogPostCard/style'
 import FontSettings from '../FontSettings'
@@ -60,9 +61,11 @@ const PostsLayout = ({ data: { mdx } }) => {
           <H1 largeFont={largeFont} fontStyle={fontStyle}>
             {title}
           </H1>
-          <Date fontStyle={fontStyle} className="hover-styles">
-            {date} &bull; {mdx.timeToRead} min read
-          </Date>
+          <DateContainer>
+            <Date fontStyle={fontStyle} className="hover-styles">
+              {date} &bull; {mdx.timeToRead} min read
+            </Date>
+          </DateContainer>
 
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </Container>
