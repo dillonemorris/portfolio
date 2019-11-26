@@ -48,20 +48,22 @@ const PostsLayout = ({ data: { mdx } }) => {
     <MDXProvider components={components}>
       <Background>
         <Container>
+          <FontSettingsContainer>
+            <FontSettings
+              largeFont={largeFont}
+              setLargeFont={setLargeFont}
+              fontStyle={fontStyle}
+              setFontStyle={setFontStyle}
+              fonts={fonts}
+            />
+          </FontSettingsContainer>
           <H1 largeFont={largeFont} fontStyle={fontStyle}>
             {title}
           </H1>
           <Date fontStyle={fontStyle} className="hover-styles">
             {date} &bull; {mdx.timeToRead} min read
           </Date>
-          <FontSettingsContainer>
-            <FontSettings
-              largeFont={largeFont}
-              setLargeFont={setLargeFont}
-              fonts={fonts}
-              setFontStyle={setFontStyle}
-            />
-          </FontSettingsContainer>
+
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </Container>
       </Background>

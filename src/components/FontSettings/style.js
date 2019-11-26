@@ -18,9 +18,11 @@ export const Button = styled.button`
   justify-content: center;
   font-family: ${({ fontStyle }) => fontStyle};
   font-size: ${({ theme }) => theme.fontSize.text_sm};
-  color: ${({ theme }) => theme.colors.secondaryLink};
+  color: ${({ active, theme }) =>
+    active ? theme.colors.secondaryLinkHover : theme.colors.secondaryLink};
   padding: ${({ theme }) => theme.spacing._1} ${({ theme }) => theme.spacing._3};
-  background: transparent;
+  background: ${({ active, theme }) =>
+    active ? theme.colors.accentLink : 'transparent'};
   border-radius: ${({ theme }) => theme.borderRadius.secondary};
   border: none;
   width: 70px;

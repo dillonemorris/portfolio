@@ -5,7 +5,7 @@
   position: relative;
   cursor: pointer;
   background-color: transparent;
-  margin: auto;
+  margin: auto 0;
   border: 0;
   padding: 0;
 
@@ -16,7 +16,7 @@
   -ms-user-select: none;
   user-select: none;
 
-  -webkit-tap-highlight-color: #2d3748;
+  -webkit-tap-highlight-color: #4c51bf;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -43,22 +43,22 @@
   height: 24px;
   padding: 0;
   border-radius: 30px;
-  background-color: #2d3748;
+  background-color: #4c51bf;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 
 .react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {
-  background-color: #1a202c;
+  background-color: #434190;
 }
 
 .react-toggle--checked .react-toggle-track {
-  background-color: #f7fafc;
+  background-color: #c3dafe;
 }
 
 .react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
-  background-color: #f7fafc;
+  background-color: #ebf4ff;
 }
 
 .react-toggle-track-check {

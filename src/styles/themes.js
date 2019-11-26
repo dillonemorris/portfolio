@@ -250,6 +250,18 @@ const themes = {
       homePageGradient:
         'linear-gradient(180deg, rgba(2,0,36,1) 0%, #434190 0%, #4C51BF 100%)',
 
+      // grays
+      white: '#fff',
+      gray100: '#F7FAFC',
+      gray200: '#EDF2F7',
+      gray300: '#E2E8F0',
+      gray400: '#CBD5E0',
+      gray500: '#A0AEC0',
+      gray600: '#718096',
+      gray700: '#4A5568',
+      gray800: '#2D3748',
+      gray900: '#1A202C',
+
       // primary
       primary100: '#EBF4FF',
       primary200: '#C3DAFE',
@@ -349,6 +361,26 @@ const themes = {
     borderRadius: {
       default: '0px',
       secondary: '4px',
+    },
+
+    // shadows
+    shadow: {
+      base: '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+      md:
+        '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+      lg:
+        '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+      xl:
+        '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+      xxl: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+    },
+
+    // typography
+    fontFamily: {
+      primary:
+        '"Metropolis", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+      secondary:
+        '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
     },
 
     // media queries
