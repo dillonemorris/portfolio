@@ -246,12 +246,6 @@ const themes = {
       linkBorderHover: '#C3DAFE',
       border: '#A3BFFA',
 
-      // border radius
-      borderRadius: {
-        default: '0px',
-        secondary: '4px',
-      },
-
       // buttons
       primaryButtonText: '#fff',
 
@@ -391,6 +385,12 @@ const themes = {
         '"Metropolis", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
       secondary:
         '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    },
+
+    // border radius
+    borderRadius: {
+      default: '0px',
+      secondary: '4px',
     },
 
     // media queries

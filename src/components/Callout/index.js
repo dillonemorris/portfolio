@@ -8,7 +8,6 @@ import {
   IconContainer,
 } from './styles'
 import { Link } from '../../components/globals'
-// import MyLink from '../../components/MyLink'
 import Button from '../Button'
 import { useContext } from 'react'
 import { ThemeContext } from 'styled-components'

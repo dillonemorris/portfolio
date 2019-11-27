@@ -13,6 +13,7 @@ export const Link = styled(MyLink)`
   padding: 0;
 
   :hover {
+    cursor: pointer;
     border-bottom: 1px solid ${({ theme }) => theme.colors.linkBorderHover};
     background: ${({ background, theme }) =>
       background ? background : theme.colors.backgroundLinkHover};
