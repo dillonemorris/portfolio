@@ -7,8 +7,8 @@ import {
   Img,
   IconContainer,
 } from './styles'
-// import { Link } from '../../components/globals'
-import MyLink from '../../components/MyLink'
+import { Link } from '../../components/globals'
+// import MyLink from '../../components/MyLink'
 import Button from '../Button'
 import { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
@@ -26,7 +26,7 @@ const Callout = () => {
         <Heading>What I'm up to</Heading>
         <Description>
           I am currently working with some amazing people at{' '}
-          <MyLink page="https://synapsestudios.com" text="Synapse Studios" />.
+          <Link page="https://synapsestudios.com" text="Synapse Studios" />.
           There, I get to utilize my diverse skillset working on next level
           products.
         </Description>

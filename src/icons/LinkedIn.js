@@ -15,7 +15,7 @@ const LinkedIn = ({ color }) => {
         stroke="none"
         strokeWidth="1"
         fill="none"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         strokeLinecap="round"
         strokeLinejoin="round"
       >

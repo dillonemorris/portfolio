@@ -1,15 +1,22 @@
 import React from 'react'
-import { StyledLink, ExternalLink } from './style'
+import { Link } from 'gatsby'
 
-const MyLink = ({ text, page }) => {
+const MyLink = ({ text, page, className }) => {
   const internal = /^\/(?!\/)/.test(page)
 
   return internal ? (
-    <StyledLink to={page}>{text}</StyledLink>
-  ) : (
-    <ExternalLink target="_blank" href={page} rel="noopener noreferrer">
+    <Link className={className} to={page}>
       {text}
-    </ExternalLink>
+    </Link>
+  ) : (
+    <a
+      className={className}
+      target="_blank"
+      href={page}
+      rel="noopener noreferrer"
+    >
+      {text}
+    </a>
   )
 }
 
