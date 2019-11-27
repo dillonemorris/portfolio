@@ -20,8 +20,11 @@ const themes = {
       accentLink: '#C3DAFE',
       navLink: '#1A202C',
       activeNavLink: '#5A67D8',
+      backgroundLinkHover: '#C3DAFE',
 
       // borders
+      linkBorder: '#A3BFFA',
+      linkBorderHover: '#4C51BF',
       border: '#4C51BF',
 
       // buttons
@@ -197,6 +200,10 @@ const themes = {
     },
 
     // borders
+    linkBorder: '#A3BFFA',
+    border: '#4C51BF',
+
+    // border radius
     borderRadius: {
       default: '0px',
       secondary: '4px',
@@ -216,6 +223,8 @@ const themes = {
     colors: {
       //backgrounds
       background: '#1A202C',
+      calloutBackground: 'rgba(45, 55, 72, 0.9)',
+      info: '#2d3748',
 
       // text
       heading: '#fff',
@@ -230,11 +239,18 @@ const themes = {
       accentLink: '#1A202C',
       navLink: '#fff',
       activeNavLink: '#7F9CF5',
+      backgroundLinkHover: '#434190',
 
       // borders
+      linkBorder: '#EBF4FF',
+      linkBorderHover: '#C3DAFE',
       border: '#A3BFFA',
-      calloutBackground: 'rgba(45, 55, 72, 0.9)',
-      info: '#2d3748',
+
+      // border radius
+      borderRadius: {
+        default: '0px',
+        secondary: '4px',
+      },
 
       // buttons
       primaryButtonText: '#fff',
@@ -355,12 +371,6 @@ const themes = {
     // transitions
     transitions: {
       hover: 'all .2s ease',
-    },
-
-    // borders
-    borderRadius: {
-      default: '0px',
-      secondary: '4px',
     },
 
     // shadows
