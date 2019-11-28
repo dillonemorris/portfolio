@@ -1,8 +1,10 @@
 import React, { useContext } from 'react'
+import { ThemeContext } from 'styled-components'
+import SEO from '../components/seo'
+import featureCardData from '../data/featureCardData'
 
 import Callout from '../components/Callout'
-import SEO from '../components/seo'
-import { ThemeContext } from 'styled-components'
+import FeatureCard from '../components/FeatureCard'
 
 //icons
 import DownArrow from '../icons/DownArrow'
@@ -13,6 +15,7 @@ import BigBlob from '../images/BigBlob'
 import SmallCircles from '../images/SmallCircles'
 import Triangle from '../images/Triangle.svg'
 import TriangleDark from '../images/TriangleDark.svg'
+import Squares from '../images/Squares'
 
 //styles
 import { LargeBody, H1 } from '../components/globals'
@@ -76,7 +79,21 @@ const IndexPage = () => {
       <div style={{ background: theme.colors.homePageGradient }}>
         <Container id="callout">
           <Callout />
-          <H1>I'm really good at...</H1>
+          <div style={{ display: 'flex' }}>
+            <div style={{ marginRight: theme.spacing._4 }}>
+              <Squares />
+            </div>
+            <H1>I'm really good at...</H1>
+          </div>
+          <div>
+            {featureCardData.map(feature => (
+              <FeatureCard
+                title={feature.title}
+                description={feature.description}
+                icon={feature.icon}
+              />
+            ))}
+          </div>
         </Container>
       </div>
     </>
