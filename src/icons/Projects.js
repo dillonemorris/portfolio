@@ -11,7 +11,7 @@ const Projects = ({ color }) => {
     >
       <g
         fill="none"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         stroke-linecap="round"
         stroke-linejoin="round"
       >

@@ -18,7 +18,12 @@ const ProjectCard = ({
       <img src={screenshot} />
       <InfoContainer>
         <H4 style={{ marginBottom: theme.spacing._1 }}>{title}</H4>
-        <Body style={{ marginBottom: theme.spacing._5 }}>{description}</Body>
+        <Body
+          color={theme.colors.secondaryHeading}
+          style={{ marginBottom: theme.spacing._5 }}
+        >
+          {description}
+        </Body>
         <Button color={color} page={page} text={btnText} />
       </InfoContainer>
     </Container>

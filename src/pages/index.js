@@ -19,6 +19,9 @@ import SmallCircles from '../images/SmallCircles'
 import Triangle from '../images/Triangle.svg'
 import TriangleDark from '../images/TriangleDark.svg'
 import Squares from '../images/Squares'
+import Waves from '../images/Waves.svg'
+import WavesDark from '../images/WavesDark.svg'
+import Triangles from '../images/Triangles'
 
 //styles
 import { LargeBody, H1, H3, Container, Background } from '../components/globals'
@@ -30,7 +33,6 @@ import {
   BlobContainer,
   BigBlobContainer,
   SmallCirclesContainer,
-  TriangleBackground,
   CallToAction,
   DownArrowContainer,
   FeatureCardContainer,
@@ -52,7 +54,11 @@ const IndexPage = () => {
   return (
     <>
       <SEO title="Home" />
-      <TriangleBackground bg={theme.dark ? TriangleDark : Triangle}>
+      <Background
+        position="bottom left"
+        size="210vh"
+        bg={theme.dark ? TriangleDark : Triangle}
+      >
         <Container>
           <BlobContainer position="right">
             <Blob />
@@ -78,7 +84,7 @@ const IndexPage = () => {
             </CallToAction>
           </Landing>
         </Container>
-      </TriangleBackground>
+      </Background>
       <BigBlobContainer>
         <BigBlob color={theme.colors.bigBlob} />
       </BigBlobContainer>
@@ -103,7 +109,11 @@ const IndexPage = () => {
           </FeatureCardContainer>
         </Container>
       </div>
-      <Background color={theme.colors.background}>
+      <Background
+        position="bottom"
+        size="100%"
+        bg={theme.dark ? WavesDark : Waves}
+      >
         <Container>
           <BlobContainer>
             <Blob color={theme.colors.blob} />
@@ -136,6 +146,9 @@ const IndexPage = () => {
               ))}
             </ProjectCardContainer>
           </ProjectsContainer>
+          <div style={{ width: '100px', marginLeft: 'auto' }}>
+            <Triangles />
+          </div>
         </Container>
       </Background>
     </>

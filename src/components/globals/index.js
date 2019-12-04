@@ -2,7 +2,12 @@ import styled from 'styled-components'
 import MyLink from '../MyLink'
 
 export const Background = styled.div`
-  background: ${({ color }) => color};
+  background-color: ${({ color, theme }) =>
+    color ? color : theme.colors.background};
+  background-image: ${props => (props.bg ? `url(${props.bg})` : 'none')};
+  background-position: ${({ position }) => (position ? position : 'initial')};
+  background-size: ${({ size }) => (size ? size : 'auto')};
+  background-repeat: no-repeat;
 `
 
 export const Container = styled.div`

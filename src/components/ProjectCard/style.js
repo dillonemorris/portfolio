@@ -5,7 +5,7 @@ export const InfoContainer = styled.div`
 `
 
 export const Container = styled.div`
-  background: #fff;
+  background: ${({ theme }) => theme.colors.background};
   position: relative;
   left: 20px;
   top: 20px;
