@@ -2,12 +2,15 @@ import React, { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
 import SEO from '../components/seo'
 import featureCardData from '../data/featureCardData'
+import projectData from '../data/projectData'
 
 import Callout from '../components/Callout'
 import FeatureCard from '../components/FeatureCard'
+import ProjectCard from '../components/ProjectCard'
 
 //icons
 import DownArrow from '../icons/DownArrow'
+import Projects from '../icons/Projects'
 
 //shapes
 import Blob from '../images/Blob'
@@ -18,10 +21,8 @@ import TriangleDark from '../images/TriangleDark.svg'
 import Squares from '../images/Squares'
 
 //styles
-import { LargeBody, H1 } from '../components/globals'
-
+import { LargeBody, H1, H3, Container, Background } from '../components/globals'
 import {
-  Container,
   Landing,
   Intro,
   Heading,
@@ -29,9 +30,14 @@ import {
   BlobContainer,
   BigBlobContainer,
   SmallCirclesContainer,
-  Background,
+  TriangleBackground,
   CallToAction,
   DownArrowContainer,
+  FeatureCardContainer,
+  ProjectsContainer,
+  ProjectsHeadingContainer,
+  ProjectCardContainer,
+  ProjectBackground,
 } from '../styles/page-styles/home-page-styles'
 
 const IndexPage = () => {
@@ -46,9 +52,9 @@ const IndexPage = () => {
   return (
     <>
       <SEO title="Home" />
-      <Background bg={theme.dark ? TriangleDark : Triangle}>
+      <TriangleBackground bg={theme.dark ? TriangleDark : Triangle}>
         <Container>
-          <BlobContainer>
+          <BlobContainer position="right">
             <Blob />
           </BlobContainer>
           <Landing>
@@ -72,7 +78,7 @@ const IndexPage = () => {
             </CallToAction>
           </Landing>
         </Container>
-      </Background>
+      </TriangleBackground>
       <BigBlobContainer>
         <BigBlob color={theme.colors.bigBlob} />
       </BigBlobContainer>
@@ -85,17 +91,53 @@ const IndexPage = () => {
             </div>
             <H1>I'm really good at...</H1>
           </div>
-          <div>
+          <FeatureCardContainer>
             {featureCardData.map(feature => (
               <FeatureCard
+                key={feature.title}
                 title={feature.title}
                 description={feature.description}
                 icon={feature.icon}
               />
             ))}
-          </div>
+          </FeatureCardContainer>
         </Container>
       </div>
+      <Background color={theme.colors.background}>
+        <Container>
+          <BlobContainer>
+            <Blob color={theme.colors.blob} />
+          </BlobContainer>
+          <ProjectsContainer>
+            <ProjectsHeadingContainer>
+              <Projects color={theme.colors.body} />
+              <H3 style={{ marginLeft: theme.spacing._3 }}>Projects</H3>
+            </ProjectsHeadingContainer>
+            <ProjectCardContainer>
+              {projectData.map((project, i) => (
+                <>
+                  <ProjectBackground
+                    color={
+                      i % 2 === 0
+                        ? theme.colors.primaryProjectBackground
+                        : theme.colors.secondaryProjectBackground
+                    }
+                  >
+                    <ProjectCard
+                      title={project.title}
+                      description={project.description}
+                      btnText={project.btnText}
+                      color={project.color}
+                      page={project.page}
+                      screenshot={project.screenshot}
+                    />
+                  </ProjectBackground>
+                </>
+              ))}
+            </ProjectCardContainer>
+          </ProjectsContainer>
+        </Container>
+      </Background>
     </>
   )
 }

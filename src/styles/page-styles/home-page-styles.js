@@ -1,21 +1,12 @@
 import styled from 'styled-components'
 
 // layout
-export const Background = styled.div`
+export const TriangleBackground = styled.div`
   background-color: ${props => props.theme.colors.background};
   background-image: url(${props => props.bg});
   background-repeat: no-repeat;
   background-position: bottom left;
   background-size: 210vh;
-`
-export const Container = styled.div`
-  padding: 0px 1.0875rem 1.45rem;
-  padding-top: 0px;
-  max-width: 1080px;
-
-  @media (min-width: ${props => props.theme.mq.sm}) {
-    margin: 0px auto;
-  }
 `
 
 export const Landing = styled.div`
@@ -89,7 +80,8 @@ export const DownArrowContainer = styled.div`
 
 export const BlobContainer = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: ${({ position }) =>
+    position === 'right' ? 'flex-end' : 'flex-start'};
 `
 
 export const BigBlobContainer = styled.div`
@@ -116,4 +108,34 @@ export const Img = styled.img`
   @media (min-width: ${props => props.theme.mq.sm}) {
     padding: 22px 0px;
   }
+`
+
+export const FeatureCardContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: ${({ theme }) => theme.spacing._12};
+  padding: ${({ theme }) => theme.spacing._20} 0;
+`
+
+export const ProjectsHeadingContainer = styled.div`
+  display: flex;
+  align-items: center;
+  padding-bottom: ${({ theme }) => theme.spacing._12};
+`
+
+export const ProjectsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-top: ${({ theme }) => theme.spacing._4};
+  padding-bottom: ${({ theme }) => theme.spacing._24};
+`
+
+export const ProjectCardContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: ${({ theme }) => theme.spacing._16};
+`
+
+export const ProjectBackground = styled.div`
+  background: ${({ color }) => color};
 `

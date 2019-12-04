@@ -1,6 +1,21 @@
 import styled from 'styled-components'
 import MyLink from '../MyLink'
 
+export const Background = styled.div`
+  background: ${({ color }) => color};
+`
+
+export const Container = styled.div`
+  background: ${({ color }) => (color ? color : 'none')};
+  padding: 0px 1.0875rem 1.45rem;
+  padding-top: 0px;
+  max-width: 1080px;
+
+  @media (min-width: ${props => props.theme.mq.sm}) {
+    margin: 0px auto;
+  }
+`
+
 export const Link = styled(MyLink)`
   color: ${({ theme }) => theme.colors.primaryLink};
   font-weight: ${({ theme }) => theme.fontWeight.medium};
@@ -40,8 +55,8 @@ export const H2 = styled.h2`
 
 export const H3 = styled.h3`
   color: ${({ theme }) => theme.colors.body};
-  font-weight: 500;
-  font-size: ${({ theme }) => theme.fontSize.text_2xl};
+  font-weight: 700;
+  font-size: ${({ theme }) => theme.fontSize.text_3xl};
   line-height: 1.5;
   margin: 0;
   padding: 0;
@@ -68,7 +83,6 @@ export const H5 = styled.h5`
 export const H6 = styled.h6`
   color: ${({ theme }) => theme.colors.body};
   font-weight: 600;
-  text-transform: uppercase;
   font-size: ${({ theme }) => theme.fontSize.text_base};
   line-height: 1.5;
   margin: 0;
@@ -85,7 +99,7 @@ export const LargeBody = styled.p`
 `
 
 export const Body = styled.p`
-  color: ${({ theme }) => theme.colors.body};
+  color: ${({ theme, color }) => (color ? color : theme.colors.body)};
   font-weight: ${({ theme }) => theme.fontWeight.light};
   font-size: ${({ theme }) => theme.fontSize.text_base};
   line-height: ${({ theme }) => theme.lineHeight.normal};

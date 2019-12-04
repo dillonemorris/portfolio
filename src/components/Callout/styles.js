@@ -24,7 +24,7 @@ export const Left = styled.div`
 
 export const Heading = styled.h1`
   color: ${({ theme }) => theme.colors.heading};
-  font-size: ${({ theme }) => theme.fontSize.text_4xl};
+  font-size: ${({ theme }) => theme.fontSize.text_3xl};
   margin-bottom: ${({ theme }) => theme.spacing._2};
 `
 

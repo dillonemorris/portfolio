@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ThemeContext } from 'styled-components'
+import { Container, Icon } from './style'
+import { H4, Body } from '../globals'
 
 const FeatureCard = ({ icon, title, description }) => {
+  const {
+    colors: { secondaryBody },
+  } = useContext(ThemeContext)
   return (
-    <div>
-      <div>{icon}</div>
-      <div>{title}</div>
-      <div>{description}</div>
-    </div>
+    <Container>
+      <Icon>{icon}</Icon>
+      <H4>{title}</H4>
+      <Body color={secondaryBody}>{description}</Body>
+    </Container>
   )
 }
 

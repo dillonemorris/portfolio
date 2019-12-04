@@ -6,11 +6,14 @@ const themes = {
       background: '#fff',
       calloutBackground: 'rgba(237, 242, 247, 0.6)',
       info: '#EBF4FF',
+      primaryProjectBackground: '#EBF4FF',
+      secondaryProjectBackground: '#EBF8FF',
 
       // text
       heading: '#1A202C',
       secondaryHeading: '#4C51BF',
       body: '#1A202C',
+      secondaryBody: '#1A202C',
       accentBody: '#2D3748',
 
       // links
@@ -32,6 +35,7 @@ const themes = {
 
       // shapes
       bigBlob: '#4C51BF',
+      blob: '#B2F5EA',
 
       //icons
       navIcon: '#1A202C',
@@ -225,11 +229,14 @@ const themes = {
       background: '#1A202C',
       calloutBackground: 'rgba(45, 55, 72, 0.9)',
       info: '#2d3748',
+      primaryProjectBackground: '#4A5568',
+      secondaryProjectBackground: '#4A5568',
 
       // text
       heading: '#fff',
       secondaryHeading: '#A3BFFA',
       body: '#fff',
+      secondaryBody: '#D8FBFF',
       accentBody: '#fff',
 
       // links
@@ -251,6 +258,7 @@ const themes = {
 
       // shapes
       bigBlob: '#3C366B',
+      blob: '#2d3748',
 
       //icons
       navIcon: '#fff',

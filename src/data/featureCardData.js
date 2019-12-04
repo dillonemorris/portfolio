@@ -14,25 +14,25 @@ const featureCardData = [
   },
   {
     icon: <UIUX />,
-    title: 'React',
+    title: 'UI/UX Design',
     description:
       'I’ve written many applications in React. I have extensive experience working on projects of varied sizes and scopes.',
   },
   {
     icon: <Lightbulb />,
-    title: 'React',
+    title: 'Problem Solving',
     description:
       'I’ve written many applications in React. I have extensive experience working on projects of varied sizes and scopes.',
   },
   {
     icon: <Communication />,
-    title: 'React',
+    title: 'Communication',
     description:
       'I’ve written many applications in React. I have extensive experience working on projects of varied sizes and scopes.',
   },
   {
     icon: <Owl />,
-    title: 'React',
+    title: 'Learning',
     description:
       'I’ve written many applications in React. I have extensive experience working on projects of varied sizes and scopes.',
   },
