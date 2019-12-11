@@ -40,7 +40,7 @@ export const Heading = styled.h1`
   }
 `
 
-export const HeroHeadingContainer = styled.div`
+export const HeroHeading = styled.div`
   max-width: ${props => props.theme.maxWidth.max_w_3xl};
   display: flex;
   flex-direction: column;
@@ -97,10 +97,6 @@ export const SmallCirclesContainer = styled.div`
   padding-top: ${props => props.theme.spacing._12};
 `
 
-export const TriangleContainer = styled.div`
-  position: absolute;
-`
-
 export const Img = styled.img`
   width: 140px;
   padding: 18px 0px;
@@ -113,14 +109,27 @@ export const Img = styled.img`
 export const FeatureCardContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: ${({ theme }) => theme.spacing._12};
+  grid-gap: 4rem 3rem;
   padding: ${({ theme }) => theme.spacing._20} 0;
 `
 
-export const ProjectsHeadingContainer = styled.div`
+export const SectionHeading = styled.div`
   display: flex;
   align-items: center;
+  padding-bottom: ${({ theme, paddingBottom }) =>
+    paddingBottom ? paddingBottom : 0};
+`
+
+export const BlogHeading = styled.div`
+  display: flex;
+  flex-direction: column;
   padding-bottom: ${({ theme }) => theme.spacing._12};
+`
+
+export const BlogCTA = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: ${({ theme }) => theme.spacing._12};
 `
 
 export const ProjectsContainer = styled.div`
@@ -130,12 +139,13 @@ export const ProjectsContainer = styled.div`
   padding-bottom: ${({ theme }) => theme.spacing._24};
 `
 
-export const ProjectCardContainer = styled.div`
+export const CardContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: ${({ theme }) => theme.spacing._24};
+  grid-gap: ${({ theme }) => theme.spacing._20};
 `
 
-export const ProjectBackground = styled.div`
-  background: ${({ color }) => color};
+export const TrianglesContainer = styled.div`
+  width: 100px;
+  margin-left: auto;
 `

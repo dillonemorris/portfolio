@@ -4,6 +4,8 @@ const themes = {
     colors: {
       //backgrounds
       background: '#fff',
+      secondaryBackground: '#F7FAFC',
+      cardBackground: '#fff',
       calloutBackground: 'rgba(237, 242, 247, 0.6)',
       info: '#EBF4FF',
       primaryProjectBackground: '#EBF4FF',
@@ -43,7 +45,7 @@ const themes = {
 
       //gradients
       homePageGradient:
-        'linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rgba(244,246,255,1) 100%)',
+        'linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(244,246,255,1) 0%, rgba(255,255,255,1) 100%)',
 
       // grays
       white: '#fff',
@@ -121,16 +123,46 @@ const themes = {
     },
 
     fontSize: {
-      text_xs: '.75rem',
-      text_sm: '.875rem',
-      text_base: '1rem',
-      text_lg: '1.125rem',
-      text_xl: '1.25rem',
-      text_2xl: '1.5rem',
-      text_3xl: '1.875rem',
-      text_4xl: '2.25rem',
-      text_5xl: '3rem',
-      text_6xl: '4rem',
+      text_xs: {
+        desktop: '.75rem',
+        mobile: '.65rem',
+      },
+      text_sm: {
+        desktop: '.875rem',
+        mobile: '.75rem',
+      },
+      text_base: {
+        desktop: '1rem',
+        mobile: '.875rem',
+      },
+      text_lg: {
+        desktop: '1.125rem',
+        mobile: '1rem',
+      },
+      text_xl: {
+        desktop: '1.25rem',
+        mobile: '1.125rem',
+      },
+      text_2xl: {
+        desktop: '1.5rem',
+        mobile: '1.25rem',
+      },
+      text_3xl: {
+        desktop: '1.875rem',
+        mobile: '1.5rem',
+      },
+      text_4xl: {
+        desktop: '2.25rem',
+        mobile: '1.875rem',
+      },
+      text_5xl: {
+        desktop: '2.75rem',
+        mobile: '2.25rem',
+      },
+      text_6xl: {
+        desktop: '4rem',
+        mobile: '3rem',
+      },
     },
 
     fontWeight: {
@@ -227,6 +259,8 @@ const themes = {
     colors: {
       //backgrounds
       background: '#1A202C',
+      secondaryBackground: '#1A202C',
+      cardBackground: '#2d3748',
       calloutBackground: 'rgba(45, 55, 72, 0.9)',
       info: '#2d3748',
       primaryProjectBackground: '#4A5568',
@@ -236,7 +270,7 @@ const themes = {
       heading: '#fff',
       secondaryHeading: '#A3BFFA',
       body: '#fff',
-      secondaryBody: '#D8FBFF',
+      secondaryBody: '#CCE0FF',
       accentBody: '#fff',
 
       // links
@@ -293,16 +327,46 @@ const themes = {
     },
 
     fontSize: {
-      text_xs: '.75rem',
-      text_sm: '.875rem',
-      text_base: '1rem',
-      text_lg: '1.125rem',
-      text_xl: '1.25rem',
-      text_2xl: '1.5rem',
-      text_3xl: '1.875rem',
-      text_4xl: '2.25rem',
-      text_5xl: '3rem',
-      text_6xl: '4rem',
+      text_xs: {
+        desktop: '.75rem',
+        mobile: '.65rem',
+      },
+      text_sm: {
+        desktop: '.875rem',
+        mobile: '.75rem',
+      },
+      text_base: {
+        desktop: '1rem',
+        mobile: '.875rem',
+      },
+      text_lg: {
+        desktop: '1.125rem',
+        mobile: '1rem',
+      },
+      text_xl: {
+        desktop: '1.25rem',
+        mobile: '1.125rem',
+      },
+      text_2xl: {
+        desktop: '1.5rem',
+        mobile: '1.25rem',
+      },
+      text_3xl: {
+        desktop: '1.875rem',
+        mobile: '1.5rem',
+      },
+      text_4xl: {
+        desktop: '2.25rem',
+        mobile: '1.875rem',
+      },
+      text_5xl: {
+        desktop: '3rem',
+        mobile: '2.25rem',
+      },
+      text_6xl: {
+        desktop: '4rem',
+        mobile: '3rem',
+      },
     },
 
     fontWeight: {

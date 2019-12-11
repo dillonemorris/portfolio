@@ -31,6 +31,16 @@ export const Quote = styled.div`
   background: ${({ theme }) => theme.colors.info};
 `
 
+export const Date = styled.div`
+  color: ${({ theme }) => theme.colors.body};
+  font-family: ${props =>
+    props.fontStyle ? props.fontStyle : props.theme.fontFamily.secondary};
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  font-weight: 200;
+  padding-bottom: 4px;
+`
+
 export const Body = styled.p`
   color: ${({ theme }) => theme.colors.body};
   font-family: ${props =>

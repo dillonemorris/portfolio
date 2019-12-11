@@ -12,8 +12,8 @@ const Projects = ({ color }) => {
       <g
         fill="none"
         fillRule="evenodd"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
         <path
           d="M.708 6.922h26.917M4.958 3.735a.354.354 0 10.354.354v-.006a.354.354 0 00-.354-.354M7.792 3.735a.354.354 0 10.354.354v-.006a.354.354 0 00-.354-.354M10.625 3.735a.354.354 0 10.354.354v-.006a.354.354 0 00-.354-.354"

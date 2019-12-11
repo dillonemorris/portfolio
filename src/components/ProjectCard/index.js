@@ -19,7 +19,7 @@ const ProjectCard = ({
       <InfoContainer>
         <H4 style={{ marginBottom: theme.spacing._1 }}>{title}</H4>
         <Body
-          color={theme.colors.secondaryHeading}
+          color={theme.colors.secondaryBody}
           style={{ marginBottom: theme.spacing._5 }}
         >
           {description}

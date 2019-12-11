@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
 import { Container, Icon } from './style'
-import { H4, Body } from '../globals'
+import { H5, Body } from '../globals'
 
 const FeatureCard = ({ icon, title, description }) => {
   const {
@@ -10,7 +10,7 @@ const FeatureCard = ({ icon, title, description }) => {
   return (
     <Container>
       <Icon>{icon}</Icon>
-      <H4>{title}</H4>
+      <H5>{title}</H5>
       <Body color={secondaryBody}>{description}</Body>
     </Container>
   )

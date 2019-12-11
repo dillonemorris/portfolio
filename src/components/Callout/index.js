@@ -1,12 +1,4 @@
 import React from 'react'
-import {
-  Container,
-  Heading,
-  Description,
-  Left,
-  Img,
-  IconContainer,
-} from './styles'
 import { Link } from '../../components/globals'
 import Button from '../Button'
 import { useContext } from 'react'
@@ -16,19 +8,23 @@ import Twitter from '../../icons/Twitter'
 import Dribbble from '../../icons/Dribbble'
 import LinkedIn from '../../icons/LinkedIn'
 import ProfilePic from '../../images/ProfilePic.jpg'
+import { H3, LargeBody } from '../globals'
+import { Container, Left, Img, IconContainer } from './styles'
 
 const Callout = () => {
   const theme = useContext(ThemeContext)
   return (
     <Container>
       <Left>
-        <Heading>What I'm up to</Heading>
-        <Description>
-          I am currently working with some amazing people at{' '}
-          <Link page="https://synapsestudios.com" text="Synapse Studios" />.
-          There, I get to utilize my diverse skillset working on next level
-          products.
-        </Description>
+        <div>
+          <H3>What I'm up to</H3>
+          <LargeBody>
+            I am currently working with some amazing people at{' '}
+            <Link lg page="https://synapsestudios.com" text="Synapse Studios" />
+            . There, I get to utilize my diverse skillset working on next level
+            products.
+          </LargeBody>
+        </div>
         <Button
           textColor={theme.colors.primaryButtonText}
           text="more about me"

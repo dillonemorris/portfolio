@@ -14,8 +14,8 @@ import {
   FontSettingsContainer,
   DateContainer,
   Quote,
+  Date,
 } from './style'
-import { Date } from '../BlogPostCard/style'
 import FontSettings from '../FontSettings'
 import { Link } from '../globals'
 import CodeBlock from '../CodeBlock'
@@ -91,7 +91,7 @@ export const pageQuery = graphql`
       body
       frontmatter {
         title
-        date
+        date(formatString: "MMMM DD, YYYY")
       }
     }
   }

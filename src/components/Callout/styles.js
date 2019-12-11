@@ -20,22 +20,10 @@ export const IconContainer = styled.div`
 export const Left = styled.div`
   display: flex;
   flex-direction: column;
-`
-
-export const Heading = styled.h1`
-  color: ${({ theme }) => theme.colors.heading};
-  font-size: ${({ theme }) => theme.fontSize.text_3xl};
-  margin-bottom: ${({ theme }) => theme.spacing._2};
-`
-
-export const Description = styled.p`
-  color: ${({ theme }) => theme.colors.accentBody};
-  font-size: ${({ theme }) => theme.fontSize.text_xl};
-  font-weight: ${({ theme }) => theme.fontWeight.light};
-  line-height: ${({ theme }) => theme.lineHeight.normal};
-  padding-right: ${({ theme }) => theme.spacing._16};
+  justify-content: space-between;
 `
 
 export const Img = styled.img`
   width: 300px;
+  margin-left: ${({ theme }) => theme.spacing._16};
 `
