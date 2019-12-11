@@ -38,6 +38,7 @@ const themes = {
       // shapes
       bigBlob: '#4C51BF',
       blob: '#B2F5EA',
+      triangleWiggle: '#FFF7E6',
 
       //icons
       navIcon: '#1A202C',
@@ -293,6 +294,7 @@ const themes = {
       // shapes
       bigBlob: '#3C366B',
       blob: '#2d3748',
+      triangleWiggle: '#3C366B',
 
       //icons
       navIcon: '#fff',

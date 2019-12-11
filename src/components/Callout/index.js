@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from '../../components/globals'
 import Button from '../Button'
-import { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
 import Github from '../../icons/Github'
 import Twitter from '../../icons/Twitter'

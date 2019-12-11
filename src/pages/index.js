@@ -111,7 +111,6 @@ const IndexPage = ({ data }) => {
             </div>
             <H1>I'm really good at...</H1>
           </div>
-
           <FeatureCardContainer>
             {featureCardData.map(feature => (
               <FeatureCard
@@ -121,7 +120,7 @@ const IndexPage = ({ data }) => {
                 icon={feature.icon}
               />
             ))}
-            <TriangleWiggle />
+            <TriangleWiggle color={theme.colors.triangleWiggle} />
           </FeatureCardContainer>
         </Container>
       </div>
@@ -169,7 +168,7 @@ const IndexPage = ({ data }) => {
       <Background color={theme.colors.background}>
         <Container
           paddingTop={theme.spacing._24}
-          paddingBottom={theme.spacing._48}
+          paddingBottom={theme.spacing._24}
         >
           <BlogHeading>
             <SectionHeading>
@@ -177,12 +176,14 @@ const IndexPage = ({ data }) => {
               <H3 style={{ marginLeft: theme.spacing._2 }}>Blog</H3>
             </SectionHeading>
             <BlogCTA>
-              <Body
-                style={{ marginRight: theme.spacing._2 }}
-                color={theme.colors.primaryLink}
-              >
-                See all posts
-              </Body>
+              <Link style={{ textDecoration: 'none' }} to="/writing">
+                <Body
+                  style={{ marginRight: theme.spacing._2 }}
+                  color={theme.colors.primaryLink}
+                >
+                  See all posts
+                </Body>
+              </Link>
               <Arrow color={theme.colors.primaryLink} />
             </BlogCTA>
           </BlogHeading>

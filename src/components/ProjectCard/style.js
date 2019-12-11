@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const InfoContainer = styled.div`
   padding: ${({ theme }) => theme.spacing._6};
+  padding-top: ${({ theme }) => theme.spacing._2};
 `
 
 export const Container = styled.div`

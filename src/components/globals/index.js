@@ -30,6 +30,7 @@ export const Link = styled(MyLink)`
   border-bottom: 1px solid ${({ theme }) => theme.colors.linkBorder};
   text-decoration: none;
   transition: ${({ theme }) => theme.transitions.hover};
+  margin-right: ${({ marginRight }) => (marginRight ? marginRight : 0)};
   margin: 0;
   padding: 0;
 
@@ -52,6 +53,7 @@ export const H1 = styled.h1`
   font-size: ${({ theme }) => theme.fontSize.text_5xl.mobile};
   line-height: 1.3;
   margin: 0;
+  margin-left: ${({ marginLeft }) => (marginLeft ? marginLeft : 0)};
   padding: 0;
   padding-bottom: ${({ paddingBottom }) => (paddingBottom ? paddingBottom : 0)};
 
