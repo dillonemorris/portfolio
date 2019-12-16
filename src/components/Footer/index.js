@@ -1,19 +1,26 @@
 import React, { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
-import { Wrapper, Inner, Text, SocialLinks } from './style'
+import { Wrapper, Inner, Text, SocialLinks, Icon } from './style'
 import { Link, Container, H1, LargeBody, Background } from '../globals'
 import FooterWaves from '../../images/FooterWaves.svg'
+import FooterWavesMobile from '../../images/FooterWavesMobile.svg'
 import FooterWavesDark from '../../images/FooterWavesDark.svg'
+import FooterWavesDarkMobile from '../../images/FooterWavesDarkMobile.svg'
 import Contact from '../../icons/Contact'
 
 const Footer = () => {
   const theme = useContext(ThemeContext)
   return (
     <Background color={theme.colors.background}>
-      <Wrapper bg={theme.dark ? FooterWavesDark : FooterWaves}>
+      <Wrapper
+        mobileBg={theme.dark ? FooterWavesDarkMobile : FooterWavesMobile}
+        bg={theme.dark ? FooterWavesDark : FooterWaves}
+      >
         <Container>
           <Inner>
-            <Contact color={theme.colors.body} />
+            <Icon>
+              <Contact color={theme.colors.body} />
+            </Icon>
             <Text>
               <div>
                 <H1 paddingBottom={theme.spacing._2}>Contact</H1>

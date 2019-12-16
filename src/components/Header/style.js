@@ -20,7 +20,7 @@ export const Inner = styled.div`
   padding: 0px 1.0875rem 0rem;
   width: 100%;
   margin: 0 auto;
-  max-width: 1080px;
+  max-width: 1200px;
   display: flex;
   align-content: center;
   justify-content: space-between;

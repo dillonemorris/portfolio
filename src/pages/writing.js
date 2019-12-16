@@ -9,7 +9,7 @@ import SEO from '../components/seo'
 const Container = styled.div`
   padding: 0px 1.0875rem 1.45rem;
   padding-top: 0px;
-  max-width: 1080px;
+  max-width: 1200px;
 
   @media (min-width: 600px) {
     margin: 0px auto;
@@ -28,7 +28,7 @@ const HeaderContainer = styled.div`
 
 const BlogPostGrid = styled.div`
   margin: 0px auto;
-  max-width: 1080px;
+  max-width: 1200px;
   display: grid;
   grid-gap: 100px;
   grid-template-columns: repeat(auto-fit, minmax(340px, auto));

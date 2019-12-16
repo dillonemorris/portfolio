@@ -6,5 +6,5 @@ export const Container = styled.div`
 `
 
 export const Icon = styled.div`
-  padding-bottom: ${({ theme }) => theme.spacing._1};
+  /* padding-bottom: ${({ theme }) => theme.spacing._0}; */
 `

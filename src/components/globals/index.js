@@ -15,7 +15,7 @@ export const Container = styled.div`
   padding: 0px 1.0875rem 1.45rem;
   padding-top: ${({ paddingTop }) => (paddingTop ? paddingTop : 0)};
   padding-bottom: ${({ paddingBottom }) => (paddingBottom ? paddingBottom : 0)};
-  max-width: 1080px;
+  max-width: 1200px;
 
   @media (min-width: ${({ theme }) => theme.mq.sm}) {
     margin: 0px auto;
@@ -49,7 +49,8 @@ export const Link = styled(MyLink)`
 
 export const H1 = styled.h1`
   color: ${({ theme }) => theme.colors.body};
-  font-weight: ${({ theme }) => theme.fontWeight.black};
+  font-weight: ${({ theme, fontWeight }) =>
+    fontWeight ? fontWeight : theme.fontWeight.black};
   font-size: ${({ theme }) => theme.fontSize.text_5xl.mobile};
   line-height: 1.3;
   margin: 0;
@@ -140,6 +141,7 @@ export const LargeBody = styled.p`
   margin: 0;
   padding-top: ${({ paddingTop }) => (paddingTop ? paddingTop : 0)};
   padding-bottom: ${({ paddingBottom }) => (paddingBottom ? paddingBottom : 0)};
+  padding-right: ${({ paddingRight }) => (paddingRight ? paddingRight : 0)};
 
   @media (min-width: ${({ theme }) => theme.mq.sm}) {
     font-size: ${({ theme }) => theme.fontSize.text_xl.desktop};
@@ -148,7 +150,8 @@ export const LargeBody = styled.p`
 
 export const Body = styled.p`
   color: ${({ theme, color }) => (color ? color : theme.colors.body)};
-  font-weight: ${({ theme }) => theme.fontWeight.light};
+  font-weight: ${({ theme, fontWeight }) =>
+    fontWeight ? fontWeight : theme.fontWeight.light};
   font-size: ${({ theme }) => theme.fontSize.text_base.mobile};
   line-height: ${({ theme }) => theme.lineHeight.normal};
   margin: 0;

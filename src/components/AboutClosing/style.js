@@ -16,7 +16,7 @@ export const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   margin: 0px auto;
-  max-width: 1080px;
+  max-width: 1200px;
   padding: 0px 1.0875rem 0rem;
 `
 

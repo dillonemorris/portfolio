@@ -11,7 +11,7 @@ export const Background = styled.div`
 `
 
 export const HeadingContainer = styled.div`
-  max-width: 1080px;
+  max-width: 1200px;
   margin: auto;
   padding: 0px 1.0875rem 0px;
 `
@@ -19,7 +19,7 @@ export const HeadingContainer = styled.div`
 export const Heading = styled.h1`
   color: #11181e;
   font-weight: 600;
-  
+
   font-size: 28px;
   padding-top: 60px;
   padding-bottom: 8px;
@@ -36,7 +36,7 @@ export const Subheading = styled.h2`
 `
 
 export const Container = styled.div`
-  max-width: 1080px;
+  max-width: 1200px;
   margin: auto;
   padding: 20px 1.0875rem 60px;
   display: grid;

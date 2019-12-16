@@ -4,15 +4,19 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: ${({ theme }) => theme.spacing._10};
   padding-bottom: ${({ theme }) => theme.spacing._4};
   border-top: 3px solid ${({ theme }) => theme.colors.backgroundLinkHover};
   height: 100%;
   background: ${({ theme }) => theme.colors.cardBackground};
-  box-shadow: ${({ theme }) => theme.shadow.lg};
   transition: ${({ theme }) => theme.transitions.hover};
   :hover {
-    box-shadow: ${({ theme }) => theme.shadow.xl};
+    box-shadow: ${({ theme }) => theme.shadow.lg};
+  }
+
+  padding: 1.5rem 1rem;
+
+  @media (min-width: ${({ theme }) => theme.mq.lg}) {
+    padding: ${({ theme }) => theme.spacing._10};
   }
 `
 

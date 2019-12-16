@@ -1,31 +1,26 @@
 import React, { useContext } from 'react'
 import { ThemeContext } from 'styled-components'
-import { H5, Body } from '../globals'
-import { InfoContainer, Container } from './style'
-import Button from '../Button'
+import { H4, Body } from '../globals'
+import { Container, TagContainer, Tag, BuiltWith } from './style'
 
-const ProjectCard = ({
-  title,
-  description,
-  screenshot,
-  btnText,
-  page,
-  color,
-}) => {
+const ProjectCard = ({ title, description, tags, tagBackground, tagColor }) => {
   const theme = useContext(ThemeContext)
   return (
     <Container>
-      <img src={screenshot} />
-      <InfoContainer>
-        <H5>{title}</H5>
-        <Body
-          color={theme.colors.secondaryBody}
-          style={{ marginBottom: theme.spacing._5 }}
-        >
-          {description}
+      <H4 paddingBottom={theme.spacing._1}>{title}</H4>
+      <Body color={theme.colors.secondaryBody}>{description}</Body>
+      <BuiltWith>
+        <Body fontWeight={theme.fontWeight.medium} color={theme.colors.heading}>
+          Built with
         </Body>
-        <Button color={color} page={page} text={btnText} />
-      </InfoContainer>
+      </BuiltWith>
+      <TagContainer>
+        {tags.map(tag => (
+          <Tag key={tag} tagColor={tagColor} tagBackground={tagBackground}>
+            {tag}
+          </Tag>
+        ))}
+      </TagContainer>
     </Container>
   )
 }

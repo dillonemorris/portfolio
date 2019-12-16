@@ -4,7 +4,13 @@ date: '2019-11-26'
 excerpt: "In this post I'll be going over an interesting problem I had to solve for while building out the redesign for Synapse Studios' marketing page. We needed a way to store the colors or the 'theme' for the site and use those colors anywhere, in any component so that they can be edited from one source of truth."
 ---
 
-In this post I'll be going over an interesting problem I had to solve for while building out the redesign for Synapse Studios' marketing page. We needed a way to store the colors or the 'theme' for the site and use those colors anywhere, in any component so that they can be edited from one source of truth. If we decide to change the theme, those changes should reflect everywhere the colors are being used on the site.
+In this post I'll be going over an interesting problem I had to solve for while building out the redesign for <a href="https://synapsestudios.com/">Synapse Studios'</a> marketing page. 
+We needed a way to store the colors or the 'theme' for the site and use those colors anywhere, in any component so that they can be edited from 
+one source of truth. If we decide to change the theme, those changes should reflect everywhere the colors are being used on the site.
+
+<br />
+
+Before diving into the specifics, I wanted to briefly explain the tools this site is built with.
 
 <br />
 
@@ -14,7 +20,9 @@ Taken from their site:
 
 > Gatsby is a free and open source framework based on React that helps developers build blazing fast websites and apps
 
-<p><a href="https://www.gatsbyjs.org/" target="_blank" rel="noopener noreferrer">Gatsby</a> allows you to build static sites while writing React. It also allows you to pull data from anywhere and then you use graphQL queries to access that data. The data for the Synapse site is coming from <a href="https://www.contentful.com/" target="_blank" rel="noopener noreferrer">contentful.</a></p>
+<p><a href="https://www.gatsbyjs.org/">Gatsby</a> allows you to build static sites while writing React. 
+It also allows you to pull data from anywhere and then you use graphQL queries to access that data. 
+The data for the Synapse site is coming from <a href="https://www.contentful.com/">contentful.</a></p>
 
 <br />
 
@@ -76,14 +84,14 @@ export const indexPageQuery = graphql`
 `
 ```
 
-In a pretty straightforward way, we grab the data we need, that data becomes available via the data prop and we simply display it in our JSX.
+In a pretty straightforward way, we grab the data we need in our graphQL query, that data becomes available via the data prop and we simply display it in our JSX.
 
 <br />
 
 An important thing to note is how this query is tied to this specific component.
 As in, if for some reason we needed to re-use this data in a separate component, we'd have to re-write this graphQL query.
-That isn't so much of an issue in the case of this hero since it's only going to be display on the home page.
-But what if we need to access data in many different places? Which brings us around to our theming issue.
+That isn't so much of an issue in the case of the hero section since it's only going to be displayed on the home page.
+But what if we need to access data in many separate places? Which brings us around to our theming issue.
 
 <br />
 
@@ -97,13 +105,16 @@ Not only do we want to use them here on the home page:
 
 <br />
 
-We also want to use them in things like callouts and headers and buttons throughout the site:
+We also want to use our theme colors in things like callouts and headers and buttons throughout the site:
 
 <br />
 
 ![Synapse Site Examples](../../images/site-examples.png)
 
-Keep in mind we totally could grab those colors in a query and then just re-write that query in every component we need them. But that's no way to live our lives.
+<br />
+
+Keep in mind we totally could grab those colors in a query and then just re-write that query 
+in every component we need them. But that's no way to live our lives.
 
 <br />
 
@@ -183,8 +194,11 @@ const useThemeColors = () => {
 export default useThemeColors
 ```
 
-So here we have a custom hook useThemeColors which composes that useStatic query hook. We're de-structuring `allContentfulThemeColors` (which comes from the contentful API) from the query object.
-We're sort of grabbing that value off of the query object and then we're just returning the data we need by drilling down further into the object. The result of this query is just going to be the contents of that node object, which are the theme colors themselves.
+So here we have a custom hook `useThemeColors` which composes that `useStatic` query hook. 
+We're de-structuring `allContentfulThemeColors` (which comes from the contentful API) from the query object.
+We're sort of grabbing that value off of the query object and then we're just returning the data we need 
+by drilling down further into the object. The result of this query is just going to be the contents of that node object, 
+which are the theme colors themselves.
 
 <br />
 
@@ -223,13 +237,14 @@ export const indexPageQuery = graphql`
 
 <br />
 
-Here we are assigning the constant `colors` to the return value of our useThemeColors hook then passing it to our button component's color prop.
+Here we are assigning the constant `colors` to the return value of our `useThemeColors`
+ hook then passing it to our button component's color prop.
 So now that Button's color is reading from the value stored in contentful.
 
 <br />
 
-We can also use the colors in our callout component as the backgroundColor.
-This time we're de-structuring the secondary color off of that node object and just passing it to the style prop of our surrounding `div`
+We can also use the colors in our callout component as the `backgroundColor`.
+This time we're de-structuring the secondary color off of that node object and just passing it to the style prop of our surrounding `div`.
 
 ```js
 import React from 'react'

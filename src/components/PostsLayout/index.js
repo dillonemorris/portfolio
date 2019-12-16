@@ -1,7 +1,5 @@
 import React from 'react'
 import { useLocalStorage } from '../../hooks/useLocalStorage'
-import { useContext } from 'react'
-import { ThemeContext } from 'styled-components'
 import { graphql } from 'gatsby'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
@@ -31,10 +29,6 @@ const PostsLayout = ({ data: { mdx } }) => {
   const [largeFont, setLargeFont] = useLocalStorage(false)
   const [fontStyle, setFontStyle] = useLocalStorage(fonts.default)
 
-  const {
-    colors: { primary100 },
-  } = useContext(ThemeContext)
-
   const components = {
     h2: ({ children }) => (
       <H2 largeFont={largeFont} fontStyle={fontStyle}>
@@ -48,9 +42,7 @@ const PostsLayout = ({ data: { mdx } }) => {
     ),
     blockquote: ({ children }) => <Quote>{children}</Quote>,
     pre: ({ children }) => <CodeBlock children={children} />,
-    a: ({ children, href }) => (
-      <Link background={primary100} text={children} page={href} />
-    ),
+    a: ({ children, href }) => <Link text={children} page={href} />,
   }
 
   const { title, date } = mdx.frontmatter

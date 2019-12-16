@@ -8,7 +8,12 @@ const ReactIcon = ({ color }) => {
   } = useContext(ThemeContext)
   const iconColor = color ? color : body
   return (
-    <svg width="42" height="40" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="58"
+      height="56"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 42 42"
+    >
       <g fill="none" fillRule="evenodd">
         <path
           d="M31.063 2.571c3.873 2.237 2.509 11.854-3.048 21.479S14.81 39.665 10.938 37.429c-3.874-2.237-2.51-11.854 3.047-21.479S27.19.335 31.063 2.571z"

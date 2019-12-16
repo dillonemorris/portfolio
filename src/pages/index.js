@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { Link, graphql } from 'gatsby'
+import MyLink from '../components/MyLink'
 import { ThemeContext } from 'styled-components'
 import SEO from '../components/seo'
 import featureCardData from '../data/featureCardData'
@@ -25,7 +26,6 @@ import TriangleDark from '../images/TriangleDark.svg'
 import Squares from '../images/Squares'
 import Waves from '../images/Waves.svg'
 import WavesDark from '../images/WavesDark.svg'
-import Triangles from '../images/Triangles'
 import TriangleWiggle from '../images/TriangleWiggle'
 
 //styles
@@ -38,7 +38,9 @@ import {
   Container,
   Background,
 } from '../components/globals'
+
 import {
+  MyContainer,
   Landing,
   Heading,
   HeroHeading,
@@ -49,11 +51,16 @@ import {
   DownArrowContainer,
   FeatureCardContainer,
   ProjectsContainer,
+  ProjectsDescription,
   SectionHeading,
   BlogCTA,
   BlogHeading,
-  CardContainer,
-  TrianglesContainer,
+  BlogCardContainer,
+  HeadingContainer,
+  ProjectCardContainer,
+  SquaresContainer,
+  TriangleWiggleContainer,
+  IconContainer,
 } from '../styles/page-styles/home-page-styles'
 
 const IndexPage = ({ data }) => {
@@ -105,11 +112,11 @@ const IndexPage = ({ data }) => {
       <div style={{ background: theme.colors.homePageGradient }}>
         <Container id="callout">
           <Callout />
-          <div style={{ display: 'flex' }}>
-            <div style={{ marginRight: theme.spacing._4 }}>
+          <div style={{ display: 'flex', zIndex: 1 }}>
+            <SquaresContainer>
               <Squares />
-            </div>
-            <H1>I'm really good at...</H1>
+            </SquaresContainer>
+            <H1 style={{ zIndex: 1 }}>I'm really good at...</H1>
           </div>
           <FeatureCardContainer>
             {featureCardData.map(feature => (
@@ -120,7 +127,9 @@ const IndexPage = ({ data }) => {
                 icon={feature.icon}
               />
             ))}
-            <TriangleWiggle color={theme.colors.triangleWiggle} />
+            <TriangleWiggleContainer>
+              <TriangleWiggle color={theme.colors.triangleWiggle} />
+            </TriangleWiggleContainer>
           </FeatureCardContainer>
         </Container>
       </div>
@@ -129,65 +138,86 @@ const IndexPage = ({ data }) => {
         size="100%"
         bg={theme.dark ? WavesDark : Waves}
       >
-        <Container paddingBottom={theme.spacing._12}>
+        <Container paddingBottom={theme.spacing._6}>
           <BlobContainer>
             <Blob color={theme.colors.blob} />
           </BlobContainer>
           <ProjectsContainer>
-            <SectionHeading paddingBottom={theme.spacing._12}>
-              <Projects color={theme.colors.body} />
-              <H3 style={{ marginLeft: theme.spacing._3 }}>Projects</H3>
-            </SectionHeading>
-            <CardContainer>
+            <div>
+              <SectionHeading>
+                <IconContainer>
+                  <Projects color={theme.colors.body} />
+                </IconContainer>
+                <HeadingContainer>
+                  <H3>Projects</H3>
+                </HeadingContainer>
+              </SectionHeading>
+              <ProjectsDescription>
+                <LargeBody>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </LargeBody>
+              </ProjectsDescription>
+            </div>
+            <ProjectCardContainer>
               {projectData.map((project, i) => (
                 <Background
                   key={project.title}
+                  style={{ marginBottom: theme.spacing._8 }}
                   color={
                     i % 2 === 0
                       ? theme.colors.primaryProjectBackground
                       : theme.colors.secondaryProjectBackground
                   }
                 >
-                  <ProjectCard
-                    title={project.title}
-                    description={project.description}
-                    btnText={project.btnText}
-                    color={project.color}
-                    page={project.page}
-                    screenshot={project.screenshot}
-                  />
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: 'none' }}
+                    href={project.page}
+                  >
+                    <ProjectCard
+                      title={project.title}
+                      description={project.description}
+                      page={project.page}
+                      tagColor={
+                        i % 2 === 0
+                          ? theme.colors.primaryTag
+                          : theme.colors.secondaryTag
+                      }
+                      tagBackground={
+                        i % 2 === 0
+                          ? theme.colors.primaryTagBackground
+                          : theme.colors.secondaryTagBackground
+                      }
+                      tags={project.tags}
+                    />
+                  </a>
                 </Background>
               ))}
-            </CardContainer>
+            </ProjectCardContainer>
           </ProjectsContainer>
-          <TrianglesContainer>
-            <Triangles />
-          </TrianglesContainer>
         </Container>
       </Background>
       <Background color={theme.colors.background}>
-        <Container
-          paddingTop={theme.spacing._24}
-          paddingBottom={theme.spacing._24}
-        >
+        <MyContainer>
           <BlogHeading>
             <SectionHeading>
-              <Blog color={theme.colors.body} />
-              <H3 style={{ marginLeft: theme.spacing._2 }}>Blog</H3>
+              <IconContainer>
+                <Blog color={theme.colors.body} />
+              </IconContainer>
+              <HeadingContainer>
+                <H3>Blog</H3>
+              </HeadingContainer>
             </SectionHeading>
             <BlogCTA>
               <Link style={{ textDecoration: 'none' }} to="/writing">
-                <Body
-                  style={{ marginRight: theme.spacing._2 }}
-                  color={theme.colors.primaryLink}
-                >
-                  See all posts
-                </Body>
+                <Body color={theme.colors.primaryLink}>See all posts</Body>
               </Link>
               <Arrow color={theme.colors.primaryLink} />
             </BlogCTA>
           </BlogHeading>
-          <CardContainer>
+          <BlogCardContainer>
             {data.allMdx.edges.map(({ node }) => (
               <div key={node.id}>
                 <Link style={{ textDecoration: 'none' }} to={node.fields.slug}>
@@ -200,8 +230,8 @@ const IndexPage = ({ data }) => {
                 </Link>
               </div>
             ))}
-          </CardContainer>
-        </Container>
+          </BlogCardContainer>
+        </MyContainer>
       </Background>
     </>
   )

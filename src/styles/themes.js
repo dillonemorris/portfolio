@@ -5,11 +5,14 @@ const themes = {
       //backgrounds
       background: '#fff',
       secondaryBackground: '#F7FAFC',
-      cardBackground: '#fff',
-      calloutBackground: 'rgba(237, 242, 247, 0.6)',
+      tertiaryBackground: '#f2f7ff',
+      cardBackground: '#f5f9ff',
+      calloutBackground: 'rgba(237, 242, 247, 0.75)',
       info: '#EBF4FF',
       primaryProjectBackground: '#EBF4FF',
       secondaryProjectBackground: '#EBF8FF',
+      primaryTagBackground: '#C3DAFE',
+      secondaryTagBackground: '#BEE3F8',
 
       // text
       heading: '#1A202C',
@@ -17,6 +20,8 @@ const themes = {
       body: '#1A202C',
       secondaryBody: '#1A202C',
       accentBody: '#2D3748',
+      primaryTag: '#3C366B',
+      secondaryTag: '#2C5282',
 
       // links
       primaryLink: '#4C51BF',
@@ -61,6 +66,7 @@ const themes = {
       gray900: '#1A202C',
 
       // primary
+      primary050: '#f2f7ff',
       primary100: '#EBF4FF',
       primary200: '#C3DAFE',
       primary300: '#A3BFFA',
@@ -261,11 +267,14 @@ const themes = {
       //backgrounds
       background: '#1A202C',
       secondaryBackground: '#1A202C',
+      tertiaryBackground: '#1A202C',
       cardBackground: '#2d3748',
       calloutBackground: 'rgba(45, 55, 72, 0.9)',
       info: '#2d3748',
       primaryProjectBackground: '#4A5568',
       secondaryProjectBackground: '#4A5568',
+      primaryTagBackground: '#434190',
+      secondaryTagBackground: '#2C5282',
 
       // text
       heading: '#fff',
@@ -273,6 +282,8 @@ const themes = {
       body: '#fff',
       secondaryBody: '#CCE0FF',
       accentBody: '#fff',
+      primaryTag: '#CCE0FF',
+      secondaryTag: '#BEE3F8',
 
       // links
       primaryLink: '#fff',
@@ -317,6 +328,7 @@ const themes = {
       gray900: '#1A202C',
 
       // primary
+      primary050: '#f2f7ff',
       primary100: '#EBF4FF',
       primary200: '#C3DAFE',
       primary300: '#A3BFFA',
@@ -326,6 +338,11 @@ const themes = {
       primary: '#4C51BF',
       primary800: '#434190',
       primary900: '#3C366B',
+
+      // blue
+      blue200: '#BEE3F8',
+      blue600: '#3182CE',
+      blue800: '#2C5282',
     },
 
     fontSize: {

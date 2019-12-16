@@ -49,12 +49,19 @@ export const Body = styled.p`
       : '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif'};
   font-size: ${props =>
     props.largeFont
-      ? props.theme.fontSize.text_xl
-      : props.theme.fontSize.text_base};
+      ? props.theme.fontSize.text_xl.mobile
+      : props.theme.fontSize.text_base.mobile};
   font-weight: ${({ theme }) => theme.fontWeight.regular};
   line-height: ${({ theme }) => theme.lineHeight.normal};
   margin: 0;
   padding: 0;
+
+  @media (min-width: ${({ theme }) => theme.mq.sm}) {
+    font-size: ${props =>
+      props.largeFont
+        ? props.theme.fontSize.text_xl.desktop
+        : props.theme.fontSize.text_base.desktop};
+  }
 `
 
 export const H1 = styled.h1`
@@ -65,12 +72,19 @@ export const H1 = styled.h1`
       : '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif'};
   font-size: ${props =>
     props.largeFont
-      ? props.theme.fontSize.text_4xl
-      : props.theme.fontSize.text_3xl};
+      ? props.theme.fontSize.text_4xl.mobile
+      : props.theme.fontSize.text_3xl.mobile};
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   line-height: ${({ theme }) => theme.lineHeight.none};
   margin-bottom: 0;
   padding: 0;
+
+  @media (min-width: ${({ theme }) => theme.mq.sm}) {
+    font-size: ${props =>
+      props.largeFont
+        ? props.theme.fontSize.text_4xl.desktop
+        : props.theme.fontSize.text_3xl.desktop};
+  }
 `
 
 export const H2 = styled.h2`
@@ -81,10 +95,19 @@ export const H2 = styled.h2`
       : '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif'};
   font-size: ${props =>
     props.largeFont
-      ? props.theme.fontSize.text_3xl
-      : props.theme.fontSize.text_2xl};
+      ? props.theme.fontSize.text_3xl.mobile
+      : props.theme.fontSize.text_2xl.mobile};
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   line-height: ${({ theme }) => theme.lineHeight.none};
+  margin-top: ${({ theme, largeFont }) =>
+    largeFont ? theme.spacing._8 : theme.spacing._4};
   margin-bottom: ${({ theme }) => theme.spacing._1};
   padding: 0;
+
+  @media (min-width: ${({ theme }) => theme.mq.sm}) {
+    font-size: ${props =>
+      props.largeFont
+        ? props.theme.fontSize.text_3xl.desktop
+        : props.theme.fontSize.text_2xl.desktop};
+  }
 `

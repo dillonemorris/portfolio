@@ -1,0 +1,370 @@
+---
+title: 'Implementing Dark Mode 🌙'
+date: '2019-12-12'
+excerpt: "I'm going to walk you through how I implemented dark mode on this site. You'll learn how your dark mode preference is read from OS level settings and saved to local storage."
+---
+
+I'm going to walk you through how I implemented dark mode on this site.
+You'll learn how users' dark mode preference is read from OS level settings and saved to local storage.
+
+<br />
+
+## useDarkMode
+
+First, let's take a look at the meat & potatoes of this implementation, the useDarkMode() hook.
+
+> Full disclosure, this hook we're looking at was written by Gabe Ragland and postes on his site <a href="https://usehooks.com/useDarkMode/">useHooks.com</a> which has a ton of hook recipes for all kinds of use cases.
+
+```js
+import { useMedia } from './useMedia'
+import { useLocalStorage } from './useLocalStorage'
+
+function useDarkMode() {
+  // Uses useLocalStorage hook to persist state through a page refresh.
+  const [enabledState, setEnabledState] = useLocalStorage('dark-mode-enabled')
+
+  // See if user has set a browser or OS preference for dark mode.
+  const prefersDarkMode = usePrefersDarkMode()
+
+  // If enabledState is defined use it, otherwise fallback to prefersDarkMode.
+  // This allows user to override OS level setting on our website.
+  const enabled =
+    typeof enabledState !== 'undefined' ? enabledState : prefersDarkMode
+
+  // Return enabled state and setter
+  return [enabled, setEnabledState]
+}
+
+// Compose our useMedia hook to detect dark mode preference.
+function usePrefersDarkMode() {
+  return useMedia(['(prefers-color-scheme: dark)'], [true], false)
+}
+
+export { useDarkMode }
+```
+
+Part of what makes hooks powerful is their shareability and composability.
+So here we have our useDarkMode hook. The hook composes a <a href="https://usehooks.com/useLocalStorage/">useLocalStorage</a>
+and <a href="https://usehooks.com/useMedia/">useMedia</a> hook.
+
+<br />
+
+## useLocalStorage
+
+The useLocalStorage hook is doing just what it sounds like. It's using local storage to store the user's dark mode preference.
+
+> Local storage is data stored in the browser that persists even after the browser window has been refreshed or closed altogether.
+
+This hook will allow us to "save" the user's dark mode setting.
+The site will "remember" their dark mode setting if they leave and don't come back for a while.
+To see this in action, simply refresh this page and you'll notice your dark mode preference was saved.
+
+<br />
+
+See the full useLocalStorage hook <a href="https://usehooks.com/useLocalStorage/">here</a>.
+
+<br />
+
+## useMedia
+
+This hook is going to look at your OS level settings to see if you prefer dark mode.
+
+> In iOS 13.0 and later, people can choose to adopt a dark system-wide appearance called Dark Mode.
+
+Through a media query, which this hook is using, we can determine if the color scheme preference to dark on your OS.'
+
+<br />
+
+See the full useMedia hook <a href="https://usehooks.com/useMedia/">here</a>.
+
+<br />
+
+## initial state and our setter
+
+Finally, we simply return out our initial state and setter function which will allow the user to override the OS level settings.
+So the useDarkMode function is going to return true or false based on whether or not dark mode is enabled.
+
+<br />
+
+Now we can import that hook at the top level and use it to determine if dark mode is enabled.
+Upon calling this useDarkMode hook, we'll get the value `true` if dark mode is enabled or `false` if it is not.
+
+```js
+// top level component
+import React from 'react'
+import { useDarkMode } from '../../hooks/useDarkMode'
+
+const Layout = ({ children }) => {
+  const [darkMode, setDarkMode] = useDarkMode()
+
+  return (
+    <Layout>
+      <Toggle onChange={() => setDarkMode(!darkMode)} />
+      {children}
+    </Layout>
+  )
+}
+
+export default Layout
+```
+
+As you can see, we are providing the ability to toggle dark mode by passing our setter function to the onChange event handler:
+
+```js
+<Toggle onChange={() => setDarkMode(!darkMode)} />
+```
+
+<br />
+
+## styled components
+
+At this point we have the ability to read from OS level settings and local storage to determine the initial dark mode state value,
+and we are providing a way for the user to toggle that value.
+
+<br />
+
+That's great, but how do now style the site based on that state value?
+
+<br />
+
+Styled components 💅
+
+<br />
+
+This is a CSS-in-JS solution and IMO the ideal solution in this case.
+
+> <p><a href="https://www.styled-components.com/">styled-components</a> lets you write actual CSS in your JavaScript. This means you can use all the features of CSS you use and love, including (but by far not limited to) media queries, all pseudo-selectors, nesting, etc.</p>
+
+<br />
+
+Here is an example of a styled component for those unfamiliar:
+
+```js
+import React from 'react'
+import styled from 'styled-components'
+
+const StyledButton = styled.button`
+  background: transparent;
+  border-radius: 3px;
+  border: 2px solid cornflowerblue;
+  color: cornflowerblue;
+  margin: 0 1em;
+  padding: 0.25em 1em;
+`
+
+const Button = () => {
+  return <StyledButton>I'm a styled button</StyledButton>
+}
+
+export default Button
+```
+
+Here we have a Button component. In it we're returning out our styled component which we're defining up top as `StyledButton`.
+This may look a little weird at first, but you get used to it. We're also importing `styled` which is the default export from styled component.
+
+> styled returns a function that accepts a tagged template literal and turns it into a StyledComponent.
+
+So `styled` is a low-level factory you use to create `styled.tagname` helper methods. Here, we are creating a button so we say `styled.button` which will create an actual HTML button element.
+This could be styled.div or styled.h1 or you could even pass it a custom component.
+
+<br />
+
+This StyledButton variable here is now a React component that you can use like any other React component!
+
+<br />
+
+So that's how styled-components work on a base level, now let's get back to our issue of theming.
+
+<br />
+
+## ThemeProvider
+
+Styled components exports a helper component called `ThemeProvider`.
+
+> ThemeProvider allows you to inject a theme into all styled components anywhere beneath it in the component tree, via the context API.
+
+In our top level component, which is the "parent" of all other components, we're going to wrap all of our children in this `ThemeProvider`.
+
+```js
+// our top level component
+const Layout = ({ children }) => {
+  // our fully comprehensive theme
+  const theme = {
+    primaryColor: 'cornflowerblue',
+  }
+
+  // styled component accessing the theme prop
+  const Box = styled.div`
+    color: ${props => props.theme.primaryColor};
+  `
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Box />
+      {children}
+    </ThemeProvider>
+  )
+}
+
+export default Layout
+```
+
+Now the theme becomes available to all child components via the theme prop. In the above example, you can see we are accessing the theme via props in our Box styled component.
+
+<br />
+
+We can access the theme inside of any styled component that is a child of the ThemeProvider.
+Since we wrapped our app in the ThemeProvider at the top level, all styled components are children of the ThemeProvider.
+That means any styled component can access the theme via props:
+
+```js
+// a deeply nested component
+const MyDeeplyNestedComponent = () => {
+  // styled component can access theme via props
+  const Heading = styled.h1`
+    color: ${props => props.theme.primaryColor};
+  `
+
+  return (
+    <Container>
+      <Heading>Hey, I'm a styled heading</Heading>
+    </Container>
+  )
+}
+
+export default MyDeeplyNestedComponent
+```
+
+<br />
+
+Now, we can simply build a themes object which houses two separate objects within it, one for our lightTheme styles, and one for darkTheme.
+We already have our state set up to determine if dark mode is enabled or not. Now it's just becomes a matter of setting the appropriate theme object based on that state.
+
+```js
+const Layout = ({ children }) => {
+  const themes = {
+    // light theme styles
+    lightTheme: {
+      primaryColor: 'cornflowerblue',
+    },
+
+    // dark theme styles
+    darkTheme: {
+      primaryColor: '#fff',
+    },
+  }
+
+  const [darkMode, setDarkMode] = useDarkMode()
+
+  const theme = darkMode ? themes.darkTheme : themes.lightTheme
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Toggle onChange={() => setDarkMode(!darkMode)} />
+      {children}
+    </ThemeProvider>
+  )
+}
+
+export default Layout
+```
+
+<br />
+
+Let's look back at our **deeply nested component**:
+
+```js
+// a deeply nested component
+const MyDeeplyNestedComponent = () => {
+  // styled component can access theme via props
+  const Heading = styled.h1`
+    color: ${props => props.theme.primaryColor};
+  `
+
+  return (
+    <Container>
+      <Heading>Hey, I'm a styled heading</Heading>
+    </Container>
+  )
+}
+
+export default MyDeeplyNestedComponent
+```
+
+This is the exact same code, except now, `this props.theme.primaryColor` is going to be either the `primaryColor` stored in the lightTheme object, or the one stored in the darkTheme object if dark mode is enabled.
+
+<br />
+
+One thing to note is that the theme prop is only available inside of a styled component.
+Often, you'll run into a situation where you just want to grab something from the theme and pass it along.
+You can do this via a React hook called useContext.
+
+```js
+import React, { useContext } from 'react'
+import { ThemeContext } from 'styled-components'
+import Button from '../../components/Button'
+
+const MyDeeplyNestedComponent = () => {
+  const theme = useContext(ThemeContext)
+
+  return (
+    <Container>
+      <Button color={theme.primaryColor} text="Hey, I'm a styled button" />
+    </Container>
+  )
+}
+
+export default MyDeeplyNestedComponent
+```
+
+Here, we're grabbing the `ThemeContext` from styled-components and passing it to useContext.
+The output of that is going to be what's stored in that theme prop on the `ThemeProvider`. We can then grab our color off of the theme object and pass it to a React component.
+
+<br />
+
+A common use-case for this is icons. For example, I have my icons as React components rendering svg's. They are set up to read their `fill` or `stroke` property from a color prop like so:
+
+```js
+import React from 'react'
+
+const Arrow = ({ color }) => {
+  const stroke = color ? color : '#4C51BF'
+
+  return (
+    <svg width="15" height="18" xmlns="http://www.w3.org/2000/svg">
+      <g stroke={stroke}>
+        <path d="M7.5 16.667l6.036-7.12a.878.878 0 000-1.094L7.5 1.333" />
+      </g>
+    </svg>
+  )
+}
+
+export default Arrow
+```
+
+Now I can useContext, assign it's output to `theme` and then pass along the color I need to the icon's color prop.
+
+```js
+import React, { useContext } from 'react'
+import { ThemeContext } from 'styled-components'
+import Arrow from '../../components/Arrow'
+
+const MyDeeplyNestedComponent = () => {
+  const theme = useContext(ThemeContext)
+
+  return (
+    <Container>
+      <Arrow color={theme.iconColor} />
+    </Container>
+  )
+}
+
+export default MyDeeplyNestedComponent
+```
+
+I hope you enjoyed this walkthrough and that it was somewhat easy to follow. The above code is obviously abbreviated, especially the theme objects.
+Check out the <a href="https://github.com/dillonmorris91/portfolio/tree/master/src">source code</a> for my site to see the nitty gritty. Feel free to get at me and let me know what you think of this implementation.
+
+<br />
+
+Thanks so much for reading. Cheers! 🍻

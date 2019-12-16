@@ -8,7 +8,12 @@ const Communication = ({ color }) => {
   } = useContext(ThemeContext)
   const iconColor = color ? color : body
   return (
-    <svg width="42" height="44" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="58"
+      height="56"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 42 42"
+    >
       <g
         stroke={iconColor}
         fill="none"
