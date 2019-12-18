@@ -169,10 +169,10 @@ export const SectionHeading = styled.div`
 export const BlogHeading = styled.div`
   display: flex;
   flex-direction: column;
-  padding-bottom: ${({ theme }) => theme.spacing._6};
+  padding-bottom: ${({ theme }) => theme.spacing._4};
 
   @media (min-width: ${({ theme }) => theme.mq.sm}) {
-    padding-bottom: ${({ theme }) => theme.spacing._12};
+    padding-bottom: ${({ theme }) => theme.spacing._8};
   }
 `
 
@@ -212,10 +212,10 @@ export const ProjectsContainer = styled.div`
 export const BlogCardContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  grid-gap: ${({ theme }) => theme.spacing._12};
+  grid-gap: ${({ theme }) => theme.spacing._6};
 
   @media (min-width: ${({ theme }) => theme.mq.lg}) {
-    grid-gap: ${({ theme }) => theme.spacing._20};
+    grid-gap: ${({ theme }) => theme.spacing._10};
   }
 `
 

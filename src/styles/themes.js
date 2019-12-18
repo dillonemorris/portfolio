@@ -379,7 +379,7 @@ const themes = {
         mobile: '1.875rem',
       },
       text_5xl: {
-        desktop: '3rem',
+        desktop: '2.75rem',
         mobile: '2.25rem',
       },
       text_6xl: {

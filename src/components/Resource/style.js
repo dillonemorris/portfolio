@@ -4,13 +4,13 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
+
   letter-spacing: 0.35px;
   font-size: 18px;
   padding-bottom: 14px;
   line-height: 1.5;
 
-  @media (min-width: 600px) {
+  @media (min-width: ${({ theme }) => theme.mq.sm}) {
     font-size: 21px;
     padding-bottom: 18px;
   }
@@ -52,7 +52,7 @@ export const TitleLink = styled.a`
   text-decoration: none;
   transition: color 0.15s ease-out;
 
-  @media (min-width: 600px) {
+  @media (min-width: ${({ theme }) => theme.mq.sm}) {
     font-size: 22px;
   }
 

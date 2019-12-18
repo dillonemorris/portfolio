@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
-import { Link, graphql } from 'gatsby'
-import MyLink from '../components/MyLink'
 import { ThemeContext } from 'styled-components'
+import { Link, graphql } from 'gatsby'
 import SEO from '../components/seo'
 import featureCardData from '../data/featureCardData'
 import projectData from '../data/projectData'
@@ -116,7 +115,7 @@ const IndexPage = ({ data }) => {
             <SquaresContainer>
               <Squares />
             </SquaresContainer>
-            <H1 style={{ zIndex: 1 }}>I'm really good at...</H1>
+            <H1>I'm really good at...</H1>
           </div>
           <FeatureCardContainer>
             {featureCardData.map(feature => (
@@ -211,7 +210,7 @@ const IndexPage = ({ data }) => {
               </HeadingContainer>
             </SectionHeading>
             <BlogCTA>
-              <Link style={{ textDecoration: 'none' }} to="/writing">
+              <Link style={{ textDecoration: 'none' }} to="/blog">
                 <Body color={theme.colors.primaryLink}>See all posts</Body>
               </Link>
               <Arrow color={theme.colors.primaryLink} />

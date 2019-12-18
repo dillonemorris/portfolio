@@ -10,7 +10,7 @@ const Container = styled.div`
   padding-top: 0px;
   max-width: 1200px;
 
-  @media (min-width: 600px) {
+  @media (min-width: ${({ theme }) => theme.mq.sm}) {
     margin: 0px auto;
   }
 `

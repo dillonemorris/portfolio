@@ -13,11 +13,11 @@ const NavDesktop = ({ className, darkMode, setDarkMode }) => {
 
   return (
     <Nav className={className}>
-      <StyledLink activeStyle={{ color: activeNavLink }} to="/writing/">
-        Writing
+      <StyledLink activeStyle={{ color: activeNavLink }} to="/">
+        Home
       </StyledLink>
-      <StyledLink activeStyle={{ color: activeNavLink }} to="/library/">
-        Library
+      <StyledLink activeStyle={{ color: activeNavLink }} to="/blog/">
+        Blog
       </StyledLink>
       <StyledLink activeStyle={{ color: activeNavLink }} to="/about/">
         About

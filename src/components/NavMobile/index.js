@@ -30,14 +30,11 @@ const NavMobile = ({ className, style, toggleMenu }) => {
           </svg>
         </MobileIcon>
       </Top>
-      <StyledLink onClick={toggleMenu} to="/projects/">
-        Projects
+      <StyledLink onClick={toggleMenu} to="/">
+        Home
       </StyledLink>
-      <StyledLink onClick={toggleMenu} to="/writing/">
-        Writing
-      </StyledLink>
-      <StyledLink onClick={toggleMenu} to="/library/">
-        Library
+      <StyledLink onClick={toggleMenu} to="/blog/">
+        Blog
       </StyledLink>
       <StyledLink onClick={toggleMenu} to="/about/">
         About

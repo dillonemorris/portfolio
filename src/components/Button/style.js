@@ -15,7 +15,7 @@ export const StyledButton = styled.button`
   transition: all 170ms ease-in-out;
   width: 100%;
 
-  @media (min-width: 600px) {
+  @media (min-width: ${({ theme }) => theme.mq.sm}) {
     width: auto;
   }
 
