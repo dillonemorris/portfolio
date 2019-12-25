@@ -98,7 +98,7 @@ const IndexPage = ({ data }) => {
             </HeroHeading>
             <CallToAction onClick={handleClick}>
               <LargeBody>Scroll on down</LargeBody>
-              <DownArrowContainer>
+              <DownArrowContainer id="callout">
                 <DownArrow color={theme.colors.primaryLink} />
               </DownArrowContainer>
             </CallToAction>
@@ -109,7 +109,7 @@ const IndexPage = ({ data }) => {
         <BigBlob color={theme.colors.bigBlob} />
       </BigBlobContainer>
       <div style={{ background: theme.colors.homePageGradient }}>
-        <Container id="callout">
+        <Container>
           <Callout />
           <div style={{ display: 'flex', zIndex: 1 }}>
             <SquaresContainer>
@@ -179,12 +179,12 @@ const IndexPage = ({ data }) => {
                       title={project.title}
                       description={project.description}
                       page={project.page}
-                      tagColor={
+                      color={
                         i % 2 === 0
                           ? theme.colors.primaryTag
                           : theme.colors.secondaryTag
                       }
-                      tagBackground={
+                      secondaryColor={
                         i % 2 === 0
                           ? theme.colors.primaryTagBackground
                           : theme.colors.secondaryTagBackground

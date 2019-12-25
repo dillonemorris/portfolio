@@ -24,7 +24,10 @@ const Layout = ({ location, children }) => {
   return (
     <ThemeProvider theme={theme}>
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
-      <div className={`${loaded ? ' loaded' : 'initial'}`}>
+      <div
+        style={{ background: theme.colors.background }}
+        className={`${loaded ? ' loaded' : 'initial'}`}
+      >
         <PoseGroup animateOnMount preEnterPose="initial">
           <Transition key={location.pathname}>
             {children}

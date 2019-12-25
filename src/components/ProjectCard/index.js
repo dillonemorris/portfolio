@@ -3,10 +3,10 @@ import { ThemeContext } from 'styled-components'
 import { H4, Body } from '../globals'
 import { Container, TagContainer, Tag, BuiltWith } from './style'
 
-const ProjectCard = ({ title, description, tags, tagBackground, tagColor }) => {
+const ProjectCard = ({ title, description, tags, secondaryColor, color }) => {
   const theme = useContext(ThemeContext)
   return (
-    <Container>
+    <Container secondaryColor={secondaryColor}>
       <H4 paddingBottom={theme.spacing._1}>{title}</H4>
       <Body color={theme.colors.secondaryBody}>{description}</Body>
       <BuiltWith>
@@ -16,7 +16,7 @@ const ProjectCard = ({ title, description, tags, tagBackground, tagColor }) => {
       </BuiltWith>
       <TagContainer>
         {tags.map(tag => (
-          <Tag key={tag} tagColor={tagColor} tagBackground={tagBackground}>
+          <Tag key={tag} color={color} secondaryColor={secondaryColor}>
             {tag}
           </Tag>
         ))}

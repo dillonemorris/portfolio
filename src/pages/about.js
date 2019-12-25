@@ -16,7 +16,7 @@ const Container = styled.div`
 `
 
 const Wrapper = styled.div`
-  backgroundcolor: '#fff';
+  background-color: '#fff';
 `
 
 const About = () => (

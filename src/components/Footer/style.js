@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.footer`
-  color: #11181e;
   background-image: ${({ mobileBg }) => `url(${mobileBg})`};
   background-position: top;
   background-size: cover;
