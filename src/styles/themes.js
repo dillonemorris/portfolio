@@ -6,19 +6,23 @@ const themes = {
       background: '#fff',
       secondaryBackground: '#F7FAFC',
       tertiaryBackground: '#f2f7ff',
+      heroBackground: '#fff',
       cardBackground: '#F2F4FF',
+      jobCardBackground: '#fff',
       calloutBackground: 'rgba(237, 242, 247, 0.75)',
       info: '#EBF4FF',
       primaryProjectBackground: '#F2F4FF',
       secondaryProjectBackground: '#E8F5FE',
       primaryTagBackground: '#C3DAFE',
       secondaryTagBackground: '#BEE3F8',
+      headingBackground: '#E6FFFA',
 
       // text
       heading: '#1A202C',
       secondaryHeading: '#4C51BF',
       body: '#1A202C',
       secondaryBody: '#1A202C',
+      tertiaryBody: '#718096',
       accentBody: '#2D3748',
       primaryTag: '#3C366B',
       secondaryTag: '#2C5282',
@@ -95,6 +99,7 @@ const themes = {
 
       // yellow
       yellow200: '#FEFCBF',
+      yellow400: '#FBD38D',
       yellow600: '#D69E2E',
       yellow800: '#975A16',
 
@@ -268,19 +273,23 @@ const themes = {
       background: '#1A202C',
       secondaryBackground: '#1A202C',
       tertiaryBackground: '#1A202C',
+      heroBackground: '#2d3748',
       cardBackground: '#2d3748',
+      jobCardBackground: '#2d3748',
       calloutBackground: 'rgba(45, 55, 72, 0.9)',
       info: '#2d3748',
       primaryProjectBackground: '#4A5568',
       secondaryProjectBackground: '#4A5568',
       primaryTagBackground: '#434190',
       secondaryTagBackground: '#2C5282',
+      headingBackground: '#4C51BF',
 
       // text
       heading: '#fff',
       secondaryHeading: '#A3BFFA',
       body: '#fff',
       secondaryBody: '#CCE0FF',
+      tertiaryBody: '#CCE0FF',
       accentBody: '#fff',
       primaryTag: '#CCE0FF',
       secondaryTag: '#BEE3F8',
@@ -343,6 +352,12 @@ const themes = {
       blue200: '#BEE3F8',
       blue600: '#3182CE',
       blue800: '#2C5282',
+
+      // yellow
+      yellow200: '#FEFCBF',
+      yellow400: '#FBD38D',
+      yellow600: '#D69E2E',
+      yellow800: '#975A16',
     },
 
     fontSize: {

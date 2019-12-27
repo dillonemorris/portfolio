@@ -9,9 +9,9 @@ const Communication = () => {
     <svg width="42" height="44" xmlns="http://www.w3.org/2000/svg">
       <g
         fill="none"
-        fill-rule="evenodd"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        fillRule="evenodd"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
         <path
           d="M21 .917c2.26 0 4.09 1.846 4.09 4.125S23.26 9.167 21 9.167s-4.09-1.846-4.09-4.125c0-2.28 1.83-4.125 4.09-4.125zM29.182 17.417c-1.153-4.556-5.75-7.308-10.267-6.148a8.48 8.48 0 00-6.097 6.148h16.364zM21 24.75v-3.667M11 24.75l2.727-3.667M31 24.75l-2.727-3.667"

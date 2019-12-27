@@ -1,35 +1,29 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ThemeContext } from 'styled-components'
 import AboutHero from '../components/AboutHero'
 import AboutClosing from '../components/AboutClosing'
-import Skills from '../components/Skills'
+import Experience from '../components/Experience'
 import SEO from '../components/seo'
-import styled from 'styled-components'
+import { Container, Background } from '../components/globals'
 
-const Container = styled.div`
-  padding: 0px 1.0875rem 1.45rem;
-  padding-top: 0px;
-  max-width: 1200px;
+const About = () => {
+  const theme = useContext(ThemeContext)
+  return (
+    <>
+      <SEO title="About" />
+      <Background color={theme.colors.heroBackground}>
+        <Container>
+          <AboutHero />
+        </Container>
+      </Background>
 
-  @media (min-width: ${({ theme }) => theme.mq.sm}) {
-    margin: 0px auto;
-  }
-`
-
-const Wrapper = styled.div`
-  background-color: '#fff';
-`
-
-const About = () => (
-  <>
-    <SEO title="About" />
-    <Wrapper>
-      <Container>
-        <AboutHero />
-        <Skills />
-        <AboutClosing />
-      </Container>
-    </Wrapper>
-  </>
-)
+      <Background color={theme.colors.secondaryBackground}>
+        <Container>
+          <Experience />
+        </Container>
+      </Background>
+    </>
+  )
+}
 
 export default About

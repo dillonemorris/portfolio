@@ -9,9 +9,9 @@ const Lightbulb = () => {
     <svg width="40" height="44" xmlns="http://www.w3.org/2000/svg">
       <g
         fill="none"
-        fill-rule="evenodd"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        fillRule="evenodd"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
         <path
           d="M25.455 31.717v4.033c0 3.038-2.442 5.5-5.455 5.5s-5.455-2.462-5.455-5.5v-4.033M20 41.252v1.833"

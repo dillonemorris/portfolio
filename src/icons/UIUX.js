@@ -13,9 +13,9 @@ const UIUX = () => {
     >
       <g
         fill="none"
-        fill-rule="evenodd"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        fillRule="evenodd"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       >
         <path
           d="M3 1h42a2 2 0 012 2v42a2 2 0 01-2 2H3a2 2 0 01-2-2V3a2 2 0 012-2z"

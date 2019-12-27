@@ -1,13 +1,17 @@
 import styled from 'styled-components'
+import { H2 } from '../globals'
 
 export const Container = styled.div`
-  padding: 50px 0px;
+  padding: ${({ theme }) => theme.spacing._12} 0;
   display: flex;
   flex-direction: column;
 
   @media (min-width: 700px) {
     flex-direction: row;
-    padding: 120px 0px 100px;
+    padding-right: 0;
+    padding-left: 0;
+    padding-top: ${({ theme }) => theme.spacing._16};
+    padding-bottom: ${({ theme }) => theme.spacing._8};
   }
 `
 
@@ -15,15 +19,9 @@ export const Img = styled.img`
   margin-bottom: 40px;
 
   @media (min-width: 700px) {
-    max-width: 350px;
-    max-height: 420px;
-    margin-right: 40px;
+    max-height: 350px;
+    margin-right: ${({ theme }) => theme.spacing._6};
     padding-bottom: 0px;
-  }
-
-  @media (min-width: 900px) {
-    max-width: 450px;
-    margin-right: 60px;
   }
 `
 
@@ -32,40 +30,16 @@ export const Right = styled.div`
   flex-direction: column;
 `
 
-export const Heading = styled.h1`
-  color: #11181e;
-  font-weight: 500;
-  letter-spacing: 0.3px;
-  font-size: 36px;
+export const Heading = styled(H2)`
+  display: flex;
+  justify-content: center;
+  width: 320px;
+  background: ${({ theme }) => theme.colors.headingBackground};
+  margin-top: ${({ theme }) => theme.spacing._24};
   margin-bottom: 12px;
+  margin-left: -120px;
 
   @media (min-width: 700px) {
     font-size: 48px;
-  }
-`
-
-export const Paragraph = styled.p`
-  color: #486581;
-  font-size: 20px;
-  line-height: 1.5;
-`
-
-export const Tagline = styled.button`
-  font-size: 18px;
-  font-weight: 300;
-  color: #4183d7;
-  width: 200px;
-  display: flex;
-  align-items: center;
-  padding: 0px;
-  border: 0;
-  background: none;
-
-  :hover {
-    cursor: pointer;
-  }
-
-  :focus {
-    outline: none;
   }
 `

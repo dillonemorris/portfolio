@@ -52,7 +52,7 @@ export const H1 = styled.h1`
   font-weight: ${({ theme, fontWeight }) =>
     fontWeight ? fontWeight : theme.fontWeight.black};
   font-size: ${({ theme }) => theme.fontSize.text_5xl.mobile};
-  line-height: 1.3;
+  line-height: ${({ theme }) => theme.lineHeight.tight};
   margin: 0;
   margin-left: ${({ marginLeft }) => (marginLeft ? marginLeft : 0)};
   padding: 0;
@@ -67,7 +67,7 @@ export const H2 = styled.h2`
   color: ${({ theme }) => theme.colors.body};
   font-weight: 700;
   font-size: ${({ theme }) => theme.fontSize.text_4xl.mobile};
-  line-height: 1.3;
+  line-height: ${({ theme }) => theme.lineHeight.tight};
   margin: 0;
   padding: 0;
   padding-bottom: ${({ paddingBottom }) => (paddingBottom ? paddingBottom : 0)};
@@ -81,7 +81,7 @@ export const H3 = styled.h3`
   color: ${({ theme }) => theme.colors.body};
   font-weight: 700;
   font-size: ${({ theme }) => theme.fontSize.text_3xl.mobile};
-  line-height: 1.5;
+  line-height: ${({ theme }) => theme.lineHeight.tight};
   margin: 0;
   padding: 0;
   padding-bottom: ${({ paddingBottom }) => (paddingBottom ? paddingBottom : 0)};
@@ -95,7 +95,7 @@ export const H4 = styled.h4`
   color: ${({ theme }) => theme.colors.body};
   font-weight: 500;
   font-size: ${({ theme }) => theme.fontSize.text_2xl.mobile};
-  line-height: 1.4;
+  line-height: ${({ theme }) => theme.lineHeight.tight};
   margin: 0;
   padding: 0;
   padding-bottom: ${({ paddingBottom }) => (paddingBottom ? paddingBottom : 0)};
@@ -109,7 +109,7 @@ export const H5 = styled.h5`
   color: ${({ theme }) => theme.colors.body};
   font-weight: 500;
   font-size: ${({ theme }) => theme.fontSize.text_xl.mobile};
-  line-height: 1.4;
+  line-height: ${({ theme }) => theme.lineHeight.tight};
   margin: 0;
   padding: 0;
   padding-bottom: ${({ paddingBottom }) => (paddingBottom ? paddingBottom : 0)};
@@ -123,7 +123,7 @@ export const H6 = styled.h6`
   color: ${({ theme }) => theme.colors.body};
   font-weight: 600;
   font-size: ${({ theme }) => theme.fontSize.text_base.mobile};
-  line-height: 1.5;
+  line-height: ${({ theme }) => theme.lineHeight.tight};
   margin: 0;
   padding: 0;
   padding-bottom: ${({ paddingBottom }) => (paddingBottom ? paddingBottom : 0)};
