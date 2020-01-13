@@ -12,19 +12,18 @@ export const Heading = styled(H3)`
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: column;
   padding: ${({ theme }) => theme.spacing._8} 0;
 
   @media (min-width: ${({ theme }) => theme.mq.md}) {
-    padding: ${({ theme }) => theme.spacing._16} 0;
+    flex-direction: row;
+    padding: ${({ theme }) => theme.spacing._24} 0;
+    padding-bottom: ${({ theme }) => theme.spacing._40};
   }
 `
 
 export const CardContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   grid-gap: ${({ theme }) => theme.spacing._8};
-
-  @media (min-width: ${({ theme }) => theme.mq.md}) {
-    flex-direction: row;
-  }
 `

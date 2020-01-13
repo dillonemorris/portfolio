@@ -6,6 +6,7 @@ const themes = {
       background: '#fff',
       secondaryBackground: '#F7FAFC',
       tertiaryBackground: '#f2f7ff',
+      quaternaryBackground: '#F7FAFC',
       heroBackground: '#fff',
       cardBackground: '#F2F4FF',
       jobCardBackground: '#fff',
@@ -52,6 +53,7 @@ const themes = {
       //icons
       navIcon: '#1A202C',
       socialIcon: '#4C51BF',
+      aboutIcon: '#4C51BF',
 
       //gradients
       homePageGradient:
@@ -273,6 +275,7 @@ const themes = {
       background: '#1A202C',
       secondaryBackground: '#1A202C',
       tertiaryBackground: '#1A202C',
+      quaternaryBackground: '#2d3748',
       heroBackground: '#2d3748',
       cardBackground: '#2d3748',
       jobCardBackground: '#2d3748',
@@ -319,6 +322,7 @@ const themes = {
       //icons
       navIcon: '#fff',
       socialIcon: '#fff',
+      aboutIcon: '#A3BFFA',
 
       //gradients
       homePageGradient:

@@ -2,10 +2,14 @@ import styled from 'styled-components'
 import { SmallBody } from '../globals'
 
 export const Container = styled.div`
-  background: ${({ theme }) => theme.colors.jobCardBackground};
-  padding: 1.5rem 2.25rem;
+  background: ${({ theme }) => theme.colors.background};
+  padding: 1rem 1.25rem;
   box-shadow: ${({ theme }) => theme.shadow.xl};
   border-left: 4px solid ${({ borderColor }) => borderColor};
+
+  @media (min-width: ${({ theme }) => theme.mq.md}) {
+    padding: 1.5rem 2.25rem;
+  }
 `
 
 export const Time = styled(SmallBody)`
@@ -17,7 +21,11 @@ export const Time = styled(SmallBody)`
 export const CompanyLocation = styled.div`
   display: flex;
   margin-top: ${({ theme }) => theme.spacing._1};
-  margin-bottom: ${({ theme }) => theme.spacing._4};
+  margin-bottom: ${({ theme }) => theme.spacing._2};
+
+  @media (min-width: ${({ theme }) => theme.mq.md}) {
+    margin-bottom: ${({ theme }) => theme.spacing._4};
+  }
 `
 
 export const Company = styled(SmallBody)`

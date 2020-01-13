@@ -26,7 +26,7 @@ const Callout = () => {
           <H3 paddingBottom={theme.spacing._1}>What I'm up to</H3>
           <Description>
             <LargeBody>
-              I am currently working with some amazing people at{' '}
+              I am currently working with some awesome people at{' '}
               <Link
                 lg
                 page="https://synapsestudios.com"
@@ -40,6 +40,7 @@ const Callout = () => {
         <Button
           textColor={theme.colors.primaryButtonText}
           text="more about me"
+          page="/about"
         />
       </Left>
       <ImageAndIcons>

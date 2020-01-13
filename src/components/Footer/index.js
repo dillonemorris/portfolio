@@ -10,6 +10,7 @@ import Contact from '../../icons/Contact'
 
 const Footer = () => {
   const theme = useContext(ThemeContext)
+
   return (
     <Background color={theme.colors.background}>
       <Wrapper

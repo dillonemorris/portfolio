@@ -1,6 +1,6 @@
 const jobData = [
   {
-    time: 'Current',
+    time: '2019-Present',
     title: 'Front End Developer / Designer',
     company: 'Synapse Studios',
     location: 'Tempe, AZ',
