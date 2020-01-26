@@ -1,7 +1,47 @@
 import styled from 'styled-components'
+import { Link } from 'gatsby'
+import Arrow from '../../icons/Arrow'
 
 export const Background = styled.div`
   background-color: ${props => props.theme.colors.background};
+`
+
+export const Pagination = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding-top: ${({ theme }) => theme.spacing._16};
+`
+
+export const LinkContainer = styled.div`
+  display: flex;
+  margin-left: ${({ marginLeftAuto }) => (marginLeftAuto ? 'auto' : null)};
+  align-items: center;
+`
+
+export const NextLink = styled(Link)`
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.primaryLink};
+  transition: ${({ theme }) => theme.transitions.hover};
+  margin-right: ${({ theme }) => theme.spacing._2};
+
+  :hover {
+    color: ${({ theme }) => theme.colors.primaryLinkHover};
+  }
+`
+
+export const PreviousLink = styled(Link)`
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.primaryLink};
+  transition: ${({ theme }) => theme.transitions.hover};
+
+  :hover {
+    color: ${({ theme }) => theme.colors.primaryLinkHover};
+  }
+`
+
+export const LeftArrow = styled(Arrow)`
+  margin-right: ${({ theme }) => theme.spacing._2};
+  transform: rotate(180deg);
 `
 
 export const Container = styled.div`

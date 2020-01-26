@@ -24,12 +24,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   const result = await graphql(`
     query {
-      allMdx {
+      allMdx(sort: { fields: frontmatter___date, order: DESC }) {
         edges {
           node {
             id
             fields {
               slug
+            }
+            frontmatter {
+              title
             }
           }
         }
@@ -39,14 +42,22 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   if (result.errors) {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
   }
+
   // Create blog post pages.
   const posts = result.data.allMdx.edges
   // call `createPage` for each result
   posts.forEach(({ node }, index) => {
+    const previous = index === posts.length - 1 ? null : posts[index + 1].node
+    const next = index === 0 ? null : posts[index - 1].node
+
     createPage({
       path: node.fields.slug,
       component: path.resolve(`./src/components/PostsLayout/index.js`),
-      context: { id: node.id },
+      context: {
+        id: node.id,
+        previous,
+        next,
+      },
     })
   })
 }

@@ -1,9 +1,14 @@
 import React from 'react'
 
-const Arrow = ({ color }) => {
+const Arrow = ({ color, className }) => {
   const stroke = color ? color : '#4C51BF'
   return (
-    <svg width="15" height="18" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      className={className}
+      width="15"
+      height="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <g
         stroke={stroke}
         fill="none"

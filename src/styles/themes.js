@@ -30,6 +30,7 @@ const themes = {
 
       // links
       primaryLink: '#4C51BF',
+      primaryLinkHover: '#3C366B',
       secondaryLink: '#4C51BF',
       secondaryLinkHover: '#3C366B',
       accentLink: '#C3DAFE',
@@ -299,6 +300,7 @@ const themes = {
 
       // links
       primaryLink: '#fff',
+      primaryLinkHover: '#C3DAFE',
       secondaryLink: '#EDF2F7',
       secondaryLinkHover: '#C3DAFE',
       accentLink: '#1A202C',

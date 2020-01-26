@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ThemeContext } from 'styled-components'
 import { useLocalStorage } from '../../hooks/useLocalStorage'
 import { graphql } from 'gatsby'
 import { MDXProvider } from '@mdx-js/react'
@@ -13,10 +14,16 @@ import {
   DateContainer,
   Quote,
   Date,
+  Pagination,
+  NextLink,
+  PreviousLink,
+  LinkContainer,
+  LeftArrow,
 } from './style'
 import FontSettings from '../FontSettings'
-import { Link } from '../globals'
+import { Link as MyLink } from '../globals'
 import CodeBlock from '../CodeBlock'
+import Arrow from '../../icons/Arrow'
 
 const fonts = {
   default:
@@ -25,9 +32,14 @@ const fonts = {
   mono: 'Space Mono',
 }
 
-const PostsLayout = ({ data: { mdx } }) => {
+const PostsLayout = ({ pageContext, data }) => {
   const [largeFont, setLargeFont] = useLocalStorage(false)
   const [fontStyle, setFontStyle] = useLocalStorage(fonts.default)
+
+  const theme = useContext(ThemeContext)
+
+  const { mdx } = data
+  const { previous, next } = pageContext
 
   const components = {
     h2: ({ children }) => (
@@ -42,7 +54,7 @@ const PostsLayout = ({ data: { mdx } }) => {
     ),
     blockquote: ({ children }) => <Quote>{children}</Quote>,
     pre: ({ children }) => <CodeBlock children={children} />,
-    a: ({ children, href }) => <Link text={children} page={href} />,
+    a: ({ children, href }) => <MyLink text={children} page={href} />,
   }
 
   const { title, date } = mdx.frontmatter
@@ -70,6 +82,24 @@ const PostsLayout = ({ data: { mdx } }) => {
           </DateContainer>
 
           <MDXRenderer>{mdx.body}</MDXRenderer>
+          <Pagination>
+            {previous && (
+              <LinkContainer marginLeftAuto={!previous}>
+                <LeftArrow color={theme.colors.primaryLink} />
+                <PreviousLink to={previous.fields.slug}>
+                  {previous.frontmatter.title}
+                </PreviousLink>
+              </LinkContainer>
+            )}
+            {next && (
+              <LinkContainer marginLeftAuto={!previous}>
+                <NextLink to={next.fields.slug}>
+                  {next.frontmatter.title}
+                </NextLink>
+                <Arrow color={theme.colors.primaryLink} />
+              </LinkContainer>
+            )}
+          </Pagination>
         </Container>
       </Background>
     </MDXProvider>
