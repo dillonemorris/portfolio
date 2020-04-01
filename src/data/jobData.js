@@ -1,11 +1,11 @@
 const jobData = [
   {
     time: '2019-Present',
-    title: 'Front End Developer / Designer',
+    title: 'Front End Developer',
     company: 'Synapse Studios',
     location: 'Tempe, AZ',
     description:
-      'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+      "At Synapse Studios, I get to work on products that millions of people use. I currently work on a front-end development team building a workout app in React Native. I get to collaborate daily with fellow developers, designers and PM's.",
   },
   {
     time: '2018-2019',
@@ -13,7 +13,7 @@ const jobData = [
     company: 'Elm Street Technology',
     location: 'Remote',
     description:
-      'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+      'Here, I worked on a productivity app for real estate professionals. I designed and developed key features alongside a team of several back-end and front-end developers.',
   },
 ]
 
