@@ -196,7 +196,7 @@ export const ProjectsDescription = styled.div`
 
 export const ProjectsContainer = styled.div`
   align-items: flex-start;
-  padding-top: ${({ theme }) => theme.spacing._4};
+  padding-top: ${({ theme }) => theme.spacing._8};
 
   @media (min-width: ${({ theme }) => theme.mq.md}) {
     display: grid;

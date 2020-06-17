@@ -90,9 +90,9 @@ const IndexPage = ({ data }) => {
             <HeroHeading>
               <H4 paddingBottom={theme.spacing._1}>Hey, I’m Dillon!</H4>
               <Heading>
-                Front End Developer{' '}
+                Javascript Developer{' '}
                 <span style={{ color: theme.colors.secondaryHeading }}>
-                  specializing in UI/UX Design
+                  specializing in UI/UX
                 </span>
               </Heading>
             </HeroHeading>
@@ -153,8 +153,8 @@ const IndexPage = ({ data }) => {
               </SectionHeading>
               <ProjectsDescription>
                 <LargeBody>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Building things is the best way to learn in my opinion. Here
+                  are just a couple of the personal projects I've completed.
                 </LargeBody>
               </ProjectsDescription>
             </div>
@@ -210,7 +210,10 @@ const IndexPage = ({ data }) => {
               </HeadingContainer>
             </SectionHeading>
             <BlogCTA>
-              <Link style={{ textDecoration: 'none' }} to="/blog">
+              <Link
+                style={{ textDecoration: 'none', marginRight: '8px' }}
+                to="/blog"
+              >
                 <Body color={theme.colors.primaryLink}>See all posts</Body>
               </Link>
               <Arrow color={theme.colors.primaryLink} />

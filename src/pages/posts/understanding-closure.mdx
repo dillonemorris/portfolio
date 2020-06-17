@@ -1,0 +1,107 @@
+---
+title: 'Understanding Closure'
+date: '2020-06-16'
+excerpt: "Closure is a scary word in Javascript. It can feel like an enigma, a secret that is only known by wizards and lab coat wearing computer scientists 🥼🧪. At least that's how I used to feel about it. Turns out, it's not all that spooky, as I will hopefully demonstrate in this post."
+---
+
+Closure is a scary word in Javascript. It can feel like an enigma, a secret that is only known by wizards and lab coat wearing computer scientists 🥼🧪. At least that's how I used to feel about it. Turns out, it's not all that spooky, as I will hopefully demonstrate in this post.
+
+
+<br />
+
+First of all, it would be plagiarism to publish this post without giving the proper credit to <a href="https://frontendmasters.com/">Front End Masters</a>. More specifically, the workshop <a href="https://frontendmasters.com/">Javascript: The Hard Parts</a> led by instructor Will Sentance from <a href="https://www.codesmith.io/">Codesmith</a>. In this post I will distill Will's lesson on Closure into a short, readable format. For the real deal, you should absolutely check out that course as well as the many other great ones on <a href="https://frontendmasters.com/">Front End Masters</a>.  
+
+<br />
+
+## What is Closure?
+
+Kyle Simpson, author of <a href="https://github.com/getify/You-Dont-Know-JS">You Don’t Know JS</a> puts it like this:
+
+> Closure is when a a function "remembers" it's lexical scope even when that function is exexcuted outside of that lexical scope. <br />
+
+In other words, we can't understand Closure without first understanding what "lexical scope" is. The good news is that the term "lexical scope" is just another scary sounding word that we can demystify quite easily. 
+
+<br />
+
+## What is Lexical Scope?
+
+Lexical scope is the surrounding environment that a variable or function is defined in. In Javascript, a variable or function is visible to the executing code if it is in the current lexical environment of the enclosing function. 
+
+Take a look at this example:
+
+```js
+function outer() {
+    let counter = 0
+    function incrementCounter() {
+        counter++
+    }
+    return incrementCounter
+}
+
+let myNewFunction = outer();
+// myNewFunction === incrementCounter
+
+myNewFunction()
+```
+
+> This is a common pattern in Javascript, storing a function inside another function. The function <strong>outer</strong> is a "higher order" function because it is returning another function <strong>incrementCounter</strong>.
+
+Intuitively, when looking at the code inside <strong>incrementCounter</strong> we'd presume that Javscript has no knowledge of the variable <strong>counter</strong>. This is because it is not defined inside of <strong>incrementCounter</strong>. What gives? The Javascript parser initially does look inside of <strong>incrementCounter</strong> for the variable <strong>counter</strong>. The cool part is that if it doesn't find it inside it's immediate surroundings, it will then look up the "chain" and find counter defined in the enclosing function, in this case <strong>outer</strong>. 
+
+<br />
+
+Because Javascript is lexically scoped, where you define your function determines what variables it has access to when it is executed. Since <strong>incrementCounter</strong> is defined inside of <strong>outer</strong> it has access to variables within that enclosing scope. 
+
+<br />
+
+After we define <strong>outer</strong>, we assign it's returned value to <strong>myNewFunction</strong>. As you can see, the returned value of <strong>outer</strong> is the function <strong>incrementCounter</strong>. To be clear, we are not returning the execution of the function, but the function definition. In other words, the contents of function: 
+
+```js
+function incrementCounter() {
+ counter++
+}
+
+```
+
+Therefore, when we call or "execute" <strong>myNewFunction</strong>, we are really saying "go execute the incrementCounter functionality." Through the power of closure, when we execute <strong>myNewFunction</strong>, we have access to the surrounding data in it's enclosed environment. In our example, that is the variable <strong>counter</strong>. Since <strong>counter</strong> is not living inside <strong>incrementCounter</strong> itself, it's value persists between function calls, making it a live store of data. If <strong>counter</strong> were to be defined inside of <strong>incrementCounter</strong>, there'd be no way of holding onto it's value and continue updating it. Here's how that would look:
+
+```js
+function outer() {
+    function incrementCounter() {
+        let counter = 0
+        counter++
+    }
+    return incrementCounter
+}
+
+let myNewFunction = outer();
+
+myNewFunction()
+```
+
+In this example, after executing <strong>myNewFunction()</strong>, the counter would be assigned the value of 0, then we'd increment it by 1. On the second call, the same thing would happen. The counter would be assigned the value 0 and then be incremented by 1. Let's take a look at the original example again:
+
+```js
+function outer() {
+    let counter = 0
+    function incrementCounter() {
+        counter++
+    }
+    return incrementCounter
+}
+
+let myNewFunction = outer();
+
+myNewFunction()
+```
+
+
+Now, the counter will be preserved on each subsequent execution of <strong>myNewFunction</strong>. On the initial call, counter is assigned the value of 0 as it was set in the enclosing function <strong>outer</strong>. When we invoke <strong>myNewFunction</strong> we are simply incrementing the counter by 1. The next time <strong>myNewFunction</strong> is called, the value of counter is what we incremented it to on the first call, 1. Again, we go ahead and increment the counter by 1 and it's value becomes 2. On the subsequent call the value will be 2, then we increment it to 3 and so on. 
+
+<br />
+
+This example clearly demostrates the power of closure. Closure gives our functions memory. With closure, we empower our functions by giving them the ability to "remember" the state of our data. We can keep a live store of data that can be updated each time the function is called.
+
+<br />
+
+Closure is used everywhere in Javscript. For my fellow react developers out there, check out this <a href="https://www.netlify.com/blog/2019/03/11/deep-dive-how-do-react-hooks-really-work/">deep dive</a> into how Hooks work under the hood. Spoiler alert: Closure.  

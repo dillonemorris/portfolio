@@ -71,6 +71,6 @@ export const SecondParagraph = styled(LargeBody)`
   padding-bottom: ${({ theme }) => theme.spacing._4};
 
   @media (min-width: ${({ theme }) => theme.mq.sm}) {
-    padding-bottom: 0px;
+    padding-bottom: ${({ theme }) => theme.spacing._12};
   }
 `
