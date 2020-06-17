@@ -6,17 +6,21 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  height: 70px;
-  background-color: #fff;
+  padding: 16px 0px;
+  background-color: ${props => props.theme.colors.background};
   margin: 0 auto;
-  color: #11181e;
+  z-index: 5;
+
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 `
 
 export const Inner = styled.div`
   padding: 0px 1.0875rem 0rem;
   width: 100%;
   margin: 0 auto;
-  max-width: 1080px;
+  max-width: 1200px;
   display: flex;
   align-content: center;
   justify-content: space-between;
@@ -25,7 +29,6 @@ export const Inner = styled.div`
 export const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
-  width: inherit;
   text-decoration: none;
 `
 
@@ -33,11 +36,11 @@ export const MobileIcon = styled.button`
   cursor: pointer;
   color: #2e2e35;
   display: inline-flex;
-  background-color: none;
+  background: none;
   border: none;
 
   :focus {
-    outline: 1px solid #fff;
+    outline: none;
   }
 
   @media (min-width: 900px) {
@@ -50,5 +53,13 @@ export const Desktop = styled(NavDesktop)`
 
   @media (min-width: 900px) {
     display: flex;
+  }
+`
+
+export const MyToggleContainer = styled.div`
+  display: flex;
+
+  @media (min-width: 900px) {
+    display: none;
   }
 `

@@ -5,6 +5,7 @@
   position: relative;
   cursor: pointer;
   background-color: transparent;
+  margin: auto 0;
   border: 0;
   padding: 0;
 
@@ -15,7 +16,7 @@
   -ms-user-select: none;
   user-select: none;
 
-  -webkit-tap-highlight-color: #25212d;
+  -webkit-tap-highlight-color: #4c51bf;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -42,22 +43,22 @@
   height: 24px;
   padding: 0;
   border-radius: 30px;
-  background-color: #4d4d4d;
+  background-color: #4c51bf;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 
 .react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {
-  background-color: #25212d;
+  background-color: #434190;
 }
 
 .react-toggle--checked .react-toggle-track {
-  background-color: #f7f7f7;
+  background-color: #c3dafe;
 }
 
 .react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
-  background-color: #f7f7f7;
+  background-color: #ebf4ff;
 }
 
 .react-toggle-track-check {
@@ -105,7 +106,7 @@
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background-color: #fafafa;
+  background-color: #fff;
 
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -118,19 +119,19 @@
 
 .react-toggle--checked .react-toggle-thumb {
   left: 27px;
-  -webkit-box-shadow: 0px 0px 3px 3px #ecddff;
-  -moz-box-shadow: 0px 0px 3px 3px #ecddff;
-  box-shadow: 0px 0px 3px 3px #ecddff;
+  -webkit-box-shadow: 0px 0px 3px 3px #667eea;
+  -moz-box-shadow: 0px 0px 3px 3px #667eea;
+  box-shadow: 0px 0px 3px 3px #667eea;
 }
 
 .react-toggle:active:not(.react-toggle--disabled) .react-toggle-thumb {
-  -webkit-box-shadow: 0px 0px 3px 2px #11181E;
-  -moz-box-shadow: 0px 0px 3px 2px #11181E;
-  box-shadow: 0px 0px 2px 3px #11181E;
+  -webkit-box-shadow: 0px 0px 3px 2px #11181e;
+  -moz-box-shadow: 0px 0px 3px 2px #11181e;
+  box-shadow: 0px 0px 2px 3px #11181e;
 }
 
 .react-toggle--focus .react-toggle-thumb {
-  -webkit-box-shadow: 0px 0px 3px 3px #ecddff;
-  -moz-box-shadow: 0px 0px 3px 3px #ecddff;
-  box-shadow: 0px 0px 3px 3px #ecddff;
+  -webkit-box-shadow: 0px 0px 3px 3px #667eea;
+  -moz-box-shadow: 0px 0px 3px 3px #667eea;
+  box-shadow: 0px 0px 3px 3px #667eea;
 }

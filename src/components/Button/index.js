@@ -7,11 +7,10 @@ const Button = ({
   text,
   page,
   color,
-  border,
-  boxShadowHover,
-  boxShadow,
   fontSize,
   padding,
+  textColor,
+  textHoverColor,
 }) => {
   const internal = /^\/(?!\/)/.test(page)
 
@@ -19,13 +18,12 @@ const Button = ({
     return (
       <Link to={page}>
         <StyledButton
-          border={border}
-          boxShadow={boxShadow}
-          boxShadowHover={boxShadowHover}
           fontSize={fontSize}
           color={color}
           padding={padding}
           className={className}
+          textColor={textColor}
+          textHoverColor={textHoverColor}
         >
           {text}
         </StyledButton>
@@ -35,13 +33,12 @@ const Button = ({
   return (
     <a target="_blank" href={page} rel="noopener noreferrer">
       <StyledButton
-        border={border}
-        boxShadow={boxShadow}
-        boxShadowHover={boxShadowHover}
         fontSize={fontSize}
         color={color}
         padding={padding}
         className={className}
+        textColor={textColor}
+        textHoverColor={textHoverColor}
       >
         {text}
       </StyledButton>

@@ -1,5 +1,9 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { useDarkMode } from '../../hooks/useDarkMode'
+
 import posed, { PoseGroup } from 'react-pose'
+import { ThemeProvider } from 'styled-components'
+import themes from '../../styles/themes'
 import Header from '../Header'
 import Footer from '../Footer'
 import '../../styles/layout.css'
@@ -7,51 +11,32 @@ import { pageFade } from '../../styles/poses'
 
 const Transition = posed.div(pageFade)
 
-class Layout extends React.Component {
-  constructor() {
-    super()
-    this.state = { loaded: false }
-  }
+const Layout = ({ location, children }) => {
+  const [loaded, setLoaded] = useState(false)
+  const [darkMode, setDarkMode] = useDarkMode()
 
-  componentDidMount() {
-    this.setState({ loaded: true })
-  }
+  useEffect(() => {
+    setLoaded(true)
+  }, [])
 
-  renderNoScript() {
-    return (
-      <noscript>
-        <style
-          dangerouslySetInnerHTML={{
-            __html: `
-                .initial {
-                  opacity: 1 !important;
-                }
-              `,
-          }}
-        />
-      </noscript>
-    )
-  }
+  const theme = darkMode ? themes.darkTheme : themes.lightTheme
 
-  render() {
-    const { location } = this.props
-    const children = this.props.children
-    const { loaded } = this.state
-
-    return (
-      <>
-        <Header />
-        <div className={`${loaded ? ' loaded' : 'initial'}`}>
-          <PoseGroup animateOnMount preEnterPose="initial">
-            <Transition key={location.pathname}>
-              {children}
-              <Footer />
-            </Transition>
-          </PoseGroup>
-        </div>
-      </>
-    )
-  }
+  return (
+    <ThemeProvider theme={theme}>
+      <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+      <div
+        style={{ background: theme.colors.background }}
+        className={`${loaded ? ' loaded' : 'initial'}`}
+      >
+        <PoseGroup animateOnMount preEnterPose="initial">
+          <Transition key={location.pathname}>
+            {children}
+            <Footer />
+          </Transition>
+        </PoseGroup>
+      </div>
+    </ThemeProvider>
+  )
 }
 
 export default Layout

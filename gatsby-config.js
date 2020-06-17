@@ -1,13 +1,28 @@
 module.exports = {
   siteMetadata: {
-    title: 'Dillon Morris - UI Designer & Developer',
+    title: 'Dillon Morris - Front End Developer',
     author: 'Dillon Morris',
     siteUrl: 'https://www.dillonmorris.me/',
-    description: 'Dillon is a UI/UX Developer & Designer in Phoenix, AZ',
+    description: 'Dillon is a Front End Developer specializing in UI/UX Design',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        plugins: [`gatsby-remark-images`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -19,7 +34,9 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `IBM Plex Mono\:300,400,400,700`, // you can also specify font weights and styles
+          `Space Mono\:400,700`,
+          `PT Serif\:500, 700,`,
+          `IBM Plex Mono\:400,700`,
         ],
         display: 'swap',
       },

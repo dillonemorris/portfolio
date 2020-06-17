@@ -1,29 +1,27 @@
 import styled from 'styled-components'
+import { H2, LargeBody } from '../globals'
 
 export const Container = styled.div`
-  padding: 50px 0px;
   display: flex;
   flex-direction: column;
+  padding: ${({ theme }) => theme.spacing._12} 0;
 
-  @media (min-width: 700px) {
+  @media (min-width: ${({ theme }) => theme.mq.md}) {
     flex-direction: row;
-    padding: 120px 0px 100px;
+    padding-right: 0;
+    padding-left: 0;
+    padding-top: ${({ theme }) => theme.spacing._16};
+    padding-bottom: ${({ theme }) => theme.spacing._8};
   }
 `
 
 export const Img = styled.img`
-  margin-bottom: 40px;
+  order: 1;
 
-  @media (min-width: 700px) {
-    max-width: 350px;
-    max-height: 420px;
-    margin-right: 40px;
-    padding-bottom: 0px;
-  }
-
-  @media (min-width: 900px) {
-    max-width: 450px;
-    margin-right: 60px;
+  @media (min-width: ${({ theme }) => theme.mq.md}) {
+    max-height: 350px;
+    margin-right: ${({ theme }) => theme.spacing._6};
+    order: 0;
   }
 `
 
@@ -32,46 +30,47 @@ export const Right = styled.div`
   flex-direction: column;
 `
 
-export const Heading = styled.h1`
-  color: #11181e;
-  font-weight: 500;
-  letter-spacing: 0.3px;
-  font-size: 36px;
+export const Heading = styled(H2)`
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  background: ${({ theme }) => theme.colors.headingBackground};
   margin-bottom: 12px;
+  margin-left: 0px;
 
-  @media (min-width: 700px) {
+  @media (min-width: ${({ theme }) => theme.mq.sm}) {
+    width: 280px;
+  }
+
+  @media (min-width: ${({ theme }) => theme.mq.md}) {
+    width: 320px;
+    margin-left: -120px;
+    margin-top: ${({ theme }) => theme.spacing._6};
     font-size: 48px;
   }
+
+  @media (min-width: ${({ theme }) => theme.mq.lg}) {
+    width: 320px;
+    margin-top: ${({ theme }) => theme.spacing._24};
+  }
 `
 
-export const Paragraph = styled.p`
-  color: #486581;
-  font-size: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif !important;
-  line-height: 1.5;
-`
+export const FirstParagraph = styled(LargeBody)`
+  padding-bottom: ${({ theme }) => theme.spacing._2};
 
-export const Tagline = styled.button`
-  font-family: 'IBM Plex Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif !important;
-  font-size: 18px;
-  font-weight: 300;
-  color: #4183d7;
-  width: 200px;
-  display: flex;
-  align-items: center;
-  padding: 0px;
-  border: 0;
-  background: none;
-
-  :hover {
-    cursor: pointer;
+  @media (min-width: ${({ theme }) => theme.mq.md}) {
+    padding-bottom: ${({ theme }) => theme.spacing._4};
   }
 
-  :focus {
-    outline: none;
+  @media (min-width: ${({ theme }) => theme.mq.lg}) {
+    padding-bottom: ${({ theme }) => theme.spacing._6};
+  }
+`
+
+export const SecondParagraph = styled(LargeBody)`
+  padding-bottom: ${({ theme }) => theme.spacing._4};
+
+  @media (min-width: ${({ theme }) => theme.mq.sm}) {
+    padding-bottom: ${({ theme }) => theme.spacing._12};
   }
 `

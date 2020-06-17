@@ -1,12 +1,27 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { useSpring } from 'react-spring'
+import { ThemeContext } from 'styled-components'
 import Logo from '../../images/Logo'
 import NavMobile from '../NavMobile'
-import { Container, Inner, StyledLink, MobileIcon, Desktop } from './style'
+import NavIcon from '../../icons/navIcon'
+import {
+  Container,
+  Inner,
+  StyledLink,
+  MobileIcon,
+  Desktop,
+  MyToggleContainer,
+} from './style'
+import MyToggle from '../MyToggle'
+import Light from '../../icons/Light'
+import Dark from '../../icons/Dark'
 
-const Header = () => {
+const Header = ({ darkMode, setDarkMode }) => {
   const [isMenuOpen, setMenuOpen] = useState(false)
   const toggleMenu = () => setMenuOpen(!isMenuOpen)
+  const {
+    colors: { navIcon },
+  } = useContext(ThemeContext)
 
   const animatedMenu = useSpring({
     transform: isMenuOpen ? `translate3d(0, 0, 0)` : `translate3d(100%, 0, 0)`,
@@ -18,18 +33,20 @@ const Header = () => {
         <StyledLink to="/">
           <Logo />
         </StyledLink>
+        <MyToggleContainer>
+          <MyToggle
+            toggle={darkMode}
+            setToggle={setDarkMode}
+            icons={{
+              checked: <Dark alt="Moon" style={{ pointerEvents: 'none' }} />,
+              unchecked: <Light alt="Sun" style={{ pointerEvents: 'none' }} />,
+            }}
+          />
+        </MyToggleContainer>
         <MobileIcon onClick={toggleMenu}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="#11181E"
-          >
-            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
-          </svg>
+          <NavIcon color={navIcon} />
         </MobileIcon>
-        <Desktop />
+        <Desktop darkMode={darkMode} setDarkMode={setDarkMode} />
         <NavMobile
           toggleMenu={toggleMenu}
           isMenuOpen={isMenuOpen}

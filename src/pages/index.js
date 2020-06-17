@@ -1,137 +1,264 @@
-import React from 'react'
-import styled from 'styled-components'
-import Avatar from '../images/avatar.png'
-import Button from '../components/Button'
+import React, { useContext } from 'react'
+import { ThemeContext } from 'styled-components'
+import { Link, graphql } from 'gatsby'
 import SEO from '../components/seo'
+import featureCardData from '../data/featureCardData'
+import projectData from '../data/projectData'
 
-const Container = styled.div`
-  padding: 0px 1.0875rem 1.45rem;
-  padding-top: 0px;
-  max-width: 1080px;
+import Callout from '../components/Callout'
+import FeatureCard from '../components/FeatureCard'
+import ProjectCard from '../components/ProjectCard'
+import BlogPostCard from '../components/BlogPostCard'
 
-  @media (min-width: 600px) {
-    margin: 0px auto;
-  }
-`
+//icons
+import DownArrow from '../icons/DownArrow'
+import Projects from '../icons/Projects'
+import Blog from '../icons/Blog'
+import Arrow from '../icons/Arrow'
 
-const Wrapper = styled.div`
-  background-color: #f4f4f4;
-`
+//shapes
+import Blob from '../images/Blob'
+import BigBlob from '../images/BigBlob'
+import SmallCircles from '../images/SmallCircles'
+import Triangle from '../images/Triangle.svg'
+import TriangleDark from '../images/TriangleDark.svg'
+import Squares from '../images/Squares'
+import Waves from '../images/Waves.svg'
+import WavesDark from '../images/WavesDark.svg'
+import TriangleWiggle from '../images/TriangleWiggle'
 
-const Heading = styled.h1`
-  color: #11181e;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  font-size: 22px;
-  line-height: 1;
-  text-align: center;
+//styles
+import {
+  Body,
+  LargeBody,
+  H1,
+  H3,
+  H4,
+  Container,
+  Background,
+} from '../components/globals'
 
-  @media (min-width: 400px) {
-    font-size: 28px;
-  }
+import {
+  MyContainer,
+  Landing,
+  Heading,
+  HeroHeading,
+  BlobContainer,
+  BigBlobContainer,
+  SmallCirclesContainer,
+  CallToAction,
+  DownArrowContainer,
+  FeatureCardContainer,
+  ProjectsContainer,
+  ProjectsDescription,
+  SectionHeading,
+  BlogCTA,
+  BlogHeading,
+  BlogCardContainer,
+  HeadingContainer,
+  ProjectCardContainer,
+  SquaresContainer,
+  TriangleWiggleContainer,
+  IconContainer,
+} from '../styles/page-styles/home-page-styles'
 
-  @media (min-width: 600px) {
-    font-size: 36px;
-  }
-`
+const IndexPage = ({ data }) => {
+  const theme = useContext(ThemeContext)
 
-const Subheading = styled.p`
-  color: #11181e;
-
-  font-weight: 400;
-  max-width: 800px;
-  text-align: center;
-  line-height: 24px;
-  margin-bottom: 10px;
-  letter-spacing: 0.4px;
-  font-size: 16px;
-
-  @media (min-width: 600px) {
-    font-size: 18px;
-  }
-`
-
-const MyContainer = styled.div`
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  min-height: calc(100vh - 210px);
-`
-
-const BodyText = styled.p`
-  color: #11181e;
-
-  max-width: 800px;
-  text-align: center;
-  line-height: 24px;
-  margin-bottom: 60px;
-  letter-spacing: 0.4px;
-  font-size: 16px;
-
-  @media (min-width: 600px) {
-    font-size: 18px;
-  }
-`
-
-const Img = styled.img`
-  width: 140px;
-  padding: 18px 0px;
-
-  @media (min-width: 600px) {
-    padding: 22px 0px;
-  }
-`
-
-const Link = styled.a`
-  color: #11181e;
-  font-weight: 600;
-  text-decoration: none;
-  border-bottom: 2px solid #bcd9ff;
-  transition: background 0.4s ease-out;
-
-  :hover {
-    background: #bcd9ff;
+  const handleClick = () => {
+    document.querySelector('#callout').scrollIntoView({
+      behavior: 'smooth',
+    })
   }
 
-  @media (min-width: 600px) {
-    fontsize: '18px';
-  }
-`
-
-const IndexPage = () => (
-  <>
-    <SEO title="Home" />
-    <Wrapper>
-      <Container>
+  return (
+    <>
+      <SEO title="Home" />
+      <Background
+        position="bottom left"
+        size="210vh"
+        bg={theme.dark ? TriangleDark : Triangle}
+      >
+        <Container paddingBottom={theme.spacing._8}>
+          <BlobContainer position="right">
+            <Blob />
+          </BlobContainer>
+          <Landing>
+            <SmallCirclesContainer>
+              <SmallCircles />
+            </SmallCirclesContainer>
+            <HeroHeading>
+              <H4 paddingBottom={theme.spacing._1}>Hey, I’m Dillon!</H4>
+              <Heading>
+                Javascript Developer{' '}
+                <span style={{ color: theme.colors.secondaryHeading }}>
+                  specializing in UI/UX
+                </span>
+              </Heading>
+            </HeroHeading>
+            <CallToAction onClick={handleClick}>
+              <LargeBody>Scroll on down</LargeBody>
+              <DownArrowContainer id="callout">
+                <DownArrow color={theme.colors.primaryLink} />
+              </DownArrowContainer>
+            </CallToAction>
+          </Landing>
+        </Container>
+      </Background>
+      <BigBlobContainer>
+        <BigBlob color={theme.colors.bigBlob} />
+      </BigBlobContainer>
+      <div style={{ background: theme.colors.homePageGradient }}>
+        <Container>
+          <Callout />
+          <div style={{ display: 'flex', zIndex: 1 }}>
+            <SquaresContainer>
+              <Squares />
+            </SquaresContainer>
+            <H1>I'm really good at...</H1>
+          </div>
+          <FeatureCardContainer>
+            {featureCardData.map(feature => (
+              <FeatureCard
+                key={feature.title}
+                title={feature.title}
+                description={feature.description}
+                icon={feature.icon}
+              />
+            ))}
+            <TriangleWiggleContainer>
+              <TriangleWiggle color={theme.colors.triangleWiggle} />
+            </TriangleWiggleContainer>
+          </FeatureCardContainer>
+        </Container>
+      </div>
+      <Background
+        position="bottom"
+        size="100%"
+        bg={theme.dark ? WavesDark : Waves}
+      >
+        <Container paddingBottom={theme.spacing._6}>
+          <BlobContainer>
+            <Blob color={theme.colors.blob} />
+          </BlobContainer>
+          <ProjectsContainer>
+            <div>
+              <SectionHeading>
+                <IconContainer>
+                  <Projects color={theme.colors.body} />
+                </IconContainer>
+                <HeadingContainer>
+                  <H3>Projects</H3>
+                </HeadingContainer>
+              </SectionHeading>
+              <ProjectsDescription>
+                <LargeBody>
+                  Building things is the best way to learn in my opinion. Here
+                  are just a couple of the personal projects I've completed.
+                </LargeBody>
+              </ProjectsDescription>
+            </div>
+            <ProjectCardContainer>
+              {projectData.map((project, i) => (
+                <Background
+                  key={project.title}
+                  style={{ marginBottom: theme.spacing._8 }}
+                  color={
+                    i % 2 === 0
+                      ? theme.colors.primaryProjectBackground
+                      : theme.colors.secondaryProjectBackground
+                  }
+                >
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: 'none' }}
+                    href={project.page}
+                  >
+                    <ProjectCard
+                      title={project.title}
+                      description={project.description}
+                      page={project.page}
+                      color={
+                        i % 2 === 0
+                          ? theme.colors.primaryTag
+                          : theme.colors.secondaryTag
+                      }
+                      secondaryColor={
+                        i % 2 === 0
+                          ? theme.colors.primaryTagBackground
+                          : theme.colors.secondaryTagBackground
+                      }
+                      tags={project.tags}
+                    />
+                  </a>
+                </Background>
+              ))}
+            </ProjectCardContainer>
+          </ProjectsContainer>
+        </Container>
+      </Background>
+      <Background color={theme.colors.background}>
         <MyContainer>
-          <Img src={Avatar} alt={'avatar'} />
-          <Heading>Hey, I’m Dillon.</Heading>
-          <Subheading>UI Developer in Phoenix, AZ.</Subheading>
-          <BodyText>
-            Currently working with some amazing people at{' '}
-            <Link
-              target="_blank"
-              href={'https://www.synapsestudios.com'}
-              rel="noopener noreferrer"
-            >
-              Synapse Studios
-            </Link>
-          </BodyText>
-          <Button
-            color={'rgba(65, 131, 215, 1)'}
-            boxShadow={'5px 5px rgba(65, 131, 215, .4)'}
-            boxShadowHover={'5px 5px rgba(65, 131, 215, 1)'}
-            border={'3px solid rgba(65, 131, 215, 1)'}
-            text="more about me"
-            page={'/about/'}
-          />
+          <BlogHeading>
+            <SectionHeading>
+              <IconContainer>
+                <Blog color={theme.colors.body} />
+              </IconContainer>
+              <HeadingContainer>
+                <H3>Blog</H3>
+              </HeadingContainer>
+            </SectionHeading>
+            <BlogCTA>
+              <Link
+                style={{ textDecoration: 'none', marginRight: '8px' }}
+                to="/blog"
+              >
+                <Body color={theme.colors.primaryLink}>See all posts</Body>
+              </Link>
+              <Arrow color={theme.colors.primaryLink} />
+            </BlogCTA>
+          </BlogHeading>
+          <BlogCardContainer>
+            {data.allMdx.edges.map(({ node }) => (
+              <div key={node.id}>
+                <Link style={{ textDecoration: 'none' }} to={node.fields.slug}>
+                  <BlogPostCard
+                    timeToRead={node.timeToRead}
+                    date={node.frontmatter.date}
+                    title={node.frontmatter.title}
+                    excerpt={node.frontmatter.excerpt}
+                  />
+                </Link>
+              </div>
+            ))}
+          </BlogCardContainer>
         </MyContainer>
-      </Container>
-    </Wrapper>
-  </>
-)
+      </Background>
+    </>
+  )
+}
+
+export const query = graphql`
+  query {
+    allMdx(sort: { fields: frontmatter___date, order: DESC }, limit: 2) {
+      totalCount
+      edges {
+        node {
+          timeToRead
+          id
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+            excerpt
+          }
+          fields {
+            slug
+          }
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage

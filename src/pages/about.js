@@ -1,35 +1,67 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ThemeContext } from 'styled-components'
+import aboutData from '../data/aboutData'
 import AboutHero from '../components/AboutHero'
-import AboutClosing from '../components/AboutClosing'
-import Skills from '../components/Skills'
+import Experience from '../components/Experience'
+import AboutCard from '../components/AboutCard'
 import SEO from '../components/seo'
-import styled from 'styled-components'
+import { Container, Background, H3 } from '../components/globals'
+import {
+  MyContainer,
+  AboutContainer,
+  AboutBody,
+  AboutGrid,
+} from '../styles/page-styles/about-page-styles'
 
-const Container = styled.div`
-  padding: 0px 1.0875rem 1.45rem;
-  padding-top: 0px;
-  max-width: 1080px;
+import Squiggly from '../images/Squiggly.svg'
+import SquigglyDark from '../images/SquigglyDark.svg'
 
-  @media (min-width: 600px) {
-    margin: 0px auto;
-  }
-`
+const About = () => {
+  const theme = useContext(ThemeContext)
+  return (
+    <>
+      <SEO title="About" />
+      <Background color={theme.colors.background}>
+        <Container>
+          <AboutHero />
+        </Container>
+      </Background>
 
-const Wrapper = styled.div`
-  backgroundcolor: '#fff';
-`
+      <Background color={theme.colors.quaternaryBackground}>
+        <Container>
+          <Experience />
+        </Container>
+      </Background>
 
-const About = () => (
-  <>
-    <SEO title="About" />
-    <Wrapper>
-      <Container>
-        <AboutHero />
-        <Skills />
-        <AboutClosing />
-      </Container>
-    </Wrapper>
-  </>
-)
+      <Background color={theme.colors.quaternaryBackground}>
+        <MyContainer></MyContainer>
+      </Background>
+
+      <Background
+        position="14% 4%"
+        bg={theme.dark ? SquigglyDark : Squiggly}
+        color={theme.colors.background}
+      >
+        <Container>
+          <AboutContainer>
+            <H3>Mottos I live by</H3>
+            <AboutBody>
+              These are the ideals I strive uphold to on a daily basis.
+            </AboutBody>
+            <AboutGrid>
+              {aboutData.map(aboutCard => (
+                <AboutCard
+                  icon={aboutCard.icon}
+                  title={aboutCard.title}
+                  description={aboutCard.description}
+                />
+              ))}
+            </AboutGrid>
+          </AboutContainer>
+        </Container>
+      </Background>
+    </>
+  )
+}
 
 export default About

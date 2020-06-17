@@ -1,95 +1,45 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
-  display: flex;
-  align-content: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 110px;
-  background-color: #fff;
-  margin: 0 auto;
-  color: #11181e;
+export const Wrapper = styled.footer`
+  background-image: ${({ mobileBg }) => `url(${mobileBg})`};
+  background-position: top;
+  background-size: cover;
+
+  @media (min-width: ${({ theme }) => theme.mq.md}) {
+    background-image: ${({ bg }) => `url(${bg})`};
+  }
 `
 
 export const Inner = styled.div`
-  max-width: 1080px;
-  margin: 0 auto;
+  display: flex;
+  padding-top: ${({ theme }) => theme.spacing._32};
+
+  @media (min-width: ${({ theme }) => theme.mq.sm}) {
+    padding-top: ${({ theme }) => theme.spacing._48};
+  }
+`
+
+export const Text = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  margin-left: ${({ theme }) => theme.spacing._0};
 
-  @media (min-width: 600px) {
-    width: 100%;
-    flex-direction: row;
-    padding: 0px 1.0875rem 0px;
-    justify-content: space-between;
+  @media (min-width: ${({ theme }) => theme.mq.sm}) {
+    margin-left: ${({ theme }) => theme.spacing._6};
   }
 `
 
-export const Left = styled.div`
-  font-family: 'IBM Plex Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif !important;
-  letter-spacing: 0.5px;
-  font-size: 14px;
-  padding-top: 10px;
-  font-weight: 300;
-  order: 2;
-  text-align: center;
-
-  @media (min-width: 600px) {
-    font-size: 13px;
-    padding-top: 0px;
-    order: 1;
-    text-align: left;
-  }
-`
-
-export const CodeLink = styled.div`
-  color: #4183d7;
-  text-decoration: none;
-  padding-bottom: 10px;
-
-  @media (min-width: 600px) {
-    padding-bottom: 0px;
-  }
-
-  :hover {
-    cursor: pointer;
-    transition: all 200ms ease-in-out;
-  }
-`
-
-export const SocialContainer = styled.div`
+export const SocialLinks = styled.div`
   display: flex;
   justify-content: space-between;
-  order: 1;
-  width: 180px;
-  padding-top: 16px;
-
-  @media (min-width: 600px) {
-    font-size: 14px;
-    padding-top: 0px;
-    order: 1;
-    text-align: left;
-  }
+  padding-top: ${({ theme }) => theme.spacing._12};
+  padding-bottom: ${({ theme }) => theme.spacing._8};
 `
 
-export const SocialLink = styled.div`
-  width: 20px;
-`
+export const Icon = styled.div`
+  display: none;
 
-export const Link = styled.a`
-  color: #11181e;
-  font-size: 13px;
-  text-decoration: none;
-`
-
-export const SocialIcon = styled.svg`
-  :hover {
-    cursor: pointer;
-    fill: #4183d7;
-    transition: all 170ms ease-in-out;
+  @media (min-width: ${({ theme }) => theme.mq.sm}) {
+    display: flex;
   }
 `

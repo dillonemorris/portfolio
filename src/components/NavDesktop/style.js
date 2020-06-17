@@ -11,15 +11,19 @@ export const Nav = styled.nav`
 export const StyledLink = styled(Link)`
   display: flex;
   text-decoration: none;
-  font-size: 15px;
+  font-size: ${({ theme }) => theme.fontSize.text_sm.desktop};
   font-weight: 400;
-  color: #11181e;
-  padding-left: 60px;
+  color: ${({ theme }) => theme.colors.navLink};
+  padding: 0px 30px;
   letter-spacing: 0.3px;
 
   :hover {
     cursor: pointer;
-    color: #4183d7;
+    color: ${({ theme }) => theme.colors.activeNavLink};
     transition: all 170ms ease-in-out;
   }
+`
+
+export const MyToggleContainer = styled.div`
+  padding: 6px 0px 0px 30px;
 `

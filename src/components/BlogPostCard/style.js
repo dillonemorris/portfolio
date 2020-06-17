@@ -1,23 +1,29 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: ${({ theme }) => theme.spacing._4};
+  border-top: 3px solid ${({ theme }) => theme.colors.backgroundLinkHover};
+  height: 100%;
+  background: ${({ theme }) => theme.colors.cardBackground};
+  transition: ${({ theme }) => theme.transitions.hover};
   :hover {
-    > .hover-styles {
-      color: rgba(65, 131, 215, 1);
-      transition-delay: 0s, 0s, 0.3s;
-    }
+    box-shadow: ${({ theme }) => theme.shadow.lg};
+  }
+
+  padding: 1.5rem 1rem;
+
+  @media (min-width: ${({ theme }) => theme.mq.lg}) {
+    padding: ${({ theme }) => theme.spacing._10};
   }
 `
 
 export const Date = styled.div`
-  color: #486581;
-  font-family: 'IBM Plex Mono', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-    'Helvetica Neue', sans-serif !important;
-  font-size: 13px;
-  letter-spacing: 0.5px;
-  font-weight: 200;
-  padding-bottom: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `
 
 export const Title = styled.div`
