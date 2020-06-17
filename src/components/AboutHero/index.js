@@ -12,7 +12,7 @@ import {
 
 const AboutHero = () => (
   <Container>
-    <Img src={about} alt={'Dillon standing beneath tree in Autumn'} />
+    <Img src={about} />
     <Right>
       <Heading>Dillon Morris</Heading>
       <FirstParagraph>
