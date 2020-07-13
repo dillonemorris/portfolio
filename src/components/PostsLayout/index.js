@@ -10,6 +10,8 @@ import {
   H1,
   H2,
   Body,
+  OL,
+  StyledLink,
   FontSettingsContainer,
   DateContainer,
   Quote,
@@ -54,7 +56,14 @@ const PostsLayout = ({ pageContext, data }) => {
     ),
     blockquote: ({ children }) => <Quote>{children}</Quote>,
     pre: ({ children }) => <CodeBlock children={children} />,
-    a: ({ children, href }) => <MyLink text={children} page={href} />,
+    a: ({ children, href }) => (
+      <StyledLink largeFont={largeFont} text={children} page={href} />
+    ),
+    ol: ({ children }) => (
+      <OL largeFont={largeFont} fontStyle={fontStyle}>
+        {children}
+      </OL>
+    ),
   }
 
   const { title, date } = mdx.frontmatter
