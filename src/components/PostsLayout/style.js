@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import Arrow from '../../icons/Arrow'
+import MyLink from '../MyLink'
 
 export const Background = styled.div`
   background-color: ${props => props.theme.colors.background};
@@ -104,6 +105,39 @@ export const Body = styled.p`
   }
 `
 
+export const StyledLink = styled(MyLink)`
+  color: ${({ theme }) => theme.colors.primaryLink};
+  font-family: ${props =>
+    props.fontStyle
+      ? props.fontStyle
+      : '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif'};
+  font-weight: ${({ theme }) => theme.fontWeight.medium};
+  font-size: ${props =>
+    props.largeFont
+      ? props.theme.fontSize.text_xl.mobile
+      : props.theme.fontSize.text_base.mobile};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.linkBorder};
+  text-decoration: none;
+  transition: ${({ theme }) => theme.transitions.hover};
+  margin-right: ${({ marginRight }) => (marginRight ? marginRight : 0)};
+  margin: 0;
+  padding: 0;
+
+  :hover {
+    cursor: pointer;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.linkBorderHover};
+    background: ${({ background, theme }) =>
+      background ? background : theme.colors.backgroundLinkHover};
+  }
+
+  @media (min-width: ${({ theme }) => theme.mq.sm}) {
+    font-size: ${props =>
+      props.largeFont
+        ? props.theme.fontSize.text_xl.desktop
+        : props.theme.fontSize.text_base.desktop};
+  }
+`
+
 export const H1 = styled.h1`
   color: ${({ theme }) => theme.colors.body};
   font-family: ${props =>
@@ -128,6 +162,31 @@ export const H1 = styled.h1`
 `
 
 export const H2 = styled.h2`
+  color: ${({ theme }) => theme.colors.body};
+  font-family: ${props =>
+    props.fontStyle
+      ? props.fontStyle
+      : '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif'};
+  font-size: ${props =>
+    props.largeFont
+      ? props.theme.fontSize.text_3xl.mobile
+      : props.theme.fontSize.text_2xl.mobile};
+  font-weight: ${({ theme }) => theme.fontWeight.bold};
+  line-height: ${({ theme }) => theme.lineHeight.none};
+  margin-top: ${({ theme, largeFont }) =>
+    largeFont ? theme.spacing._8 : theme.spacing._4};
+  margin-bottom: ${({ theme }) => theme.spacing._1};
+  padding: 0;
+
+  @media (min-width: ${({ theme }) => theme.mq.sm}) {
+    font-size: ${props =>
+      props.largeFont
+        ? props.theme.fontSize.text_3xl.desktop
+        : props.theme.fontSize.text_2xl.desktop};
+  }
+`
+
+export const OL = styled.ol`
   color: ${({ theme }) => theme.colors.body};
   font-family: ${props =>
     props.fontStyle

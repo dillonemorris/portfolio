@@ -28,23 +28,14 @@ const Footer = () => {
                 <LargeBody>Feel free to reach out and/or follow me!</LargeBody>
               </div>
               <SocialLinks>
-                <Link page={'mailto:dillonmorris91@gmail.com'} text="Email" />
-                <Link
-                  page={'https://github.com/dillonmorris91'}
-                  text="Github"
-                />
-                <Link
-                  page={'https://dribbble.com/dillonmorris'}
-                  text="Dribbble"
-                />
+                <Link page={'mailto:dillon@dilmodev.com'} text="Email" />
+                <Link page={'https://github.com/dilmodev'} text="Github" />
+                <Link page={'https://dribbble.com/dilmodev'} text="Dribbble" />
                 <Link
                   page={'https://www.linkedin.com/in/dillonmorrisdev/'}
                   text="LinkedIn"
                 />
-                <Link
-                  page={'https://twitter.com/ThisIsDillon'}
-                  text="Twitter"
-                />
+                <Link page={'https://twitter.com/dilmodev'} text="Twitter" />
               </SocialLinks>
             </Text>
           </Inner>

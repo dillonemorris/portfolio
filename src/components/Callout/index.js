@@ -46,13 +46,13 @@ const Callout = () => {
       <ImageAndIcons>
         <Img src={ProfilePic} />
         <IconContainer>
-          <a target="blank" href="https://github.com/dillonmorris91">
+          <a target="blank" href="https://github.com/dilmodev">
             <Github color={theme.colors.socialIcon} />
           </a>
-          <a target="blank" href="https://twitter.com/ThisIsDillon">
+          <a target="blank" href="https://twitter.com/dilmodev">
             <Twitter color={theme.colors.socialIcon} />
           </a>
-          <a target="blank" href="https://dribbble.com/dillonmorris">
+          <a target="blank" href="https://dribbble.com/dilmodev">
             <Dribbble color={theme.colors.socialIcon} />
           </a>
           <a target="blank" href="https://www.linkedin.com/in/dillonmorrisdev/">
