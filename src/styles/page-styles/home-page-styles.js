@@ -54,7 +54,7 @@ export const Heading = styled.h1`
   line-height: ${({ theme }) => theme.lineHeight.tight};
 
   @media (min-width: ${({ theme }) => theme.mq.sm}) {
-    font-size: 6.5vh;
+    font-size: 6vh;
     line-height: ${({ theme }) => theme.lineHeight.none};
   }
 `

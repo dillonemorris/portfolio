@@ -88,12 +88,15 @@ const IndexPage = ({ data }) => {
               <SmallCircles />
             </SmallCirclesContainer>
             <HeroHeading>
-              <H4 paddingBottom={theme.spacing._1}>Hey, I’m Dillon!</H4>
               <Heading>
-                Javascript Developer{' '}
+                I craft{' '}
                 <span style={{ color: theme.colors.secondaryHeading }}>
-                  specializing in UI/UX
-                </span>
+                  quality React frontends{' '}
+                </span>{' '}
+                and have a passion for{' '}
+                <span style={{ color: theme.colors.secondaryHeading }}>
+                  usability.
+                </span>{' '}
               </Heading>
             </HeroHeading>
             <CallToAction onClick={handleClick}>
