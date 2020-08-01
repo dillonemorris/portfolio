@@ -1,0 +1,55 @@
+---
+title: "Don't Solve Problems You Don't Have."
+date: '2020-08-01'
+excerpt: "I wanted to share a recent experience learning this principle the hard way, or perhaps the only way, through failure. I was working on a side project when I ran into a bug I could not track down, which was made so much harder to solve because I didn't follow this principle. This post is me learning from my mistake."
+---
+
+I wanted to share a recent experience learning this principle the hard way, or perhaps the only way, through failure. I was working on a side project when I ran into a bug I could not track down, which was made so much harder to solve because I didn't follow this principle. This post is me learning from my mistake.
+
+<br />
+
+## Optimization
+
+> optimization is the process of modifying a system to make some features of it work more efficiently or use fewer resources. 
+> <a href="https://simple.wikipedia.org/wiki/Optimization_(computer_science)#:~:text=In%20computing%2C%20optimization%20is%20the,efficiently%20or%20use%20fewer%20resources.&text=The%20optimized%20system%20may%20be,network%20such%20as%20the%20Internet.">- wikipedia</a>
+
+The term "work more efficiently" implies that it already works as is. This is a key point. Make sure the problem you are solving is already solved. Only then can you come back and optimize your solution to be "more efficient." By optimizing the solution before it is in place, you are making assumptions, which is always something to avoid. Don't ever make assumptions if you can avoid it. By making assumptions, you can quickly code yourself into a corner that is difficult or even impossible to get out of without completely scrapping large chunks of code. Of course, this will inevitably happen. It's inevitable that you will make some assumptions and it's okay to scrap code and start over or backtrack if you've made a faulty one. The eariler in the process you can do this however, the more time (money) you will save.
+
+<br />
+
+## Think, then write, then think some more
+
+Spend as much time, if not more time *thinking* about the code you are writing before you write it. What specific, small problem are you solving right now? Solve that small problem, then solve another one, until you arrive at a place where you've solved the larger problem encompassing those smaller ones. Only then should you concern yourself with things like optimization. 
+
+
+> Make it right, make it work, then make it fast. 
+> <a href="https://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast">- Kent Beck</a>
+
+
+Writing maintainable software is an iterative process. By taking things one step at a time you are breaking complex problems down into smaller, simpler problems. By iterating in this way, you start to realize that the problems you thought were small were actually deceptively complex on their own. Or at the very least, these small problems require a few considerations to be made and deserve your full attention. Don't forget about the little guy, the small problems that make up the large solution. When you concern yourself with optimization too early, it's easy to forget them.
+
+<br />
+
+## Iterate, then iterate again
+
+Don't be afraid to get dirty with the code that's in your local branch. No one will ever read your early, scrappy iterations. To ensure that, review your own code before submitting it. Better yet, submit a PR without adding any reviewers. Let the code sit, let your mind focus on something else, and then come back and review your own code with a fresh mind. At this point you will likely find optimizations that should be made. After all, when you submit your PR and ask your peers to review it, you should 100% confident that it will be approved and merged. The reviewer will likely find things that can be improved or have questions or feedback, but those should be surprises to you and things you never would have thought of. 
+
+<br />
+
+Don’t let your reviewers find issues with your code that you could have found on your own, that’s a waste of their precious time. 
+
+<br />
+
+## The right tool 🛠
+
+Don’t use tech just because it’s the hot thing. Just because an API is popular/well-tested etc. doesn’t mean it’s the right tool to solve the problem you’re trying to solve. Just because a tool worked for you in the past on a different project, doesn't mean it's the right tool for your current job. By avoiding optimization in the early stages of a project, you are giving yourself time to really understand the problems you are solving. This aids you in picking the right tool for the job instead of one that is popular or has worked you for you in the past. 
+
+<br />
+
+I've had some experience lately in working with the <a href="https://reactjs.org/docs/context.html">Context API</a>. This is an example of a popular/well-tested API. It can simplify your React apps greatly. It lets you store state values in a top level <a href="https://reactjs.org/docs/context.html#contextprovider">Provider</a> so that any components that are children of that Provider can <a href="https://reactjs.org/docs/hooks-reference.html#usecontext">use</a> those values directly. It allows your child components to access just the properties they need, which makes your code more readable and maintainable. Sounds pretty great right? As great as this tool may be, it is not a silver bullet. Just because it worked in one situation, doesn't mean it will work in another. For example, I was working on a small side project and chose to store state values in context from the get go. This was a premature optimization. I ended up running into a bug that was harder to diagnose because I optimized too early. The context API really only serves it's purpose when you have a large enough set of components that need access to the same values. While building a feature for work recently, I went about this the opposite way after learning from the mistake I made on the side project. The feature I was tasked with building ended up being larger and more complex than I initially anticipated. There was a good amount of <a href="https://kentcdodds.com/blog/prop-drilling">prop-drilling</a> going on between several components and it was starting to become hard to reason about. This was the point where I asked myself, "is this a good use-case for the context API?" I bounced this idea off of a peer and they agreed it was a good candidate for using context. Ideally, I would have done this from the very start but I really didn't lose anything by waiting to optimize.
+
+<br />
+
+## Final note on failure
+
+You will optimize too early, or make some other mistake. The important thing is not to get down about these failures but gain takeaways that you can apply to future problems (i.e. this blog post). I realized I was missing the point of side projects. The end goal is never what you’re aiming for. You’re aiming to learn something by failing. This is why it’s good to get out of your comfort zone as often as possible because that is when you truly learn. I also understand that the term "optimization" is a broad one. That word likely means something different to you than it does to me based on our experience and the size of problems we are solving. I know I've spoken some absolutes, this is simply to get my point across, although that point is open to interpretation. I'd like to think that my future self reading this in 1 year will have a different opinion or think about optimization in a completely different way. That would mean that I've failed more along the way and therefore grown as a person and as a professional.
