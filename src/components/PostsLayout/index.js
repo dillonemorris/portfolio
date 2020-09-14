@@ -64,6 +64,11 @@ const PostsLayout = ({ pageContext, data }) => {
         {children}
       </OL>
     ),
+    ul: ({ children }) => (
+      <Body largeFont={largeFont} fontStyle={fontStyle}>
+        {children}
+      </Body>
+    ),
   }
 
   const { title, date } = mdx.frontmatter
