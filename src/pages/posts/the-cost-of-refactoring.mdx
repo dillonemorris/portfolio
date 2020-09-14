@@ -1,0 +1,80 @@
+---
+title: 'The Cost of Refactoring'
+date: '2020-09-14'
+excerpt: 'Refactoring can be enormously beneficial. It is often necessary when striving for sustainable, efficient code. However, code is an expensive commodity, and as with anything in software development, there are tradeoffs to consider.'
+---
+
+Refactoring can be enormously beneficial. It is often necessary when striving for sustainable, efficient code. However, code is an expensive commodity. As with anything in software development, there are tradeoffs to consider when investing in a refactor of any scale.
+
+<br />
+
+## Chesterton's "code"
+
+> Do not remove a fence until you know why it was put up in the first place.
+
+This heuristic is known as "[Chesterton's Fence](https://fs.blog/2020/03/chestertons-fence/)." When you are refactoring code, think of yourself as a reformer. You must understand fully why the code exists before reforming it. Otherwise, "you are likely to do more harm than good with its removal."
+
+The code you are reforming didn't come out of nowhere. It was not created erroneously, in fact, it was written the way it was for a specific reason or a series of reasons. Those reasons are likely no longer relevant or else the code would not need to be refactored. But "until we establish that reason, we have no business taking an ax to it."
+
+> If a fence exists, there is likely a reason for it.
+
+Consider the possibility that the code does not need refactoring, or perhaps not as much as you originally thought. In any case, it's part of the system whether you like it or not, and it is your responsibility to understand the system you are working in. Only once you understand it should you feel like it is your place to modify or axe it.
+
+<br />
+
+Be humble. Don’t be overconfident in your ability to “make the code better.” The code didn’t get to where it is overnight, there’s likely reasons it hasn’t been refactored yet, uncover the "why".
+
+<br />
+
+As developers, we tend to equate our self worth with our knowledge. This is scary when considering how little we may know. When we run into code we do not understand, it's easy to perch upon your ivory tower of knowledge and look down at those that came before us in the codebase as lazy time-wasters. "Why would they write it like this, what a mess, let me fix it." Everyone is lazy, even you, and we don't like to waste time and resources. Just because you don't understand the code, doesn't mean it had no reason to be there in the first place. Maybe it is hard to understand, hard to reason about, maybe that's because it was written in a rushed manner. And hey, it's not easy to write simple, readable code. Maybe the original developers were sacrificing maintainability in order to ship faster with the intention of cleaning it up one day and that day never came. It happens all the time, in every professional project. Have empathy for your peers who spent precious time building the software with the best of their abilities.
+
+<br />
+
+## Refactoring "old" code
+
+To use a more specific example, I have recently been spending much time refactoring code to be in a completely different style (functional vs. classical). For those unfamiliar, there used to be a concept of class components vs. functional components in React. If you wanted a stateful component, you had no choice but to write a class component. As of React `v16.8` ([the one with Hooks](https://reactjs.org/blog/2019/02/06/react-v16.8.0.html)), you can write stateful components using functions. The class-based "old" way of writing react components is harder for me to read and understand. This is because I don't have years of experience writing class components, in other words, I don't understand it fully. As I read through these class components, I catch myself wondering why they were written this way and become frustrated. I have to stop and realize there is a very simple answer to this "hooks weren't created yet."
+
+<br />
+
+The code you're refactoring was written in a specific timeframe that must be considered. If it was written any more than 1 year ago, it's likely that a new way of doing things has been adopted. Is this "new way" better? In general no, it's not better just because it's newer. You and your fellow developers on your team will have to decide if this new way is something you are committing to, and a lot of considerations should be made without taking things like hype and popularity into account.
+
+<br />
+
+## Is Refactoring necessary?
+
+You will likely have to explain to your project manager the reason why the code needs to be refactored. Or you may feel an urge to "go rogue." You think, this will only take me 30 minutes tops. Then 2 hours goes by and you're stuck. You introduced a bug that you're not sure how to solve. Turns out that you didn't fully understand the code you were refactoring. So before you start hacking away and "fixing" other's "mistakes," you owe it to others working on the project to make sure you are spending your time wisely.
+
+A lot of the time, refactoring is time well spent. Technical debt accrues on every project, and in many ways it is your responsibility to tend to it. If you find yourself having to lobby for the need to refactor, consider introducing the words "increased risk" into the conversation. An article by [Rachel Stephens](https://redmonk.com/rstephens/2017/08/08/technical-debt/) points this out. When managers hear the words, "refactor" or "pay back technical debt," they will likely equate this to "work that isn't directly benefiting the company." So a better way to express this is to state that by continuing to avoid code that needs to be cleaned up, we are increasing risk for bugs. If we're working on bugs we can't work on new features. If we don't take time to write code that is extendable and maintainable and less bug prone, than we will certainly cost the company money.
+
+<br />
+
+## Your time is a commodity
+
+Whether we like it or not, as a software developer, you are a commodity. Or rather, your time is a commodity. The time that you devote to anything incurs a very real, and likely specific amount of dollars. Now, how you choose to spend the time your employer is paying for is up to you. But if you want to be a productive and valuable member of your team, you must spend that time in a way that maximizes the return on your employer's investment. All this to say, your time is money, the company's money. I believe this applies to those who are self-employed as well.
+
+<br />
+
+Now, as developers, we will always have many things we _could_ be doing. There are always many tasks competing for our time and attention. The "blue sky" scenario is that as a developer, you get to choose what you work on and for how long. The reality is, you don't own the software you are writing, it does not belong to you. Though you should feel a sense of ownership and pride for your own contribution to the software, the reality is that the code is only valuable when it's making your employer real dollars. In other words, you don't get to take the code with you when you leave the company. This must be taken into account anytime you make a decision to refactor code. Unless you want to spend your own personal time refactoring or improving the code base, which I would argue is unhealthy, you will be spending company dollars to do it. I believe it is therefore your responsibility to take time to make sure any changes you make that are not directly related to feature work are actually going to be beneficial to the company's code.
+
+<br />
+
+This is why we talk so much about the value of side projects. With side projects, you own the code. Code is valuable because it takes a lot of time and mental energy to produce. Code is expensive to produce in so many ways. So that feeling of creating something on your own and saying "Look at what I built, I own this, it is mine," is a feeling every developer should experience on an ongoing basis. I just don't think that's how we should view the code we are being paid by someone else to write.
+
+<br />
+
+## Increased Risk
+
+Allow me to revisit the idea of risk. I believe that when deciding on what to work on, one way to think of it is in terms of risk. Risk equals cost, cost equals risk. Let's say you're itching to refactor a bit of legacy code. This code is crufty, it's got cobwebs all over it from weeks and months gone by of no care or attention. You will find this kind of code in any moderately sized enterprise grade application. This is an important point. I'd venture to say there is no codebase where the developer's working on it would say "nothing needs to be refactored here, it's all in tip-top shape." Technology moves too fast, new paradigms emerge, new developers come onto teams with strong opinions, hey, it could be you. You could come onto a project and be perturbed by what you see as a mess of code, code that is consistently producing your employer real money. Remember, it's their code, not yours, you do not own it. Back to risk, so you're itching to refactor some legacy code? You must ask yourself, "if I refactor this code, am I incurring more risk or am I decreasing risk?" Well, that depends, how big is the refactor? This is a question you need to confront before you sink time (and company money) into the refactor. I've been bitten hard by this before, and will be again I'm sure. You're cruising along, trying to fix a bug perhaps when you come upon some dusty code. You think "let me tidy this up. After all, I've gotten pretty fast at this sort of thing, it'll be quick." So you start a refactor with this hasty approach. An hour goes by and you find you've said that to yourself 5 times without batting an eye. In other words, you "fix" one piece of code, only to find that that piece of code has more legacy code within it, and so on and so on until you're knee deep in muck. And so you finally clean it all up. Now you're submitting a fairly hefty chunk of code, code that needs to be reviewed which costs the company more money. And let's say you did fix that bug you were initially set out to fix, how can you be 100% sure you didn't introduce a new one?
+
+<br />
+
+There is a time and place for refactoring code. It could be hugely beneficial and well worth the investment to make software more reusable, maintainable and therefore less error-prone. However, the key word there is investment. There is a very real investment there that should not be scoffed at. Is the investment worth the money you are spending? It very well could be, and it very well could take weeks or months before it pays off. It could end up saving a ton of time and money in the long run. And it could be that the return on your investment turns out to be less that the initial cost, that's a very real possibility. In any case, there is a process you should go through before deciding to refactor. I believe that you should owe it to yourself and your employer to take time, even if it's 5 minutes, to really ask yourself these questions. Involve your team members, your manager, this is a decision that affects everyone, not just yourself. It may not always turn out to be worth it, and you may not find that out until your already in the refactor process, but at least you gave it some thought.
+
+<br />
+
+## Key takeaways
+
+- Understand the code you are refactoring. Until you understand it you have no business removing it.
+- Have empathy for the developers before you. That had legitimate reasons for doing what they did and how they went about it.
+- What’s the real ROI, be honest with yourself and consider those that will be maintaining this code in the future.
+- Neglecting refactors and technical debt === increased risk in the long term.
