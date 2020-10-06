@@ -597,7 +597,7 @@ pre tt:after {
 
 .language-js {
   font-size: 14px;
-  font-family: 'IBM Plex Mono', Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
+  font-family: Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
 }
 
 code[class*='language-'],

@@ -23,7 +23,6 @@ import {
   LeftArrow,
 } from './style'
 import FontSettings from '../FontSettings'
-import { Link as MyLink } from '../globals'
 import CodeBlock from '../CodeBlock'
 import Arrow from '../../icons/Arrow'
 

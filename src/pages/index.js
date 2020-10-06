@@ -33,7 +33,6 @@ import {
   LargeBody,
   H1,
   H3,
-  H4,
   Container,
   Background,
 } from '../components/globals'
