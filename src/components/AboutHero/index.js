@@ -16,7 +16,7 @@ const AboutHero = () => (
       <Heading>Dillon Morris</Heading>
       <FirstParagraph>
         I get to work on a team that makes digital products that help people. I
-        am grateful for that privilege and strive to make the most of it.
+        am grateful for that privelege and strive to make the most of it.
       </FirstParagraph>
       <SecondParagraph>
         When I'm not coding & creating for the web I enjoy playing and writing
