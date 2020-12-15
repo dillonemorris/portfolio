@@ -26,14 +26,13 @@ const Callout = () => {
           <H3 paddingBottom={theme.spacing._1}>What I'm up to</H3>
           <Description>
             <LargeBody>
-              I am currently working with some awesome people at{' '}
+              Collaborating with clients and co-workers to build solid products at{' '}
               <Link
                 lg
-                page="https://synapsestudios.com"
-                text="Synapse Studios"
+                page="https://formidable.com/"
+                text="Formidable"
               />
-              . We build custom app used and loved by millions. There, I get to
-              utilize my diverse skillset working on next level products.
+              . I'm grateful to work for a company that shares my values. Values like inclusion, autonomy and craft.
             </LargeBody>
           </Description>
         </div>
