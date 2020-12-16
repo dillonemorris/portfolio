@@ -19,6 +19,7 @@ import {
 
 const Callout = () => {
   const theme = useContext(ThemeContext)
+
   return (
     <Container>
       <Left>
@@ -26,13 +27,10 @@ const Callout = () => {
           <H3 paddingBottom={theme.spacing._1}>What I'm up to</H3>
           <Description>
             <LargeBody>
-              Collaborating with clients and co-workers to build solid products at{' '}
-              <Link
-                lg
-                page="https://formidable.com/"
-                text="Formidable"
-              />
-              . I'm grateful to work for a company that shares my values. Values like inclusion, autonomy and craft.
+              Collaborating with clients and co-workers to build solid products
+              at <Link lg page="https://formidable.com/" text="Formidable" />.
+              I'm grateful to work for a company that shares my values. Values
+              like inclusion, autonomy and craft.
             </LargeBody>
           </Description>
         </div>
