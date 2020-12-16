@@ -1,0 +1,189 @@
+---
+title: 'React Components are Just Functions'
+date: '2020-12-16'
+excerpt: "When developing React components it's easy to think of them as their own beast. It's important however to realize that they are just an abstraction over regular javascript functions."
+---
+
+When developing React components it's easy to think of them as their own beast. It's important however to realize that they are just an abstraction over regular javascript functions.
+
+<br />
+
+## What is React?
+
+React components are the low level building blocks that make up a react application. So to understand what components are, let's first understand what react is.
+
+> React is a declarative, efficient, and flexible JavaScript library for building user interfaces. - [React Docs](https://reactjs.org/tutorial/tutorial.html)
+
+Here's a basic React component:
+
+```js
+function Hero() {
+  return (
+    <div>
+      <h1>Hi, I'm Dillon!</h1>
+      <p>This is my react component</p>
+    </div>
+  )
+}
+```
+
+Our markup in the middle is React's templating language called JSX. It's important to note that JSX is simply an abstraction that sits above the `createElement` method exported from React. This is what the above code looks like without utilizing the JSX abstraction:
+
+```js
+return React.createElement('div', null,
+  React.createElement('h1', null, "Hi, I'm Dillon!"
+  React.createElement('ul', null, "This is my react component")
+);
+```
+
+As you can see, the JSX in our `Hero` component is really just syntactic sugar for calling the `createElement` method exported by React. Let's take a closer look at `createElement` 's [function signature](https://developer.mozilla.org/en-US/docs/Glossary/Signature/Function).
+
+```jsx
+React.createElement(component, props, ...children)
+```
+
+Now let's break down each of the arguments this nifty function named `createElement` accepts.
+
+<br />
+
+## Component
+
+```jsx
+React.createElement(component, props, ...children)
+```
+
+The first argument, `component`, takes a string representing any native HTML elements (ex. "div", "h1", "p" etc.). This is what we did in our `Hero` example. You can also pass plain old javascript functions as an argument for component. The fact that the `createElement` method can take in a javascript function is a key point here. More on that to come, first let's take a look at the 2nd argument, `props`.
+
+<br />
+
+## Props
+
+The second argument we pass to `createElement` is props. Props is just a plain javascript object. From the React Official Documentation:
+
+> When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this object “props”.
+
+In our `Hero` example, we didn't include any attributes to our JSX elements, therefore props was null. We'll take a look a closer look at how props work in the next section.
+
+<br />
+
+## Children
+
+Children are the components nested inside of the JSX element. Let's look again at our example:
+
+```jsx
+function Hero() {
+  return (
+    <div>
+      <h1>Hi, I'm Dillon!</h1>
+      <p>This is my react component</p>
+    </div>
+  )
+}
+```
+
+The children of this JSX element "div" are the "h1" and the "p" elements. Those elements also have children. The "h1" element has 1 child, which is the string "Hi, I'm Dillon!". The "p" tag also has 1 child, which is the string "This is my react component." Now looking again at our transpiled version of this code:
+
+```jsx
+return React.createElement(
+  'div',
+  null,
+  React.createElement('h1', null, "Hi, I'm Dillon!"),
+  React.createElement('ul', null, 'This is my react component')
+)
+```
+
+We can see that JSX is just a series of nested calls to `createElement`. It's really 1 call to `createElement` with nested calls passed as the third argument (children). In this example we are passing 'div' as the first argument, which can either be a string value of the HTML element you want to create, or a function. Next, we pass `null` as the value for `props` since we aren't passing any props to these elements.
+
+<br />
+
+## What are React components?
+
+> React components let you split the UI into independent, reusable pieces, and think about each piece in isolation.
+
+> Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called “props”) and return React elements describing what should appear on the screen.
+
+Let's look again at our simple React component:
+
+```jsx
+function Hero() {
+  return (
+    <div>
+      <h1>Hi, I'm Dillon!</h1>
+      <p>This is my react component</p>
+    </div>
+  )
+}
+```
+
+This isn't too interesting in that it's a function that takes no inputs and spits out some markup. Let's take a closer look at how props work to understand how our component becomes dynamic.
+
+```jsx
+function Hero(props) {
+  return (
+    <div>
+      <h1>Hi, I'm {props.name}!</h1>
+      <p>This is my react component</p>
+    </div>
+  )
+}
+```
+
+In our h1 tag we are now accessing the property `name` on an object called props? Now how is this possible? What is props really and how do we have access to it here? This really has more to do with whoever is invoking `Hero` than `Hero` itself. Let's go one level up and see what happens when we invoke this component.
+
+<br />
+
+Let's say we are developing a marketing page. We have a `Home` page component and inside of it we want to render our `Hero` component. That would look something like this:
+
+```jsx
+function Home() {
+  return <Hero name="Dillon" />
+}
+```
+
+<br />
+
+If we transpile the return value, we should now know what to expect, a call to `createElement`:
+
+```jsx
+return React.createElement(Hero, { name: 'Dillon' })
+```
+
+<br />
+
+This is cool. Now, we are passing a value to `createElement`'s second argument, props.
+
+> When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this object “props”.
+
+So when this `createElement` method is invoked by React, under the hood it is passing an object called props to our function `Hero`. That is why when we declare our component `Hero` , we can access the `name` value from the props object that React so conveniently made available to us.
+
+<br />
+
+## Just functions
+
+I hope I was able to show that we can use the word component and function interchangeably when talking about React. The `createElement` method takes a function as it's first argument, those are our custom "user-defined" components, like our `Hero` component. When React invokes that function, it passes along `props` as a single object. As we saw, JSX is just syntactic sugar for the `createElement` method:
+
+```jsx
+function Home() {
+  return <Hero name="Dillon" />
+}
+```
+
+```jsx
+return React.createElement(Hero, { name: 'Dillon' })
+```
+
+The two snippets above are just two ways of writing the same thing.
+
+<br />
+
+## Resources
+
+With this understanding of React components as just functions we can apply principles of writing quality functions to writing quality react components. Here are some resources for learning those principles:
+
+<br />
+
+[Readable Functions Do one Thing](https://www.entropywins.wtf/blog/2018/10/30/readable-functions-do-one-thing/)
+
+[Functions - Eloquent Javascript](https://eloquentjavascript.net/03_functions.html)
+
+[The art of writing plain and small functions](https://dmitripavlutin.com/the-art-of-writing-small-and-plain-functions/)
