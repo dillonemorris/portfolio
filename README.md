@@ -1,4 +1,4 @@
-## <a href="https://5fda8a9053f3f00008ff127b--mystifying-rosalind-311b89.netlify.app/">Portfolio site v1</a>
+## <a href="https://5fda8a9053f3f00008ff127b--mystifying-rosalind-311b89.netlify.app/">Portfolio site v2</a>
 
 This is a retired portfolio site I spent a lot of time and work on. I'm keeping it here for posterity and in case anyone wants to peek at the code or the site.
 
